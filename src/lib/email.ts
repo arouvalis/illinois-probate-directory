@@ -1,5 +1,5 @@
 const TO_EMAIL = "arouvalis@gmail.com";
-const FROM_EMAIL = "Illinois Probate Directory <leads@illinoisprobatedirectory.com>";
+const FROM_EMAIL = "Illinois Probate Directory <noreply@illinoisprobatedirectory.com>";
 
 export async function sendEmail({
   subject,

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   },
   description:
     "Find experienced probate attorneys across Cook, Lake, Will, Kane, McHenry, and DuPage counties in Illinois. Compare ratings, specializations, and get connected today.",
-  metadataBase: new URL("https://illinoisprobatedirectory.com"),
+  metadataBase: new URL("https://www.illinoisprobatedirectory.com"),
   verification: {
     google: "OdAS2upgHPS4qIzSHL45_8gVbwgmPT3StMm42ZYo044",
   },

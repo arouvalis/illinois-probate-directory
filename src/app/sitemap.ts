@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { getAllAttorneys, COUNTY_SLUGS } from "@/lib/attorneys";
 
-const BASE_URL = "https://illinoisprobatedirectory.com";
+const BASE_URL = "https://www.illinoisprobatedirectory.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const attorneys = getAllAttorneys();

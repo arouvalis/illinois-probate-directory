@@ -88,7 +88,7 @@ export default function HomepageLeadForm() {
               required
               value={form.name}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-navy-500"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-navy-500"
               placeholder="Jane Smith"
             />
           </div>
@@ -102,7 +102,7 @@ export default function HomepageLeadForm() {
               required
               value={form.email}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-navy-500"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-navy-500"
               placeholder="jane@example.com"
             />
           </div>
@@ -117,7 +117,7 @@ export default function HomepageLeadForm() {
             required
             value={form.county}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-navy-500"
+            className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-navy-500"
           >
             <option value="">Select your county…</option>
             {COUNTIES.map((c) => (

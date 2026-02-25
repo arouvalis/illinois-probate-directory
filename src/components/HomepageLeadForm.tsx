@@ -7,6 +7,7 @@ const COUNTIES = ["Cook", "Lake", "Will", "Kane", "McHenry", "DuPage", "Other"];
 interface FormData {
   name: string;
   email: string;
+  phone: string;
   county: string;
   hasRealEstate: string;
 }
@@ -15,6 +16,7 @@ export default function HomepageLeadForm() {
   const [form, setForm] = useState<FormData>({
     name: "",
     email: "",
+    phone: "",
     county: "",
     hasRealEstate: "",
   });
@@ -106,6 +108,20 @@ export default function HomepageLeadForm() {
               placeholder="jane@example.com"
             />
           </div>
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-navy-800 mb-1">
+            Phone Number (optional)
+          </label>
+          <input
+            type="tel"
+            name="phone"
+            value={form.phone}
+            onChange={handleChange}
+            className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-navy-500"
+            placeholder="(312) 555-0100"
+          />
         </div>
 
         <div>

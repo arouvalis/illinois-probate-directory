@@ -1,7 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { COUNTY_NAMES, COUNTY_SLUG_MAP } from "@/lib/attorneys";
 import CountySearchForm from "@/components/CountySearchForm";
 import HomepageLeadForm from "@/components/HomepageLeadForm";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const COUNTY_DESCRIPTIONS: Record<string, string> = {
   Cook: "240 attorneys · Chicago & suburbs",

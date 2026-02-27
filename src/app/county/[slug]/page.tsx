@@ -22,6 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Probate Attorneys in ${county} County, Illinois`,
     description: `Find experienced probate attorneys in ${county} County, Illinois. Compare ratings, specializations, free consultations, and more.`,
+    alternates: { canonical: `/county/${params.slug}` },
   };
 }
 

@@ -30,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         ? `Specializes in: ${attorney.specializations_found}.`
         : ""
     } ${attorney.free_consultation === "YES" ? "Free consultation available." : ""}`,
+    alternates: { canonical: `/attorney/${params.slug}` },
   };
 }
 

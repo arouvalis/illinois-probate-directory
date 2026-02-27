@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "How Probate Works in Illinois – Step-by-Step Guide",
   description:
     "A complete guide to the Illinois probate process: filing, timelines, costs, small estate affidavits, and how to find a probate attorney.",
+  alternates: { canonical: "/resources/how-probate-works-illinois" },
 };
 
 export default function HowProbateWorksPage() {

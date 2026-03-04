@@ -5,7 +5,7 @@ import CountySearchForm from "@/components/CountySearchForm";
 import HomepageLeadForm from "@/components/HomepageLeadForm";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/" },
+  alternates: { canonical: "https://www.illinoisprobatedirectory.com/" },
 };
 
 const COUNTY_DESCRIPTIONS: Record<string, string> = {

@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Selling Inherited Property in Illinois – Complete Guide",
   description:
     "Everything you need to know about selling inherited real estate in Illinois: probate, stepped-up basis, capital gains tax, and working with attorneys.",
-  alternates: { canonical: "/resources/selling-inherited-property-illinois" },
+  alternates: { canonical: "https://www.illinoisprobatedirectory.com/resources/selling-inherited-property-illinois" },
 };
 
 export default function SellingInheritedPropertyPage() {

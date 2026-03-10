@@ -31,12 +31,12 @@ export default function Header() {
               </button>
               <div className="absolute top-full left-0 mt-1 w-48 bg-white text-gray-800 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 {[
-                  ["Cook County", "/county/cook-county"],
-                  ["Lake County", "/county/lake-county"],
-                  ["Will County", "/county/will-county"],
-                  ["Kane County", "/county/kane-county"],
-                  ["McHenry County", "/county/mchenry-county"],
-                  ["DuPage County", "/county/dupage-county"],
+                  ["Cook County", "/county/cook"],
+                  ["Lake County", "/county/lake"],
+                  ["Will County", "/county/will"],
+                  ["Kane County", "/county/kane"],
+                  ["McHenry County", "/county/mchenry"],
+                  ["DuPage County", "/county/dupage"],
                 ].map(([label, href]) => (
                   <Link
                     key={href}
@@ -84,12 +84,12 @@ export default function Header() {
             <Link href="/" className="block px-2 py-1.5 hover:text-blue-300" onClick={() => setMenuOpen(false)}>Home</Link>
             <p className="px-2 py-1 text-xs text-gray-400 uppercase tracking-wider">Counties</p>
             {[
-              ["Cook County", "/county/cook-county"],
-              ["Lake County", "/county/lake-county"],
-              ["Will County", "/county/will-county"],
-              ["Kane County", "/county/kane-county"],
-              ["McHenry County", "/county/mchenry-county"],
-              ["DuPage County", "/county/dupage-county"],
+              ["Cook County", "/county/cook"],
+              ["Lake County", "/county/lake"],
+              ["Will County", "/county/will"],
+              ["Kane County", "/county/kane"],
+              ["McHenry County", "/county/mchenry"],
+              ["DuPage County", "/county/dupage"],
             ].map(([label, href]) => (
               <Link key={href} href={href} className="block px-4 py-1.5 hover:text-blue-300" onClick={() => setMenuOpen(false)}>
                 {label}

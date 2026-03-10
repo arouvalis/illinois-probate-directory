@@ -208,12 +208,12 @@ export default function SellingInheritedPropertyPage() {
             </p>
             <div className="flex flex-wrap gap-3">
               {[
-                ["Cook County", "/county/cook-county"],
-                ["Lake County", "/county/lake-county"],
-                ["Will County", "/county/will-county"],
-                ["Kane County", "/county/kane-county"],
-                ["McHenry County", "/county/mchenry-county"],
-                ["DuPage County", "/county/dupage-county"],
+                ["Cook County", "/county/cook"],
+                ["Lake County", "/county/lake"],
+                ["Will County", "/county/will"],
+                ["Kane County", "/county/kane"],
+                ["McHenry County", "/county/mchenry"],
+                ["DuPage County", "/county/dupage"],
               ].map(([label, href]) => (
                 <Link key={href} href={href} className="btn-primary text-sm py-2 px-4">
                   {label}

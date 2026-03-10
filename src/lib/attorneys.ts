@@ -24,12 +24,12 @@ export interface Attorney {
 }
 
 export const COUNTY_SLUGS: Record<string, string> = {
-  "cook-county": "Cook",
-  "lake-county": "Lake",
-  "will-county": "Will",
-  "kane-county": "Kane",
-  "mchenry-county": "McHenry",
-  "dupage-county": "DuPage",
+  cook: "Cook",
+  lake: "Lake",
+  will: "Will",
+  kane: "Kane",
+  mchenry: "McHenry",
+  dupage: "DuPage",
 };
 
 export const COUNTY_NAMES = [
@@ -42,12 +42,12 @@ export const COUNTY_NAMES = [
 ];
 
 export const COUNTY_SLUG_MAP: Record<string, string> = {
-  Cook: "cook-county",
-  Lake: "lake-county",
-  Will: "will-county",
-  Kane: "kane-county",
-  McHenry: "mchenry-county",
-  DuPage: "dupage-county",
+  Cook: "cook",
+  Lake: "lake",
+  Will: "will",
+  Kane: "kane",
+  McHenry: "mchenry",
+  DuPage: "dupage",
 };
 
 export const attorneys = attorneysData as Attorney[];

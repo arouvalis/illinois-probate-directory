@@ -19,12 +19,12 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-3">Browse by County</h4>
             <ul className="space-y-1.5 text-sm">
               {[
-                ["Cook County", "/county/cook-county"],
-                ["Lake County", "/county/lake-county"],
-                ["Will County", "/county/will-county"],
-                ["Kane County", "/county/kane-county"],
-                ["McHenry County", "/county/mchenry-county"],
-                ["DuPage County", "/county/dupage-county"],
+                ["Cook County", "/county/cook"],
+                ["Lake County", "/county/lake"],
+                ["Will County", "/county/will"],
+                ["Kane County", "/county/kane"],
+                ["McHenry County", "/county/mchenry"],
+                ["DuPage County", "/county/dupage"],
               ].map(([label, href]) => (
                 <li key={href}>
                   <Link href={href} className="hover:text-white transition-colors">

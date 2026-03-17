@@ -52,15 +52,16 @@ export default function HowProbateWorksPage() {
               Not all estates require probate. In Illinois, probate is generally required when:
             </p>
             <ul className="mt-3 space-y-2 list-disc list-outside ml-5">
-              <li>The deceased owned real estate in their name alone (without a transfer-on-death deed).</li>
-              <li>The total value of individually owned assets exceeds $100,000.</li>
-              <li>There are debts that creditors need to resolve through a formal process.</li>
-              <li>There is a dispute among heirs or beneficiaries.</li>
+              <li>The deceased owned real estate in their name alone (and it is not subject to a transfer-on-death instrument or held in a trust).</li>
+              <li>The total value of individually owned personal property exceeds $100,000.</li>
+              <li>There are significant debts that need to be resolved through a formal court process.</li>
+              <li>There is a dispute among heirs or beneficiaries that requires court involvement.</li>
             </ul>
             <p className="mt-3">
-              Assets that pass outside of probate include jointly held property, life insurance
-              proceeds with a named beneficiary, retirement accounts (IRA, 401k), payable-on-death
-              bank accounts, and assets held in a living trust.
+              Assets that typically pass outside of probate include: jointly held property with right
+              of survivorship, life insurance proceeds with a named beneficiary, retirement accounts
+              (such as IRAs and 401(k)s) with designated beneficiaries, payable-on-death or
+              transfer-on-death accounts, and assets properly titled in a living trust.
             </p>
           </section>
 
@@ -145,9 +146,9 @@ export default function HowProbateWorksPage() {
             <ul className="mt-3 space-y-1.5 list-disc list-outside ml-5">
               <li><strong>Court filing fees:</strong> $200–$500 depending on estate size and county</li>
               <li><strong>Publication fees:</strong> $100–$300 for required creditor notices</li>
-              <li><strong>Attorney fees:</strong> Often 2–4% of the gross estate value, or charged hourly</li>
+              <li><strong>Attorney fees:</strong> Often 2–5% of the gross estate value, or charged as a flat or hourly fee</li>
               <li><strong>Executor fees:</strong> The executor is entitled to reasonable compensation from the estate</li>
-              <li><strong>Appraisal fees:</strong> Required for real estate, business interests, or unusual assets</li>
+              <li><strong>Appraisal fees:</strong> Often required for real estate, business interests, or unusual assets</li>
             </ul>
           </section>
 

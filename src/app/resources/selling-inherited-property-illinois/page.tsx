@@ -23,7 +23,7 @@ export default function SellingInheritedPropertyPage() {
           Selling Inherited Property in Illinois
         </h1>
         <p className="text-gray-500 text-sm mb-8">
-          A practical guide for heirs and executors navigating the sale of inherited real estate.
+          A practical guide for heirs and executors navigating inherited real estate sales.
         </p>
 
         <div className="space-y-10 text-gray-700 leading-relaxed">
@@ -31,14 +31,14 @@ export default function SellingInheritedPropertyPage() {
           <section>
             <h2 className="text-2xl font-serif font-bold text-navy-800 mb-3">Overview</h2>
             <p>
-              Inheriting real estate in Illinois can be both a financial opportunity and a
-              logistical challenge. Whether you&apos;ve inherited a Chicago condo, a suburban
-              home, or vacant land downstate, the process of selling that property involves
-              legal, tax, and practical steps that are different from a typical home sale.
+              Inheriting real estate in Illinois presents both opportunity and complexity.
+              Whether it&apos;s a Chicago condo, suburban home, or downstate land, selling
+              inherited property involves legal, tax, and practical steps that differ from
+              typical home sales.
             </p>
             <p className="mt-3">
-              This guide covers the key steps, from determining whether probate is required
-              to understanding your tax obligations when you sell.
+              This guide walks you through everything from determining probate requirements
+              to understanding your tax obligations at sale.
             </p>
           </section>
 
@@ -79,15 +79,19 @@ export default function SellingInheritedPropertyPage() {
               Step 2: Get the Property Into Your Name (or the Estate&apos;s Name)
             </h2>
             <p>
-              If probate is required, the court will issue Letters of Office (also called
+              If probate is required, the court issues Letters of Office (also called
               Letters Testamentary or Letters of Administration), which give the executor
               legal authority to manage and sell estate property.
             </p>
             <p className="mt-3">
-              The executor does not necessarily need to transfer the deed into their own
-              name — they can sell directly from the estate. However, the court may need
-              to approve the sale if the will requires it or if heirs object.
+              The executor can typically sell directly from the estate without transferring
+              the deed into their own name. However, court approval may be required if:
             </p>
+            <ul className="mt-3 space-y-2 list-disc list-outside ml-5">
+              <li>The will specifically requires it</li>
+              <li>Heirs or beneficiaries object</li>
+              <li>The estate is under formal supervised administration</li>
+            </ul>
           </section>
 
           <section>
@@ -173,11 +177,12 @@ export default function SellingInheritedPropertyPage() {
               When Multiple Heirs Are Involved
             </h2>
             <p>
-              If multiple heirs inherit a property together and disagree on whether to sell
-              (or for how much), any co-owner can file a <strong>partition action</strong>
-              in Illinois court. A partition action forces the sale of the property and
-              division of proceeds — but it&apos;s costly and time-consuming. Mediation
-              and early legal counsel can help resolve disagreements before they escalate.
+              If multiple heirs inherit property together and disagree on selling (or price),
+              any co-owner can file a <strong>partition action</strong> in Illinois court.
+              This forces sale and proceeds division&mdash;but it&apos;s costly and time-consuming.
+            </p>
+            <p className="mt-3">
+              Mediation and early legal counsel often resolve disputes faster.
             </p>
           </section>
 
@@ -190,11 +195,11 @@ export default function SellingInheritedPropertyPage() {
             </p>
             <ul className="mt-3 space-y-1.5 list-disc list-outside ml-5">
               <li>Obtain Letters of Office authorizing the executor to sell</li>
-              <li>Draft or review the real estate sale contract</li>
-              <li>Coordinate with the title company on probate-related title issues</li>
-              <li>Handle creditor claims that affect proceeds from the sale</li>
-              <li>Advise on tax filings required after the sale</li>
-              <li>Represent the estate if other heirs challenge the sale</li>
+              <li>Draft/review the real estate sale contract</li>
+              <li>Coordinate with title company on probate title issues</li>
+              <li>Handle creditor claims affecting sale proceeds</li>
+              <li>Advise on required post-sale tax filings</li>
+              <li>Represent estate if heirs challenge the sale</li>
             </ul>
           </section>
 

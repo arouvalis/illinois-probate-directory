@@ -132,28 +132,6 @@
     "source_county": "Cook"
   },
   {
-    "slug": "theresa-clancy-law-oak-park",
-    "name": "Theresa Clancy Law",
-    "phone": "+1 708-819-1580",
-    "website": "http://theresaclancylaw.com/",
-    "address": "801 N Euclid Ave, Oak Park, IL 60302",
-    "street": "801 N Euclid Ave",
-    "city": "Oak Park",
-    "state": "Illinois",
-    "postal_code": "60302",
-    "rating": 5.0,
-    "reviews": null,
-    "photo": "https://lh3.googleusercontent.com/p/AF1QipNRPFq6uLCTN0X7yZ5BletP1zsU6uWFTQ4p0mWV=w800-h500-k-no",
-    "working_hours": null,
-    "about": "{\"Accessibility\": {\"Wheelchair accessible entrance\": true, \"Wheelchair accessible parking lot\": true, \"Wheelchair accessible restroom\": true}, \"Other\": {\"Identifies as women-owned\": true}}",
-    "probate_verified": "YES",
-    "confidence_score": 2.0,
-    "specializations_found": "estate planning",
-    "free_consultation": "UNCLEAR",
-    "languages": null,
-    "source_county": "Cook"
-  },
-  {
     "slug": "chicago-estate-lawyers-chicago",
     "name": "Chicago Estate Lawyers",
     "phone": "+1 312-313-7018",

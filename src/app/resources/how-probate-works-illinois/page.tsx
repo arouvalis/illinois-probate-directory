@@ -73,12 +73,12 @@ export default function HowProbateWorksPage() {
                 {
                   step: "1",
                   title: "File a Petition with the Probate Court",
-                  body: "The executor named in the will (or a family member if there is no will) files a petition with the Circuit Court in the county where the deceased lived. The court verifies the will's validity and officially opens the estate.",
+                  body: "The first step is to open a probate case in the Circuit Court for the county where the person lived at death. The executor named in the will (or a family member if there is no will) files the will and simple court papers asking to be officially put in charge of the estate. Once the judge approves this, the court issues documents called \u201cLetters of Office\u201d that show they have authority to handle the estate.",
                 },
                 {
                   step: "2",
                   title: "Appointment of Executor or Administrator",
-                  body: "The court appoints an executor (if named in the will) or an administrator (if there is no will). This person has legal authority to act on behalf of the estate.",
+                  body: "The court appoints an executor (if named in the will) or an administrator (if there is no will) and issues Letters of Office. These Letters give that person legal authority to act on behalf of the estate.",
                 },
                 {
                   step: "3",
@@ -88,7 +88,7 @@ export default function HowProbateWorksPage() {
                 {
                   step: "4",
                   title: "Notify Creditors",
-                  body: "Illinois law requires the executor to publish a notice to creditors in a local newspaper for three consecutive weeks. Creditors then have six months from the date of publication to file claims against the estate.",
+                  body: "Illinois law requires the executor to publish a notice to creditors in a local newspaper for three consecutive weeks. Creditors then have six months from the date of publication to file claims against the estate. Publication is primarily for unknown creditors, while known creditors should also receive mailed or personal notice if reasonably ascertainable.",
                 },
                 {
                   step: "5",
@@ -98,7 +98,7 @@ export default function HowProbateWorksPage() {
                 {
                   step: "6",
                   title: "File Estate Tax Returns (if applicable)",
-                  body: "Illinois imposes an estate tax on estates valued over $4 million. Federal estate tax applies to estates over the federal exemption threshold (currently $13.61 million per person). An estate attorney can advise whether returns must be filed.",
+                  body: "Illinois imposes an estate tax on estates valued over $4 million. Federal estate tax applies to estates over the federal exemption threshold (currently $13.61 million per person). An estate attorney or tax professional can advise whether returns must be filed.",
                 },
                 {
                   step: "7",

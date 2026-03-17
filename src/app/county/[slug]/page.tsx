@@ -6,6 +6,7 @@ import {
   getAllAttorneys,
 } from "@/lib/attorneys";
 import AttorneyCard from "@/components/AttorneyCard";
+import AttorneySearch from "@/components/AttorneySearch";
 import Link from "next/link";
 
 interface Props {
@@ -91,19 +92,7 @@ export default function CountyPage({ params }: Props) {
         <div className="flex flex-col lg:flex-row gap-10">
           {/* Main listing */}
           <div className="flex-1 min-w-0">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-serif font-bold text-navy-800">
-                {attorneys.length} Attorneys Found
-              </h2>
-              <span className="text-sm text-gray-400">
-                Sorted by verification &amp; rating
-              </span>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
-              {sorted.map((attorney) => (
-                <AttorneyCard key={attorney.slug} attorney={attorney} />
-              ))}
-            </div>
+            <AttorneySearch attorneys={sorted} totalCount={attorneys.length} />
           </div>
 
           {/* Sidebar */}

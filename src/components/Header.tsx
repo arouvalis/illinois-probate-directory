@@ -60,6 +60,12 @@ export default function Header() {
             >
               Selling Inherited Property
             </Link>
+            <Link
+              href="/blog"
+              className="hover:text-blue-300 transition-colors"
+            >
+              Blog
+            </Link>
           </nav>
 
           {/* Mobile menu button */}
@@ -97,6 +103,7 @@ export default function Header() {
             ))}
             <Link href="/resources/how-probate-works-illinois" className="block px-2 py-1.5 hover:text-blue-300" onClick={() => setMenuOpen(false)}>How Probate Works</Link>
             <Link href="/resources/selling-inherited-property-illinois" className="block px-2 py-1.5 hover:text-blue-300" onClick={() => setMenuOpen(false)}>Selling Inherited Property</Link>
+            <Link href="/blog" className="block px-2 py-1.5 hover:text-blue-300" onClick={() => setMenuOpen(false)}>Blog</Link>
           </nav>
         )}
       </div>

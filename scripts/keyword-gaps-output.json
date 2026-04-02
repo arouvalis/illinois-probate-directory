@@ -381,6 +381,18 @@
       "impressions": 2,
       "ctr": "0%",
       "position": 30
+    },
+    {
+      "query": "executor selling house illinois",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 90
+    },
+    {
+      "query": "inherited house illinois",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 90
     }
   ]
 }

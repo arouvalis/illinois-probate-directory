@@ -36,6 +36,39 @@ const COUNTY_INTROS: Record<string, string> = {
   DuPage: "DuPage County probate is handled at the DuPage County Courthouse in Wheaton. Attorneys cover Naperville, Oak Brook, Wheaton, Downers Grove, Lisle, and surrounding suburbs.",
 };
 
+
+const COUNTY_BLOG_LINKS: Record<string, { title: string; href: string }[]> = {
+  Cook: [
+    { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
+    { title: "What to Do With an Inherited House in Illinois", href: "/blog/inherited-house-illinois" },
+    { title: "Joliet Illinois Probate Lawyers", href: "/blog/joliet-illinois-probate-lawyers" },
+  ],
+  DuPage: [
+    { title: "Finding a Probate Attorney in Hinsdale", href: "/blog/probate-attorney-hinsdale" },
+    { title: "Finding a Probate Attorney in Burr Ridge", href: "/blog/probate-attorney-burr-ridge" },
+    { title: "Estate Law in Arlington Heights", href: "/blog/estate-law-arlington-heights-il" },
+    { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
+  ],
+  Will: [
+    { title: "Joliet Illinois Probate Lawyers", href: "/blog/joliet-illinois-probate-lawyers" },
+    { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
+    { title: "What to Do With an Inherited House in Illinois", href: "/blog/inherited-house-illinois" },
+  ],
+  Kane: [
+    { title: "Estate Law in Arlington Heights", href: "/blog/estate-law-arlington-heights-il" },
+    { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
+    { title: "What to Do With an Inherited House in Illinois", href: "/blog/inherited-house-illinois" },
+  ],
+  McHenry: [
+    { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
+    { title: "What to Do With an Inherited House in Illinois", href: "/blog/inherited-house-illinois" },
+  ],
+  Lake: [
+    { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
+    { title: "What to Do With an Inherited House in Illinois", href: "/blog/inherited-house-illinois" },
+  ],
+};
+
 export default function CountyPage({ params }: Props) {
   const county = COUNTY_SLUGS[params.slug];
   if (!county) notFound();
@@ -136,6 +169,26 @@ export default function CountyPage({ params }: Props) {
                 How Probate Works in Illinois →
               </Link>
             </div>
+          
+            {COUNTY_BLOG_LINKS[county] && (
+              <div className="bg-gray-50 rounded-lg p-5 border border-gray-200">
+                <h3 className="font-serif font-bold text-navy-800 mb-4">
+                  Helpful Resources
+                </h3>
+                <ul className="space-y-2">
+                  {COUNTY_BLOG_LINKS[county].map((post) => (
+                    <li key={post.href}>
+                      <Link
+                        href={post.href}
+                        className="text-sm text-navy-700 hover:text-navy-900 hover:underline"
+                      >
+                        {post.title} →
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </aside>
         </div>
       </div>

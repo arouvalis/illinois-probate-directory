@@ -79,8 +79,8 @@ export default function CountyPage({ params }: Props) {
 
   // Sort: verified + rated first
   const sorted = [...attorneys].sort((a, b) => {
-    const aScore = (a.probate_verified === "YES" ? 10 : 0) + (a.rating ?? 0);
-    const bScore = (b.probate_verified === "YES" ? 10 : 0) + (b.rating ?? 0);
+    const aScore = (a.featured ? 100 : 0) + (a.probate_verified === "YES" ? 10 : 0) + (a.rating ?? 0);
+    const bScore = (b.featured ? 100 : 0) + (b.probate_verified === "YES" ? 10 : 0) + (b.rating ?? 0);
     return bScore - aScore;
   });
 

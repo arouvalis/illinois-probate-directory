@@ -9,9 +9,10 @@ export default function AttorneyCard({ attorney }: Props) {
   const specs = parseSpecializations(attorney.specializations_found).slice(0, 3);
   const rating = attorney.rating ? Number(attorney.rating.toFixed(1)) : null;
   const isFreeConsult = attorney.free_consultation === "YES";
+  const isFeatured = attorney.featured === true;
 
   return (
-    <div className="card flex flex-col gap-3">
+    <div className={`card flex flex-col gap-3${isFeatured ? ' ring-2 ring-amber-400' : ''}`}>
       <div className="flex items-start justify-between gap-2">
         <div>
           <h3 className="font-serif font-bold text-navy-800 text-lg leading-snug">
@@ -21,6 +22,11 @@ export default function AttorneyCard({ attorney }: Props) {
             {attorney.city}, {attorney.state}
           </p>
         </div>
+        {isFeatured && (
+          <span className="shrink-0 bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap">
+            ⭐ Featured
+          </span>
+        )}
         {isFreeConsult && (
           <span className="shrink-0 bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap">
             Free Consult

@@ -85,7 +85,9 @@
     "specializations_found": "probate, estate administration, estate planning, wills",
     "free_consultation": "YES",
     "languages": null,
-    "source_county": "Cook"
+    "source_county": "Cook",
+    "phone_direct": "+1 312-818-1212",
+    "featured": true
   },
   {
     "slug": "peck-ritchey-llc-chicago",

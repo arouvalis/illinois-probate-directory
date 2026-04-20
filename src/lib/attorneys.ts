@@ -4,6 +4,7 @@ export interface Attorney {
   slug: string;
   name: string | null;
   phone: string | null;
+  phone_direct: string | null;
   website: string | null;
   address: string | null;
   street: string | null;
@@ -21,6 +22,7 @@ export interface Attorney {
   free_consultation: string | null;
   languages: string | null;
   source_county: string;
+  featured: boolean | null;
 }
 
 export const COUNTY_SLUGS: Record<string, string> = {

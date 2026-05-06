@@ -7,6 +7,11 @@ const nextConfig = {
         destination: "/county/mchenry",
         permanent: true,
       },
+      {
+        source: "/attorney/theresa-clancy-law-oak-park",
+        destination: "/county/cook-county",
+        permanent: true,
+      },
     ];
   },
   images: {

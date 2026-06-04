@@ -28,15 +28,14 @@ export default function ForFamiliesBanner() {
               You won&apos;t get an automated response.
             </p>
 
-            {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
               <Link
                 href="/#lead-form"
                 className="inline-block bg-amber-600 hover:bg-amber-700 text-white font-bold px-6 py-3 rounded-lg transition-colors duration-200"
               >
-                Get Help With the Property Side →
+                Get Help With the Property Side &rarr;
               </Link>
-              
+              <a
                 href="tel:8722402639"
                 className="text-amber-700 font-semibold text-sm hover:text-amber-800 transition-colors"
               >

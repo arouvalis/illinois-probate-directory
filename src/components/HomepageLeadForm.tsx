@@ -70,7 +70,7 @@ export default function HomepageLeadForm() {
   }
 
   return (
-    <div className="bg-white rounded-xl p-6 max-w-lg mx-auto shadow-2xl">
+    <div id="lead-form" className="bg-white rounded-xl p-6 max-w-lg mx-auto shadow-2xl">
       <h2 className="font-serif font-bold text-navy-900 text-xl mb-1 text-center">
         Get Help Finding the Right Probate Attorney in Illinois
       </h2>

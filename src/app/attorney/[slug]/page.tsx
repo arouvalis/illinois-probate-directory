@@ -92,6 +92,7 @@ export default function AttorneyPage({ params }: Props) {
     : [];
 
   return (
+    <>
     <div className="max-w-5xl mx-auto px-4 py-8">
       {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-sm text-gray-400 mb-6">
@@ -315,5 +316,6 @@ export default function AttorneyPage({ params }: Props) {
       </div>
     </div>
     <ForFamiliesBanner />
+    </>
   );
 }

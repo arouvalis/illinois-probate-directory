@@ -37,7 +37,7 @@ export default function ForFamiliesBanner() {
               </Link>
               <a
                 href="tel:8722402639"
-                className="text-amber-700 font-semibold text-sm hover:text-amber-800 transition-colors"
+                className="text-amber-700 font-semibold text-sm hover:text-amber-800 transition-colors whitespace-nowrap"
               >
                 or call 872-240-2639
               </a>

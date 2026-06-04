@@ -10,6 +10,7 @@ import {
   COUNTY_SLUG_MAP,
 } from "@/lib/attorneys";
 import AttorneyMessageForm from "@/components/AttorneyMessageForm";
+import ForFamiliesBanner from "@/components/ForFamiliesBanner";
 import ChecklistForm from "@/components/ChecklistForm";
 
 interface Props {
@@ -313,5 +314,6 @@ export default function AttorneyPage({ params }: Props) {
         </div>
       </div>
     </div>
+    <ForFamiliesBanner />
   );
 }

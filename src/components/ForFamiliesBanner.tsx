@@ -30,7 +30,7 @@ export default function ForFamiliesBanner() {
 
             <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
               <Link
-                href="/#lead-form"
+                href="/for-families"
                 className="inline-block bg-amber-600 hover:bg-amber-700 text-white font-bold px-6 py-3 rounded-lg transition-colors duration-200"
               >
                 Get Help With the Property Side &rarr;

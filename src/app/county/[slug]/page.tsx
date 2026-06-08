@@ -61,6 +61,7 @@ const COUNTY_BLOG_LINKS: Record<string, { title: string; href: string }[]> = {
     { title: "What to Do With an Inherited House in Illinois", href: "/blog/inherited-house-illinois" },
   ],
   McHenry: [
+    { title: "Probate Attorneys in Crystal Lake, IL", href: "/city/crystal-lake-probate-attorney" },
     { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
     { title: "What to Do With an Inherited House in Illinois", href: "/blog/inherited-house-illinois" },
   ],

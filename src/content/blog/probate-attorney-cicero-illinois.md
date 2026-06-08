@@ -32,6 +32,14 @@ You don't need an attorney physically located in Cicero — what matters is Cook
 
 [IllinoisProbateDirectory.com](https://www.illinoisprobatedirectory.com) lists probate attorneys serving Cook County. Browse profiles, look for experience with Cook County Probate Division, and find attorneys offering free initial consultations.
 
+## Probate Real Estate Help for Cicero Families
+
+If the estate includes a property — whether it needs to be sold, cleaned out, or maintained while probate is ongoing — we help Cicero families navigate the real estate side. Many probate properties sit vacant for months while the estate settles. We work directly alongside your attorney to coordinate property maintenance, cleanout, valuation, and sale.
+
+[Get help with the property side →](/for-families)
+
 ---
 
 *Related: [Can You Sell a House in Probate in Illinois?](/blog/sell-house-in-probate-illinois)*
+
+*Also see: [Cook County Probate Attorneys](/county/cook-county) · [Probate Attorneys in Northbrook](/city/northbrook-probate-attorney) · [Probate Attorneys in Orland Park](/city/orland-park-probate-attorney)*

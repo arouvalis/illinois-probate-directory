@@ -46,6 +46,7 @@ const COUNTY_BLOG_LINKS: Record<string, { title: string; href: string }[]> = {
     { title: "Joliet Illinois Probate Lawyers", href: "/blog/joliet-illinois-probate-lawyers" },
   ],
   DuPage: [
+    { title: "Probate Attorneys in Naperville, IL", href: "/city/naperville-probate-attorney" },
     { title: "Finding a Probate Attorney in Hinsdale", href: "/blog/probate-attorney-hinsdale" },
     { title: "Finding a Probate Attorney in Burr Ridge", href: "/blog/probate-attorney-burr-ridge" },
     { title: "Estate Law in Arlington Heights", href: "/blog/estate-law-arlington-heights-il" },
@@ -58,6 +59,8 @@ const COUNTY_BLOG_LINKS: Record<string, { title: string; href: string }[]> = {
     { title: "What to Do With an Inherited House in Illinois", href: "/blog/inherited-house-illinois" },
   ],
   Kane: [
+    { title: "Probate Attorneys in Elgin, IL", href: "/city/elgin-probate-attorney" },
+    { title: "Probate Attorneys in Aurora, IL", href: "/city/aurora-probate-attorney" },
     { title: "Estate Law in Arlington Heights", href: "/blog/estate-law-arlington-heights-il" },
     { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
     { title: "What to Do With an Inherited House in Illinois", href: "/blog/inherited-house-illinois" },
@@ -68,6 +71,7 @@ const COUNTY_BLOG_LINKS: Record<string, { title: string; href: string }[]> = {
     { title: "What to Do With an Inherited House in Illinois", href: "/blog/inherited-house-illinois" },
   ],
   Lake: [
+    { title: "Probate Attorneys in Libertyville, IL", href: "/city/libertyville-probate-attorney" },
     { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
     { title: "What to Do With an Inherited House in Illinois", href: "/blog/inherited-house-illinois" },
   ],

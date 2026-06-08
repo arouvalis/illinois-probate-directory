@@ -62,6 +62,10 @@ export function getAttorneyBySlug(slug: string): Attorney | undefined {
   return attorneys.find((a) => a.slug === slug);
 }
 
+export function getAttorneysByCity(city: string): Attorney[] {
+  return attorneys.filter((a) => a.city?.toLowerCase() === city.toLowerCase());
+}
+
 export function getAttorneysByCounty(county: string): Attorney[] {
   return attorneys.filter((a) => a.source_county === county);
 }

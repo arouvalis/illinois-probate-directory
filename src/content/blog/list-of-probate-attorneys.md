@@ -63,3 +63,5 @@ Dealing with probate while grieving is one of life's more difficult challenges. 
 Start by building your list of probate attorneys in your area. Use resources like IllinoisProbateDirectory.com to find attorneys who practice in your county, then narrow your choices based on experience, communication style, and fee structure. Schedule consultations with two or three attorneys before making your decision.
 
 If you're ready to find a probate attorney near you, visit IllinoisProbateDirectory.com to browse over 585 Illinois probate lawyers searchable by location. Finding the right legal help is the first step toward getting through probate with as little stress as possible.
+
+*Browse attorneys: [Cook County Probate Attorneys](/county/cook-county) · [All Illinois Counties](/)*

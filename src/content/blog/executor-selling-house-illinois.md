@@ -74,3 +74,5 @@ A probate attorney can guide you through court procedures, ensure you meet all d
 If you're selling a house as an executor in Illinois, you don't have to navigate this alone. **[Search IllinoisProbateDirectory.com](https://illinoisprobatedirectory.com)** to find qualified probate attorneys in your area who specialize in estate sales and can provide the guidance you need.
 
 Your loved one's legacy deserves to be handled properly—and you deserve expert support during this challenging time.
+
+*Browse attorneys: [Cook County Probate Attorneys](/county/cook-county) · [All Illinois Counties](/)*

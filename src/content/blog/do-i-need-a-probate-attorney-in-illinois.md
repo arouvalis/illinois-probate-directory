@@ -41,3 +41,5 @@ Illinois Probate Directory makes this search easier by connecting you with exper
 Ultimately, the decision about whether to hire a probate attorney comes down to your specific circumstances, comfort level, and the complexity of the estate. When in doubt, many attorneys offer initial consultations where you can discuss your situation and get professional advice about whether you need ongoing legal representation.
 
 Ready to explore your options? Browse our directory of qualified Illinois probate attorneys who can help guide you through this process with the expertise and compassion you deserve during this difficult time.
+
+*Browse attorneys: [Cook County Probate Attorneys](/county/cook-county) · [All Illinois Counties](/)*

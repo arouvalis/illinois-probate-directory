@@ -43,3 +43,5 @@ Finally, request references from recent clients or ask about their approach to h
 Selecting the right probate attorney is one of the most important decisions you'll make during this process. Take time to research your options, schedule consultations with potential attorneys, and trust your instincts about who will best serve your family's needs.
 
 IllinoisProbateDirectory.com connects families with qualified probate attorneys throughout Illinois, including experienced professionals in the Schaumburg area. Browse our directory to find attorneys who can provide the expertise and compassionate guidance you need during this challenging time.
+
+*Browse attorneys: [Cook County Probate Attorneys](/county/cook-county) · [All Illinois Counties](/)*

@@ -39,3 +39,5 @@ The probate process doesn't have to be a source of additional stress during an a
 Remember that choosing an attorney is ultimately about finding someone you trust and feel comfortable working with throughout what may be a lengthy process. Take time to meet with potential attorneys, ask questions about their experience and approach, and select someone who demonstrates both legal competence and personal understanding of your family's needs.
 
 IllinoisProbateDirectory.com can help you connect with qualified probate attorneys in the Waukegan area who understand local procedures and have experience handling cases like yours. Browse our directory of vetted Illinois probate attorneys to find the right legal representation for your family's needs.
+
+*Browse attorneys: [Lake County Probate Attorneys](/county/lake-county) · [All Illinois Counties](/)*

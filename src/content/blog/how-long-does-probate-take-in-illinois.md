@@ -55,3 +55,5 @@ Navigating Illinois probate doesn't have to be a journey you take alone. An expe
 The Illinois Probate Directory connects families with qualified probate attorneys throughout the state who understand local court procedures and can help guide you through this challenging time.
 
 Ready to find the right probate attorney for your situation? Browse our directory of experienced Illinois probate lawyers who can help you understand your specific timeline and navigate the process with confidence.
+
+*Browse attorneys: [Cook County Probate Attorneys](/county/cook-county) · [All Illinois Counties](/)*

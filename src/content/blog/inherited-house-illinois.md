@@ -85,3 +85,5 @@ Start by gathering important documents: the will, death certificate, property de
 Inheriting a house is a major decision, and you don't have to figure it out alone. Whether you're keeping, selling, or renting the property, having expert guidance makes the process smoother and protects your interests.
 
 **Ready for professional help?** [Search IllinoisProbateDirectory.com](https://illinoisprobaatedirectory.com) to find experienced probate attorneys in your area who can guide you through every step of managing your inherited Illinois home.
+
+*Browse attorneys: [Cook County Probate Attorneys](/county/cook-county) · [All Illinois Counties](/)*

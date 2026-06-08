@@ -88,3 +88,5 @@ Take your time with this decision. Interview multiple attorneys. Ask questions. 
 If you're not sure where to start, IllinoisProbateDirectory.com offers a comprehensive directory of over 585 probate attorneys across Illinois, including many experienced Chicago probate lawyers. You can search by location to find attorneys who practice in Cook County or any other Illinois county.
 
 Your loved one trusted you to handle their affairs. Honor that trust by getting the professional help you deserve. Start your search for a qualified probate attorney today, and take the first step toward peace of mind.
+
+*Browse attorneys: [Cook County Probate Attorneys](/county/cook-county) · [All Illinois Counties](/)*

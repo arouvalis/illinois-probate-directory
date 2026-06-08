@@ -39,6 +39,8 @@ const COUNTY_INTROS: Record<string, string> = {
 
 const COUNTY_BLOG_LINKS: Record<string, { title: string; href: string }[]> = {
   Cook: [
+    { title: "Probate Attorneys in Northbrook, IL", href: "/city/northbrook-probate-attorney" },
+    { title: "Probate Attorneys in Orland Park, IL", href: "/city/orland-park-probate-attorney" },
     { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
     { title: "What to Do With an Inherited House in Illinois", href: "/blog/inherited-house-illinois" },
     { title: "Joliet Illinois Probate Lawyers", href: "/blog/joliet-illinois-probate-lawyers" },

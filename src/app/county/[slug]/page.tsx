@@ -50,6 +50,7 @@ const COUNTY_BLOG_LINKS: Record<string, { title: string; href: string }[]> = {
     { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
   ],
   Will: [
+    { title: "Probate Attorneys in Joliet, IL", href: "/city/joliet-probate-attorney" },
     { title: "Joliet Illinois Probate Lawyers", href: "/blog/joliet-illinois-probate-lawyers" },
     { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
     { title: "What to Do With an Inherited House in Illinois", href: "/blog/inherited-house-illinois" },

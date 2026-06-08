@@ -1,25 +1,81 @@
 {
   "ctrGaps": [
     {
-      "query": "estate law arlington heights il",
+      "query": "joliet wills & estates attorney",
       "clicks": 0,
-      "impressions": 82,
+      "impressions": 107,
       "ctr": "0%",
-      "position": 60.39
-    },
-    {
-      "query": "probate attorney hinsdale",
-      "clicks": 0,
-      "impressions": 71,
-      "ctr": "0%",
-      "position": 41.42
+      "position": 46.97
     },
     {
       "query": "joliet estate planning attorneys",
       "clicks": 0,
-      "impressions": 52,
+      "impressions": 107,
       "ctr": "0%",
-      "position": 62.58
+      "position": 50.03
+    },
+    {
+      "query": "cicero probate attorney",
+      "clicks": 0,
+      "impressions": 106,
+      "ctr": "0%",
+      "position": 41.78
+    },
+    {
+      "query": "cicero probate lawyer",
+      "clicks": 0,
+      "impressions": 101,
+      "ctr": "0%",
+      "position": 45.49
+    },
+    {
+      "query": "joliet will lawyer",
+      "clicks": 0,
+      "impressions": 84,
+      "ctr": "0%",
+      "position": 55.45
+    },
+    {
+      "query": "chicago probate lawyer",
+      "clicks": 0,
+      "impressions": 78,
+      "ctr": "0%",
+      "position": 45.4
+    },
+    {
+      "query": "estate law arlington heights il",
+      "clicks": 0,
+      "impressions": 70,
+      "ctr": "0%",
+      "position": 57.67
+    },
+    {
+      "query": "joliet wills & trusts lawyer",
+      "clicks": 0,
+      "impressions": 67,
+      "ctr": "0%",
+      "position": 45.82
+    },
+    {
+      "query": "probate attorney rolling meadows",
+      "clicks": 0,
+      "impressions": 66,
+      "ctr": "0%",
+      "position": 42
+    },
+    {
+      "query": "probate attorney hinsdale",
+      "clicks": 0,
+      "impressions": 62,
+      "ctr": "0%",
+      "position": 38.68
+    },
+    {
+      "query": "joliet illinois probate lawyers",
+      "clicks": 0,
+      "impressions": 58,
+      "ctr": "0%",
+      "position": 39.91
     },
     {
       "query": "arlington heights estate planning attorney",
@@ -29,13 +85,6 @@
       "position": 60.33
     },
     {
-      "query": "joliet wills & estates attorney",
-      "clicks": 0,
-      "impressions": 45,
-      "ctr": "0%",
-      "position": 64.8
-    },
-    {
       "query": "arlington heights wills and trusts attorney",
       "clicks": 0,
       "impressions": 43,
@@ -43,102 +92,53 @@
       "position": 68.4
     },
     {
-      "query": "estate lawyer nokomis il",
+      "query": "estate planning attorney rolling meadows",
       "clicks": 0,
-      "impressions": 37,
+      "impressions": 42,
       "ctr": "0%",
-      "position": 15.32
+      "position": 35.88
     },
     {
-      "query": "joliet illinois probate lawyers",
+      "query": "wills attorney rolling meadows",
       "clicks": 0,
-      "impressions": 37,
+      "impressions": 38,
       "ctr": "0%",
-      "position": 40.76
+      "position": 38.42
     },
     {
-      "query": "probate attorney burr ridge",
+      "query": "joliet probate lawyer",
       "clicks": 0,
-      "impressions": 34,
+      "impressions": 36,
       "ctr": "0%",
-      "position": 32.09
+      "position": 41.64
     },
     {
-      "query": "gilbert probate litigation lawyer",
+      "query": "probate lawyer chicago",
       "clicks": 0,
-      "impressions": 28,
+      "impressions": 36,
       "ctr": "0%",
-      "position": 70.29
-    },
-    {
-      "query": "probate lawyer hinsdale",
-      "clicks": 0,
-      "impressions": 26,
-      "ctr": "0%",
-      "position": 51.42
-    },
-    {
-      "query": "cicero probate attorney",
-      "clicks": 0,
-      "impressions": 25,
-      "ctr": "0%",
-      "position": 47.52
-    },
-    {
-      "query": "probate attorney rolling meadows",
-      "clicks": 0,
-      "impressions": 24,
-      "ctr": "0%",
-      "position": 48.88
+      "position": 62.47
     },
     {
       "query": "\"\"(815) 562-2704\"\" hewitt & wagner attorneys at law",
       "clicks": 0,
-      "impressions": 23,
+      "impressions": 34,
       "ctr": "0%",
-      "position": 7.7
-    },
-    {
-      "query": "meents law wilmington",
-      "clicks": 0,
-      "impressions": 22,
-      "ctr": "0%",
-      "position": 6.64
-    },
-    {
-      "query": "cicero probate lawyer",
-      "clicks": 0,
-      "impressions": 22,
-      "ctr": "0%",
-      "position": 57.32
-    },
-    {
-      "query": "gilbert wills litigation attorney",
-      "clicks": 0,
-      "impressions": 22,
-      "ctr": "0%",
-      "position": 71.64
-    },
-    {
-      "query": "wills attorney burr ridge",
-      "clicks": 0,
-      "impressions": 19,
-      "ctr": "0%",
-      "position": 60
-    },
-    {
-      "query": "sell house in probate illinois",
-      "clicks": 0,
-      "impressions": 19,
-      "ctr": "0%",
-      "position": 80.21
+      "position": 7.24
     },
     {
       "query": "\"\"(847) 628-8311\"\" the law office of anthony r. scifo, p.c.",
       "clicks": 0,
-      "impressions": 18,
+      "impressions": 32,
       "ctr": "0%",
-      "position": 6.94
+      "position": 7.38
+    },
+    {
+      "query": "estate lawyer nokomis il",
+      "clicks": 0,
+      "impressions": 29,
+      "ctr": "0%",
+      "position": 14.24
     }
   ],
   "page2": [
@@ -150,16 +150,23 @@
       "position": 11
     },
     {
-      "query": "bott and associates",
-      "clicks": 0,
-      "impressions": 3,
-      "ctr": "0%",
-      "position": 11.33
+      "query": "list of probate attorneys",
+      "clicks": 1,
+      "impressions": 10,
+      "ctr": "10%",
+      "position": 11.3
     },
     {
-      "query": "law office of mayra prado-pagan, real estate lawyer",
+      "query": "bott and associates",
       "clicks": 0,
-      "impressions": 6,
+      "impressions": 5,
+      "ctr": "0%",
+      "position": 11.4
+    },
+    {
+      "query": "\"\"(847) 714-2866\"\" law offices of lauren e. jackson",
+      "clicks": 0,
+      "impressions": 4,
       "ctr": "0%",
       "position": 11.5
     },
@@ -171,11 +178,11 @@
       "position": 11.89
     },
     {
-      "query": "\"\"kuhn, heap & monson attorneys at law\"\" \"\"naperville\"\"",
+      "query": "\"\"(815) 748-0380\"\" klein, stoddard, buck & lewis, llc",
       "clicks": 0,
-      "impressions": 10,
+      "impressions": 13,
       "ctr": "0%",
-      "position": 12.1
+      "position": 12
     },
     {
       "query": "michael naughton attorney",
@@ -187,16 +194,16 @@
     {
       "query": "\"\"bradford miller law, p.c.\"\" \"\"60661\"\"",
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 4,
       "ctr": "0%",
-      "position": 13.33
+      "position": 12.75
     },
     {
-      "query": "\"\"law office of vogel and mourelatos, llc\"\" \"\"60118\"\"",
+      "query": "estate lawyer nokomis il",
       "clicks": 0,
-      "impressions": 6,
+      "impressions": 29,
       "ctr": "0%",
-      "position": 14
+      "position": 14.24
     },
     {
       "query": "steve english law",
@@ -206,18 +213,11 @@
       "position": 14.33
     },
     {
-      "query": "probate lawyer",
+      "query": "\"\"law office of vogel and mourelatos, llc\"\" \"\"60118\"\"",
       "clicks": 0,
-      "impressions": 14,
+      "impressions": 9,
       "ctr": "0%",
-      "position": 15.29
-    },
-    {
-      "query": "estate lawyer nokomis il",
-      "clicks": 0,
-      "impressions": 37,
-      "ctr": "0%",
-      "position": 15.32
+      "position": 15.33
     },
     {
       "query": "\"\"bassett & gabriel law office, p.c.\"\" \"\"62095\"\"",
@@ -229,9 +229,9 @@
     {
       "query": "dlaw pc",
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 5,
       "ctr": "0%",
-      "position": 15.33
+      "position": 15.4
     },
     {
       "query": "attorney grossman",
@@ -241,6 +241,20 @@
       "position": 15.5
     },
     {
+      "query": "\"\"kuhn, heap & monson attorneys at law\"\" \"\"naperville\"\"",
+      "clicks": 0,
+      "impressions": 16,
+      "ctr": "0%",
+      "position": 15.81
+    },
+    {
+      "query": "\"\"dynasty law, llc\"\" \"\"60611\"\"",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": "0%",
+      "position": 17
+    },
+    {
       "query": "lawrence kamin",
       "clicks": 0,
       "impressions": 4,
@@ -248,18 +262,11 @@
       "position": 17.5
     },
     {
-      "query": "\"\"dynasty law, llc\"\" \"\"60611\"\"",
+      "query": "kavanagh grumley & gorbold llc reviews",
       "clicks": 0,
       "impressions": 3,
       "ctr": "0%",
       "position": 17.67
-    },
-    {
-      "query": "probate attorney",
-      "clicks": 0,
-      "impressions": 12,
-      "ctr": "0%",
-      "position": 18.42
     },
     {
       "query": "the grossman law firm",
@@ -274,50 +281,92 @@
       "impressions": 4,
       "ctr": "0%",
       "position": 18.75
-    },
-    {
-      "query": "\"\"bassett & gabriel law office, p.c.\"\" \"\"bassettlawoffice.com\"\"",
-      "clicks": 0,
-      "impressions": 4,
-      "ctr": "0%",
-      "position": 19
     }
   ],
   "geo": [
     {
+      "query": "cicero probate attorney",
+      "clicks": 0,
+      "impressions": 106,
+      "ctr": "0%",
+      "position": 41.78
+    },
+    {
+      "query": "cicero probate lawyer",
+      "clicks": 0,
+      "impressions": 101,
+      "ctr": "0%",
+      "position": 45.49
+    },
+    {
+      "query": "chicago probate lawyer",
+      "clicks": 0,
+      "impressions": 78,
+      "ctr": "0%",
+      "position": 45.4
+    },
+    {
       "query": "estate law arlington heights il",
       "clicks": 0,
-      "impressions": 82,
+      "impressions": 70,
       "ctr": "0%",
-      "position": 60.39
+      "position": 57.67
+    },
+    {
+      "query": "probate attorney rolling meadows",
+      "clicks": 0,
+      "impressions": 66,
+      "ctr": "0%",
+      "position": 42
     },
     {
       "query": "probate attorney hinsdale",
       "clicks": 0,
-      "impressions": 71,
+      "impressions": 62,
       "ctr": "0%",
-      "position": 41.42
-    },
-    {
-      "query": "estate lawyer nokomis il",
-      "clicks": 0,
-      "impressions": 37,
-      "ctr": "0%",
-      "position": 15.32
+      "position": 38.68
     },
     {
       "query": "joliet illinois probate lawyers",
       "clicks": 0,
-      "impressions": 37,
+      "impressions": 58,
       "ctr": "0%",
-      "position": 40.76
+      "position": 39.91
     },
     {
-      "query": "probate attorney burr ridge",
+      "query": "joliet probate lawyer",
       "clicks": 0,
-      "impressions": 34,
+      "impressions": 36,
       "ctr": "0%",
-      "position": 32.09
+      "position": 41.64
+    },
+    {
+      "query": "probate lawyer chicago",
+      "clicks": 0,
+      "impressions": 36,
+      "ctr": "0%",
+      "position": 62.47
+    },
+    {
+      "query": "estate lawyer nokomis il",
+      "clicks": 0,
+      "impressions": 29,
+      "ctr": "0%",
+      "position": 14.24
+    },
+    {
+      "query": "probate lawyer",
+      "clicks": 0,
+      "impressions": 28,
+      "ctr": "0%",
+      "position": 22.21
+    },
+    {
+      "query": "lake county il probate",
+      "clicks": 0,
+      "impressions": 28,
+      "ctr": "0%",
+      "position": 27
     },
     {
       "query": "gilbert probate litigation lawyer",
@@ -334,95 +383,46 @@
       "position": 51.42
     },
     {
-      "query": "cicero probate attorney",
+      "query": "probate attorney",
       "clicks": 0,
       "impressions": 25,
       "ctr": "0%",
-      "position": 47.52
+      "position": 24.76
     },
     {
-      "query": "probate attorney rolling meadows",
+      "query": "probate attorney burr ridge",
       "clicks": 0,
-      "impressions": 24,
+      "impressions": 25,
       "ctr": "0%",
-      "position": 48.88
-    },
-    {
-      "query": "cicero probate lawyer",
-      "clicks": 0,
-      "impressions": 22,
-      "ctr": "0%",
-      "position": 57.32
+      "position": 33.56
     },
     {
       "query": "sell house in probate illinois",
       "clicks": 0,
+      "impressions": 21,
+      "ctr": "0%",
+      "position": 80.43
+    },
+    {
+      "query": "chicago illinois probate lawyers",
+      "clicks": 0,
       "impressions": 19,
       "ctr": "0%",
-      "position": 80.21
+      "position": 44.68
     },
     {
-      "query": "probate lawyer",
+      "query": "chicago probate lawyers",
       "clicks": 0,
-      "impressions": 14,
+      "impressions": 17,
       "ctr": "0%",
-      "position": 15.29
+      "position": 48.94
     },
     {
-      "query": "gilbert probate and trusts lawyer",
+      "query": "probate lawyer st. john",
       "clicks": 0,
-      "impressions": 14,
+      "impressions": 16,
       "ctr": "0%",
-      "position": 86.29
-    },
-    {
-      "query": "probate attorney lake in the hills",
-      "clicks": 0,
-      "impressions": 13,
-      "ctr": "0%",
-      "position": 28.15
-    },
-    {
-      "query": "probate attorney",
-      "clicks": 0,
-      "impressions": 12,
-      "ctr": "0%",
-      "position": 18.42
-    },
-    {
-      "query": "lake county il probate",
-      "clicks": 0,
-      "impressions": 11,
-      "ctr": "0%",
-      "position": 32.91
-    },
-    {
-      "query": "probate litigation attorney lake in the hills",
-      "clicks": 0,
-      "impressions": 11,
-      "ctr": "0%",
-      "position": 34.64
-    },
-    {
-      "query": "joliet probate lawyer",
-      "clicks": 0,
-      "impressions": 11,
-      "ctr": "0%",
-      "position": 44.64
-    },
-    {
-      "query": "probate lawyer lake in the hills",
-      "clicks": 0,
-      "impressions": 10,
-      "ctr": "0%",
-      "position": 35.2
-    },
-    {
-      "query": "probate law firm lake in the hills",
-      "clicks": 0,
-      "impressions": 9,
-      "ctr": "0%",
-      "position": 33.78
+      "position": 68
     }
   ]
 }

@@ -16,11 +16,15 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   if (!fs.existsSync(filePath)) return {};
 
   const markdown = fs.readFileSync(filePath, 'utf8');
-  const firstLine = markdown.split('\n').find(line => line.startsWith('# '));
+  const lines = markdown.split('\n');
+  const firstLine = lines.find(line => line.startsWith('# '));
   const title = firstLine ? firstLine.replace('# ', '').trim() : params.slug;
+  const firstPara = lines.find(line => line.trim().length > 80 && !line.startsWith('#') && !line.startsWith('!'));
+  const description = firstPara ? firstPara.replace(/\*\*/g, '').slice(0, 155).trim() + '...' : `${title} — Illinois Probate Directory`;
 
   return {
     title: `${title} | Illinois Probate Directory`,
+    description,
     alternates: {
       canonical: `https://www.illinoisprobatedirectory.com/blog/${params.slug}`,
     },

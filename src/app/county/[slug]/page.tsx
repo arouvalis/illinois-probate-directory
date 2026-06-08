@@ -21,8 +21,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const county = COUNTY_SLUGS[params.slug];
   if (!county) return {};
   return {
-    title: `Probate Attorneys in ${county} County, Illinois`,
-    description: `Find experienced probate attorneys in ${county} County, Illinois. Compare ratings, specializations, free consultations, and more.`,
+    title: `Probate Attorneys in ${county} County, IL | Free Directory`,
+    description: county === 'Cook'
+      ? `Browse 240+ probate attorneys in Cook County, IL. Compare ratings, find free consultations, and connect with verified probate lawyers serving Chicago and suburbs.`
+      : county === 'Will'
+      ? `Browse 59 probate attorneys in Will County, IL. Find verified probate lawyers in Joliet, Naperville, and Plainfield. Compare ratings and free consultations.`
+      : county === 'Lake'
+      ? `Browse 70 probate attorneys in Lake County, IL. Find verified probate lawyers in Waukegan, Lake Forest, and Libertyville. Compare ratings and free consultations.`
+      : county === 'Kane'
+      ? `Browse 65 probate attorneys in Kane County, IL. Find verified probate lawyers in Aurora, Elgin, and St. Charles. Compare ratings and free consultations.`
+      : county === 'McHenry'
+      ? `Browse 70 probate attorneys in McHenry County, IL. Find verified probate lawyers in Crystal Lake, Woodstock, and McHenry. Compare ratings and free consultations.`
+      : county === 'DuPage'
+      ? `Browse 55 probate attorneys in DuPage County, IL. Find verified probate lawyers in Wheaton, Naperville, and Oak Brook. Compare ratings and free consultations.`
+      : `Find experienced probate attorneys in ${county} County, Illinois. Compare ratings, specializations, free consultations, and more.`,
     alternates: { canonical: `https://www.illinoisprobatedirectory.com/county/${params.slug}` },
   };
 }

@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { COUNTY_NAMES, COUNTY_SLUG_MAP } from "@/lib/attorneys";
+import { COUNTY_NAMES, COUNTY_SLUG_MAP, getAllAttorneys } from "@/lib/attorneys";
 import CountySearchForm from "@/components/CountySearchForm";
+import ForFamiliesBanner from "@/components/ForFamiliesBanner";
 import HomepageLeadForm from "@/components/HomepageLeadForm";
+import HomepageSearch from "@/components/HomepageSearch";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://www.illinoisprobatedirectory.com/" },
@@ -18,6 +20,8 @@ const COUNTY_DESCRIPTIONS: Record<string, string> = {
 };
 
 export default function HomePage() {
+  const allAttorneys = getAllAttorneys();
+
   return (
     <>
       {/* Hero */}
@@ -75,6 +79,9 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* Search */}
+      <HomepageSearch attorneys={allAttorneys} />
 
       {/* What is Probate */}
       <section className="py-16 px-4 bg-gray-50">
@@ -159,6 +166,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* For Families */}
+      <ForFamiliesBanner />
 
       {/* Why Use This Directory */}
       <section className="py-16 px-4 bg-navy-800 text-white">

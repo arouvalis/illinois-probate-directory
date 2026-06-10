@@ -4,6 +4,7 @@ export interface Attorney {
   slug: string;
   name: string | null;
   phone: string | null;
+  phone_direct: string | null;
   website: string | null;
   address: string | null;
   street: string | null;
@@ -21,6 +22,7 @@ export interface Attorney {
   free_consultation: string | null;
   languages: string | null;
   source_county: string;
+  featured: boolean | null;
 }
 
 export const COUNTY_SLUGS: Record<string, string> = {
@@ -58,6 +60,10 @@ export function getAllAttorneys(): Attorney[] {
 
 export function getAttorneyBySlug(slug: string): Attorney | undefined {
   return attorneys.find((a) => a.slug === slug);
+}
+
+export function getAttorneysByCity(city: string): Attorney[] {
+  return attorneys.filter((a) => a.city?.toLowerCase() === city.toLowerCase());
 }
 
 export function getAttorneysByCounty(county: string): Attorney[] {

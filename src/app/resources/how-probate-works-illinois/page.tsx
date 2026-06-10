@@ -105,15 +105,16 @@ export default function HowProbateWorksPage() {
               Not all estates require probate. In Illinois, probate is generally required when:
             </p>
             <ul className="mt-3 space-y-2 list-disc list-outside ml-5">
-              <li>The deceased owned real estate in their name alone (without a transfer-on-death deed).</li>
-              <li>The total value of individually owned assets exceeds $100,000.</li>
-              <li>There are debts that creditors need to resolve through a formal process.</li>
-              <li>There is a dispute among heirs or beneficiaries.</li>
+              <li>The deceased owned real estate in their name alone (and it is not subject to a transfer-on-death instrument or held in a trust).</li>
+              <li>The total value of individually owned personal property exceeds $100,000.</li>
+              <li>There are significant debts that need to be resolved through a formal court process.</li>
+              <li>There is a dispute among heirs or beneficiaries that requires court involvement.</li>
             </ul>
             <p className="mt-3">
-              Assets that pass outside of probate include jointly held property, life insurance
-              proceeds with a named beneficiary, retirement accounts (IRA, 401k), payable-on-death
-              bank accounts, and assets held in a living trust.
+              Assets that typically pass outside of probate include: jointly held property with right
+              of survivorship, life insurance proceeds with a named beneficiary, retirement accounts
+              (such as IRAs and 401(k)s) with designated beneficiaries, payable-on-death or
+              transfer-on-death accounts, and assets properly titled in a living trust.
             </p>
           </section>
 
@@ -126,12 +127,12 @@ export default function HowProbateWorksPage() {
                 {
                   step: "1",
                   title: "File a Petition with the Probate Court",
-                  body: "The executor named in the will (or a family member if there is no will) files a petition with the Circuit Court in the county where the deceased lived. The court verifies the will's validity and officially opens the estate.",
+                  body: "The first step is to open a probate case in the Circuit Court for the county where the person lived at death. The executor named in the will (or a family member if there is no will) files the will and simple court papers asking to be officially put in charge of the estate. Once the judge approves this, the court issues documents called \u201cLetters of Office\u201d that show they have authority to handle the estate.",
                 },
                 {
                   step: "2",
                   title: "Appointment of Executor or Administrator",
-                  body: "The court appoints an executor (if named in the will) or an administrator (if there is no will). This person has legal authority to act on behalf of the estate.",
+                  body: "The court appoints an executor (if named in the will) or an administrator (if there is no will) and issues Letters of Office. These Letters give that person legal authority to act on behalf of the estate.",
                 },
                 {
                   step: "3",
@@ -141,7 +142,7 @@ export default function HowProbateWorksPage() {
                 {
                   step: "4",
                   title: "Notify Creditors",
-                  body: "Illinois law requires the executor to publish a notice to creditors in a local newspaper for three consecutive weeks. Creditors then have six months from the date of publication to file claims against the estate.",
+                  body: "Illinois law requires the executor to publish a notice to creditors in a local newspaper for three consecutive weeks. Creditors then have six months from the date of publication to file claims against the estate. Publication is primarily for unknown creditors, while known creditors should also receive mailed or personal notice if reasonably ascertainable.",
                 },
                 {
                   step: "5",
@@ -151,7 +152,7 @@ export default function HowProbateWorksPage() {
                 {
                   step: "6",
                   title: "File Estate Tax Returns (if applicable)",
-                  body: "Illinois imposes an estate tax on estates valued over $4 million. Federal estate tax applies to estates over the federal exemption threshold (currently $13.61 million per person). An estate attorney can advise whether returns must be filed.",
+                  body: "Illinois imposes an estate tax on estates valued over $4 million. Federal estate tax applies to estates over the federal exemption threshold (currently $13.61 million per person). An estate attorney or tax professional can advise whether returns must be filed.",
                 },
                 {
                   step: "7",
@@ -198,9 +199,9 @@ export default function HowProbateWorksPage() {
             <ul className="mt-3 space-y-1.5 list-disc list-outside ml-5">
               <li><strong>Court filing fees:</strong> $200–$500 depending on estate size and county</li>
               <li><strong>Publication fees:</strong> $100–$300 for required creditor notices</li>
-              <li><strong>Attorney fees:</strong> Often 2–4% of the gross estate value, or charged hourly</li>
+              <li><strong>Attorney fees:</strong> Often 2–5% of the gross estate value, or charged as a flat or hourly fee</li>
               <li><strong>Executor fees:</strong> The executor is entitled to reasonable compensation from the estate</li>
-              <li><strong>Appraisal fees:</strong> Required for real estate, business interests, or unusual assets</li>
+              <li><strong>Appraisal fees:</strong> Often required for real estate, business interests, or unusual assets</li>
             </ul>
           </section>
 

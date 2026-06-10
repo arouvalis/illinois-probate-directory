@@ -60,6 +60,18 @@ export default function Header() {
             >
               Selling Inherited Property
             </Link>
+            <Link
+              href="/blog"
+              className="hover:text-blue-300 transition-colors"
+            >
+              Blog
+            </Link>
+            <Link
+              href="/for-families"
+              className="bg-amber-500 hover:bg-amber-400 text-white px-4 py-2 rounded-lg transition-colors font-bold text-sm shadow-md border-2 border-amber-400 hover:border-amber-300"
+            >
+              🏠 Get Property Help
+            </Link>
           </nav>
 
           {/* Mobile menu button */}
@@ -97,6 +109,8 @@ export default function Header() {
             ))}
             <Link href="/resources/how-probate-works-illinois" className="block px-2 py-1.5 hover:text-blue-300" onClick={() => setMenuOpen(false)}>How Probate Works</Link>
             <Link href="/resources/selling-inherited-property-illinois" className="block px-2 py-1.5 hover:text-blue-300" onClick={() => setMenuOpen(false)}>Selling Inherited Property</Link>
+            <Link href="/blog" className="block px-2 py-1.5 hover:text-blue-300" onClick={() => setMenuOpen(false)}>Blog</Link>
+            <Link href="/for-families" className="block mx-2 mt-2 px-4 py-2.5 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg text-center" onClick={() => setMenuOpen(false)}>🏠 Get Property Help</Link>
           </nav>
         )}
       </div>

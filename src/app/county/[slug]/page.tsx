@@ -6,6 +6,7 @@ import {
   getAllAttorneys,
 } from "@/lib/attorneys";
 import AttorneyCard from "@/components/AttorneyCard";
+import AttorneySearch from "@/components/AttorneySearch";
 import Link from "next/link";
 
 interface Props {
@@ -20,8 +21,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const county = COUNTY_SLUGS[params.slug];
   if (!county) return {};
   return {
-    title: `Probate Attorneys in ${county} County, Illinois`,
-    description: `Find experienced probate attorneys in ${county} County, Illinois. Compare ratings, specializations, free consultations, and more.`,
+    title: `Probate Attorneys in ${county} County, IL | Free Directory`,
+    description: county === 'Cook'
+      ? `Browse 240+ probate attorneys in Cook County, IL. Compare ratings, find free consultations, and connect with verified probate lawyers serving Chicago and suburbs.`
+      : county === 'Will'
+      ? `Browse 59 probate attorneys in Will County, IL. Find verified probate lawyers in Joliet, Naperville, and Plainfield. Compare ratings and free consultations.`
+      : county === 'Lake'
+      ? `Browse 70 probate attorneys in Lake County, IL. Find verified probate lawyers in Waukegan, Lake Forest, and Libertyville. Compare ratings and free consultations.`
+      : county === 'Kane'
+      ? `Browse 65 probate attorneys in Kane County, IL. Find verified probate lawyers in Aurora, Elgin, and St. Charles. Compare ratings and free consultations.`
+      : county === 'McHenry'
+      ? `Browse 70 probate attorneys in McHenry County, IL. Find verified probate lawyers in Crystal Lake, Woodstock, and McHenry. Compare ratings and free consultations.`
+      : county === 'DuPage'
+      ? `Browse 55 probate attorneys in DuPage County, IL. Find verified probate lawyers in Wheaton, Naperville, and Oak Brook. Compare ratings and free consultations.`
+      : `Find experienced probate attorneys in ${county} County, Illinois. Compare ratings, specializations, free consultations, and more.`,
     alternates: { canonical: `https://www.illinoisprobatedirectory.com/county/${params.slug}` },
   };
 }
@@ -35,6 +48,47 @@ const COUNTY_INTROS: Record<string, string> = {
   DuPage: "DuPage County probate is handled at the DuPage County Courthouse in Wheaton. Attorneys cover Naperville, Oak Brook, Wheaton, Downers Grove, Lisle, and surrounding suburbs.",
 };
 
+
+const COUNTY_BLOG_LINKS: Record<string, { title: string; href: string }[]> = {
+  Cook: [
+    { title: "Probate Attorneys in Northbrook, IL", href: "/city/northbrook-probate-attorney" },
+    { title: "Probate Attorneys in Orland Park, IL", href: "/city/orland-park-probate-attorney" },
+    { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
+    { title: "What to Do With an Inherited House in Illinois", href: "/blog/inherited-house-illinois" },
+    { title: "Joliet Illinois Probate Lawyers", href: "/blog/joliet-illinois-probate-lawyers" },
+  ],
+  DuPage: [
+    { title: "Probate Attorneys in Naperville, IL", href: "/city/naperville-probate-attorney" },
+    { title: "Finding a Probate Attorney in Hinsdale", href: "/blog/probate-attorney-hinsdale" },
+    { title: "Finding a Probate Attorney in Burr Ridge", href: "/blog/probate-attorney-burr-ridge" },
+    { title: "Estate Law in Arlington Heights", href: "/blog/estate-law-arlington-heights-il" },
+    { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
+  ],
+  Will: [
+    { title: "Probate Attorneys in Joliet, IL", href: "/city/joliet-probate-attorney" },
+    { title: "Joliet Illinois Probate Lawyers", href: "/blog/joliet-illinois-probate-lawyers" },
+    { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
+    { title: "What to Do With an Inherited House in Illinois", href: "/blog/inherited-house-illinois" },
+  ],
+  Kane: [
+    { title: "Probate Attorneys in Elgin, IL", href: "/city/elgin-probate-attorney" },
+    { title: "Probate Attorneys in Aurora, IL", href: "/city/aurora-probate-attorney" },
+    { title: "Estate Law in Arlington Heights", href: "/blog/estate-law-arlington-heights-il" },
+    { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
+    { title: "What to Do With an Inherited House in Illinois", href: "/blog/inherited-house-illinois" },
+  ],
+  McHenry: [
+    { title: "Probate Attorneys in Crystal Lake, IL", href: "/city/crystal-lake-probate-attorney" },
+    { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
+    { title: "What to Do With an Inherited House in Illinois", href: "/blog/inherited-house-illinois" },
+  ],
+  Lake: [
+    { title: "Probate Attorneys in Libertyville, IL", href: "/city/libertyville-probate-attorney" },
+    { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
+    { title: "What to Do With an Inherited House in Illinois", href: "/blog/inherited-house-illinois" },
+  ],
+};
+
 export default function CountyPage({ params }: Props) {
   const county = COUNTY_SLUGS[params.slug];
   if (!county) notFound();
@@ -45,8 +99,8 @@ export default function CountyPage({ params }: Props) {
 
   // Sort: verified + rated first
   const sorted = [...attorneys].sort((a, b) => {
-    const aScore = (a.probate_verified === "YES" ? 10 : 0) + (a.rating ?? 0);
-    const bScore = (b.probate_verified === "YES" ? 10 : 0) + (b.rating ?? 0);
+    const aScore = (a.featured ? 100 : 0) + (a.probate_verified === "YES" ? 10 : 0) + (a.rating ?? 0);
+    const bScore = (b.featured ? 100 : 0) + (b.probate_verified === "YES" ? 10 : 0) + (b.rating ?? 0);
     return bScore - aScore;
   });
 
@@ -91,19 +145,7 @@ export default function CountyPage({ params }: Props) {
         <div className="flex flex-col lg:flex-row gap-10">
           {/* Main listing */}
           <div className="flex-1 min-w-0">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-serif font-bold text-navy-800">
-                {attorneys.length} Attorneys Found
-              </h2>
-              <span className="text-sm text-gray-400">
-                Sorted by verification &amp; rating
-              </span>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
-              {sorted.map((attorney) => (
-                <AttorneyCard key={attorney.slug} attorney={attorney} />
-              ))}
-            </div>
+            <AttorneySearch attorneys={sorted} totalCount={attorneys.length} />
           </div>
 
           {/* Sidebar */}
@@ -147,6 +189,26 @@ export default function CountyPage({ params }: Props) {
                 How Probate Works in Illinois →
               </Link>
             </div>
+          
+            {COUNTY_BLOG_LINKS[county] && (
+              <div className="bg-gray-50 rounded-lg p-5 border border-gray-200">
+                <h3 className="font-serif font-bold text-navy-800 mb-4">
+                  Helpful Resources
+                </h3>
+                <ul className="space-y-2">
+                  {COUNTY_BLOG_LINKS[county].map((post) => (
+                    <li key={post.href}>
+                      <Link
+                        href={post.href}
+                        className="text-sm text-navy-700 hover:text-navy-900 hover:underline"
+                      >
+                        {post.title} →
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </aside>
         </div>
       </div>

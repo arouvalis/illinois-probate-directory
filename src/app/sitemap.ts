@@ -1,4 +1,6 @@
 import { MetadataRoute } from "next";
+import fs from "fs";
+import path from "path";
 import { getAllAttorneys, COUNTY_SLUGS } from "@/lib/attorneys";
 
 const BASE_URL = "https://www.illinoisprobatedirectory.com";
@@ -37,5 +39,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...countyPages, ...attorneyPages];
+  const blogDir = path.join(process.cwd(), "src/content/blog");
+  const blogFiles = fs.existsSync(blogDir) ? fs.readdirSync(blogDir) : [];
+  const blogPages: MetadataRoute.Sitemap = blogFiles.map((file) => ({
+    url: `${BASE_URL}/blog/${file.replace(".md", "")}`,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...countyPages, ...attorneyPages, ...blogPages];
 }

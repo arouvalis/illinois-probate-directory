@@ -1,16 +1,68 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "When is probate required in Illinois?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Probate is required in Illinois when the deceased owned real estate in their name alone, when total individually owned assets exceed $100,000, when there are debts creditors need to resolve, or when there is a dispute among heirs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does probate take in Illinois?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A straightforward Illinois probate case typically takes 6 to 12 months. Complex estates with disputed wills, real estate in multiple states, or contested debts can take 2 to 3 years or longer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does probate cost in Illinois?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Illinois probate costs typically include court filing fees of $200–$500, publication fees of $100–$300, attorney fees of 2–4% of the gross estate value, executor fees, and appraisal fees."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need an attorney for Illinois probate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Illinois does not technically require an attorney for probate, but most executors hire one due to the legal filings, court appearances, creditor negotiations, and tax decisions involved."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a Small Estate Affidavit in Illinois?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If the total estate value excluding real estate and jointly held assets is $100,000 or less, Illinois allows heirs to collect assets using a Small Estate Affidavit without formal probate."
+      }
+    }
+  ]
+};
+
 export const metadata: Metadata = {
   title: "How Probate Works in Illinois – Step-by-Step Guide",
   description:
-    "A complete guide to the Illinois probate process: filing, timelines, costs, small estate affidavits, and how to find a probate attorney.",
+    "Illinois probate takes 6–12 months and costs 2–4% of the estate value. This guide covers filing requirements, timelines by county, small estate affidavits, and when an attorney is required.",
   alternates: { canonical: "https://www.illinoisprobatedirectory.com/resources/how-probate-works-illinois" },
 };
 
 export default function HowProbateWorksPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-sm text-gray-400 mb-8">
         <Link href="/" className="hover:text-navy-700 transition-colors">Home</Link>
@@ -23,7 +75,8 @@ export default function HowProbateWorksPage() {
           How Probate Works in Illinois
         </h1>
         <p className="text-gray-500 text-sm mb-8">
-          A complete step-by-step guide for families navigating estate administration.
+          A complete step-by-step guide for families navigating estate administration.{" "}
+          <span className="text-gray-400">Last updated: June 2026</span>
         </p>
 
         <div className="space-y-10 text-gray-700 leading-relaxed">

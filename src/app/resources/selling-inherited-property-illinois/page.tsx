@@ -1,16 +1,68 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need probate to sell inherited property in Illinois?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on how the property was titled. If it was solely in the deceased's name, probate is almost certainly required before the executor has legal authority to sell. Property held in joint tenancy, a TOD deed, or a living trust can bypass probate entirely."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the stepped-up cost basis on inherited property in Illinois?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When you inherit real estate, your tax basis is reset to the fair market value on the date of the deceased's death. This means if you sell the property quickly after inheriting it, you may owe little or no capital gains tax on appreciation that occurred during the deceased's lifetime."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What taxes apply when selling inherited property in Illinois?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Illinois taxes capital gains as ordinary income at a flat 4.95% state rate, in addition to federal capital gains tax. Illinois also imposes an estate tax on estates over $4 million and a real estate transfer tax of $0.50 per $500 of sales price. Chicago adds an additional city transfer tax."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if multiple heirs disagree on selling inherited property in Illinois?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Any co-owner can file a partition action in Illinois court, which forces a sale and division of proceeds. However, this is costly and time-consuming. Mediation and early legal counsel often resolve disputes faster."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a probate attorney to sell inherited property in Illinois?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While not legally required, a probate attorney can obtain the Letters of Office authorizing the executor to sell, handle creditor claims, coordinate with the title company, and represent the estate if heirs challenge the sale."
+      }
+    }
+  ]
+};
+
 export const metadata: Metadata = {
   title: "Selling Inherited Property in Illinois – Complete Guide",
   description:
-    "Everything you need to know about selling inherited real estate in Illinois: probate, stepped-up basis, capital gains tax, and working with attorneys.",
+    "Illinois inherited property sales involve probate authority, a stepped-up cost basis, and state capital gains tax of 4.95%. This guide covers every step from probate to closing.",
   alternates: { canonical: "https://www.illinoisprobatedirectory.com/resources/selling-inherited-property-illinois" },
 };
 
 export default function SellingInheritedPropertyPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-sm text-gray-400 mb-8">
         <Link href="/" className="hover:text-navy-700 transition-colors">Home</Link>
@@ -23,7 +75,8 @@ export default function SellingInheritedPropertyPage() {
           Selling Inherited Property in Illinois
         </h1>
         <p className="text-gray-500 text-sm mb-8">
-          A practical guide for heirs and executors navigating inherited real estate sales.
+          A practical guide for heirs and executors navigating inherited real estate sales.{" "}
+          <span className="text-gray-400">Last updated: June 2026</span>
         </p>
 
         <div className="space-y-10 text-gray-700 leading-relaxed">

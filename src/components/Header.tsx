@@ -48,22 +48,30 @@ export default function Header() {
                 ))}
               </div>
             </div>
-            <Link
-              href="/resources/how-probate-works-illinois"
-              className="hover:text-blue-300 transition-colors"
-            >
-              How Probate Works
-            </Link>
-            <Link
-              href="/resources/selling-inherited-property-illinois"
-              className="hover:text-blue-300 transition-colors"
-            >
-              Selling Inherited Property
-            </Link>
-            <Link
-              href="/blog"
-              className="hover:text-blue-300 transition-colors"
-            >
+            <div className="relative group">
+              <button className="hover:text-blue-300 transition-colors flex items-center gap-1">
+                Resources
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className="absolute top-full left-0 mt-1 w-64 bg-white text-gray-800 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                {[
+                  ["How Probate Works", "/resources/how-probate-works-illinois"],
+                  ["Selling Inherited Property", "/resources/selling-inherited-property-illinois"],
+                  ["Probate Courts by County", "/resources/illinois-probate-courts-by-county"],
+                ].map(([label, href]) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    className="block px-4 py-2 hover:bg-navy-50 hover:text-navy-800 text-sm"
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <Link href="/blog" className="hover:text-blue-300 transition-colors">
               Blog
             </Link>
             <Link
@@ -107,8 +115,10 @@ export default function Header() {
                 {label}
               </Link>
             ))}
-            <Link href="/resources/how-probate-works-illinois" className="block px-2 py-1.5 hover:text-blue-300" onClick={() => setMenuOpen(false)}>How Probate Works</Link>
-            <Link href="/resources/selling-inherited-property-illinois" className="block px-2 py-1.5 hover:text-blue-300" onClick={() => setMenuOpen(false)}>Selling Inherited Property</Link>
+            <p className="px-2 py-1 text-xs text-gray-400 uppercase tracking-wider">Resources</p>
+            <Link href="/resources/how-probate-works-illinois" className="block px-4 py-1.5 hover:text-blue-300" onClick={() => setMenuOpen(false)}>How Probate Works</Link>
+            <Link href="/resources/selling-inherited-property-illinois" className="block px-4 py-1.5 hover:text-blue-300" onClick={() => setMenuOpen(false)}>Selling Inherited Property</Link>
+            <Link href="/resources/illinois-probate-courts-by-county" className="block px-4 py-1.5 hover:text-blue-300" onClick={() => setMenuOpen(false)}>Probate Courts by County</Link>
             <Link href="/blog" className="block px-2 py-1.5 hover:text-blue-300" onClick={() => setMenuOpen(false)}>Blog</Link>
             <Link href="/for-families" className="block mx-2 mt-2 px-4 py-2.5 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg text-center" onClick={() => setMenuOpen(false)}>🏠 Get Property Help</Link>
           </nav>

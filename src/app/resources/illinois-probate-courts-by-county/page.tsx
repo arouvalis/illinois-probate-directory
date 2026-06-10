@@ -34,7 +34,7 @@ const faqSchema = {
       name: "What is the small estate affidavit threshold in Illinois?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "As of August 15, 2025, the Illinois small estate affidavit threshold increased to $150,000 for personal property (excluding real estate). Estates at or below this value with no real estate can avoid formal probate using a notarized affidavit.",
+        text: "As of August 15, 2025, the Illinois small estate affidavit threshold increased to $150,000 for personal property excluding real estate. Estates at or below this value with no real estate can avoid formal probate using a notarized affidavit.",
       },
     },
     {
@@ -141,7 +141,6 @@ export default function IllinoisProbateCourtsByCountyPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-sm text-gray-400 mb-8">
         <Link href="/" className="hover:text-navy-700 transition-colors">
           Home
@@ -162,7 +161,6 @@ export default function IllinoisProbateCourtsByCountyPage() {
           Last updated: June 2026 — Verify current fees with the Circuit Clerk before filing.
         </p>
 
-        {/* Key Facts Bar */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10 not-prose">
           {[
             { label: "Counties Covered", value: "6" },
@@ -180,7 +178,6 @@ export default function IllinoisProbateCourtsByCountyPage() {
           ))}
         </div>
 
-        {/* County Table */}
         <div className="not-prose overflow-x-auto mb-10">
           <table className="w-full text-sm border-collapse">
             <thead>
@@ -195,10 +192,7 @@ export default function IllinoisProbateCourtsByCountyPage() {
             </thead>
             <tbody>
               {counties.map((county, i) => (
-                <tr
-                  key={county.name}
-                  className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}
-                >
+                <tr key={county.name} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
                   <td className="p-3 font-semibold text-navy-800">
                     <Link href={county.link} className="hover:underline">
                       {county.name}
@@ -219,17 +213,13 @@ export default function IllinoisProbateCourtsByCountyPage() {
           </table>
         </div>
 
-        {/* County Detail Cards */}
         <h2 className="text-2xl font-serif font-bold text-navy-800 mb-6">
           County-by-County Details
         </h2>
 
         <div className="not-prose space-y-6 mb-10">
           {counties.map((county) => (
-            <div
-              key={county.name}
-              className="border border-gray-200 rounded-xl p-6"
-            >
+            <div key={county.name} className="border border-gray-200 rounded-xl p-6">
               <h3 className="text-lg font-serif font-bold text-navy-800 mb-3">
                 {county.name} Probate Court
               </h3>
@@ -268,10 +258,7 @@ export default function IllinoisProbateCourtsByCountyPage() {
                 </div>
               </div>
               <div className="mt-4">
-                <Link
-                  href={county.link}
-                  className="text-sm text-gold-600 hover:underline font-medium"
-                >
+                <Link href={county.link} className="text-sm text-gold-600 hover:underline font-medium">
                   Find probate attorneys in {county.name} →
                 </Link>
               </div>
@@ -279,7 +266,6 @@ export default function IllinoisProbateCourtsByCountyPage() {
           ))}
         </div>
 
-        {/* Notes Section */}
         <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-8 not-prose">
           <h3 className="font-serif font-bold text-navy-800 text-lg mb-3">
             Important Notes
@@ -319,7 +305,6 @@ export default function IllinoisProbateCourtsByCountyPage() {
           </ul>
         </div>
 
-        {/* CTA */}
         <div className="bg-navy-50 border border-navy-200 rounded-xl p-6 not-prose">
           <h2 className="font-serif font-bold text-navy-800 text-xl mb-2">
             Find a Probate Attorney in Your County

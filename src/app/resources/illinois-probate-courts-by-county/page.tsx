@@ -278,7 +278,7 @@ export default function IllinoisProbateCourtsByCountyPage() {
             <li>
               All Illinois counties require mandatory e-filing for probate cases through
               the statewide{" "}
-              
+              <a
                 href="https://efile.illinoiscourts.gov"
                 target="_blank"
                 rel="noopener noreferrer"

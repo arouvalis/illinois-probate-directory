@@ -60,6 +60,7 @@ export default function Header() {
                   ["How Probate Works", "/resources/how-probate-works-illinois"],
                   ["Selling Inherited Property", "/resources/selling-inherited-property-illinois"],
                   ["Probate Courts by County", "/resources/illinois-probate-courts-by-county"],
+                  ["Probate Timeline by County", "/resources/illinois-probate-timeline-by-county"],
                 ].map(([label, href]) => (
                   <Link
                     key={href}
@@ -119,6 +120,7 @@ export default function Header() {
             <Link href="/resources/how-probate-works-illinois" className="block px-4 py-1.5 hover:text-blue-300" onClick={() => setMenuOpen(false)}>How Probate Works</Link>
             <Link href="/resources/selling-inherited-property-illinois" className="block px-4 py-1.5 hover:text-blue-300" onClick={() => setMenuOpen(false)}>Selling Inherited Property</Link>
             <Link href="/resources/illinois-probate-courts-by-county" className="block px-4 py-1.5 hover:text-blue-300" onClick={() => setMenuOpen(false)}>Probate Courts by County</Link>
+            <Link href="/resources/illinois-probate-timeline-by-county" className="block px-4 py-1.5 hover:text-blue-300" onClick={() => setMenuOpen(false)}>Probate Timeline by County</Link>
             <Link href="/blog" className="block px-2 py-1.5 hover:text-blue-300" onClick={() => setMenuOpen(false)}>Blog</Link>
             <Link href="/for-families" className="block mx-2 mt-2 px-4 py-2.5 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg text-center" onClick={() => setMenuOpen(false)}>🏠 Get Property Help</Link>
           </nav>

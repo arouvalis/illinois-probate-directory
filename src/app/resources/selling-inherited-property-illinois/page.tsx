@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ForFamiliesBanner from "@/components/ForFamiliesBanner";
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -57,6 +58,7 @@ export const metadata: Metadata = {
 
 export default function SellingInheritedPropertyPage() {
   return (
+    <>
     <div className="max-w-3xl mx-auto px-4 py-12">
       <script
         type="application/ld+json"
@@ -282,5 +284,7 @@ export default function SellingInheritedPropertyPage() {
         </div>
       </article>
     </div>
+    <ForFamiliesBanner />
+    </>
   );
 }

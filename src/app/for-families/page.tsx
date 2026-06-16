@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import ForFamiliesContactForm from "@/components/ForFamiliesContactForm";
 
 export const metadata: Metadata = {
-  title: "Help With Probate Property | Illinois Probate Directory",
-  description: "Dealing with an estate that includes property? We help Illinois families with probate property sales, cleanout, valuation, and more. Personally reviewed — no automated responses.",
+  title: "Help With an Inherited House or Estate Property in Illinois",
+  description: "Not sure what to do with an inherited house or estate property in Illinois? We help families with vacant property maintenance, cleanout, valuation, and sale coordination — working alongside your probate attorney, not around them.",
   alternates: { canonical: "https://www.illinoisprobatedirectory.com/for-families" },
 };
 

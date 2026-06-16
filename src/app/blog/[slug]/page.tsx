@@ -3,6 +3,7 @@ import path from 'path';
 import { marked } from 'marked';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import ForFamiliesBanner from '@/components/ForFamiliesBanner';
 
 const BLOG_DIR = path.join(process.cwd(), 'src/content/blog');
 
@@ -93,6 +94,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
   const lastUpdated = getLastUpdated(filePath);
 
   return (
+    <>
     <div className="max-w-3xl mx-auto px-4 py-12">
       {faqSchema && (
         <script
@@ -106,5 +108,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
         dangerouslySetInnerHTML={{ __html: html }}
       />
     </div>
+    <ForFamiliesBanner />
+    </>
   );
 }

@@ -53,6 +53,16 @@ export default function HomePage() {
                 </p>
                 <CountySearchForm />
               </div>
+
+              {/* Quick link for property-related visitors */}
+              <div className="mt-6 pt-6 border-t border-navy-600">
+                <Link
+                  href="/for-families"
+                  className="inline-flex items-center gap-2 text-amber-300 hover:text-amber-200 text-sm font-semibold transition-colors"
+                >
+                  🏠 Does the estate include a house or property? Get help here →
+                </Link>
+              </div>
             </div>
 
             {/* Right: lead capture form */}

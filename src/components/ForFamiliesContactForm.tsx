@@ -23,10 +23,19 @@ export default function ForFamiliesContactForm() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const [hasStarted, setHasStarted] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => {
+    if (!hasStarted) {
+      setHasStarted(true);
+      if (typeof window !== "undefined" && (window as any).gtag) {
+        (window as any).gtag("event", "form_start", {
+          form_name: "for_families_contact",
+        });
+      }
+    }
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
@@ -168,7 +177,7 @@ export default function ForFamiliesContactForm() {
           disabled={loading}
           className="w-full bg-amber-600 text-white py-3 px-6 rounded-lg font-bold text-base hover:bg-amber-700 transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
         >
-          {loading ? "Submitting…" : "Submit My Inquiry →"}
+          {loading ? "Sending…" : "Tell Us What's Going On →"}
         </button>
 
         <p className="text-xs text-gray-400 text-center">

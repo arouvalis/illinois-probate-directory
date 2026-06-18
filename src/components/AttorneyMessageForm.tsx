@@ -170,6 +170,13 @@ export default function AttorneyMessageForm({ attorneyName, attorneySlug }: Prop
         >
           {loading ? "Sending…" : "Send Message"}
         </button>
+
+        {(form.hasRealEstate === "Yes" || form.hasRealEstate === "Not Sure") && (
+          <div className="bg-amber-50 border border-amber-100 rounded-lg px-4 py-3 text-sm">
+            <span className="text-amber-800">🏠 Does the estate include a property that needs to be sold, cleaned out, or maintained? </span>
+            <a href="/for-families" className="text-amber-700 font-semibold underline hover:text-amber-800">We can help with that too →</a>
+          </div>
+        )}
       </form>
     </div>
   );

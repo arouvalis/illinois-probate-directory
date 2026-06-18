@@ -92,4 +92,8 @@ Estate planning is one of those tasks that's easy to put off. But the peace of m
 
 Don't leave your family's future to chance. Use IllinoisProbateDirectory.com to find a qualified probate and estate planning attorney in Joliet or anywhere in Will County. Taking this step today means your loved ones won't have to guess what you wanted tomorrow.
 
+
+
+[Browse Joliet probate attorneys →](/city/joliet-probate-attorney)
+
 *Browse attorneys: [Will County Probate Attorneys](/county/will-county) · [All Illinois Counties](/)*

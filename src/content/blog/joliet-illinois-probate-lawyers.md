@@ -46,4 +46,8 @@ Your loved one's legacy deserves to be handled properly, and your family deserve
 
 **Ready to find the right probate attorney for your family? Visit IllinoisProbateDirectory.com today and search our comprehensive directory of Joliet Illinois probate lawyers. We're here to help you connect with the legal support your family needs.**
 
+
+
+[Browse Joliet probate attorneys →](/city/joliet-probate-attorney)
+
 *Browse attorneys: [Will County Probate Attorneys](/county/will-county) · [All Illinois Counties](/)*

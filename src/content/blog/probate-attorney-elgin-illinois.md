@@ -42,4 +42,8 @@ Remember that while the probate process may seem daunting, you don't have to nav
 
 If you're ready to find a qualified probate attorney in Elgin, Illinois, IllinoisProbateDirectory.com can help connect you with experienced local attorneys who understand the complexities of Illinois probate law. Visit our directory to explore your options and take the first step toward resolving your probate matter with confidence.
 
+
+
+[Browse Elgin probate attorneys →](/city/elgin-probate-attorney)
+
 *Browse attorneys: [Kane County Probate Attorneys](/county/kane-county) · [All Illinois Counties](/)*

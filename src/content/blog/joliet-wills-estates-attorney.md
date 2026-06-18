@@ -81,4 +81,8 @@ Whether you need help with basic estate planning, are facing a complicated proba
 
 Don't try to navigate the probate system alone. Use the directory to find a qualified Joliet wills and estates attorney who can answer your questions, explain your options, and help you move forward during a difficult time.
 
+
+
+[Browse Joliet probate attorneys →](/city/joliet-probate-attorney)
+
 *Browse attorneys: [Will County Probate Attorneys](/county/will-county) · [All Illinois Counties](/)*

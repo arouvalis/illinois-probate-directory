@@ -88,4 +88,8 @@ Creating a will isn't about dwelling on death—it's about protecting the people
 
 Don't put this off because it feels uncomfortable. Search the IllinoisProbateDirectory.com listings today to connect with an experienced probate attorney in Will County who can guide you through the process. Your future self—and your family—will thank you.
 
+
+
+[Browse Joliet probate attorneys →](/city/joliet-probate-attorney)
+
 *Browse attorneys: [Will County Probate Attorneys](/county/will-county) · [All Illinois Counties](/)*

@@ -304,6 +304,32 @@ export default function AttorneyPage({ params }: Props) {
             </div>
           )}
 
+          {countySlug && (
+            <div className="bg-navy-50 rounded-xl border border-navy-200 p-5">
+              <h3 className="font-serif font-bold text-navy-800 text-sm mb-3">
+                Browse More Attorneys
+              </h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link
+                    href={}
+                    className="text-sm text-navy-700 hover:text-navy-900 hover:underline"
+                  >
+                    More {attorney.source_county} County Probate Attorneys →
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/"
+                    className="text-sm text-navy-700 hover:text-navy-900 hover:underline"
+                  >
+                    Search All Illinois Attorneys →
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          )}
+
           <div className="bg-gray-50 rounded-xl border border-gray-200 p-5">
             <p className="text-xs text-gray-400 leading-relaxed">
               <strong className="text-gray-500">Disclaimer:</strong> This

@@ -56,4 +56,4 @@ Losing a loved one is never easy, but you don't have to face the probate process
 
 Your family deserves professional support. Let us help you find it.
 
-*Browse attorneys: [DuPage County Probate Attorneys](/county/dupage-county) · [All Illinois Counties](/)*
+*Browse attorneys: [DuPage County Probate Attorneys](/county/dupage) · [All Illinois Counties](/)*

@@ -54,7 +54,7 @@ If the Rolling Meadows estate includes real property, we can help. Many probate 
 
 Browse Cook County probate attorneys on Illinois Probate Directory — many serve the northwest suburbs including Rolling Meadows, Arlington Heights, Schaumburg, and surrounding communities.
 
-[Browse Cook County Probate Attorneys →](/county/cook-county)
+[Browse Cook County Probate Attorneys →](/county/cook)
 
 ---
 

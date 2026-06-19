@@ -44,4 +44,4 @@ Don't let the probate process overwhelm you during an already difficult time. Wi
 
 [Browse Aurora probate attorneys →](/city/aurora-probate-attorney)
 
-*Browse attorneys: [Kane County Probate Attorneys](/county/kane-county) · [All Illinois Counties](/)*
+*Browse attorneys: [Kane County Probate Attorneys](/county/kane) · [All Illinois Counties](/)*

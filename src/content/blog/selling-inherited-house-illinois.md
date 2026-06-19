@@ -66,4 +66,4 @@ Selling an inherited house in Illinois involves court filings, title work, and t
 
 *Related: [Can You Sell a House in Probate in Illinois?](/blog/sell-house-in-probate-illinois) | [Executor Selling a House in Illinois](/blog/executor-selling-house-illinois)*
 
-*Browse attorneys: [Cook County Probate Attorneys](/county/cook-county) · [All Illinois Counties](/)*
+*Browse attorneys: [Cook County Probate Attorneys](/county/cook) · [All Illinois Counties](/)*

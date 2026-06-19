@@ -50,4 +50,4 @@ Your loved one's legacy deserves to be handled properly, and your family deserve
 
 [Browse Joliet probate attorneys →](/city/joliet-probate-attorney)
 
-*Browse attorneys: [Will County Probate Attorneys](/county/will-county) · [All Illinois Counties](/)*
+*Browse attorneys: [Will County Probate Attorneys](/county/will) · [All Illinois Counties](/)*

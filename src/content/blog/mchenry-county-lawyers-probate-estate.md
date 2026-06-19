@@ -38,4 +38,4 @@ You don't have to navigate this alone. McHenry County has qualified estate lawye
 
 *Related: [McHenry County Estate Planning Attorneys](/blog/mchenry-county-estate-planning-attorneys)*
 
-*Browse attorneys: [McHenry County Probate Attorneys](/county/mchenry-county) · [All Illinois Counties](/)*
+*Browse attorneys: [McHenry County Probate Attorneys](/county/mchenry) · [All Illinois Counties](/)*

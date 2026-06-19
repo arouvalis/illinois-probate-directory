@@ -38,4 +38,4 @@ Remember that the probate process can take several months or even years to compl
 
 Illinois Probate Directory can help connect you with qualified probate attorneys throughout the state who have the experience and expertise to guide your family through this process. Browse our directory of Illinois probate professionals to find attorneys in your area and compare their qualifications, experience, and client reviews to make the best choice for your family's specific needs.
 
-*Browse attorneys: [Cook County Probate Attorneys](/county/cook-county) · [All Illinois Counties](/)*
+*Browse attorneys: [Cook County Probate Attorneys](/county/cook) · [All Illinois Counties](/)*

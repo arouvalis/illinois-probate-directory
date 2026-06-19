@@ -28,7 +28,7 @@ export default function AuroraProbatePage() {
           <div className="flex items-center gap-2 text-sm text-blue-300 mb-3">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/county/kane-county" className="hover:text-white transition-colors">Kane County</Link>
+            <Link href="/county/kane" className="hover:text-white transition-colors">Kane County</Link>
             <span>/</span>
             <span>Aurora</span>
           </div>

@@ -46,4 +46,4 @@ Getting the right help early — before mistakes are made — is the single most
 
 *Related: [Can You Sell a House in Probate in Illinois?](/blog/sell-house-in-probate-illinois)*
 
-*Browse attorneys: [McHenry County Probate Attorneys](/county/mchenry-county) · [All Illinois Counties](/)*
+*Browse attorneys: [McHenry County Probate Attorneys](/county/mchenry) · [All Illinois Counties](/)*

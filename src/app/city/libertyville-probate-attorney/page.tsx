@@ -28,7 +28,7 @@ export default function LibertyvilleProbatePage() {
           <div className="flex items-center gap-2 text-sm text-blue-300 mb-3">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/county/lake-county" className="hover:text-white transition-colors">Lake County</Link>
+            <Link href="/county/lake" className="hover:text-white transition-colors">Lake County</Link>
             <span>/</span>
             <span>Libertyville</span>
           </div>

@@ -78,4 +78,4 @@ Handling a loved one's estate is a significant responsibility, and you don't hav
 
 Start your search today by browsing the attorney listings at IllinoisProbateDirectory.com. You can filter by location to find experienced probate lawyers near you, compare your options, and take the first step toward settling your loved one's estate with confidence.
 
-*Browse attorneys: [Cook County Probate Attorneys](/county/cook-county) · [All Illinois Counties](/)*
+*Browse attorneys: [Cook County Probate Attorneys](/county/cook) · [All Illinois Counties](/)*

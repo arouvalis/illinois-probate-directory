@@ -44,4 +44,4 @@ Remember that IllinoisProbateDirectory.com can help you find qualified probate a
 
 [Browse Naperville probate attorneys →](/city/naperville-probate-attorney)
 
-*Browse attorneys: [DuPage County Probate Attorneys](/county/dupage-county) · [All Illinois Counties](/)*
+*Browse attorneys: [DuPage County Probate Attorneys](/county/dupage) · [All Illinois Counties](/)*

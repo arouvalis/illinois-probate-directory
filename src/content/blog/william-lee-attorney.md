@@ -46,4 +46,4 @@ Whether you're looking for a particular attorney like William Lee or simply need
 
 Don't let the probate process overwhelm you during this already difficult time. Browse Illinois Probate Directory today to find experienced probate attorneys in your area who can provide the guidance and support your family needs.
 
-*Browse attorneys: [Will County Probate Attorneys](/county/will-county) · [All Illinois Counties](/)*
+*Browse attorneys: [Will County Probate Attorneys](/county/will) · [All Illinois Counties](/)*

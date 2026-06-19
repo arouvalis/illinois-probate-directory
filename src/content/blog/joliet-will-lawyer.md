@@ -92,4 +92,4 @@ Don't put this off because it feels uncomfortable. Search the IllinoisProbateDir
 
 [Browse Joliet probate attorneys →](/city/joliet-probate-attorney)
 
-*Browse attorneys: [Will County Probate Attorneys](/county/will-county) · [All Illinois Counties](/)*
+*Browse attorneys: [Will County Probate Attorneys](/county/will) · [All Illinois Counties](/)*

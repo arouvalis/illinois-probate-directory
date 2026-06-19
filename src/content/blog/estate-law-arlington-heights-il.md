@@ -61,4 +61,4 @@ Don't let confusion or uncertainty delay your family's healing. Visit **Illinois
 
 Your free consultation is just a few clicks away.
 
-*Browse attorneys: [Cook County Probate Attorneys](/county/cook-county) · [All Illinois Counties](/)*
+*Browse attorneys: [Cook County Probate Attorneys](/county/cook) · [All Illinois Counties](/)*

@@ -96,4 +96,4 @@ Don't leave your family's future to chance. Use IllinoisProbateDirectory.com to 
 
 [Browse Joliet probate attorneys →](/city/joliet-probate-attorney)
 
-*Browse attorneys: [Will County Probate Attorneys](/county/will-county) · [All Illinois Counties](/)*
+*Browse attorneys: [Will County Probate Attorneys](/county/will) · [All Illinois Counties](/)*

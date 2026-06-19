@@ -86,4 +86,4 @@ Inheriting a house is a major decision, and you don't have to figure it out alon
 
 **Ready for professional help?** [Search IllinoisProbateDirectory.com](https://illinoisprobaatedirectory.com) to find experienced probate attorneys in your area who can guide you through every step of managing your inherited Illinois home.
 
-*Browse attorneys: [Cook County Probate Attorneys](/county/cook-county) · [All Illinois Counties](/)*
+*Browse attorneys: [Cook County Probate Attorneys](/county/cook) · [All Illinois Counties](/)*

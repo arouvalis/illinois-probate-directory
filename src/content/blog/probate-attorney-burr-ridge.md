@@ -60,4 +60,4 @@ Losing a loved one is hard enough without struggling to manage their estate alon
 
 **Don't navigate probate alone.** Visit **IllinoisProbateDirectory.com** today to search for experienced probate attorneys in Burr Ridge who can help your family. Our directory makes it simple to find the right professional match, so you can focus on what matters most—honoring your loved one's memory and supporting your family through this difficult time.
 
-*Browse attorneys: [DuPage County Probate Attorneys](/county/dupage-county) · [All Illinois Counties](/)*
+*Browse attorneys: [DuPage County Probate Attorneys](/county/dupage) · [All Illinois Counties](/)*

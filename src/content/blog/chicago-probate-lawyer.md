@@ -91,4 +91,4 @@ If the estate includes real property in the Chicago area, [ChicagoProbateSpecial
 
 Your loved one trusted you to handle their affairs. Honor that trust by getting the professional help you deserve. Start your search for a qualified probate attorney today, and take the first step toward peace of mind.
 
-*Browse attorneys: [Cook County Probate Attorneys](/county/cook-county) · [All Illinois Counties](/)*
+*Browse attorneys: [Cook County Probate Attorneys](/county/cook) · [All Illinois Counties](/)*

@@ -75,4 +75,4 @@ If you're selling a house as an executor in Illinois, you don't have to navigate
 
 Your loved one's legacy deserves to be handled properly—and you deserve expert support during this challenging time.
 
-*Browse attorneys: [Cook County Probate Attorneys](/county/cook-county) · [All Illinois Counties](/)*
+*Browse attorneys: [Cook County Probate Attorneys](/county/cook) · [All Illinois Counties](/)*

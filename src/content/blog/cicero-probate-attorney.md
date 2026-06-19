@@ -88,4 +88,4 @@ Ready to find qualified legal help near you? Browse IllinoisProbateDirectory.com
 
 [Browse Cicero probate attorneys →](/blog/probate-attorney-cicero-illinois)
 
-*Browse attorneys: [Cook County Probate Attorneys](/county/cook-county) · [All Illinois Counties](/)*
+*Browse attorneys: [Cook County Probate Attorneys](/county/cook) · [All Illinois Counties](/)*

@@ -34,4 +34,4 @@ Illinois Probate Directory can help you connect with qualified estate planning a
 
 Take the first step toward protecting your family's future by exploring qualified living trust attorneys in your area through Illinois Probate Directory today.
 
-*Browse attorneys: [McHenry County Probate Attorneys](/county/mchenry-county) · [All Illinois Counties](/)*
+*Browse attorneys: [McHenry County Probate Attorneys](/county/mchenry) · [All Illinois Counties](/)*

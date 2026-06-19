@@ -82,4 +82,4 @@ Probate doesn't have to be a nightmare. With the right guidance, you can settle 
 
 Use IllinoisProbateDirectory.com to find a local probate attorney who can answer your questions, handle the paperwork, and guide you through every step of the process.
 
-*Browse attorneys: [Lake County Probate Attorneys](/county/lake-county) · [All Illinois Counties](/)*
+*Browse attorneys: [Lake County Probate Attorneys](/county/lake) · [All Illinois Counties](/)*

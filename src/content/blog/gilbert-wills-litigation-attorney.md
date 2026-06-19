@@ -32,4 +32,4 @@ Time is often critical in will contests, and having the right legal representati
 
 Don't let uncertainty about the legal process prevent you from taking action to protect your interests. Visit Illinois Probate Directory today to connect with experienced probate attorneys in your area who can evaluate your situation and help you understand your options for moving forward.
 
-*Browse attorneys: [Will County Probate Attorneys](/county/will-county) · [All Illinois Counties](/)*
+*Browse attorneys: [Will County Probate Attorneys](/county/will) · [All Illinois Counties](/)*

@@ -42,6 +42,6 @@ If the estate includes a property — whether it needs to be sold, cleaned out, 
 
 *Related: [Can You Sell a House in Probate in Illinois?](/blog/sell-house-in-probate-illinois)*
 
-*Also see: [Cook County Probate Attorneys](/county/cook-county) · [Probate Attorneys in Northbrook](/city/northbrook-probate-attorney) · [Probate Attorneys in Orland Park](/city/orland-park-probate-attorney)*
+*Also see: [Cook County Probate Attorneys](/county/cook) · [Probate Attorneys in Northbrook](/city/northbrook-probate-attorney) · [Probate Attorneys in Orland Park](/city/orland-park-probate-attorney)*
 
 [Browse Cicero probate attorneys →](/blog/probate-attorney-cicero-illinois)

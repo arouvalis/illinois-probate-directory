@@ -29,7 +29,7 @@ export default function CrystalLakeProbatePage() {
           <div className="flex items-center gap-2 text-sm text-blue-300 mb-3">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/county/mchenry-county" className="hover:text-white transition-colors">McHenry County</Link>
+            <Link href="/county/mchenry" className="hover:text-white transition-colors">McHenry County</Link>
             <span>/</span>
             <span>Crystal Lake</span>
           </div>

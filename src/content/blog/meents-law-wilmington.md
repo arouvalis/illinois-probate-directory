@@ -38,4 +38,4 @@ Finding the right legal representation doesn't have to be a daunting task. With 
 
 Ready to find the right probate attorney for your family's needs? Visit Illinois Probate Directory today to explore qualified legal professionals throughout Illinois who can provide the expertise and support you need during this important time.
 
-*Browse attorneys: [Will County Probate Attorneys](/county/will-county) · [All Illinois Counties](/)*
+*Browse attorneys: [Will County Probate Attorneys](/county/will) · [All Illinois Counties](/)*

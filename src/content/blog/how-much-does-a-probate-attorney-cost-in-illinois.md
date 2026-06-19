@@ -48,4 +48,4 @@ Every probate case is unique, and cost estimates can vary widely based on your s
 
 Ready to find experienced probate attorneys in your area? Visit IllinoisProbateDirectory.com to connect with qualified legal professionals who can provide personalized cost estimates and guide your family through the probate process with confidence and care.
 
-*Browse attorneys: [Cook County Probate Attorneys](/county/cook-county) · [All Illinois Counties](/)*
+*Browse attorneys: [Cook County Probate Attorneys](/county/cook) · [All Illinois Counties](/)*

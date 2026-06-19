@@ -63,4 +63,4 @@ You don't have to navigate this alone — and the sooner you get the right help,
 
 *Related: [Executor Selling a House in Illinois: Your Step-by-Step Guide](/blog/executor-selling-house-illinois)*
 
-*Browse attorneys: [Cook County Probate Attorneys](/county/cook-county) · [All Illinois Counties](/)*
+*Browse attorneys: [Cook County Probate Attorneys](/county/cook) · [All Illinois Counties](/)*

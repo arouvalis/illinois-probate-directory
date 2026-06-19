@@ -8,6 +8,7 @@ import {
 import AttorneyCard from "@/components/AttorneyCard";
 import AttorneySearch from "@/components/AttorneySearch";
 import Link from "next/link";
+import React from "react";
 
 interface Props {
   params: { slug: string };
@@ -90,6 +91,94 @@ const COUNTY_BLOG_LINKS: Record<string, { title: string; href: string }[]> = {
   ],
 };
 
+const COUNTY_CONTENT: Record<string, React.ReactNode> = {
+  Cook: (
+    <div className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-navy-800 prose-a:text-navy-700">
+      <h2>Probate in Cook County, Illinois</h2>
+      <p>
+        Cook County handles more probate cases than any other county in Illinois. All Cook County
+        probate matters are filed at the <strong>Cook County Circuit Court Probate Division</strong>,
+        located at the Richard J. Daley Center, 50 W Washington St, Chicago, IL 60602. The court
+        processes thousands of estates annually, covering Chicago and all surrounding suburbs.
+      </p>
+
+      <h3>How Cook County Probate Works</h3>
+      <p>
+        Illinois probate in Cook County follows a structured process. After a loved one passes away,
+        the executor files a petition with the Probate Division. The court validates the will,
+        appoints the executor, and issues Letters of Office — the legal document authorizing the
+        executor to manage and sell estate assets. Creditors have 6 months from the publication of
+        notice to file claims. Once that period closes, the executor distributes remaining assets
+        to heirs and petitions for the estate to be closed.
+      </p>
+      <p>
+        Cook County&apos;s high case volume means filings must be precise and deadlines strictly
+        observed. An attorney experienced with the Cook County Probate Division can navigate the
+        court&apos;s specific procedures and prevent costly delays.
+      </p>
+
+      <h3>Chicago Probate Attorneys</h3>
+      <p>
+        Chicago is home to the largest concentration of probate attorneys in Illinois. Whether
+        you need help with a straightforward estate or a complex situation involving disputed
+        assets, trust litigation, or multiple properties, Chicago probate lawyers handle the
+        full range of estate matters. Many offer free initial consultations and serve clients
+        throughout Cook County regardless of where the attorney&apos;s office is located.
+      </p>
+
+      <h3>Cook County Suburbs We Serve</h3>
+      <p>
+        Our directory includes probate attorneys serving every Cook County community, including:
+      </p>
+      <ul>
+        <li><strong>Cicero</strong> — One of the most densely populated Cook County suburbs, with many estates centered on family homes passed through generations.</li>
+        <li><strong>Rolling Meadows</strong> — Northwest suburban community with active probate activity through the Cook County Probate Division.</li>
+        <li><strong>Northbrook</strong> — North Shore suburb with attorneys serving Glenview, Deerfield, and surrounding communities.</li>
+        <li><strong>Orland Park</strong> — Southwest suburban hub serving Tinley Park, Mokena, and surrounding communities.</li>
+        <li><strong>Barrington</strong> — Northwest community at the intersection of Cook, Lake, McHenry, and Kane counties.</li>
+        <li><strong>Palos Heights</strong> — Southwest Cook County community serving Palos Hills and surrounding suburbs.</li>
+        <li><strong>Schaumburg, Arlington Heights, Evanston</strong> — Additional high-activity Cook County communities with strong probate attorney representation.</li>
+      </ul>
+
+      <h3>Real Estate in Cook County Probate</h3>
+      <p>
+        Many Cook County probate estates include real property — often a family home in Chicago
+        or the suburbs that was solely titled in the deceased&apos;s name. When that happens,
+        the property must go through probate before it can be sold or transferred to heirs.
+        The executor receives authority to sell the property through the Letters of Office issued
+        by the court.
+      </p>
+      <p>
+        If you&apos;re dealing with a property in a Cook County estate — whether it needs to be
+        sold, cleaned out, or maintained while the estate is open — we can help connect you with
+        the right resources. Many probate properties sit vacant for months while the estate
+        settles. <a href="/for-families">Get help with the property side →</a>
+      </p>
+
+      <h3>Frequently Asked Questions</h3>
+      <h4>How long does probate take in Cook County?</h4>
+      <p>
+        A straightforward Cook County probate case typically takes 12 to 18 months from filing
+        to closing. Complex estates with disputes, multiple properties, or creditor issues can
+        take longer. The mandatory 6-month creditor period is the primary driver of the timeline.
+      </p>
+      <h4>Do I need a probate attorney in Cook County?</h4>
+      <p>
+        Illinois law does not require an attorney for probate, but Cook County&apos;s court
+        procedures are complex enough that most executors benefit significantly from legal
+        representation. Attorneys familiar with the Daley Center&apos;s Probate Division can
+        prevent filing errors that cause costly delays.
+      </p>
+      <h4>Where is the Cook County Probate Court?</h4>
+      <p>
+        The Cook County Circuit Court Probate Division is located at the Richard J. Daley Center,
+        50 W Washington St, Chicago, IL 60602, on the 18th floor. Hours are Monday through Friday,
+        8:30 AM to 4:30 PM.
+      </p>
+    </div>
+  ),
+};
+
 export default function CountyPage({ params }: Props) {
   const county = COUNTY_SLUGS[params.slug];
   if (!county) notFound();
@@ -141,6 +230,14 @@ export default function CountyPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {COUNTY_CONTENT[county] && (
+        <section className="py-12 px-4 bg-gray-50 border-b border-gray-200">
+          <div className="max-w-5xl mx-auto">
+            {COUNTY_CONTENT[county]}
+          </div>
+        </section>
+      )}
 
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="flex flex-col lg:flex-row gap-10">

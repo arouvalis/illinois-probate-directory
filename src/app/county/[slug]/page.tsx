@@ -221,6 +221,72 @@ const COUNTY_CONTENT: Record<string, React.ReactNode> = {
       <p>A straightforward Kane County estate typically takes 12 to 18 months. The mandatory 6-month creditor notice period is the primary driver of the timeline.</p>
     </div>
   ),
+  Will: (
+    <div className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-navy-800 prose-a:text-navy-700">
+      <h2>Probate in Will County, Illinois</h2>
+      <p>Will County probate cases are filed at the <strong>Will County Courthouse</strong>, located at 14 W Jefferson St, Joliet, IL 60432. The court serves Joliet, Naperville, Plainfield, Bolingbrook, Romeoville, and surrounding communities.</p>
+      <h3>How Will County Probate Works</h3>
+      <p>After a loved one passes away in Will County, the executor files a petition at the Joliet courthouse. The court appoints the executor, issues Letters of Office, and begins administration. Creditors have 6 months from publication of notice to file claims. Once that period closes, remaining assets are distributed to heirs and the estate is closed.</p>
+      <h3>Will County Communities We Serve</h3>
+      <ul>
+        <li><strong><a href="/city/joliet-probate-attorney">Joliet</a></strong> — The Will County seat and largest city, with 26 probate attorneys serving the area.</li>
+        <li><strong>Naperville</strong> — One of Illinois most populous suburbs, spanning Will and DuPage counties.</li>
+        <li><strong>Plainfield, Bolingbrook, Romeoville</strong> — Fast-growing Will County communities with active probate activity.</li>
+        <li><strong>Mokena, New Lenox, Frankfort</strong> — Additional Will County communities served by local probate attorneys.</li>
+      </ul>
+      <h3>Real Estate in Will County Probate</h3>
+      <p>Many Will County probate estates include residential property in Joliet, Plainfield, or surrounding communities. If the estate includes a property that needs to be maintained, cleaned out, or sold during probate, we can help. <a href="/for-families">Get help with the property side</a></p>
+      <h3>Frequently Asked Questions</h3>
+      <h4>Where is the Will County Probate Court?</h4>
+      <p>The Will County Courthouse is located at 14 W Jefferson St, Joliet, IL 60432. All Will County probate filings are made here.</p>
+      <h4>How long does probate take in Will County?</h4>
+      <p>A straightforward Will County estate typically takes 12 to 18 months. The mandatory 6-month creditor notice period is the primary driver of the timeline.</p>
+    </div>
+  ),
+  Lake: (
+    <div className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-navy-800 prose-a:text-navy-700">
+      <h2>Probate in Lake County, Illinois</h2>
+      <p>Lake County probate cases are filed at the <strong>Lake County Courthouse</strong>, located at 18 N County St, Waukegan, IL 60085. The court serves Waukegan, Lake Forest, Libertyville, Gurnee, Highland Park, and surrounding communities.</p>
+      <h3>How Lake County Probate Works</h3>
+      <p>After a loved one passes away in Lake County, the executor files a petition at the Waukegan courthouse. The court appoints the executor, issues Letters of Office, and begins administration. Creditors have 6 months from publication of notice to file claims. Once that period closes, remaining assets are distributed to heirs and the estate is closed.</p>
+      <h3>Lake County Communities We Serve</h3>
+      <ul>
+        <li><strong>Waukegan</strong> — Lake County seat and home to the courthouse where all probate cases are filed.</li>
+        <li><strong><a href="/city/libertyville-probate-attorney">Libertyville</a></strong> — Prominent Lake County community with 11 probate attorneys serving the area.</li>
+        <li><strong>Lake Forest, Highland Park</strong> — North Shore communities with active estate activity and strong attorney representation.</li>
+        <li><strong>Gurnee, Mundelein, Vernon Hills</strong> — Additional Lake County communities served by local probate attorneys.</li>
+      </ul>
+      <h3>Real Estate in Lake County Probate</h3>
+      <p>Many Lake County probate estates include residential property — often homes in Waukegan, Libertyville, or the North Shore communities. If the estate includes a property that needs to be maintained, cleaned out, or sold during probate, we can help. <a href="/for-families">Get help with the property side</a></p>
+      <h3>Frequently Asked Questions</h3>
+      <h4>Where is the Lake County Probate Court?</h4>
+      <p>The Lake County Courthouse is located at 18 N County St, Waukegan, IL 60085. All Lake County probate filings are made here.</p>
+      <h4>How long does probate take in Lake County?</h4>
+      <p>A straightforward Lake County estate typically takes 12 to 18 months. The mandatory 6-month creditor notice period is the primary driver of the timeline.</p>
+    </div>
+  ),
+  DuPage: (
+    <div className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-navy-800 prose-a:text-navy-700">
+      <h2>Probate in DuPage County, Illinois</h2>
+      <p>DuPage County probate cases are filed at the <strong>DuPage County Courthouse</strong>, located at 505 N County Farm Rd, Wheaton, IL 60187. The court serves Naperville, Oak Brook, Wheaton, Downers Grove, Lisle, and surrounding suburbs.</p>
+      <h3>How DuPage County Probate Works</h3>
+      <p>After a loved one passes away in DuPage County, the executor files a petition at the Wheaton courthouse. The court appoints the executor, issues Letters of Office, and begins administration. Creditors have 6 months from publication of notice to file claims. Once that period closes, remaining assets are distributed to heirs and the estate is closed.</p>
+      <h3>DuPage County Communities We Serve</h3>
+      <ul>
+        <li><strong><a href="/city/naperville-probate-attorney">Naperville</a></strong> — One of Illinois most populous suburbs, spanning DuPage and Will counties with 11 probate attorneys.</li>
+        <li><strong>Wheaton</strong> — DuPage County seat and home to the courthouse where all probate cases are filed.</li>
+        <li><strong>Oak Brook, Downers Grove, Lisle</strong> — Prominent DuPage communities with strong probate attorney representation.</li>
+        <li><strong>Hinsdale, Burr Ridge, Elmhurst</strong> — Additional high-activity DuPage County communities.</li>
+      </ul>
+      <h3>Real Estate in DuPage County Probate</h3>
+      <p>Many DuPage County probate estates include residential property in Naperville, Wheaton, or surrounding communities. If the estate includes a property that needs to be maintained, cleaned out, or sold during probate, we can help. <a href="/for-families">Get help with the property side</a></p>
+      <h3>Frequently Asked Questions</h3>
+      <h4>Where is the DuPage County Probate Court?</h4>
+      <p>The DuPage County Courthouse is located at 505 N County Farm Rd, Wheaton, IL 60187. All DuPage County probate filings are made here.</p>
+      <h4>How long does probate take in DuPage County?</h4>
+      <p>A straightforward DuPage County estate typically takes 12 to 18 months. The mandatory 6-month creditor notice period is the primary driver of the timeline.</p>
+    </div>
+  ),
 };
 
 export default function CountyPage({ params }: Props) {

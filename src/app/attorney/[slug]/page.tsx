@@ -312,7 +312,7 @@ export default function AttorneyPage({ params }: Props) {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    href={}
+                    href={`/county/${countySlug}`}
                     className="text-sm text-navy-700 hover:text-navy-900 hover:underline"
                   >
                     More {attorney.source_county} County Probate Attorneys →

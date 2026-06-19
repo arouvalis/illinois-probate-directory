@@ -131,12 +131,12 @@ const COUNTY_CONTENT: Record<string, React.ReactNode> = {
         Our directory includes probate attorneys serving every Cook County community, including:
       </p>
       <ul>
-        <li><strong>Cicero</strong> — One of the most densely populated Cook County suburbs, with many estates centered on family homes passed through generations.</li>
-        <li><strong>Rolling Meadows</strong> — Northwest suburban community with active probate activity through the Cook County Probate Division.</li>
-        <li><strong>Northbrook</strong> — North Shore suburb with attorneys serving Glenview, Deerfield, and surrounding communities.</li>
-        <li><strong>Orland Park</strong> — Southwest suburban hub serving Tinley Park, Mokena, and surrounding communities.</li>
-        <li><strong>Barrington</strong> — Northwest community at the intersection of Cook, Lake, McHenry, and Kane counties.</li>
-        <li><strong>Palos Heights</strong> — Southwest Cook County community serving Palos Hills and surrounding suburbs.</li>
+        <li><strong><a href="/blog/probate-attorney-cicero-illinois">Cicero</a></strong> — One of the most densely populated Cook County suburbs, with many estates centered on family homes passed through generations.</li>
+        <li><strong><a href="/blog/probate-attorney-rolling-meadows-illinois">Rolling Meadows</a></strong> — Northwest suburban community with active probate activity through the Cook County Probate Division.</li>
+        <li><strong><a href="/city/northbrook-probate-attorney">Northbrook</a></strong> — North Shore suburb with attorneys serving Glenview, Deerfield, and surrounding communities.</li>
+        <li><strong><a href="/city/orland-park-probate-attorney">Orland Park</a></strong> — Southwest suburban hub serving Tinley Park, Mokena, and surrounding communities.</li>
+        <li><strong><a href="/city/barrington-probate-attorney">Barrington</a></strong> — Northwest community at the intersection of Cook, Lake, McHenry, and Kane counties.</li>
+        <li><strong><a href="/city/palos-heights-probate-attorney">Palos Heights</a></strong> — Southwest Cook County community serving Palos Hills and surrounding suburbs.</li>
         <li><strong>Schaumburg, Arlington Heights, Evanston</strong> — Additional high-activity Cook County communities with strong probate attorney representation.</li>
       </ul>
 

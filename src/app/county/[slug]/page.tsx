@@ -177,6 +177,50 @@ const COUNTY_CONTENT: Record<string, React.ReactNode> = {
       </p>
     </div>
   ),
+  McHenry: (
+    <div className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-navy-800 prose-a:text-navy-700">
+      <h2>Probate in McHenry County, Illinois</h2>
+      <p>McHenry County probate cases are filed at the <strong>McHenry County Courthouse</strong>, located at 2200 N Seminary Ave, Woodstock, IL 60098. The court serves Crystal Lake, McHenry, Algonquin, Huntley, Marengo, and surrounding communities.</p>
+      <h3>How McHenry County Probate Works</h3>
+      <p>After a loved one passes away in McHenry County, the executor files a petition at the Woodstock courthouse. The court appoints the executor, issues Letters of Office, and begins administration. Creditors have 6 months from publication of notice to file claims. Once that period closes, assets are distributed to heirs and the estate is closed.</p>
+      <h3>McHenry County Communities We Serve</h3>
+      <ul>
+        <li><strong><a href="/city/crystal-lake-probate-attorney">Crystal Lake</a></strong> — The largest city in McHenry County, with 30 probate attorneys serving the area.</li>
+        <li><strong>Woodstock</strong> — County seat and home to the McHenry County Courthouse where all probate cases are filed.</li>
+        <li><strong>McHenry</strong> — Active Fox River community with strong probate attorney representation.</li>
+        <li><strong>Algonquin, Huntley, Marengo</strong> — Additional McHenry County communities served by local probate attorneys.</li>
+      </ul>
+      <h3>Real Estate in McHenry County Probate</h3>
+      <p>Many McHenry County estates include residential property in Crystal Lake, Woodstock, or surrounding communities. If the estate includes a property that needs to be maintained, cleaned out, or sold, we can help. <a href="/for-families">Get help with the property side</a></p>
+      <h3>Frequently Asked Questions</h3>
+      <h4>Where is the McHenry County Probate Court?</h4>
+      <p>The McHenry County Courthouse is located at 2200 N Seminary Ave, Woodstock, IL 60098. All McHenry County probate filings are made here.</p>
+      <h4>How long does probate take in McHenry County?</h4>
+      <p>A straightforward McHenry County estate typically takes 12 to 18 months. The mandatory 6-month creditor notice period is the primary driver of the timeline.</p>
+    </div>
+  ),
+  Kane: (
+    <div className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-navy-800 prose-a:text-navy-700">
+      <h2>Probate in Kane County, Illinois</h2>
+      <p>Kane County probate cases are filed at the <strong>Kane County Courthouse</strong>, located at 100 S 3rd St, Geneva, IL 60134. The court serves Aurora, Elgin, St. Charles, Batavia, and surrounding communities.</p>
+      <h3>How Kane County Probate Works</h3>
+      <p>After a loved one passes away in Kane County, the executor files a petition at the Geneva courthouse. The court appoints the executor, issues Letters of Office, and begins administration. Creditors have 6 months from publication of notice to file claims. Once that period closes, remaining assets are distributed to heirs.</p>
+      <h3>Kane County Communities We Serve</h3>
+      <ul>
+        <li><strong><a href="/city/aurora-probate-attorney">Aurora</a></strong> — The second largest city in Illinois, spanning Kane and DuPage counties with 12 probate attorneys.</li>
+        <li><strong><a href="/city/elgin-probate-attorney">Elgin</a></strong> — One of the largest Kane County cities with 14 probate attorneys serving the area.</li>
+        <li><strong>St. Charles, Batavia, Geneva</strong> — Fox Valley communities with strong probate attorney representation, including the county seat in Geneva.</li>
+        <li><strong>Carpentersville, Dundee</strong> — Additional Kane County communities served by local probate attorneys.</li>
+      </ul>
+      <h3>Real Estate in Kane County Probate</h3>
+      <p>Many Kane County probate estates include residential property in Aurora, Elgin, or the Fox Valley communities. If the estate includes a property that needs to be maintained, cleaned out, or sold during probate, we can help. <a href="/for-families">Get help with the property side</a></p>
+      <h3>Frequently Asked Questions</h3>
+      <h4>Where is the Kane County Probate Court?</h4>
+      <p>The Kane County Courthouse is located at 100 S 3rd St, Geneva, IL 60134. All Kane County probate filings are made here.</p>
+      <h4>How long does probate take in Kane County?</h4>
+      <p>A straightforward Kane County estate typically takes 12 to 18 months. The mandatory 6-month creditor notice period is the primary driver of the timeline.</p>
+    </div>
+  ),
 };
 
 export default function CountyPage({ params }: Props) {

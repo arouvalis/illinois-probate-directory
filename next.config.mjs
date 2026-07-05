@@ -7,6 +7,11 @@ const nextConfig = {
         destination: "/county/mchenry",
         permanent: true,
       },
+      {
+        source: "/attorney/theresa-clancy-law-oak-park",
+        destination: "/county/cook",
+        permanent: true,
+      },
     ];
   },
   images: {
@@ -16,4 +21,5 @@ const nextConfig = {
     ],
   },
 };
+
 export default nextConfig;

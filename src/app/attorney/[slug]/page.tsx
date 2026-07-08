@@ -98,16 +98,16 @@ export default function AttorneyPage({ params }: Props) {
     },
     "knowsAbout": "Probate Law",
     ...(website && { "sameAs": website }),
-    ...(rating && {
+    ...(rating && attorney.reviews && {
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": rating,
-        "reviewCount": attorney.reviews || 1,
+        "reviewCount": attorney.reviews,
       },
     }),
   };
   const accessibilityFeatures = about?.Accessibility
-    ? Object.entries(about.Accessibility)
+      ? Object.entries(about.Accessibility)
         .filter(([, val]) => val === true)
         .map(([key]) => key)
     : [];

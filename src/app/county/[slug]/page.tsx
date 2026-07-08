@@ -288,7 +288,33 @@ const COUNTY_CONTENT: Record<string, React.ReactNode> = {
     </div>
   ),
 };
-
+const COUNTY_FAQ: Record<string, { question: string; answer: string }[]> = {
+  Cook: [
+    { question: "How long does probate take in Cook County?", answer: "A straightforward Cook County probate case typically takes 12 to 18 months from filing to closing. Complex estates with disputes, multiple properties, or creditor issues can take longer. The mandatory 6-month creditor period is the primary driver of the timeline." },
+    { question: "Do I need a probate attorney in Cook County?", answer: "Illinois law does not require an attorney for probate, but Cook County's court procedures are complex enough that most executors benefit significantly from legal representation. Attorneys familiar with the Daley Center's Probate Division can prevent filing errors that cause costly delays." },
+    { question: "Where is the Cook County Probate Court?", answer: "The Cook County Circuit Court Probate Division is located at the Richard J. Daley Center, 50 W Washington St, Chicago, IL 60602, on the 18th floor. Hours are Monday through Friday, 8:30 AM to 4:30 PM." },
+  ],
+  McHenry: [
+    { question: "Where is the McHenry County Probate Court?", answer: "The McHenry County Courthouse is located at 2200 N Seminary Ave, Woodstock, IL 60098. All McHenry County probate filings are made here." },
+    { question: "How long does probate take in McHenry County?", answer: "A straightforward McHenry County estate typically takes 12 to 18 months. The mandatory 6-month creditor notice period is the primary driver of the timeline." },
+  ],
+  Kane: [
+    { question: "Where is the Kane County Probate Court?", answer: "The Kane County Courthouse is located at 100 S 3rd St, Geneva, IL 60134. All Kane County probate filings are made here." },
+    { question: "How long does probate take in Kane County?", answer: "A straightforward Kane County estate typically takes 12 to 18 months. The mandatory 6-month creditor notice period is the primary driver of the timeline." },
+  ],
+  Will: [
+    { question: "Where is the Will County Probate Court?", answer: "The Will County Courthouse is located at 14 W Jefferson St, Joliet, IL 60432. All Will County probate filings are made here." },
+    { question: "How long does probate take in Will County?", answer: "A straightforward Will County estate typically takes 12 to 18 months. The mandatory 6-month creditor notice period is the primary driver of the timeline." },
+  ],
+  Lake: [
+    { question: "Where is the Lake County Probate Court?", answer: "The Lake County Courthouse is located at 18 N County St, Waukegan, IL 60085. All Lake County probate filings are made here." },
+    { question: "How long does probate take in Lake County?", answer: "A straightforward Lake County estate typically takes 12 to 18 months. The mandatory 6-month creditor notice period is the primary driver of the timeline." },
+  ],
+  DuPage: [
+    { question: "Where is the DuPage County Probate Court?", answer: "The DuPage County Courthouse is located at 505 N County Farm Rd, Wheaton, IL 60187. All DuPage County probate filings are made here." },
+    { question: "How long does probate take in DuPage County?", answer: "A straightforward DuPage County estate typically takes 12 to 18 months. The mandatory 6-month creditor notice period is the primary driver of the timeline." },
+  ],
+};
 export default function CountyPage({ params }: Props) {
   const county = COUNTY_SLUGS[params.slug];
   if (!county) notFound();
@@ -307,9 +333,39 @@ export default function CountyPage({ params }: Props) {
   const allCounties = Object.entries(COUNTY_SLUGS).filter(
     ([slug]) => slug !== params.slug
   );
+  const countySchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": (COUNTY_FAQ[county] || []).map((qa) => ({
+      "@type": "Question",
+      "name": qa.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": qa.answer,
+      },
+    })),
+  };
 
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": `Probate Attorneys in ${county} County, Illinois`,
+    "url": `https://www.illinoisprobatedirectory.com/county/${params.slug}`,
+    "about": {
+      "@type": "AdministrativeArea",
+      "name": `${county} County, Illinois`,
+    },
+  };
   return (
     <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(countySchema) }}
+    />
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
+    />
       {/* Hero */}
       <section className="bg-gradient-to-r from-navy-800 to-navy-700 text-white py-12 px-4">
         <div className="max-w-5xl mx-auto">

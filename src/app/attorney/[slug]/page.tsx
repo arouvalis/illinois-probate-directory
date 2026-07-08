@@ -78,7 +78,34 @@ export default function AttorneyPage({ params }: Props) {
   const about = parseAbout(attorney.about);
   const countySlug = COUNTY_SLUG_MAP[attorney.source_county];
   const website = cleanWebsite(attorney.website);
-
+  const attorneySchema = {
+    "@context": "https://schema.org",
+    "@type": "Attorney",
+    "name": attorney.name,
+    "telephone": attorney.phone,
+    "url": `https://www.illinoisprobatedirectory.com/attorney/${attorney.slug}`,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": attorney.street || undefined,
+      "addressLocality": attorney.city,
+      "addressRegion": "IL",
+      "postalCode": attorney.postal_code,
+      "addressCountry": "US",
+    },
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": `${attorney.source_county} County, Illinois`,
+    },
+    "knowsAbout": "Probate Law",
+    ...(website && { "sameAs": website }),
+    ...(rating && {
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": rating,
+        "reviewCount": attorney.reviews || 1,
+      },
+    }),
+  };
   const accessibilityFeatures = about?.Accessibility
     ? Object.entries(about.Accessibility)
         .filter(([, val]) => val === true)
@@ -93,6 +120,10 @@ export default function AttorneyPage({ params }: Props) {
 
   return (
     <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(attorneySchema) }}
+    />
     <div className="max-w-5xl mx-auto px-4 py-8">
       {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-sm text-gray-400 mb-6">

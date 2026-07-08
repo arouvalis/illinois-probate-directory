@@ -1,0 +1,17 @@
+# Illinois Probate Directory
+
+> A directory of 590+ verified probate attorneys across Cook, Lake, Will, Kane, McHenry, and DuPage counties, Illinois. Free to search, no registration required.
+
+## Key pages
+- [Home](https://www.illinoisprobatedirectory.com/): Full attorney search across all 6 counties
+- [Cook County Attorneys](https://www.illinoisprobatedirectory.com/county/cook)
+- [Lake County Attorneys](https://www.illinoisprobatedirectory.com/county/lake)
+- [Will County Attorneys](https://www.illinoisprobatedirectory.com/county/will)
+- [Kane County Attorneys](https://www.illinoisprobatedirectory.com/county/kane)
+- [McHenry County Attorneys](https://www.illinoisprobatedirectory.com/county/mchenry)
+- [DuPage County Attorneys](https://www.illinoisprobatedirectory.com/county/dupage)
+- [How Probate Works in Illinois](https://www.illinoisprobatedirectory.com/resources/how-probate-works-illinois)
+- [Illinois Probate Courts by County](https://www.illinoisprobatedirectory.com/resources/illinois-probate-courts-by-county)
+- [Illinois Probate Timeline by County](https://www.illinoisprobatedirectory.com/resources/illinois-probate-timeline-by-county)
+- [Selling Inherited Property in Illinois](https://www.illinoisprobatedirectory.com/resources/selling-inherited-property-illinois)
+- [Blog](https://www.illinoisprobatedirectory.com/blog)

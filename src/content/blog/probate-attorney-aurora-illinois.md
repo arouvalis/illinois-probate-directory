@@ -44,4 +44,6 @@ Don't let the probate process overwhelm you during an already difficult time. Wi
 
 [Browse Aurora probate attorneys →](/city/aurora-probate-attorney)
 
+If the estate includes a property that needs to be sold, cleaned out, or maintained while probate is ongoing, we can help. [Get help with the property side →](/for-families)
+
 *Browse attorneys: [Kane County Probate Attorneys](/county/kane) · [All Illinois Counties](/)*

@@ -16,7 +16,17 @@ export const metadata: Metadata = {
     google: "OdAS2upgHPS4qIzSHL45_8gVbwgmPT3StMm42ZYo044",
   },
 };
-
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Illinois Probate Directory",
+  "url": "https://www.illinoisprobatedirectory.com",
+  "description": "A directory of verified probate attorneys serving Cook, Lake, Will, Kane, McHenry, and DuPage counties, Illinois.",
+  "areaServed": {
+    "@type": "State",
+    "name": "Illinois",
+  },
+};
 export default function RootLayout({
   children,
 }: {
@@ -25,6 +35,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex flex-col min-h-screen">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-NKWRWZQDP9"
           strategy="afterInteractive"

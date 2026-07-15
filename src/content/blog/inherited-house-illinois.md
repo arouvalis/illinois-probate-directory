@@ -72,6 +72,10 @@ The probate process can be complex, and inherited property adds another layer of
 
 Having proper legal guidance ensures you protect your interests and avoid costly mistakes.
 
+## If the Property Itself Is the Hard Part
+
+Inheriting a house often means dealing with more than paperwork — a vacant property that needs maintenance, years of belongings to sort through, or a sale you're not sure how to start. [We help families with exactly that](/for-families), from cleanout to full sale coordination. We work alongside your attorney, not around them.
+
 ## Next Steps
 
 Start by gathering important documents: the will, death certificate, property deed, and any mortgage or loan documents. Then consider:
@@ -84,6 +88,6 @@ Start by gathering important documents: the will, death certificate, property de
 
 Inheriting a house is a major decision, and you don't have to figure it out alone. Whether you're keeping, selling, or renting the property, having expert guidance makes the process smoother and protects your interests.
 
-**Ready for professional help?** [Search IllinoisProbateDirectory.com](https://illinoisprobaatedirectory.com) to find experienced probate attorneys in your area who can guide you through every step of managing your inherited Illinois home.
+**Ready for professional help?** [Search IllinoisProbateDirectory.com](https://illinoisprobatedirectory.com) to find experienced probate attorneys in your area who can guide you through every step of managing your inherited Illinois home.
 
 *Browse attorneys: [Cook County Probate Attorneys](/county/cook) · [All Illinois Counties](/)*

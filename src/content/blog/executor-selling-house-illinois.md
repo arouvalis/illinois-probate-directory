@@ -69,6 +69,10 @@ The executor's role carries significant legal and financial responsibility. Illi
 
 A probate attorney can guide you through court procedures, ensure you meet all deadlines, protect yourself legally, and help maximize the estate's value for beneficiaries.
 
+## Need Help With the Property Side?
+
+Beyond the legal steps, executors often end up managing the physical property too — repairs, cleanout, showings, coordinating with a realtor. [We handle that side directly](/for-families) so you can focus on your fiduciary duties, not home maintenance.
+
 ## Next Steps
 
 If you're selling a house as an executor in Illinois, you don't have to navigate this alone. **[Search IllinoisProbateDirectory.com](https://illinoisprobatedirectory.com)** to find qualified probate attorneys in your area who specialize in estate sales and can provide the guidance you need.

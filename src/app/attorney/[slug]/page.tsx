@@ -8,6 +8,7 @@ import {
   parseSpecializations,
   cleanWebsite,
   COUNTY_SLUG_MAP,
+  generateAttorneyDescription,
 } from "@/lib/attorneys";
 import AttorneyMessageForm from "@/components/AttorneyMessageForm";
 import ForFamiliesBanner from "@/components/ForFamiliesBanner";
@@ -203,6 +204,13 @@ export default function AttorneyPage({ params }: Props) {
                 </div>
               )}
             </div>
+          </div>
+
+          {/* Generated description */}
+          <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
+            <p className="text-gray-700 leading-relaxed">
+              {generateAttorneyDescription(attorney)}
+            </p>
           </div>
 
           {/* Contact info */}

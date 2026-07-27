@@ -95,13 +95,13 @@ export default async function BlogPost({ params }: { params: { slug: string } })
 
   return (
     <>
-    <div className="max-w-3xl mx-auto px-4 py-12">
       {faqSchema && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
+    <div className="max-w-3xl mx-auto px-4 py-12">
       <p className="text-gray-400 text-sm mb-6">Last updated: {lastUpdated}</p>
       <article
         className="prose prose-lg prose-headings:font-serif prose-headings:text-navy-800 prose-a:text-gold-600"

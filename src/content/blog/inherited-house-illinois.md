@@ -2,13 +2,13 @@
 
 Inheriting a house is a significant responsibility, especially when you're already dealing with the emotional weight of losing a loved one. If you've recently inherited a property in Illinois, you likely have questions about what comes next. This guide will help you understand your options and navigate this important process.
 
-## Understanding Your Rights as an Illinois Heir
+## What Should You Know About Your Rights as an Illinois Heir?
 
 When someone passes away and leaves you their home, you don't automatically own it outright. In Illinois, inherited property goes through the probate process unless the deceased had specific estate planning strategies in place (like a living trust or transfer-on-death deed).
 
 During probate, the court validates the will, identifies heirs, and oversees the legal transfer of property. This process typically takes 6-12 months, though complex estates may take longer. It's important to know that you may have certain rights and responsibilities regarding the property during this time.
 
-## Your Options With an Inherited House
+## Your Options With an Inherited House?
 
 Once you've inherited a house in Illinois, you have several choices:
 
@@ -41,7 +41,7 @@ If the house is in good condition and located in a desirable area, renting it ou
 - Handling tenant screening and rent collection
 - Paying property taxes and insurance
 
-## Important Considerations for Illinois Homeowners
+## What Are Important ?
 
 ### Property Taxes
 
@@ -59,7 +59,7 @@ Update the homeowner's insurance policy immediately to reflect your ownership. Y
 
 If the house has a mortgage or other liens, these typically must be paid from the estate. Your probate attorney can explain how this works in your specific situation.
 
-## Working With an Illinois Probate Attorney
+## How Does Working ?
 
 The probate process can be complex, and inherited property adds another layer of legal considerations. An experienced Illinois probate attorney can help you:
 
@@ -72,11 +72,11 @@ The probate process can be complex, and inherited property adds another layer of
 
 Having proper legal guidance ensures you protect your interests and avoid costly mistakes.
 
-## If the Property Itself Is the Hard Part
+## If the Property Itself Is the Hard Part?
 
 Inheriting a house often means dealing with more than paperwork — a vacant property that needs maintenance, years of belongings to sort through, or a sale you're not sure how to start. [We help families with exactly that](/for-families), from cleanout to full sale coordination. We work alongside your attorney, not around them.
 
-## Next Steps
+## Next Steps?
 
 Start by gathering important documents: the will, death certificate, property deed, and any mortgage or loan documents. Then consider:
 
@@ -84,7 +84,7 @@ Start by gathering important documents: the will, death certificate, property de
 2. **Speaking with a tax professional** about capital gains and income tax implications
 3. **Consulting an Illinois probate attorney** to understand your legal responsibilities
 
-## Taking Action
+## Taking Action?
 
 Inheriting a house is a major decision, and you don't have to figure it out alone. Whether you're keeping, selling, or renting the property, having expert guidance makes the process smoother and protects your interests.
 

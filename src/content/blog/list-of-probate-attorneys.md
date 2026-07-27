@@ -4,7 +4,7 @@ When a loved one passes away, the last thing you want to worry about is navigati
 
 Finding the right attorney isn't just about picking a name off a website. It's about understanding what you need, knowing what questions to ask, and making sure the lawyer you choose has experience with Illinois probate law specifically. This guide will walk you through everything you need to know about finding and evaluating probate attorneys in Illinois.
 
-## Why You Need a Probate Attorney
+## Why You Need a Probate Attorney?
 
 Before diving into how to find an attorney, it's worth understanding why you likely need one in the first place. Illinois probate law has specific requirements, deadlines, and procedures that can trip up even the most organized executor.
 
@@ -12,7 +12,7 @@ An executor is the person named in the will to handle the estate — but being n
 
 A probate attorney guides you through each step. They prepare and file court documents, represent you at hearings, help resolve disputes among heirs, and ensure the estate closes properly. For most families, the peace of mind alone is worth the cost.
 
-## What to Look for in a Probate Attorney
+## What to Look for in a Probate Attorney?
 
 Not all attorneys are created equal, and not every lawyer who handles probate does it regularly. When reviewing any list of probate attorneys, keep these factors in mind.
 
@@ -24,7 +24,7 @@ Not all attorneys are created equal, and not every lawyer who handles probate do
 
 **Transparent fee structure.** Probate attorneys typically charge either a flat fee, an hourly rate, or a percentage of the estate's value. Each approach has pros and cons depending on the complexity of your case. What matters most is that the attorney clearly explains their fees upfront with no surprises later.
 
-## Questions to Ask Before Hiring
+## Questions to Ask Before Hiring?
 
 Once you have a list of potential attorneys, schedule consultations with your top choices. Many probate lawyers offer free or low-cost initial meetings. Use this time to ask important questions.
 
@@ -36,7 +36,7 @@ Inquire about who will actually handle your case. In larger firms, a senior atto
 
 Finally, ask for references. A confident attorney will happily connect you with past clients who can speak to their experience working with that lawyer.
 
-## How to Find Probate Attorneys in Illinois
+## How Do You Find Probate Attorneys in Illinois?
 
 You have several options for building your initial list of attorneys to consider.
 
@@ -46,7 +46,7 @@ Online directories offer another approach. IllinoisProbateDirectory.com maintain
 
 State and local bar associations also provide referral services. The Illinois State Bar Association and many county bar associations offer lawyer referral programs that can connect you with probate attorneys in your area.
 
-## Red Flags to Watch For
+## Red Flags to Watch For?
 
 While most attorneys are professional and ethical, be cautious if you encounter these warning signs during your search.
 
@@ -56,7 +56,7 @@ Be wary of unusually low fees without explanation. If one attorney quotes a fee 
 
 Pay attention to communication during the consultation process. If the attorney is hard to reach before you've even hired them, imagine how difficult communication might be once you're a client and they have your retainer.
 
-## Taking the Next Step
+## Taking the Next Step?
 
 Dealing with probate while grieving is one of life's more difficult challenges. The right attorney can shoulder much of the burden, allowing you to focus on your family during a hard time.
 

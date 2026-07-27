@@ -2,7 +2,7 @@
 
 Estate planning is one of those things most people know they should do but keep putting off. If you live in McHenry County and want to make sure your family is protected — or if you're dealing with a loved one's estate right now — this guide covers what estate planning involves, how it connects to probate, and how to find a qualified local attorney.
 
-## Estate Planning vs. Probate: Understanding the Difference
+## Estate Planning vs. Probate: Understanding the Difference?
 
 These two terms are closely related but refer to different things, and it's worth knowing the distinction before you start looking for an attorney.
 
@@ -12,7 +12,7 @@ These two terms are closely related but refer to different things, and it's wort
 
 The connection: good estate planning can reduce or eliminate the need for probate. A properly funded revocable living trust, for example, allows assets to pass directly to beneficiaries without going through court at all. Many McHenry County families work with an estate planning attorney specifically to avoid putting their heirs through the probate process.
 
-## What Estate Planning Services Cover
+## What Estate Planning Services Cover?
 
 A qualified estate planning attorney in McHenry County can help you with:
 
@@ -26,7 +26,7 @@ A qualified estate planning attorney in McHenry County can help you with:
 
 **Beneficiary designations review** — retirement accounts and life insurance pass outside of your will, so making sure designations are current and coordinated with your overall plan matters more than most people realize.
 
-## Finding the Right Attorney in McHenry County
+## How Do You Find ?
 
 Probate attorneys and estate planning attorneys often overlap — many attorneys handle both, meaning one person can help you plan your estate now and assist your family with probate later if needed. That continuity has real value.
 

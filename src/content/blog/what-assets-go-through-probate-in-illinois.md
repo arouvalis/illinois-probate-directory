@@ -4,7 +4,7 @@ Losing a loved one is never easy, and dealing with their estate can feel overwhe
 
 Probate is the court-supervised process of distributing a deceased person's assets, paying debts, and formally closing their estate. Not all assets require probate, which is why it's crucial to understand the distinction between probate and non-probate assets under Illinois law.
 
-## Assets That Must Go Through Probate in Illinois
+## Assets That Must Go Through Probate in Illinois?
 
 In Illinois, assets that are owned solely in the deceased person's name typically must go through probate. These probate assets include:
 
@@ -18,7 +18,7 @@ In Illinois, assets that are owned solely in the deceased person's name typicall
 
 **Business Interests:** Sole proprietorships and the deceased person's ownership interest in partnerships or closely-held corporations typically require probate administration.
 
-## Assets That Avoid Probate
+## Assets That Avoid Probate?
 
 Many families are relieved to learn that numerous assets can bypass the probate process entirely. These non-probate assets transfer directly to beneficiaries:
 
@@ -30,7 +30,7 @@ Many families are relieved to learn that numerous assets can bypass the probate 
 
 **Small Personal Property:** Illinois allows for simplified procedures for small estates, and certain personal property may be transferred without formal probate proceedings under specific circumstances.
 
-## Special Considerations and Exceptions
+## Special Considerations and Exceptions?
 
 Illinois law provides several important exceptions and special rules that can affect whether assets go through probate:
 
@@ -42,7 +42,7 @@ Illinois law provides several important exceptions and special rules that can af
 
 **Improperly Designated Beneficiaries:** Assets intended to avoid probate may end up in probate if beneficiary designations are outdated, incomplete, or if all named beneficiaries have predeceased the asset owner.
 
-## Getting Professional Help with Illinois Probate
+## How Do You Get ?
 
 Determining which assets require probate and navigating Illinois probate law can be complex, especially when you're grieving the loss of a loved one. Each family's situation is unique, and what seems straightforward may involve complications that aren't immediately apparent.
 

@@ -184,5 +184,20 @@ export function generateAttorneyDescription(attorney: Attorney): string {
     sentences.push(pick(freeOnly, seed, 3));
   }
 
+  // Always add context about probate process and directory
+  const probateContext = [
+    `Families in ${city} working through the probate process can use IllinoisProbateDirectory.com to compare local attorneys and find the right fit for their situation.`,
+    `Navigating probate in ${county} can be complex — IllinoisProbateDirectory.com lists local attorneys to help families find qualified legal help.`,
+    `IllinoisProbateDirectory.com connects families in ${city} with experienced probate attorneys across ${county}.`,
+  ];
+  sentences.push(pick(probateContext, seed, 4));
+
+  const closing = [
+    `If you are dealing with a loved one's estate, consulting with a local probate attorney early can help avoid delays and reduce stress.`,
+    `Whether you need help filing with the probate court or administering an estate, an experienced local attorney can guide you through each step.`,
+    `Probate timelines in Illinois vary by county and estate complexity — a qualified local attorney can help families understand what to expect.`,
+  ];
+  sentences.push(pick(closing, seed, 5));
+
   return sentences.join(" ");
 }

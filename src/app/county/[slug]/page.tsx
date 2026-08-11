@@ -61,6 +61,7 @@ const COUNTY_BLOG_LINKS: Record<string, { title: string; href: string }[]> = {
   ],
   DuPage: [
     { title: "Probate Attorneys in Naperville, IL", href: "/city/naperville-probate-attorney" },
+    { title: "Naperville, IL Probate: A Complete Guide", href: "/blog/probate-attorney-naperville-illinois" },
     { title: "Finding a Probate Attorney in Hinsdale", href: "/blog/probate-attorney-hinsdale" },
     { title: "Finding a Probate Attorney in Burr Ridge", href: "/blog/probate-attorney-burr-ridge" },
     { title: "Estate Law in Arlington Heights", href: "/blog/estate-law-arlington-heights-il" },

@@ -32,6 +32,11 @@ const nextConfig = {
         destination: "/blog/cicero-probate-attorney",
         permanent: true,
       },
+      {
+        source: "/blog/naperville-il-probate",
+        destination: "/blog/probate-attorney-naperville-illinois",
+        permanent: true,
+      },
     ];
   },
   images: {

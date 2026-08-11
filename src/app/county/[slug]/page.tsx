@@ -76,6 +76,7 @@ const COUNTY_BLOG_LINKS: Record<string, { title: string; href: string }[]> = {
   Kane: [
     { title: "Probate Attorneys in Elgin, IL", href: "/city/elgin-probate-attorney" },
     { title: "Probate Attorneys in Aurora, IL", href: "/city/aurora-probate-attorney" },
+    { title: "Finding a Probate Attorney in Aurora: Complete Guide", href: "/blog/probate-attorney-aurora-illinois" },
     { title: "Estate Law in Arlington Heights", href: "/blog/estate-law-arlington-heights-il" },
     { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
     { title: "What to Do With an Inherited House in Illinois", href: "/blog/inherited-house-illinois" },

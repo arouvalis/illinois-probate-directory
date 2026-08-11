@@ -18,7 +18,7 @@ Communication style is another important consideration. During an already stress
 
 Don't forget to discuss fees upfront. Most probate attorneys charge either an hourly rate or a percentage of the estate's value. Make sure you understand how fees are calculated and what services are included. A reputable attorney will provide a clear fee structure and estimate of total costs based on your specific situation.
 
-## What Are Common ?
+## What Services Do Aurora Probate Attorneys Provide?
 
 Probate attorneys in Aurora offer a wide range of services to help families navigate the estate settlement process. These typically include filing the initial petition with the court, locating and inventorying estate assets, notifying creditors and beneficiaries, and preparing required court documents and accountings.
 

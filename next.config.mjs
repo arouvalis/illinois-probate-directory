@@ -12,6 +12,21 @@ const nextConfig = {
         destination: "/county/cook",
         permanent: true,
       },
+      {
+        source: "/blog/joliet-estate-planning-attorneys",
+        destination: "/blog/joliet-wills-estates-attorney",
+        permanent: true,
+      },
+      {
+        source: "/blog/joliet-will-lawyer",
+        destination: "/blog/joliet-wills-estates-attorney",
+        permanent: true,
+      },
+      {
+        source: "/blog/joliet-illinois-probate-lawyers",
+        destination: "/blog/joliet-wills-estates-attorney",
+        permanent: true,
+      },
     ];
   },
   images: {

@@ -57,7 +57,7 @@ const COUNTY_BLOG_LINKS: Record<string, { title: string; href: string }[]> = {
     { title: "Probate Attorneys in Orland Park, IL", href: "/city/orland-park-probate-attorney" },
     { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
     { title: "What to Do With an Inherited House in Illinois", href: "/blog/inherited-house-illinois" },
-    { title: "Joliet Illinois Probate Lawyers", href: "/blog/joliet-illinois-probate-lawyers" },
+    { title: "Joliet Probate & Estate Planning Guide", href: "/blog/joliet-wills-estates-attorney" },
   ],
   DuPage: [
     { title: "Probate Attorneys in Naperville, IL", href: "/city/naperville-probate-attorney" },
@@ -68,7 +68,7 @@ const COUNTY_BLOG_LINKS: Record<string, { title: string; href: string }[]> = {
   ],
   Will: [
     { title: "Probate Attorneys in Joliet, IL", href: "/city/joliet-probate-attorney" },
-    { title: "Joliet Illinois Probate Lawyers", href: "/blog/joliet-illinois-probate-lawyers" },
+    { title: "Joliet Probate & Estate Planning Guide", href: "/blog/joliet-wills-estates-attorney" },
     { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
     { title: "What to Do With an Inherited House in Illinois", href: "/blog/inherited-house-illinois" },
   ],

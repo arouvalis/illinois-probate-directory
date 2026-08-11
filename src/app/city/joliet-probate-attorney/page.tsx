@@ -123,7 +123,7 @@ export default function JolietProbatePage() {
               </h3>
               <ul className="space-y-2">
                 {[
-                  { title: "Joliet Illinois Probate Lawyers", href: "/blog/joliet-illinois-probate-lawyers" },
+                  { title: "Joliet Probate & Estate Planning Guide", href: "/blog/joliet-wills-estates-attorney" },
                   { title: "How Probate Works in Illinois", href: "/resources/how-probate-works-illinois" },
                   { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
                   { title: "Selling Inherited Property in Illinois", href: "/resources/selling-inherited-property-illinois" },

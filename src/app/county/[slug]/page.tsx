@@ -131,7 +131,7 @@ const COUNTY_CONTENT: Record<string, React.ReactNode> = {
         Our directory includes probate attorneys serving every Cook County community, including:
       </p>
       <ul>
-        <li><strong><a href="/blog/probate-attorney-cicero-illinois">Cicero</a></strong> — One of the most densely populated Cook County suburbs, with many estates centered on family homes passed through generations.</li>
+        <li><strong><a href="/blog/cicero-probate-attorney">Cicero</a></strong> — One of the most densely populated Cook County suburbs, with many estates centered on family homes passed through generations.</li>
         <li><strong><a href="/blog/probate-attorney-rolling-meadows-illinois">Rolling Meadows</a></strong> — Northwest suburban community with active probate activity through the Cook County Probate Division.</li>
         <li><strong><a href="/city/northbrook-probate-attorney">Northbrook</a></strong> — North Shore suburb with attorneys serving Glenview, Deerfield, and surrounding communities.</li>
         <li><strong><a href="/city/orland-park-probate-attorney">Orland Park</a></strong> — Southwest suburban hub serving Tinley Park, Mokena, and surrounding communities.</li>

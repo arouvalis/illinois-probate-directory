@@ -27,6 +27,11 @@ const nextConfig = {
         destination: "/blog/joliet-wills-estates-attorney",
         permanent: true,
       },
+      {
+        source: "/blog/probate-attorney-cicero-illinois",
+        destination: "/blog/cicero-probate-attorney",
+        permanent: true,
+      },
     ];
   },
   images: {

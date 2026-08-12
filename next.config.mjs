@@ -37,6 +37,16 @@ const nextConfig = {
         destination: "/blog/probate-attorney-naperville-illinois",
         permanent: true,
       },
+      {
+        source: "/blog/gilbert-wills-attorney",
+        destination: "/blog/gilberts-wills-attorney",
+        permanent: true,
+      },
+      {
+        source: "/blog/gilbert-wills-litigation-attorney",
+        destination: "/blog/gilberts-wills-attorney",
+        permanent: true,
+      },
     ];
   },
   images: {

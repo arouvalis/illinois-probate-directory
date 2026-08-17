@@ -89,6 +89,7 @@ const COUNTY_BLOG_LINKS: Record<string, { title: string; href: string }[]> = {
   ],
   Lake: [
     { title: "Probate Attorneys in Libertyville, IL", href: "/city/libertyville-probate-attorney" },
+    { title: "Lake County IL Probate: A Complete Guide", href: "/blog/lake-county-il-probate" },
     { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
     { title: "What to Do With an Inherited House in Illinois", href: "/blog/inherited-house-illinois" },
   ],

@@ -47,6 +47,11 @@ const nextConfig = {
         destination: "/blog/gilberts-wills-attorney",
         permanent: true,
       },
+      {
+        source: "/blog/lake-county-probate-illinois",
+        destination: "/blog/lake-county-il-probate",
+        permanent: true,
+      },
     ];
   },
   images: {

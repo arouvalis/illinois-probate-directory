@@ -52,6 +52,11 @@ const nextConfig = {
         destination: "/blog/lake-county-il-probate",
         permanent: true,
       },
+      {
+        source: "/blog/mchenry-county-estate-planning-attorneys",
+        destination: "/blog/mchenry-county-lawyers-probate-estate",
+        permanent: true,
+      },
     ];
   },
   images: {

@@ -13002,5 +13002,27 @@
     "free_consultation": null,
     "languages": null,
     "source_county": "McHenry"
+  },
+  {
+    "slug": "attorney-deadra-woods-stokes-orland-park",
+    "name": "Attorney Deadra Woods Stokes",
+    "phone": "+1 708-248-8229",
+    "website": "https://www.deadrawoodsstokes.com/",
+    "address": "15255 S 94th Ave Ste 500, Orland Park, IL 60462",
+    "street": "15255 S 94th Ave Ste 500",
+    "city": "Orland Park",
+    "state": "Illinois",
+    "postal_code": "60462",
+    "rating": 3.8,
+    "reviews": 17,
+    "photo": null,
+    "working_hours": null,
+    "about": null,
+    "probate_verified": "YES",
+    "confidence_score": 10.0,
+    "specializations_found": "probate, estate planning, real estate, serves Cook and Will County",
+    "free_consultation": "UNCLEAR",
+    "languages": null,
+    "source_county": "Cook"
   }
 ]

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { isUsableListingImage } from "@/lib/listing-image";
 
 interface Props {
   website: string | null;
@@ -49,7 +50,7 @@ export default function AttorneyPhoto({ website, name }: Props) {
     fetch(`/api/og-image?website=${encodeURIComponent(website)}`)
       .then((r) => r.json())
       .then((data: { url: string | null }) => {
-        if (data.url) {
+        if (data.url && isUsableListingImage(data.url)) {
           setState({ phase: "image", url: data.url });
         } else {
           setState({ phase: "placeholder" });

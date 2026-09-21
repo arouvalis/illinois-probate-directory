@@ -8934,28 +8934,6 @@
     "source_county": "Will"
   },
   {
-    "slug": "plan-your-heritage-plainfield",
-    "name": "Plan Your Heritage",
-    "phone": "+1 815-280-0411",
-    "website": "http://planyourheritage.com/",
-    "address": "6523 Denali Ridge Dr, Plainfield, IL 60586",
-    "street": "6523 Denali Ridge Dr",
-    "city": "Plainfield",
-    "state": "Illinois",
-    "postal_code": "60586",
-    "rating": null,
-    "reviews": null,
-    "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=TJ4vfF-igffrbgHqSSWSlg&cb_client=search.gws-prod.gps&w=800&h=500&yaw=353.9638&pitch=0&thumbfov=100",
-    "working_hours": "{\"Monday\": [\"9AM-4:30PM\"], \"Tuesday\": [\"8AM-9PM\"], \"Wednesday\": [\"9AM-5:30PM\"], \"Thursday\": [\"9AM-7:30PM\"], \"Friday\": [\"9AM-5PM\"], \"Saturday\": [\"9AM-4PM\"], \"Sunday\": [\"1-4PM\"]}",
-    "about": "{\"Service options\": {\"Onsite services\": false}, \"Accessibility\": {\"Wheelchair accessible entrance\": true, \"Assistive hearing loop\": false, \"Wheelchair accessible parking lot\": false, \"Wheelchair accessible restroom\": false, \"Wheelchair accessible seating\": false}}",
-    "probate_verified": "YES",
-    "confidence_score": 6.0,
-    "specializations_found": "probate, estate planning",
-    "free_consultation": "UNCLEAR",
-    "languages": null,
-    "source_county": "Will"
-  },
-  {
     "slug": "ddv-law-ltd-chicago",
     "name": "DDV Law, Ltd.",
     "phone": "+1 312-878-0155",

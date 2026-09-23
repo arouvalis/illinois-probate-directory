@@ -23,6 +23,7 @@ export interface Attorney {
   languages: string | null;
   source_county: string;
   featured: boolean | null;
+  additional_offices?: { address: string | null; phone: string | null }[];
 }
 
 export const COUNTY_SLUGS: Record<string, string> = {
@@ -200,4 +201,40 @@ export function generateAttorneyDescription(attorney: Attorney): string {
   sentences.push(pick(closing, seed, 5));
 
   return sentences.join(" ");
+}
+
+// ── Multi-office firms ─────────────────────────────────────────────
+// Offices of the same firm are matched by website domain. Generic hosts
+// (social profiles, Google sites) are ignored so unrelated firms never match.
+const SHARED_HOSTS = ["facebook.", "google.", "linkedin.", "sites.", "business.site", "yelp.", "avvo.", "justia.", "findlaw.", "lawyers.com", "martindale."];
+
+function firmDomain(url: string | null): string | null {
+  if (!url) return null;
+  const m = url.toLowerCase().match(/^(?:https?:\/\/)?(?:www\.)?([^/?#]+)/);
+  const host = m ? m[1] : null;
+  if (!host || SHARED_HOSTS.some((h) => host.includes(h))) return null;
+  return host;
+}
+
+export interface OtherOffice {
+  slug: string | null; // null = office without its own profile page
+  city: string | null;
+  county: string | null;
+  address: string | null;
+  phone: string | null;
+}
+
+export function getOtherOffices(attorney: Attorney): OtherOffice[] {
+  const domain = firmDomain(attorney.website);
+  const linked: OtherOffice[] = domain
+    ? attorneys
+        .filter((a) => a.slug !== attorney.slug && firmDomain(a.website) === domain)
+        .map((a) => ({ slug: a.slug, city: a.city, county: a.source_county, address: a.address, phone: a.phone }))
+    : [];
+  const unlinked: OtherOffice[] = (attorney.additional_offices ?? []).map((o) => {
+    const parts = (o.address ?? "").split(",").map((x) => x.trim());
+    const city = parts.length >= 3 ? parts[parts.length - 2] : null; // "street, City, IL 60000"
+    return { slug: null, city, county: null, address: o.address, phone: o.phone };
+  });
+  return [...linked, ...unlinked].sort((x, y) => (x.city ?? "").localeCompare(y.city ?? ""));
 }

@@ -9,6 +9,7 @@ import {
   cleanWebsite,
   COUNTY_SLUG_MAP,
   generateAttorneyDescription,
+  getOtherOffices,
 } from "@/lib/attorneys";
 import AttorneyMessageForm from "@/components/AttorneyMessageForm";
 import ForFamiliesBanner from "@/components/ForFamiliesBanner";
@@ -79,6 +80,9 @@ export default function AttorneyPage({ params }: Props) {
   const about = parseAbout(attorney.about);
   const countySlug = COUNTY_SLUG_MAP[attorney.source_county];
   const website = cleanWebsite(attorney.website);
+  const otherOffices = getOtherOffices(attorney);
+  const areaLabel = (county: string | null) =>
+    !county ? "" : county === "Other Illinois" ? "Illinois" : `${county} County`;
   const attorneySchema = {
     "@context": "https://schema.org",
     "@type": "Attorney",
@@ -255,6 +259,40 @@ export default function AttorneyPage({ params }: Props) {
                   </div>
                 )}
               </div>
+            </div>
+          )}
+
+          {/* Office locations (multi-office firms) */}
+          {otherOffices.length > 0 && (
+            <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
+              <h2 className="font-serif font-bold text-navy-800 text-lg mb-2">
+                Office Locations
+              </h2>
+              <p className="text-sm text-gray-600 mb-4">
+                This page covers the firm&apos;s {attorney.city} office
+                {attorney.source_county ? `, serving ${areaLabel(attorney.source_county)}` : ""}.
+                {" "}{attorney.name} has {otherOffices.length === 1 ? "one other office" : `${otherOffices.length} other offices`}.
+              </p>
+              <ul className="divide-y divide-gray-100">
+                <li className="py-3">
+                  <p className="text-sm font-semibold text-navy-800">{attorney.city} (this office)</p>
+                  {attorney.address && <p className="text-sm text-gray-600">{attorney.address}</p>}
+                  {attorney.phone && <p className="text-sm text-gray-500">{attorney.phone}</p>}
+                </li>
+                {otherOffices.map((o, i) => (
+                  <li key={o.slug ?? `office-${i}`} className="py-3">
+                    {o.slug ? (
+                      <Link href={`/attorney/${o.slug}`} className="text-sm font-semibold text-navy-700 hover:text-navy-900 hover:underline">
+                        {o.city} office{o.county ? `, ${areaLabel(o.county)}` : ""} →
+                      </Link>
+                    ) : (
+                      <p className="text-sm font-semibold text-navy-800">{o.city ? `${o.city} office` : "Additional office"}</p>
+                    )}
+                    {o.address && <p className="text-sm text-gray-600">{o.address}</p>}
+                    {o.phone && <p className="text-sm text-gray-500">{o.phone}</p>}
+                  </li>
+                ))}
+              </ul>
             </div>
           )}
 

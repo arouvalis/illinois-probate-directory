@@ -1,3 +1,5 @@
+# How to Sell a House in Probate in Illinois
+
 When a family member passes away and leaves behind a home, one of the first questions families ask is: *can we even sell this?* The short answer is yes — but the house has to go through Illinois probate first, and the process has specific steps you need to follow.
 
 This guide walks you through exactly what's involved, how long it takes, and when you need an attorney.

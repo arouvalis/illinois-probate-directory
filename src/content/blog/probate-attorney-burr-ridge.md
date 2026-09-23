@@ -28,7 +28,7 @@ Probate attorneys typically charge in different ways—hourly rates, flat fees, 
 
 Check online reviews and ask for references from past clients. Look for testimonials that mention compassion, professionalism, and clear communication—qualities that matter when you're grieving.
 
-## The Illinois Probate Process Overview?
+## The Illinois Probate Process Overview
 
 Understanding the basic steps can help you know what to expect when working with your attorney:
 
@@ -54,7 +54,7 @@ Through our platform, you can:
 
 Our goal is to help you find an attorney who combines legal expertise with genuine compassion for families during difficult times.
 
-## Taking the Next Step?
+## Taking the Next Step
 
 Losing a loved one is hard enough without struggling to manage their estate alone. A qualified probate attorney in Burr Ridge can handle the legal complexities, answer your questions, and provide peace of mind during this transition.
 

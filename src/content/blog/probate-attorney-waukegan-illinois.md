@@ -22,17 +22,17 @@ Transparency about fees is crucial. Most probate attorneys work on either an hou
 
 Consider the attorney's reputation within the Waukegan legal community. References from past clients, peer recognition, and standing with the Illinois State Bar Association all provide valuable insights into their professional competence and ethical standards.
 
-## What Are Common ?
+## What Are Common Probate Challenges?
 
 Several issues frequently arise during Illinois probate proceedings that require skilled legal guidance. Will contests, where family members dispute the validity of a will, can significantly complicate and extend the probate process. An experienced attorney can help navigate these disputes while working to preserve family relationships whenever possible.
 
-Estate tax considerations present another common challenge. While Illinois repealed its state estate tax in 2010, federal estate taxes may still apply to larger estates. Your attorney should be knowledgeable about tax implications and work with qualified tax professionals when necessary.
+Estate tax considerations present another common challenge. Illinois has its own estate tax on estates over $4 million, one of the lowest thresholds in the country, and federal estate tax can also apply to very large estates. Your attorney should be knowledgeable about tax implications and work with qualified tax professionals when necessary.
 
 Property issues often create complications, especially when the deceased owned real estate in multiple counties or states. Waukegan attorneys familiar with both local and out-of-state property laws can help ensure all assets are properly handled.
 
 Creditor claims and debt settlement require careful attention to legal deadlines and procedures. Illinois law provides specific timeframes for creditors to make claims against an estate, and proper handling of these issues protects beneficiaries from future liability.
 
-## Moving Forward with Confidence?
+## Moving Forward with Confidence
 
 The probate process doesn't have to be a source of additional stress during an already difficult time. With the right legal guidance, you can navigate Illinois probate law efficiently while ensuring your loved one's wishes are honored and your family's interests are protected.
 

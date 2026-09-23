@@ -24,7 +24,7 @@ Rather than focusing solely on finding a specific attorney by name, it's importa
 
 **References and Reviews**: Don't hesitate to ask for references from past clients or check online reviews. Other families' experiences can give you insight into what it's like to work with a particular attorney.
 
-## Questions to Ask During Your Initial Consultation?
+## Questions to Ask During Your Initial Consultation
 
 When you meet with potential probate attorneys, come prepared with questions that will help you evaluate whether they're the right fit:
 
@@ -42,7 +42,7 @@ Our directory features attorneys throughout Illinois who specialize in probate a
 
 Whether you're looking for a particular attorney like William Lee or simply need a qualified probate lawyer in your area, Illinois Probate Directory can help you find the right legal representation quickly and efficiently.
 
-## Take the Next Step?
+## Take the Next Step
 
 Don't let the probate process overwhelm you during this already difficult time. Browse Illinois Probate Directory today to find experienced probate attorneys in your area who can provide the guidance and support your family needs.
 

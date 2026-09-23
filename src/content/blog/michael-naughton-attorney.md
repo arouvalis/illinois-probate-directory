@@ -10,7 +10,7 @@ Probate cases can vary significantly in complexity. Some estates move through th
 
 When researching any attorney, including Michael Naughton or other Illinois probate lawyers, consider looking into their background, experience level, client reviews, and areas of specialization. Some attorneys focus primarily on estate planning, while others dedicate most of their practice to probate administration and litigation.
 
-## What Are the Key ?
+## What Are the Key Qualities of a Good Probate Attorney?
 
 Regardless of which specific attorney you're considering, certain qualities are essential in probate representation. First and foremost, look for someone with substantial experience in Illinois probate law. The rules and procedures can vary significantly from state to state, so local expertise matters tremendously.
 
@@ -20,7 +20,7 @@ Fee structure transparency is another crucial factor. Probate attorneys typicall
 
 Finally, consider the attorney's reputation within the local legal community. Attorneys who are well-regarded by their peers and have positive relationships with probate court personnel can often navigate the system more efficiently, potentially saving your family time and money.
 
-## The Illinois Probate Process: Why Legal Expertise Matters?
+## The Illinois Probate Process: Why Legal Expertise Matters
 
 Illinois probate law includes specific requirements for everything from filing deadlines to creditor notifications. Missing a deadline or failing to follow proper procedures can result in costly delays or legal complications for your family.
 

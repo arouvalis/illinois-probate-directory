@@ -32,13 +32,13 @@ Consider the attorney's reputation in the local legal community and their track 
 
 Finally, discuss fees upfront and make sure you understand how the attorney charges for their services. Many probate attorneys work on an hourly basis, while others may offer flat fees for certain services.
 
-## Moving Forward with Confidence?
+## Moving Forward with Confidence
 
 Choosing the right probate attorney is an important decision that can significantly impact how smoothly your loved one's estate is settled. Take time to research your options, schedule consultations with potential attorneys, and ask questions about their experience and approach to probate cases.
 
 Remember that while the probate process may seem daunting, you don't have to navigate it alone. With the right legal guidance, you can ensure your loved one's final wishes are honored and their estate is distributed according to Illinois law.
 
-## Find Your Elgin Probate Attorney Today?
+## Find Your Elgin Probate Attorney Today
 
 If you're ready to find a qualified probate attorney in Elgin, Illinois, IllinoisProbateDirectory.com can help connect you with experienced local attorneys who understand the complexities of Illinois probate law. Visit our directory to explore your options and take the first step toward resolving your probate matter with confidence.
 

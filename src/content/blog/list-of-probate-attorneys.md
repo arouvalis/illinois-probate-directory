@@ -24,7 +24,7 @@ Not all attorneys are created equal, and not every lawyer who handles probate do
 
 **Transparent fee structure.** Probate attorneys typically charge either a flat fee, an hourly rate, or a percentage of the estate's value. Each approach has pros and cons depending on the complexity of your case. What matters most is that the attorney clearly explains their fees upfront with no surprises later.
 
-## Questions to Ask Before Hiring?
+## Questions to Ask Before Hiring
 
 Once you have a list of potential attorneys, schedule consultations with your top choices. Many probate lawyers offer free or low-cost initial meetings. Use this time to ask important questions.
 
@@ -46,7 +46,7 @@ Online directories offer another approach. IllinoisProbateDirectory.com maintain
 
 State and local bar associations also provide referral services. The Illinois State Bar Association and many county bar associations offer lawyer referral programs that can connect you with probate attorneys in your area.
 
-## Red Flags to Watch For?
+## Red Flags to Watch For
 
 While most attorneys are professional and ethical, be cautious if you encounter these warning signs during your search.
 
@@ -56,7 +56,7 @@ Be wary of unusually low fees without explanation. If one attorney quotes a fee 
 
 Pay attention to communication during the consultation process. If the attorney is hard to reach before you've even hired them, imagine how difficult communication might be once you're a client and they have your retainer.
 
-## Taking the Next Step?
+## Taking the Next Step
 
 Dealing with probate while grieving is one of life's more difficult challenges. The right attorney can shoulder much of the burden, allowing you to focus on your family during a hard time.
 

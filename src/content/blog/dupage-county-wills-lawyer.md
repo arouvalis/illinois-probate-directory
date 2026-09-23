@@ -12,7 +12,7 @@ Most estate planning attorneys in DuPage County also handle the broader picture:
 
 On the probate side, after a death, a wills lawyer helps the executor file the will with the court, open the estate, and navigate the probate process through to final distribution. In DuPage County, that means working through the **DuPage County Circuit Court Probate Division in Wheaton**.
 
-## Probate in DuPage County: What to Expect?
+## Probate in DuPage County: What to Expect
 
 DuPage County is one of the busier probate courts in Illinois, which reflects the county's size and the significant real estate values in communities like Naperville, Wheaton, Downers Grove, and Elmhurst.
 
@@ -34,7 +34,7 @@ A few things worth evaluating when you're choosing an attorney:
 
 **Communication style** — probate takes months. You want someone who keeps you informed and is accessible when questions come up.
 
-## Find a Wills or Probate Attorney in DuPage County?
+## Find a Wills or Probate Attorney in DuPage County
 
 [IllinoisProbateDirectory.com](https://www.illinoisprobatedirectory.com) lists probate and estate attorneys serving DuPage County, including attorneys in Naperville, Wheaton, Downers Grove, Elmhurst, and surrounding communities. Browse profiles and look for attorneys with probate-specific experience who offer free consultations.
 

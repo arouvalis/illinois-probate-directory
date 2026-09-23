@@ -3,6 +3,21 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/attorney/will-county-bar-association-joliet",
+        destination: "/county/will",
+        permanent: true,
+      },
+      {
+        source: "/attorney/maria-mastrolonardo-probate-real-estate-specialist-re-max-enterprises-naperville",
+        destination: "/county/dupage",
+        permanent: true,
+      },
+      {
+        source: "/attorney/lewis-levinson-law-office-twin-lakes",
+        destination: "/attorney/lewis-levinson-richmond",
+        permanent: true,
+      },
+      {
         source: "/blog/inherited-house-illinois",
         destination: "/resources/selling-inherited-property-illinois",
         permanent: true,

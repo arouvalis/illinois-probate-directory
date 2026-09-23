@@ -3,6 +3,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/attorney/richard-r-rodriguez-divorce-family-law-mchenry",
+        destination: "/county/mchenry",
+        permanent: true,
+      },
+      {
         source: "/attorney/will-county-law-library-joliet",
         destination: "/county/will",
         permanent: true,

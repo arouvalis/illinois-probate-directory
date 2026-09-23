@@ -55,8 +55,7 @@ const COUNTY_BLOG_LINKS: Record<string, { title: string; href: string }[]> = {
     { title: "Chicago Probate Real Estate Help", href: "https://www.chicagoprobatespecialist.com" },
     { title: "Probate Attorneys in Northbrook, IL", href: "/city/northbrook-probate-attorney" },
     { title: "Probate Attorneys in Orland Park, IL", href: "/city/orland-park-probate-attorney" },
-    { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
-    { title: "What to Do With an Inherited House in Illinois", href: "/blog/inherited-house-illinois" },
+    { title: "Selling an Inherited House in Illinois", href: "/resources/selling-inherited-property-illinois" },
     { title: "Joliet Probate & Estate Planning Guide", href: "/blog/joliet-wills-estates-attorney" },
   ],
   DuPage: [
@@ -65,13 +64,12 @@ const COUNTY_BLOG_LINKS: Record<string, { title: string; href: string }[]> = {
     { title: "Finding a Probate Attorney in Hinsdale", href: "/blog/probate-attorney-hinsdale" },
     { title: "Finding a Probate Attorney in Burr Ridge", href: "/blog/probate-attorney-burr-ridge" },
     { title: "Estate Law in Arlington Heights", href: "/blog/estate-law-arlington-heights-il" },
-    { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
+    { title: "Selling an Inherited House in Illinois", href: "/resources/selling-inherited-property-illinois" },
   ],
   Will: [
     { title: "Probate Attorneys in Joliet, IL", href: "/city/joliet-probate-attorney" },
     { title: "Joliet Probate & Estate Planning Guide", href: "/blog/joliet-wills-estates-attorney" },
-    { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
-    { title: "What to Do With an Inherited House in Illinois", href: "/blog/inherited-house-illinois" },
+    { title: "Selling an Inherited House in Illinois", href: "/resources/selling-inherited-property-illinois" },
   ],
   Kane: [
     { title: "Probate Attorneys in Elgin, IL", href: "/city/elgin-probate-attorney" },
@@ -79,20 +77,17 @@ const COUNTY_BLOG_LINKS: Record<string, { title: string; href: string }[]> = {
     { title: "Finding a Probate Attorney in Aurora: Complete Guide", href: "/blog/probate-attorney-aurora-illinois" },
     { title: "Wills & Probate Attorney in Gilberts, IL", href: "/blog/gilberts-wills-attorney" },
     { title: "Estate Law in Arlington Heights", href: "/blog/estate-law-arlington-heights-il" },
-    { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
-    { title: "What to Do With an Inherited House in Illinois", href: "/blog/inherited-house-illinois" },
+    { title: "Selling an Inherited House in Illinois", href: "/resources/selling-inherited-property-illinois" },
   ],
   McHenry: [
     { title: "Probate Attorneys in Crystal Lake, IL", href: "/city/crystal-lake-probate-attorney" },
     { title: "McHenry County Probate & Estate Lawyers", href: "/blog/mchenry-county-lawyers-probate-estate" },
-    { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
-    { title: "What to Do With an Inherited House in Illinois", href: "/blog/inherited-house-illinois" },
+    { title: "Selling an Inherited House in Illinois", href: "/resources/selling-inherited-property-illinois" },
   ],
   Lake: [
     { title: "Probate Attorneys in Libertyville, IL", href: "/city/libertyville-probate-attorney" },
     { title: "Lake County IL Probate: A Complete Guide", href: "/blog/lake-county-il-probate" },
-    { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
-    { title: "What to Do With an Inherited House in Illinois", href: "/blog/inherited-house-illinois" },
+    { title: "Selling an Inherited House in Illinois", href: "/resources/selling-inherited-property-illinois" },
   ],
 };
 

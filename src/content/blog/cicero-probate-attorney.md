@@ -98,4 +98,4 @@ Ready to find qualified legal help near you? Browse IllinoisProbateDirectory.com
 
 [Browse Cicero probate attorneys →](/county/cook)
 
-*Also see: [Cook County Probate Attorneys](/county/cook) · [Can You Sell a House in Probate in Illinois?](/blog/sell-house-in-probate-illinois)*
+*Also see: [Cook County Probate Attorneys](/county/cook) · [Selling an Inherited House in Illinois](/resources/selling-inherited-property-illinois)*

@@ -104,6 +104,6 @@ Probate doesn't have to be a nightmare. With the right guidance, you can settle 
 
 IllinoisProbateDirectory.com provides a searchable directory of over 585 probate attorneys across the state, including many who serve Lake County and the surrounding area. Browse verified profiles and look for attorneys familiar with the 19th Judicial Circuit Court, including those offering free initial consultations.
 
-*Related: [Can You Sell a House in Probate in Illinois?](/blog/sell-house-in-probate-illinois)*
+*Related: [Selling an Inherited House in Illinois](/resources/selling-inherited-property-illinois)*
 
 *Browse attorneys: [Lake County Probate Attorneys](/county/lake) · [All Illinois Counties](/)*

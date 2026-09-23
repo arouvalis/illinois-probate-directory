@@ -58,4 +58,4 @@ Browse Cook County probate attorneys on Illinois Probate Directory — many serv
 
 ---
 
-*Related: [Probate Attorneys in Northbrook, IL](/city/northbrook-probate-attorney) · [Probate Attorneys in Barrington, IL](/city/barrington-probate-attorney) · [Can You Sell a House in Probate in Illinois?](/blog/sell-house-in-probate-illinois)*
+*Related: [Probate Attorneys in Northbrook, IL](/city/northbrook-probate-attorney) · [Probate Attorneys in Barrington, IL](/city/barrington-probate-attorney) · [Selling an Inherited House in Illinois](/resources/selling-inherited-property-illinois)*

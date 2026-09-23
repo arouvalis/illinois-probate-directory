@@ -125,7 +125,6 @@ export default function JolietProbatePage() {
                 {[
                   { title: "Joliet Probate & Estate Planning Guide", href: "/blog/joliet-wills-estates-attorney" },
                   { title: "How Probate Works in Illinois", href: "/resources/how-probate-works-illinois" },
-                  { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
                   { title: "Selling Inherited Property in Illinois", href: "/resources/selling-inherited-property-illinois" },
                 ].map((post) => (
                   <li key={post.href}>

@@ -113,9 +113,7 @@ export default function NapervilleProbatePage() {
                 {[
                   { title: "How Probate Works in Illinois", href: "/resources/how-probate-works-illinois" },
                   { title: "Naperville, IL Probate: A Complete Guide", href: "/blog/probate-attorney-naperville-illinois" },
-                  { title: "Executor Selling a House in Illinois", href: "/blog/executor-selling-house-illinois" },
                   { title: "Selling Inherited Property in Illinois", href: "/resources/selling-inherited-property-illinois" },
-                  { title: "What to Do With an Inherited House in Illinois", href: "/blog/inherited-house-illinois" },
                 ].map((post) => (
                   <li key={post.href}>
                     <Link href={post.href} className="text-sm text-navy-700 hover:text-navy-900 hover:underline">

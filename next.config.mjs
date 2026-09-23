@@ -3,6 +3,31 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/blog/inherited-house-illinois",
+        destination: "/resources/selling-inherited-property-illinois",
+        permanent: true,
+      },
+      {
+        source: "/blog/executor-selling-house-illinois",
+        destination: "/resources/selling-inherited-property-illinois",
+        permanent: true,
+      },
+      {
+        source: "/blog/sell-house-in-probate-illinois",
+        destination: "/resources/selling-inherited-property-illinois",
+        permanent: true,
+      },
+      {
+        source: "/blog/can-executor-sell-house-illinois",
+        destination: "/resources/selling-inherited-property-illinois",
+        permanent: true,
+      },
+      {
+        source: "/blog/selling-inherited-house-illinois",
+        destination: "/resources/selling-inherited-property-illinois",
+        permanent: true,
+      },
+      {
         source: "/county/mchenry-county",
         destination: "/county/mchenry",
         permanent: true,

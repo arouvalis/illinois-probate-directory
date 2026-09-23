@@ -42,6 +42,6 @@ DuPage County has strong legal talent in estate law — finding the right fit is
 
 ---
 
-*Related: [Executor Selling a House in Illinois: Your Step-by-Step Guide](/blog/executor-selling-house-illinois)*
+*Related: [Selling an Inherited House in Illinois](/resources/selling-inherited-property-illinois)*
 
 *Browse attorneys: [DuPage County Probate Attorneys](/county/dupage) · [All Illinois Counties](/)*

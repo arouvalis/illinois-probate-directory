@@ -3,6 +3,106 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/attorney/will-county-law-library-joliet",
+        destination: "/county/will",
+        permanent: true,
+      },
+      {
+        source: "/attorney/will-county-circuit-clerk-joliet",
+        destination: "/county/will",
+        permanent: true,
+      },
+      {
+        source: "/attorney/collins-mary-l-woodridge",
+        destination: "/county/dupage",
+        permanent: true,
+      },
+      {
+        source: "/attorney/collins-disability-law-woodridge",
+        destination: "/county/dupage",
+        permanent: true,
+      },
+      {
+        source: "/attorney/terrence-j-mckenna-crystal-lake",
+        destination: "/attorney/mckenna-law-pc-crystal-lake",
+        permanent: true,
+      },
+      {
+        source: "/attorney/johnson-jennifer-l-crystal-lake",
+        destination: "/attorney/zanck-coen-wright-saladin-p-c-crystal-lake",
+        permanent: true,
+      },
+      {
+        source: "/attorney/patricia-c-kraft-attorney-at-law-crystal-lake",
+        destination: "/attorney/the-law-offices-of-stacy-stusowski-pc-crystal-lake",
+        permanent: true,
+      },
+      {
+        source: "/attorney/peter-f-carroll-woodstock",
+        destination: "/attorney/carroll-carroll-attorneys-at-law-woodstock",
+        permanent: true,
+      },
+      {
+        source: "/attorney/the-law-firm-of-zohaib-ali-woodridge",
+        destination: "/attorney/zara-law-group-woodridge",
+        permanent: true,
+      },
+      {
+        source: "/attorney/merle-c-bassett-wood-river",
+        destination: "/attorney/bassett-gabriel-law-office-p-c-wood-river",
+        permanent: true,
+      },
+      {
+        source: "/attorney/mcandrews-law-mchenry",
+        destination: "/attorney/law-office-of-patrick-j-mcandrews-mchenry",
+        permanent: true,
+      },
+      {
+        source: "/attorney/matuszewich-kelly-llp-lake-in-the-hills",
+        destination: "/attorney/franks-kelly-matuszewich-and-andrle-attorneys-at-law-lake-in-the-hills",
+        permanent: true,
+      },
+      {
+        source: "/attorney/peck-ritchey-llc-northbrook",
+        destination: "/attorney/peck-ritchey-llc-chicago",
+        permanent: true,
+      },
+      {
+        source: "/attorney/mohammed-shamaileh-tabahi-llc-elmwood-park",
+        destination: "/attorney/the-shamaileh-law-firm-llc-glenview",
+        permanent: true,
+      },
+      {
+        source: "/attorney/kazdalaw-oak-lawn",
+        destination: "/attorney/kazdalaw-p-c-tinley-park",
+        permanent: true,
+      },
+      {
+        source: "/attorney/o-flaherty-law-evanston",
+        destination: "/attorney/o-flaherty-law-chicago",
+        permanent: true,
+      },
+      {
+        source: "/attorney/evans-legacy-law-group-llc-lake-forest",
+        destination: "/attorney/evans-legacy-law-group-libertyville",
+        permanent: true,
+      },
+      {
+        source: "/attorney/meents-law-p-c-formerly-fisher-meents-llc-wilmington",
+        destination: "/attorney/meents-law-p-c-channahon",
+        permanent: true,
+      },
+      {
+        source: "/attorney/cowlin-naughton-curran-cuda-hanzel-woodstock",
+        destination: "/attorney/cowlin-naughton-curran-cuda-hanzel-crystal-lake",
+        permanent: true,
+      },
+      {
+        source: "/attorney/bernabei-balestri-fiocchi-spring-valley",
+        destination: "/attorney/bernabei-balestri-fiocchi-la-salle",
+        permanent: true,
+      },
+      {
         source: "/attorney/will-county-bar-association-joliet",
         destination: "/county/will",
         permanent: true,

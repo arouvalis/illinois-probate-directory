@@ -5,7 +5,7 @@ import AttorneyCard from "@/components/AttorneyCard";
 import ForFamiliesBanner from "@/components/ForFamiliesBanner";
 
 export const metadata: Metadata = {
-  title: "Probate Attorneys in Barrington, IL | Illinois Probate Directory",
+  title: "Probate Attorneys in Barrington, IL",
   description: "Find experienced probate attorneys in Barrington, Illinois. Barrington is in Cook County — probate cases are filed at the Richard J. Daley Center in Chicago. Browse verified local attorneys.",
   alternates: { canonical: "https://www.illinoisprobatedirectory.com/city/barrington-probate-attorney" },
 };

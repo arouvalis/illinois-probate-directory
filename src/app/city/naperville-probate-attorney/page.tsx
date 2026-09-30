@@ -6,7 +6,7 @@ import { getCityGuideHtml } from "@/lib/cityGuide";
 import ForFamiliesBanner from "@/components/ForFamiliesBanner";
 
 export const metadata: Metadata = {
-  title: "Probate Attorneys in Naperville, IL | Illinois Probate Directory",
+  title: "Probate Attorneys in Naperville, IL",
   description: "Find experienced probate attorneys in Naperville, Illinois. Naperville spans DuPage and Will counties — most probate cases are filed at the DuPage County Courthouse in Wheaton. Browse verified local attorneys.",
   alternates: { canonical: "https://www.illinoisprobatedirectory.com/city/naperville-probate-attorney" },
 };

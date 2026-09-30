@@ -5,7 +5,7 @@ import AttorneyCard from "@/components/AttorneyCard";
 import ForFamiliesBanner from "@/components/ForFamiliesBanner";
 
 export const metadata: Metadata = {
-  title: "Probate Attorneys in Elgin, IL | Illinois Probate Directory",
+  title: "Probate Attorneys in Elgin, IL",
   description: "Find experienced probate attorneys in Elgin, Illinois. Elgin is in Kane County — probate cases are filed at the Kane County Courthouse in Geneva. Browse verified local attorneys.",
   alternates: { canonical: "https://www.illinoisprobatedirectory.com/city/elgin-probate-attorney" },
 };

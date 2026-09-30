@@ -5,7 +5,7 @@ import AttorneyCard from "@/components/AttorneyCard";
 import ForFamiliesBanner from "@/components/ForFamiliesBanner";
 
 export const metadata: Metadata = {
-  title: "Probate Attorneys in Libertyville, IL | Illinois Probate Directory",
+  title: "Probate Attorneys in Libertyville, IL",
   description: "Find experienced probate attorneys in Libertyville, Illinois. Libertyville is in Lake County — probate cases are filed at the Lake County Courthouse in Waukegan. Browse verified local attorneys.",
   alternates: { canonical: "https://www.illinoisprobatedirectory.com/city/libertyville-probate-attorney" },
 };

@@ -5,7 +5,7 @@ import AttorneyCard from "@/components/AttorneyCard";
 import ForFamiliesBanner from "@/components/ForFamiliesBanner";
 
 export const metadata: Metadata = {
-  title: "Probate Attorneys in Palos Heights, IL | Illinois Probate Directory",
+  title: "Probate Attorneys in Palos Heights, IL",
   description: "Find experienced probate attorneys in Palos Heights, Illinois. Palos Heights is in Cook County — probate cases are filed at the Richard J. Daley Center in Chicago. Browse verified local attorneys.",
   alternates: { canonical: "https://www.illinoisprobatedirectory.com/city/palos-heights-probate-attorney" },
 };

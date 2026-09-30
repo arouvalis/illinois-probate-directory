@@ -5,7 +5,7 @@ import AttorneyCard from "@/components/AttorneyCard";
 import ForFamiliesBanner from "@/components/ForFamiliesBanner";
 
 export const metadata: Metadata = {
-  title: "Probate Attorneys in Northbrook, IL | Illinois Probate Directory",
+  title: "Probate Attorneys in Northbrook, IL",
   description: "Find experienced probate attorneys in Northbrook, Illinois. Northbrook is in Cook County — probate cases are filed at the Richard J. Daley Center in Chicago. Browse verified local attorneys.",
   alternates: { canonical: "https://www.illinoisprobatedirectory.com/city/northbrook-probate-attorney" },
 };

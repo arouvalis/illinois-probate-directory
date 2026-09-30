@@ -5,7 +5,7 @@ import AttorneyCard from "@/components/AttorneyCard";
 import ForFamiliesBanner from "@/components/ForFamiliesBanner";
 
 export const metadata: Metadata = {
-  title: "Probate Attorneys in Crystal Lake, IL | Illinois Probate Directory",
+  title: "Probate Attorneys in Crystal Lake, IL",
   description: "Find experienced probate attorneys in Crystal Lake, Illinois. Crystal Lake is in McHenry County — probate cases are filed at the McHenry County Courthouse in Woodstock. Browse verified local attorneys.",
   alternates: { canonical: "https://www.illinoisprobatedirectory.com/city/crystal-lake-probate-attorney" },
 };

@@ -6,7 +6,7 @@ import { getCityGuideHtml } from "@/lib/cityGuide";
 import ForFamiliesBanner from "@/components/ForFamiliesBanner";
 
 export const metadata: Metadata = {
-  title: "Probate Attorneys in Joliet, IL | Illinois Probate Directory",
+  title: "Probate Attorneys in Joliet, IL",
   description: "Find experienced probate attorneys in Joliet, Illinois. Joliet is the Will County seat — probate cases are filed at the Will County Courthouse. Browse verified local attorneys.",
   alternates: { canonical: "https://www.illinoisprobatedirectory.com/city/joliet-probate-attorney" },
 };

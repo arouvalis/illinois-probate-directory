@@ -74,7 +74,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const description = firstPara ? firstPara.replace(/\*\*/g, '').slice(0, 155).trim() + '...' : `${title} — Illinois Probate Directory`;
 
   return {
-    title: `${title} | Illinois Probate Directory`,
+    title,
     description,
     alternates: {
       canonical: `https://www.illinoisprobatedirectory.com/blog/${params.slug}`,

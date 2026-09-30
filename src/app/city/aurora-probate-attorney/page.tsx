@@ -6,7 +6,7 @@ import { getCityGuideHtml } from "@/lib/cityGuide";
 import ForFamiliesBanner from "@/components/ForFamiliesBanner";
 
 export const metadata: Metadata = {
-  title: "Probate Attorneys in Aurora, IL | Illinois Probate Directory",
+  title: "Probate Attorneys in Aurora, IL",
   description: "Find experienced probate attorneys in Aurora, Illinois. Aurora spans Kane and DuPage counties — most probate cases are filed at the Kane County Courthouse in Geneva. Browse verified local attorneys.",
   alternates: { canonical: "https://www.illinoisprobatedirectory.com/city/aurora-probate-attorney" },
 };

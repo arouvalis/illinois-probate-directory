@@ -5,7 +5,7 @@ import AttorneyCard from "@/components/AttorneyCard";
 import ForFamiliesBanner from "@/components/ForFamiliesBanner";
 
 export const metadata: Metadata = {
-  title: "Probate Attorneys in Orland Park, IL | Illinois Probate Directory",
+  title: "Probate Attorneys in Orland Park, IL",
   description: "Find experienced probate attorneys in Orland Park, Illinois. Orland Park is in Cook County — probate cases are filed at the Richard J. Daley Center in Chicago. Browse verified local attorneys.",
   alternates: { canonical: "https://www.illinoisprobatedirectory.com/city/orland-park-probate-attorney" },
 };

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { trackEvent } from "@/lib/analytics";
 const COUNTIES = ["Cook", "Lake", "Will", "Kane", "McHenry", "DuPage", "Other"];
 
 interface FormData {
@@ -43,6 +44,7 @@ export default function HomepageLeadForm() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Something went wrong.");
       setSubmitted(true);
+      trackEvent("generate_lead", { form_name: "homepage", has_real_estate: form.hasRealEstate || undefined });
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Something went wrong.");
     } finally {

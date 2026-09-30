@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { trackEvent } from "@/lib/analytics";
 interface ContactFormProps {
   attorneyName: string;
   attorneySlug: string;
@@ -63,6 +64,7 @@ export default function ContactForm({ attorneyName, attorneySlug }: ContactFormP
       // Contact details returned from server — never in initial page HTML
       setRevealed({ phone: data.phone ?? null, website: data.website ?? null });
       setSubmitted(true);
+      trackEvent("generate_lead", { form_name: "contact", has_real_estate: form.hasRealEstate || undefined });
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Something went wrong.");
     } finally {

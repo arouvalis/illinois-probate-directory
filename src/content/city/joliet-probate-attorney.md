@@ -1,5 +1,3 @@
-# Joliet Probate & Estate Planning: A Complete Guide for Will County Families
-
 Whether you're planning ahead to protect your own family's future, or you're navigating a loved one's estate after a death, dealing with wills, trusts, and probate can feel overwhelming. This guide covers both sides of that journey for Joliet and Will County residents — what to do now to plan ahead, and what to expect if you're handling an estate after a loss.
 
 ## Estate Planning: Protecting Your Family Before You Need To

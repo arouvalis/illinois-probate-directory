@@ -1,12 +1,10 @@
-# Naperville, IL Probate: A Complete Guide for Families Settling an Estate
-
 Losing a loved one is difficult enough without having to navigate complex legal processes. If you're facing probate in Naperville, IL, you're likely feeling overwhelmed by paperwork, court requirements, and unfamiliar terminology. This guide breaks down everything you need to know about settling an estate in this DuPage County city, and how to find the right probate attorney to help.
 
 ## What Is Probate and When Is It Required?
 
 Probate is the legal process of settling a deceased person's estate. It involves validating their will (if one exists), identifying and valuing assets, paying debts and taxes, and distributing remaining property to beneficiaries.
 
-In Illinois, probate is typically required when someone dies owning assets solely in their name worth more than $100,000. If the deceased owned real estate in their name alone, probate is almost always necessary regardless of value.
+In Illinois, probate is typically required when someone dies owning assets solely in their name worth more than $150,000 ($100,000 for deaths before August 15, 2025). If the deceased owned real estate in their name alone, probate is almost always necessary regardless of value.
 
 Common assets that trigger probate include:
 - Houses, condos, or land titled only in the deceased's name
@@ -43,7 +41,7 @@ Illinois offers several probate options depending on the estate's size and compl
 
 **Supervised Administration.** Here, the court oversees major decisions, and the representative must get court approval before selling property, paying certain debts, or making distributions. This process takes longer and costs more, but may be appropriate when beneficiaries disagree or there are concerns about proper estate management.
 
-**Small Estate Affidavit.** If the estate contains only personal property (no real estate) valued at $100,000 or less, heirs may be able to use a small estate affidavit instead of formal probate — a simplified process that allows collection of assets without opening a court case.
+**Small Estate Affidavit.** If the estate contains only personal property (no real estate) valued at $150,000 or less ($100,000 for deaths before August 15, 2025), heirs may be able to use a small estate affidavit instead of formal probate — a simplified process that allows collection of assets without opening a court case.
 
 ## The Naperville Probate Process Step by Step
 
@@ -63,7 +61,7 @@ Understanding what to expect helps reduce stress and allows you to plan accordin
 
 ## How Long Does Probate Take in DuPage County?
 
-Most straightforward probate cases in DuPage County take between six months and one year. The mandatory creditor claim period is six months from the representative's appointment, which sets a minimum timeline.
+Most straightforward probate cases in DuPage County take between six months and one year. The creditor claim period runs at least six months from the first publication of the notice to creditors, which sets a minimum timeline.
 
 Factors that can extend the process include disputes among beneficiaries, complex assets like business interests, real estate that needs to be sold, tax issues or audits, and missing heirs who must be located.
 
@@ -71,7 +69,7 @@ Factors that can extend the process include disputes among beneficiaries, comple
 
 Probate expenses vary based on estate complexity. Typical costs include:
 
-- Court filing fees ($350–$500 depending on estate value)
+- Court filing fees, which vary by county and estate value
 - Publication fees for creditor notice ($100–$300)
 - Attorney fees (often 2–4% of estate value for routine cases)
 - Representative compensation (reasonable fees based on time and effort)

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getAttorneysByCity } from "@/lib/attorneys";
 import AttorneyCard from "@/components/AttorneyCard";
+import { getCityGuideHtml } from "@/lib/cityGuide";
 import ForFamiliesBanner from "@/components/ForFamiliesBanner";
 
 export const metadata: Metadata = {
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default function JolietProbatePage() {
+  const guideHtml = getCityGuideHtml("joliet-probate-attorney");
   const attorneys = getAttorneysByCity("Joliet");
   const verified = attorneys.filter((a) => a.probate_verified === "YES");
   const freeConsult = attorneys.filter((a) => a.free_consultation === "YES");
@@ -72,6 +74,12 @@ export default function JolietProbatePage() {
                 <AttorneyCard key={attorney.slug} attorney={attorney} />
               ))}
             </div>
+            {guideHtml && (
+              <article
+                className="prose prose-lg max-w-none mt-12 pt-10 border-t border-gray-200 prose-headings:font-serif prose-headings:text-navy-800 prose-a:text-gold-600"
+                dangerouslySetInnerHTML={{ __html: guideHtml }}
+              />
+            )}
           </div>
 
           {/* Sidebar */}
@@ -123,7 +131,6 @@ export default function JolietProbatePage() {
               </h3>
               <ul className="space-y-2">
                 {[
-                  { title: "Joliet Probate & Estate Planning Guide", href: "/blog/joliet-wills-estates-attorney" },
                   { title: "How Probate Works in Illinois", href: "/resources/how-probate-works-illinois" },
                   { title: "Selling Inherited Property in Illinois", href: "/resources/selling-inherited-property-illinois" },
                 ].map((post) => (

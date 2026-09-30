@@ -3,6 +3,21 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/blog/probate-attorney-naperville-illinois",
+        destination: "/city/naperville-probate-attorney",
+        permanent: true,
+      },
+      {
+        source: "/blog/joliet-wills-estates-attorney",
+        destination: "/city/joliet-probate-attorney",
+        permanent: true,
+      },
+      {
+        source: "/blog/probate-attorney-aurora-illinois",
+        destination: "/city/aurora-probate-attorney",
+        permanent: true,
+      },
+      {
         source: "/county/cook-county",
         destination: "/county/cook",
         permanent: true,
@@ -184,17 +199,17 @@ const nextConfig = {
       },
       {
         source: "/blog/joliet-estate-planning-attorneys",
-        destination: "/blog/joliet-wills-estates-attorney",
+        destination: "/city/joliet-probate-attorney",
         permanent: true,
       },
       {
         source: "/blog/joliet-will-lawyer",
-        destination: "/blog/joliet-wills-estates-attorney",
+        destination: "/city/joliet-probate-attorney",
         permanent: true,
       },
       {
         source: "/blog/joliet-illinois-probate-lawyers",
-        destination: "/blog/joliet-wills-estates-attorney",
+        destination: "/city/joliet-probate-attorney",
         permanent: true,
       },
       {
@@ -204,7 +219,7 @@ const nextConfig = {
       },
       {
         source: "/blog/naperville-il-probate",
-        destination: "/blog/probate-attorney-naperville-illinois",
+        destination: "/city/naperville-probate-attorney",
         permanent: true,
       },
       {

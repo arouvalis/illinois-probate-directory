@@ -1,5 +1,3 @@
-# Finding the Right Probate Attorney in Aurora, Illinois: Your Complete Guide
-
 Dealing with the loss of a loved one is never easy, and navigating the probate process during this difficult time can feel overwhelming. If you're in Aurora, Illinois, and need to settle an estate, finding the right probate attorney can make all the difference in ensuring the process goes smoothly and efficiently.
 
 ## What Should You Know About Probate in Illinois?

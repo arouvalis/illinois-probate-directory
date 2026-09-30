@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getAttorneysByCity } from "@/lib/attorneys";
 import AttorneyCard from "@/components/AttorneyCard";
+import { getCityGuideHtml } from "@/lib/cityGuide";
 import ForFamiliesBanner from "@/components/ForFamiliesBanner";
 
 export const metadata: Metadata = {
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default function NapervilleProbatePage() {
+  const guideHtml = getCityGuideHtml("naperville-probate-attorney");
   const attorneys = getAttorneysByCity("Naperville");
   const verified = attorneys.filter((a) => a.probate_verified === "YES");
   const freeConsult = attorneys.filter((a) => a.free_consultation === "YES");
@@ -69,6 +71,12 @@ export default function NapervilleProbatePage() {
                 <AttorneyCard key={attorney.slug} attorney={attorney} />
               ))}
             </div>
+            {guideHtml && (
+              <article
+                className="prose prose-lg max-w-none mt-12 pt-10 border-t border-gray-200 prose-headings:font-serif prose-headings:text-navy-800 prose-a:text-gold-600"
+                dangerouslySetInnerHTML={{ __html: guideHtml }}
+              />
+            )}
           </div>
 
           <aside className="lg:w-64 shrink-0 space-y-6">
@@ -112,7 +120,6 @@ export default function NapervilleProbatePage() {
               <ul className="space-y-2">
                 {[
                   { title: "How Probate Works in Illinois", href: "/resources/how-probate-works-illinois" },
-                  { title: "Naperville, IL Probate: A Complete Guide", href: "/blog/probate-attorney-naperville-illinois" },
                   { title: "Selling Inherited Property in Illinois", href: "/resources/selling-inherited-property-illinois" },
                 ].map((post) => (
                   <li key={post.href}>

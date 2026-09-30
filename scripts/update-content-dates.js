@@ -87,7 +87,11 @@ for (const f of fs.readdirSync(BLOG).filter((f) => f.endsWith(".md"))) {
     if (e.name !== "page.tsx") continue;
     const rel = path.relative(ROOT, full);
     const route = "/" + path.relative(APP, dir).split(path.sep).filter(Boolean).join("/");
-    record(route === "/" ? "/" : route, hash(fs.readFileSync(full, "utf8")), fileDate(rel));
+    // City pages also render a guide from src/content/city/<slug>.md
+    const guideRel = route.startsWith("/city/") ? `src/content/city/${route.slice(6)}.md` : null;
+    const guide = guideRel && fs.existsSync(path.join(ROOT, guideRel)) ? fs.readFileSync(path.join(ROOT, guideRel), "utf8") : "";
+    const seed = [fileDate(rel), guide ? fileDate(guideRel) : null].filter(Boolean).sort().pop();
+    record(route === "/" ? "/" : route, hash(fs.readFileSync(full, "utf8") + guide), seed);
   }
 })(APP);
 

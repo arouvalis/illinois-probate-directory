@@ -92,14 +92,12 @@ Location and convenience matter too. A Naperville-based attorney, or one who reg
 
 Probate law involves specific procedures and deadlines. Missing a deadline or filing incorrect paperwork can create serious problems. An experienced local attorney knows the preferences of DuPage and Will County courts and can guide you through the process efficiently.
 
-IllinoisProbateDirectory.com maintains a comprehensive listing of probate attorneys serving Naperville and surrounding communities, making it easy to compare your options and find qualified local help.
-
 ## Take the Next Step
 
 Handling probate while grieving is challenging, but you don't have to figure it out alone. Whether you need help with a straightforward estate or face a complicated situation with disputes or unusual assets, professional guidance makes a significant difference.
 
-Visit IllinoisProbateDirectory.com to browse probate attorneys serving Naperville and DuPage County. Compare your options and take the first step toward settling your loved one's estate with confidence.
+Start with the Naperville attorneys listed above. Many offer an initial consultation, so you can talk with a few before deciding.
 
-[Browse Naperville probate attorneys →](/city/naperville-probate-attorney)
+If the estate includes a house that needs to be sold, cleaned out, or maintained while probate is ongoing, we can help with that side. [Get help with the property side →](/for-families)
 
-*Browse attorneys: [DuPage County Probate Attorneys](/county/dupage) · [Will County Probate Attorneys](/county/will) · [All Illinois Counties](/)*
+*Browse more attorneys: [DuPage County Probate Attorneys](/county/dupage) · [Will County Probate Attorneys](/county/will) · [All Illinois Counties](/)*

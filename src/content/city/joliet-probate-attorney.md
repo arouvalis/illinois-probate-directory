@@ -87,12 +87,12 @@ Whether you're planning ahead or handling an estate after a loss, look for the s
 
 **Relevant specialization.** An attorney who mostly handles personal injury cases isn't necessarily the right fit for a complex estate or a contested will. Look for someone who concentrates specifically in probate and estate law.
 
-## Finding Local Help Through IllinoisProbateDirectory.com
+## Finding the Right Help in Joliet
 
-IllinoisProbateDirectory.com connects Joliet and Will County families with over 585 verified probate and estate planning attorneys across Illinois. You can search by location to find attorneys who know the local court system, compare their experience and specializations, and reach out directly — whether you're setting up a will for the first time or handling a loved one's estate right now.
+The attorneys listed above serve Joliet and Will County families and know the local court system. Compare their experience and practice areas, then reach out directly, whether you're setting up a will for the first time or handling a loved one's estate right now.
 
 Don't navigate this alone, and don't put it off because it's uncomfortable. The peace of mind of having a plan in place, or the right guidance during probate, is worth the effort either way.
 
-[Browse Joliet probate attorneys →](/city/joliet-probate-attorney)
+If the estate includes a house that needs to be sold, cleaned out, or maintained while probate is ongoing, we can help with that side. [Get help with the property side →](/for-families)
 
-*Browse attorneys: [Will County Probate Attorneys](/county/will) · [All Illinois Counties](/)*
+*Browse more attorneys: [Will County Probate Attorneys](/county/will) · [All Illinois Counties](/)*

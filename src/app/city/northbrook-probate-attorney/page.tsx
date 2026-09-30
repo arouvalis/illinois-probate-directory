@@ -99,12 +99,12 @@ export default function NorthbrookProbatePage() {
               </h3>
               <ul className="space-y-2">
                 {[
-                  { name: "Cook County", slug: "cook-county" },
-                  { name: "Lake County", slug: "lake-county" },
-                  { name: "DuPage County", slug: "dupage-county" },
-                  { name: "Kane County", slug: "kane-county" },
-                  { name: "Will County", slug: "will-county" },
-                  { name: "McHenry County", slug: "mchenry-county" },
+                  { name: "Cook County", slug: "cook" },
+                  { name: "Lake County", slug: "lake" },
+                  { name: "DuPage County", slug: "dupage" },
+                  { name: "Kane County", slug: "kane" },
+                  { name: "Will County", slug: "will" },
+                  { name: "McHenry County", slug: "mchenry" },
                 ].map((c) => (
                   <li key={c.slug}>
                     <Link

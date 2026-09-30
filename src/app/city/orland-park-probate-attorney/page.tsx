@@ -99,12 +99,12 @@ export default function OrlandParkProbatePage() {
               </h3>
               <ul className="space-y-2">
                 {[
-                  { name: "Cook County", slug: "cook-county" },
-                  { name: "Will County", slug: "will-county" },
-                  { name: "DuPage County", slug: "dupage-county" },
-                  { name: "Kane County", slug: "kane-county" },
-                  { name: "Lake County", slug: "lake-county" },
-                  { name: "McHenry County", slug: "mchenry-county" },
+                  { name: "Cook County", slug: "cook" },
+                  { name: "Will County", slug: "will" },
+                  { name: "DuPage County", slug: "dupage" },
+                  { name: "Kane County", slug: "kane" },
+                  { name: "Lake County", slug: "lake" },
+                  { name: "McHenry County", slug: "mchenry" },
                 ].map((c) => (
                   <li key={c.slug}>
                     <Link

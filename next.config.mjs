@@ -3,6 +3,31 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/county/cook-county",
+        destination: "/county/cook",
+        permanent: true,
+      },
+      {
+        source: "/county/dupage-county",
+        destination: "/county/dupage",
+        permanent: true,
+      },
+      {
+        source: "/county/kane-county",
+        destination: "/county/kane",
+        permanent: true,
+      },
+      {
+        source: "/county/lake-county",
+        destination: "/county/lake",
+        permanent: true,
+      },
+      {
+        source: "/county/will-county",
+        destination: "/county/will",
+        permanent: true,
+      },
+      {
         source: "/attorney/richard-r-rodriguez-divorce-family-law-mchenry",
         destination: "/county/mchenry",
         permanent: true,

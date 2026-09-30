@@ -99,12 +99,12 @@ export default function CrystalLakeProbatePage() {
               </h3>
               <ul className="space-y-2">
                 {[
-                  { name: "McHenry County", slug: "mchenry-county" },
-                  { name: "Cook County", slug: "cook-county" },
-                  { name: "Lake County", slug: "lake-county" },
-                  { name: "Kane County", slug: "kane-county" },
-                  { name: "Will County", slug: "will-county" },
-                  { name: "DuPage County", slug: "dupage-county" },
+                  { name: "McHenry County", slug: "mchenry" },
+                  { name: "Cook County", slug: "cook" },
+                  { name: "Lake County", slug: "lake" },
+                  { name: "Kane County", slug: "kane" },
+                  { name: "Will County", slug: "will" },
+                  { name: "DuPage County", slug: "dupage" },
                 ].map((c) => (
                   <li key={c.slug}>
                     <Link

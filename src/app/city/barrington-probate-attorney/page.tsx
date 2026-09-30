@@ -91,12 +91,12 @@ export default function BarringtonProbatePage() {
               <h3 className="font-serif font-bold text-navy-800 mb-4">Browse by County</h3>
               <ul className="space-y-2">
                 {[
-                  { name: "Cook County", slug: "cook-county" },
-                  { name: "Lake County", slug: "lake-county" },
-                  { name: "McHenry County", slug: "mchenry-county" },
-                  { name: "Kane County", slug: "kane-county" },
-                  { name: "DuPage County", slug: "dupage-county" },
-                  { name: "Will County", slug: "will-county" },
+                  { name: "Cook County", slug: "cook" },
+                  { name: "Lake County", slug: "lake" },
+                  { name: "McHenry County", slug: "mchenry" },
+                  { name: "Kane County", slug: "kane" },
+                  { name: "DuPage County", slug: "dupage" },
+                  { name: "Will County", slug: "will" },
                 ].map((c) => (
                   <li key={c.slug}>
                     <Link href={`/county/${c.slug}`} className="text-sm text-navy-700 hover:text-navy-900 hover:underline">

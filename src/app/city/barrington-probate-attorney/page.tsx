@@ -59,6 +59,7 @@ export default function BarringtonProbatePage() {
               attorneys={attorneys}
               heading={`${attorneys.length} Probate Attorney Listings in Barrington`}
               gridClassName="space-y-4"
+              insert={<EstateHouseBlock placement="city_barrington" />}
             />
           </div>
 
@@ -117,9 +118,6 @@ export default function BarringtonProbatePage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 pb-12">
-        <EstateHouseBlock placement="city_barrington" className="max-w-3xl" />
-      </div>
     </>
   );
 }

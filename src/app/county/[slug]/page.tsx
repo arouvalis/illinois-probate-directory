@@ -398,8 +398,11 @@ export default function CountyPage({ params }: Props) {
         <div className="flex flex-col lg:flex-row gap-10">
           {/* Main listing */}
           <div className="flex-1 min-w-0">
-            <AttorneySearch attorneys={attorneys} totalCount={attorneys.length} />
-            <EstateHouseBlock placement={`county_${params.slug}`} className="mt-10" />
+            <AttorneySearch
+              attorneys={attorneys}
+              totalCount={attorneys.length}
+              insert={<EstateHouseBlock placement={`county_${params.slug}`} />}
+            />
           </div>
 
           {/* Sidebar */}

@@ -59,6 +59,7 @@ export default function PalosHeightsProbatePage() {
               attorneys={attorneys}
               heading={`${attorneys.length} Probate Attorney Listings in Palos Heights`}
               gridClassName="space-y-4"
+              insert={<EstateHouseBlock placement="city_palos_heights" />}
             />
           </div>
 
@@ -118,9 +119,6 @@ export default function PalosHeightsProbatePage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 pb-12">
-        <EstateHouseBlock placement="city_palos_heights" className="max-w-3xl" />
-      </div>
     </>
   );
 }

@@ -59,6 +59,7 @@ export default function ElginProbatePage() {
               attorneys={attorneys}
               heading={`${attorneys.length} Probate Attorney Listings in Elgin`}
               gridClassName="space-y-4"
+              insert={<EstateHouseBlock placement="city_elgin" />}
             />
           </div>
 
@@ -117,9 +118,6 @@ export default function ElginProbatePage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 pb-12">
-        <EstateHouseBlock placement="city_elgin" className="max-w-3xl" />
-      </div>
     </>
   );
 }

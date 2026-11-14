@@ -63,6 +63,7 @@ export default function OrlandParkProbatePage() {
               attorneys={attorneys}
               heading={`${attorneys.length} Probate Attorney Listings in Orland Park`}
               gridClassName="space-y-4"
+              insert={<EstateHouseBlock placement="city_orland_park" />}
             />
           </div>
 
@@ -134,9 +135,6 @@ export default function OrlandParkProbatePage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 pb-12">
-        <EstateHouseBlock placement="city_orland_park" className="max-w-3xl" />
-      </div>
     </>
   );
 }

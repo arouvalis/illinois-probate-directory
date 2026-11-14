@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, type ReactNode } from "react";
 import AttorneyList from "./AttorneyList";
 import type { Attorney } from "@/lib/attorneys";
 
@@ -8,12 +8,15 @@ interface Props {
   attorneys: Attorney[];
   totalCount?: number;
   placeholder?: string;
+  /** Passed to AttorneyList: shown after the 9th listing (or the last, if fewer). */
+  insert?: ReactNode;
 }
 
 export default function AttorneySearch({
   attorneys,
   totalCount,
   placeholder = "Search by name, firm, or city…",
+  insert,
 }: Props) {
   const [query, setQuery] = useState("");
 
@@ -78,10 +81,12 @@ export default function AttorneySearch({
           >
             Clear search
           </button>
+          {insert && <div className="mt-10 text-left">{insert}</div>}
         </div>
       ) : (
         <AttorneyList
           attorneys={filtered}
+          insert={insert}
           heading={
             query
               ? `${filtered.length} result${filtered.length !== 1 ? "s" : ""} for "${query}"`

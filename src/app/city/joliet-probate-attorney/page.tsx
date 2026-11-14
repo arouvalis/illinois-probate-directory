@@ -64,6 +64,7 @@ export default function JolietProbatePage() {
               attorneys={attorneys}
               heading={`${attorneys.length} Probate Attorney Listings in Joliet`}
               gridClassName="space-y-4"
+              insert={<EstateHouseBlock placement="city_joliet" />}
             />
             {guideHtml && (
               <article
@@ -141,9 +142,6 @@ export default function JolietProbatePage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 pb-12">
-        <EstateHouseBlock placement="city_joliet" className="max-w-3xl" />
-      </div>
     </>
   );
 }

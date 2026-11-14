@@ -61,6 +61,7 @@ export default function AuroraProbatePage() {
               attorneys={attorneys}
               heading={`${attorneys.length} Probate Attorney Listings in Aurora`}
               gridClassName="space-y-4"
+              insert={<EstateHouseBlock placement="city_aurora" />}
             />
             {guideHtml && (
               <article
@@ -125,9 +126,6 @@ export default function AuroraProbatePage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 pb-12">
-        <EstateHouseBlock placement="city_aurora" className="max-w-3xl" />
-      </div>
     </>
   );
 }

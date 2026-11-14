@@ -63,6 +63,7 @@ export default function NorthbrookProbatePage() {
               attorneys={attorneys}
               heading={`${attorneys.length} Probate Attorney Listings in Northbrook`}
               gridClassName="space-y-4"
+              insert={<EstateHouseBlock placement="city_northbrook" />}
             />
           </div>
 
@@ -134,9 +135,6 @@ export default function NorthbrookProbatePage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 pb-12">
-        <EstateHouseBlock placement="city_northbrook" className="max-w-3xl" />
-      </div>
     </>
   );
 }

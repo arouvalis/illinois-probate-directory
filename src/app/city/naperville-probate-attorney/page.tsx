@@ -61,6 +61,7 @@ export default function NapervilleProbatePage() {
               attorneys={attorneys}
               heading={`${attorneys.length} Probate Attorney Listings in Naperville`}
               gridClassName="space-y-4"
+              insert={<EstateHouseBlock placement="city_naperville" />}
             />
             {guideHtml && (
               <article
@@ -125,9 +126,6 @@ export default function NapervilleProbatePage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 pb-12">
-        <EstateHouseBlock placement="city_naperville" className="max-w-3xl" />
-      </div>
     </>
   );
 }

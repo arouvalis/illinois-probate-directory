@@ -60,6 +60,7 @@ export default function LibertyvilleProbatePage() {
               attorneys={attorneys}
               heading={`${attorneys.length} Probate Attorney Listings in Libertyville`}
               gridClassName="space-y-4"
+              insert={<EstateHouseBlock placement="city_libertyville" />}
             />
           </div>
 
@@ -118,9 +119,6 @@ export default function LibertyvilleProbatePage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 pb-12">
-        <EstateHouseBlock placement="city_libertyville" className="max-w-3xl" />
-      </div>
     </>
   );
 }

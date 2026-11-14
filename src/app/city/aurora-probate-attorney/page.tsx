@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getAttorneysByCity } from "@/lib/attorneys";
 import AttorneyList from "@/components/AttorneyList";
 import { getCityGuideHtml } from "@/lib/cityGuide";
-import ForFamiliesBanner from "@/components/ForFamiliesBanner";
+import EstateHouseBlock from "@/components/EstateHouseBlock";
 
 export const metadata: Metadata = {
   title: "Probate Attorneys in Aurora, IL",
@@ -61,6 +61,7 @@ export default function AuroraProbatePage() {
               attorneys={attorneys}
               heading={`${attorneys.length} Probate Attorney Listings in Aurora`}
               gridClassName="space-y-4"
+              insert={<EstateHouseBlock placement="city_aurora" />}
             />
             {guideHtml && (
               <article
@@ -125,7 +126,6 @@ export default function AuroraProbatePage() {
         </div>
       </div>
 
-      <ForFamiliesBanner />
     </>
   );
 }

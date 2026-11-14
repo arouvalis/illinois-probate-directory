@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { Fragment, useMemo, useState, type ReactNode } from "react";
 import AttorneyCard from "./AttorneyCard";
 import type { Attorney } from "@/lib/attorneys";
 
@@ -27,7 +27,11 @@ interface Props {
   attorneys: Attorney[];
   heading: string;
   gridClassName?: string;
+  /** Shown once inside the list: after the 9th listing, or after the last one if there are fewer. */
+  insert?: ReactNode;
 }
+
+const INSERT_AFTER = 9;
 
 /**
  * A grid of attorney cards with a "Sort by" control. The default order is
@@ -39,6 +43,7 @@ export default function AttorneyList({
   attorneys,
   heading,
   gridClassName = "grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5",
+  insert,
 }: Props) {
   const [sort, setSort] = useState<SortKey>("name");
   // A Featured listing (a referral partner, marked "Featured" on its card) stays first in every order.
@@ -70,8 +75,13 @@ export default function AttorneyList({
         )}
       </div>
       <div className={gridClassName}>
-        {sorted.map((attorney) => (
-          <AttorneyCard key={attorney.slug} attorney={attorney} />
+        {sorted.map((attorney, i) => (
+          <Fragment key={attorney.slug}>
+            <AttorneyCard attorney={attorney} />
+            {insert && i === Math.min(INSERT_AFTER, sorted.length) - 1 && (
+              <div className="col-span-full">{insert}</div>
+            )}
+          </Fragment>
         ))}
       </div>
     </div>

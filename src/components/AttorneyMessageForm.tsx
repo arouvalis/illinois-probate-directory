@@ -177,10 +177,9 @@ export default function AttorneyMessageForm({ attorneyName, attorneySlug, hasEma
         </button>
 
         {(details.hasRealEstate === "Yes" || details.hasRealEstate === "Not Sure") && (
-          <div className="bg-amber-50 border border-amber-100 rounded-lg px-4 py-3 text-sm">
-            <span className="text-amber-800">🏠 Does the estate include a property that needs to be sold, cleaned out, or maintained? </span>
-            <a href="/for-families" className="text-amber-700 font-semibold underline hover:text-amber-800">We can help with that too →</a>
-          </div>
+          <p className="text-sm text-gray-500">
+            <a href="/for-families" data-property-placement="attorney_form" className="underline hover:text-navy-800">Estate includes a house? See what to expect →</a>
+          </p>
         )}
       </form>
     </div>

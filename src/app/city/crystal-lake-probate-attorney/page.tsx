@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getAttorneysByCity } from "@/lib/attorneys";
 import AttorneyList from "@/components/AttorneyList";
-import ForFamiliesBanner from "@/components/ForFamiliesBanner";
+import EstateHouseBlock from "@/components/EstateHouseBlock";
 
 export const metadata: Metadata = {
   title: "Probate Attorneys in Crystal Lake, IL",
@@ -63,6 +63,7 @@ export default function CrystalLakeProbatePage() {
               attorneys={attorneys}
               heading={`${attorneys.length} Probate Attorney Listings in Crystal Lake`}
               gridClassName="space-y-4"
+              insert={<EstateHouseBlock placement="city_crystal_lake" />}
             />
           </div>
 
@@ -134,7 +135,6 @@ export default function CrystalLakeProbatePage() {
         </div>
       </div>
 
-      <ForFamiliesBanner />
     </>
   );
 }

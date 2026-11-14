@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getAttorneysByCity } from "@/lib/attorneys";
 import AttorneyList from "@/components/AttorneyList";
 import { getCityGuideHtml } from "@/lib/cityGuide";
-import ForFamiliesBanner from "@/components/ForFamiliesBanner";
+import EstateHouseBlock from "@/components/EstateHouseBlock";
 
 export const metadata: Metadata = {
   title: "Probate Attorneys in Joliet, IL",
@@ -64,6 +64,7 @@ export default function JolietProbatePage() {
               attorneys={attorneys}
               heading={`${attorneys.length} Probate Attorney Listings in Joliet`}
               gridClassName="space-y-4"
+              insert={<EstateHouseBlock placement="city_joliet" />}
             />
             {guideHtml && (
               <article
@@ -141,7 +142,6 @@ export default function JolietProbatePage() {
         </div>
       </div>
 
-      <ForFamiliesBanner />
     </>
   );
 }

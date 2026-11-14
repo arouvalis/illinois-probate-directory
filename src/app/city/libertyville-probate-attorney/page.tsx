@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getAttorneysByCity } from "@/lib/attorneys";
 import AttorneyList from "@/components/AttorneyList";
-import ForFamiliesBanner from "@/components/ForFamiliesBanner";
+import EstateHouseBlock from "@/components/EstateHouseBlock";
 
 export const metadata: Metadata = {
   title: "Probate Attorneys in Libertyville, IL",
@@ -60,6 +60,7 @@ export default function LibertyvilleProbatePage() {
               attorneys={attorneys}
               heading={`${attorneys.length} Probate Attorney Listings in Libertyville`}
               gridClassName="space-y-4"
+              insert={<EstateHouseBlock placement="city_libertyville" />}
             />
           </div>
 
@@ -118,7 +119,6 @@ export default function LibertyvilleProbatePage() {
         </div>
       </div>
 
-      <ForFamiliesBanner />
     </>
   );
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import ForFamiliesBanner from "@/components/ForFamiliesBanner";
+import EstateHouseBlock from "@/components/EstateHouseBlock";
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -220,11 +220,7 @@ export default function SellingInheritedPropertyPage() {
             <p className="mt-3">{"Attorney fees in Illinois probate are typically paid from the estate, not out of the executor's pocket."}</p>
           </section>
 
-          <section className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-            <h2 className="text-2xl font-serif font-bold text-navy-800 mb-3">{"Need Help With the Property Itself?"}</h2>
-            <p>{"The legal process is only half of it. Executors and heirs also end up handling the house itself: a lifetime of belongings to sort, repairs, a vacant property to watch over, and a sale to coordinate, often from out of state. "}<Link href="/for-families" className="text-navy-700 underline hover:text-navy-900">{"We help Illinois families with exactly that"}</Link>{", from cleanout through closing. We work alongside your probate attorney, not around them."}</p>
-            <Link href="/for-families" className="btn-primary text-sm py-2 px-4 inline-block mt-4">{"Get help with an inherited property"}</Link>
-          </section>
+          <EstateHouseBlock placement="selling_guide" />
 
           <div className="bg-navy-50 border border-navy-200 rounded-xl p-6 mt-8">
             <h2 className="font-serif font-bold text-navy-800 text-xl mb-2">
@@ -253,7 +249,6 @@ export default function SellingInheritedPropertyPage() {
         </div>
       </article>
     </div>
-    <ForFamiliesBanner />
     </>
   );
 }

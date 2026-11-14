@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { COUNTY_NAMES, COUNTY_SLUG_MAP, getAllAttorneys, getDirectoryStats, getCountyCount } from "@/lib/attorneys";
 import CountySearchForm from "@/components/CountySearchForm";
-import ForFamiliesBanner from "@/components/ForFamiliesBanner";
 import HomepageLeadForm from "@/components/HomepageLeadForm";
 import HomepageSearch from "@/components/HomepageSearch";
 
@@ -59,9 +58,10 @@ export default function HomePage() {
               <div className="mt-6 pt-6 border-t border-navy-600">
                 <Link
                   href="/for-families"
-                  className="inline-flex items-center gap-2 text-amber-300 hover:text-amber-200 text-sm font-semibold transition-colors"
+                  data-property-placement="homepage_hero"
+                  className="text-gray-200 hover:text-white text-sm underline transition-colors"
                 >
-                  🏠 Does the estate include a house or property? Get help here →
+                  Does the estate include a house? What happens to it during probate
                 </Link>
               </div>
             </div>
@@ -177,9 +177,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* For Families */}
-      <ForFamiliesBanner />
 
       {/* Why Use This Directory */}
       <section className="py-16 px-4 bg-navy-800 text-white">

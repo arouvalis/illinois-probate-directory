@@ -75,11 +75,8 @@ export default function Header() {
             <Link href="/blog" className="hover:text-blue-300 transition-colors">
               Blog
             </Link>
-            <Link
-              href="/for-families"
-              className="bg-amber-500 hover:bg-amber-400 text-white px-4 py-2 rounded-lg transition-colors font-bold text-sm shadow-md border-2 border-amber-400 hover:border-amber-300"
-            >
-              🏠 Get Property Help
+            <Link href="/for-families" className="hover:text-blue-300 transition-colors">
+              Inherited Property
             </Link>
           </nav>
 
@@ -122,7 +119,7 @@ export default function Header() {
             <Link href="/resources/illinois-probate-courts-by-county" className="block px-4 py-1.5 hover:text-blue-300" onClick={() => setMenuOpen(false)}>Probate Courts by County</Link>
             <Link href="/resources/illinois-probate-timeline-by-county" className="block px-4 py-1.5 hover:text-blue-300" onClick={() => setMenuOpen(false)}>Probate Timeline by County</Link>
             <Link href="/blog" className="block px-2 py-1.5 hover:text-blue-300" onClick={() => setMenuOpen(false)}>Blog</Link>
-            <Link href="/for-families" className="block mx-2 mt-2 px-4 py-2.5 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg text-center" onClick={() => setMenuOpen(false)}>🏠 Get Property Help</Link>
+            <Link href="/for-families" className="block px-2 py-1.5 hover:text-blue-300" onClick={() => setMenuOpen(false)}>Inherited Property</Link>
           </nav>
         )}
       </div>

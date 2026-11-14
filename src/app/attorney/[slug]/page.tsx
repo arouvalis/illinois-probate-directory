@@ -12,7 +12,7 @@ import {
   getOtherOffices,
 } from "@/lib/attorneys";
 import AttorneyMessageForm from "@/components/AttorneyMessageForm";
-import ForFamiliesBanner from "@/components/ForFamiliesBanner";
+import { EstateHouseLine } from "@/components/EstateHouseBlock";
 import ChecklistForm from "@/components/ChecklistForm";
 import { getAttorneyLeadEmail } from "@/lib/attorneyRecords";
 
@@ -417,7 +417,7 @@ export default function AttorneyPage({ params }: Props) {
         </div>
       </div>
     </div>
-    <ForFamiliesBanner />
+    <EstateHouseLine placement="attorney_page" className="max-w-5xl mx-auto px-4 pb-10" />
     </>
   );
 }

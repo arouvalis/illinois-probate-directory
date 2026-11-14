@@ -34,10 +34,6 @@ Not every estate requires formal probate, but most do when real property is invo
 
 Many Palos Heights probate estates include a family home that needs to be sold, maintained, or transferred during the probate process. If the property is vacant, it may need cleanout, maintenance, or repairs before it can be listed.
 
-If you are dealing with a property in a Palos Heights estate, we can help with everything from property valuation and cleanout to full sale coordination — working directly alongside your probate attorney.
-
-[Get help with the property side →](/for-families)
-
 ## Find a Probate Attorney Serving Palos Heights
 
 Our directory includes probate attorneys serving Palos Heights and the surrounding southwest Cook County communities including Palos Hills, Orland Park, Tinley Park, and Mokena.

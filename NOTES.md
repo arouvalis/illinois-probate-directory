@@ -307,3 +307,36 @@ The 9-to-12-month upper figure is the site's own estimate (it was already on the
 5. **Lead storage.** Leads still live only in email. Storing them (and counting leads sent per attorney automatically) needs a database or sheet, which is a choice of service for Andy.
 6. **Blog posts about removed firms** (`william-lee-attorney`, `estate-lawyer-nokomis-il`) are untouched, per the no-deletions-before-Phase-4 rule.
 8. Homepage and For-Families confirmations promise a reply but no time limit. Only the attorney path promises "1 business day".
+
+---
+
+# NOTES — Phase 2 (IPD → CPS handoff, IPD side)
+
+Session date: Nov 14, 2026. IPD only. One pull request, not merged. No form fields, lead routing or email changes.
+
+## What changed
+
+- **Menu:** the orange "Get Property Help" button is now a plain link, "Inherited Property", to `/for-families` (desktop and mobile).
+- **`/for-families`:** rewritten as a short neutral explainer (who is responsible, vacancy, insurance, cleanout, selling and court approval), followed by a labeled section, "Real estate help: Chicago Probate Specialist", with a tracked link to CPS and the existing form. The page and the form both say requests go to Andy Rouvalis of Chicago Probate Specialist, a licensed Illinois real estate broker. Only the form's wording changed (heading, the line under it, the thank-you message).
+- **One shared block**, "Does the estate include a house?" (`src/components/EstateHouseBlock.tsx`), links to `/for-families` and to CPS. It is on all 6 county pages, all 10 city pages, the selling guide and blog posts. On county and city pages it sits inside the attorney list, after the 9th listing (after the last one if a list or a search result has fewer than 9); the position is set by `INSERT_AFTER` in `src/components/AttorneyList.tsx`. It replaces the large amber "For Families" banner, which is deleted.
+- **Attorney pages:** the banner is replaced by one small grey line linking to `/for-families`. No service list, no CPS link. The three blog posts about a named attorney or firm (`michael-naughton-attorney`, `william-lee-attorney`, `meents-law-wilmington`) get the same line instead of the block.
+- **Homepage:** banner removed. The one line under the county search stays, reworded and in plain styling.
+- **Older "we can help" wording removed** from the six county write-ups, three city guides and three blog posts, so each page has one property mention. The Cook County sidebar link to CPS and the inline CPS paragraph in `chicago-probate-lawyer` were removed for the same reason; the block on those pages links to CPS.
+
+## Tracking
+
+- GA4 (`G-NKWRWZQDP9`) loads from the site-wide layout. Checked in a production build: all 582 built pages contain the tag.
+- Every CPS link is built by `cpsUrl()` in `src/lib/cps.ts`: `utm_source=illinoisprobatedirectory`, `utm_medium=referral`, `utm_campaign=ipd_handoff`, `utm_content=<placement>`. Placements: `county_cook` … `county_will`, `city_<town>`, `blog_<post-slug>`, `selling_guide`, `for_families`.
+- GA4 events (sent by `src/components/HandoffClickTracker.tsx`, site-wide):
+  - `cps_handoff_click` — any click on a link to CPS. Parameters: `placement`, `link_url`, `page_path`.
+  - `inherited_property_click` — a click from a block or line to `/for-families`. Parameters: `placement`, `page_path`.
+- Safety net: a CPS link added later without UTM tags (for example by the blog pipeline) gets them at click time with `utm_content=untagged_link`, and still fires the event.
+
+## Open items for Andy
+
+1. **GA4:** Andy is registering `placement` as an event-scoped custom dimension himself.
+2. **Attorney message form prompt:** per Andy, the amber prompt is now a plain grey link, "Estate includes a house? See what to expect →", to `/for-families`. It still appears only after a Yes or Not sure answer. Wording and style only; it fires `inherited_property_click` with `placement=attorney_form`.
+3. **HomeSmart Connect** confirmed correct by Andy.
+4. **Explainer facts** (court approval of a sale; vacancy clauses "often 30 or 60 days"): Andy is having an attorney review them.
+5. **CPS now has GA4 on every page** (Andy, CPS quick fixes), so arrivals from IPD are tracked there. Tracked CPS → IPD links were not checked from this repo.
+6. The footer still has no link to `/for-families`; not in scope here.

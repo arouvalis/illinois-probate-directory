@@ -8,6 +8,7 @@ import {
   getCountyCount,
 } from "@/lib/attorneys";
 import AttorneySearch from "@/components/AttorneySearch";
+import EstateHouseBlock from "@/components/EstateHouseBlock";
 import Link from "next/link";
 import React from "react";
 
@@ -50,7 +51,6 @@ const COUNTY_INTROS: Record<string, string> = {
 
 const COUNTY_BLOG_LINKS: Record<string, { title: string; href: string }[]> = {
   Cook: [
-    { title: "Chicago Probate Real Estate Help", href: "https://www.chicagoprobatespecialist.com" },
     { title: "Probate Attorneys in Northbrook, IL", href: "/city/northbrook-probate-attorney" },
     { title: "Probate Attorneys in Orland Park, IL", href: "/city/orland-park-probate-attorney" },
     { title: "Selling an Inherited House in Illinois", href: "/resources/selling-inherited-property-illinois" },
@@ -147,10 +147,8 @@ const COUNTY_CONTENT: Record<string, React.ReactNode> = {
         by the court.
       </p>
       <p>
-        If you&apos;re dealing with a property in a Cook County estate — whether it needs to be
-        sold, cleaned out, or maintained while the estate is open — we can help connect you with
-        the right resources. Many probate properties sit vacant for months while the estate
-        settles. <a href="/for-families">Get help with the property side →</a>
+Until it is sold or transferred, the house is the executor&apos;s responsibility: it has
+        to stay insured, secured and maintained, and a vacant house needs regular checks.
       </p>
 
       <h3>Frequently Asked Questions</h3>
@@ -189,7 +187,7 @@ const COUNTY_CONTENT: Record<string, React.ReactNode> = {
         <li><strong>Algonquin, Huntley, Marengo</strong> — Additional McHenry County communities served by local probate attorneys.</li>
       </ul>
       <h3>Real Estate in McHenry County Probate</h3>
-      <p>Many McHenry County estates include residential property in Crystal Lake, Woodstock, or surrounding communities. If the estate includes a property that needs to be maintained, cleaned out, or sold, we can help. <a href="/for-families">Get help with the property side</a></p>
+      <p>Many McHenry County estates include residential property in Crystal Lake, Woodstock, or surrounding communities. Until the house is sold or transferred, the executor is responsible for keeping it insured, secured and maintained.</p>
       <h3>Frequently Asked Questions</h3>
       <h4>Where is the McHenry County Probate Court?</h4>
       <p>The McHenry County Courthouse is located at 2200 N Seminary Ave, Woodstock, IL 60098. All McHenry County probate filings are made here.</p>
@@ -211,7 +209,7 @@ const COUNTY_CONTENT: Record<string, React.ReactNode> = {
         <li><strong>Carpentersville, Dundee</strong> — Additional Kane County communities served by local probate attorneys.</li>
       </ul>
       <h3>Real Estate in Kane County Probate</h3>
-      <p>Many Kane County probate estates include residential property in Aurora, Elgin, or the Fox Valley communities. If the estate includes a property that needs to be maintained, cleaned out, or sold during probate, we can help. <a href="/for-families">Get help with the property side</a></p>
+      <p>Many Kane County probate estates include residential property in Aurora, Elgin, or the Fox Valley communities. Until the house is sold or transferred, the executor is responsible for keeping it insured, secured and maintained.</p>
       <h3>Frequently Asked Questions</h3>
       <h4>Where is the Kane County Probate Court?</h4>
       <p>The Kane County Courthouse is located at 100 S 3rd St, Geneva, IL 60134. All Kane County probate filings are made here.</p>
@@ -233,7 +231,7 @@ const COUNTY_CONTENT: Record<string, React.ReactNode> = {
         <li><strong>Mokena, New Lenox, Frankfort</strong> — Additional Will County communities served by local probate attorneys.</li>
       </ul>
       <h3>Real Estate in Will County Probate</h3>
-      <p>Many Will County probate estates include residential property in Joliet, Plainfield, or surrounding communities. If the estate includes a property that needs to be maintained, cleaned out, or sold during probate, we can help. <a href="/for-families">Get help with the property side</a></p>
+      <p>Many Will County probate estates include residential property in Joliet, Plainfield, or surrounding communities. Until the house is sold or transferred, the executor is responsible for keeping it insured, secured and maintained.</p>
       <h3>Frequently Asked Questions</h3>
       <h4>Where is the Will County Probate Court?</h4>
       <p>The Will County Courthouse is located at 100 W Jefferson St, Joliet, IL 60432. All Will County probate filings are made here.</p>
@@ -255,7 +253,7 @@ const COUNTY_CONTENT: Record<string, React.ReactNode> = {
         <li><strong>Gurnee, Mundelein, Vernon Hills</strong> — Additional Lake County communities served by local probate attorneys.</li>
       </ul>
       <h3>Real Estate in Lake County Probate</h3>
-      <p>Many Lake County probate estates include residential property — often homes in Waukegan, Libertyville, or the North Shore communities. If the estate includes a property that needs to be maintained, cleaned out, or sold during probate, we can help. <a href="/for-families">Get help with the property side</a></p>
+      <p>Many Lake County probate estates include residential property — often homes in Waukegan, Libertyville, or the North Shore communities. Until the house is sold or transferred, the executor is responsible for keeping it insured, secured and maintained.</p>
       <h3>Frequently Asked Questions</h3>
       <h4>Where is the Lake County Probate Court?</h4>
       <p>The Lake County Courthouse is located at 18 N County St, Waukegan, IL 60085. All Lake County probate filings are made here.</p>
@@ -277,7 +275,7 @@ const COUNTY_CONTENT: Record<string, React.ReactNode> = {
         <li><strong>Hinsdale, Burr Ridge, Elmhurst</strong> — Additional high-activity DuPage County communities.</li>
       </ul>
       <h3>Real Estate in DuPage County Probate</h3>
-      <p>Many DuPage County probate estates include residential property in Naperville, Wheaton, or surrounding communities. If the estate includes a property that needs to be maintained, cleaned out, or sold during probate, we can help. <a href="/for-families">Get help with the property side</a></p>
+      <p>Many DuPage County probate estates include residential property in Naperville, Wheaton, or surrounding communities. Until the house is sold or transferred, the executor is responsible for keeping it insured, secured and maintained.</p>
       <h3>Frequently Asked Questions</h3>
       <h4>Where is the DuPage County Probate Court?</h4>
       <p>The DuPage County Courthouse is located at 505 N County Farm Rd, Wheaton, IL 60187. All DuPage County probate filings are made here.</p>
@@ -400,7 +398,11 @@ export default function CountyPage({ params }: Props) {
         <div className="flex flex-col lg:flex-row gap-10">
           {/* Main listing */}
           <div className="flex-1 min-w-0">
-            <AttorneySearch attorneys={attorneys} totalCount={attorneys.length} />
+            <AttorneySearch
+              attorneys={attorneys}
+              totalCount={attorneys.length}
+              insert={<EstateHouseBlock placement={`county_${params.slug}`} />}
+            />
           </div>
 
           {/* Sidebar */}

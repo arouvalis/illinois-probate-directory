@@ -1,5 +1,6 @@
 // "Contact this attorney" path.
-// - Attorney email on file  -> emailed to the attorney, site owner copied.
+// - Attorney email on file  -> emailed to the attorney; the site owner gets a
+//                              separate copy, which alone carries the PROPERTY LEAD flag.
 // - No attorney email       -> emailed to the site owner, flagged CALL THIS ATTORNEY.
 // The response says which happened so the form can show an accurate confirmation.
 import { NextResponse } from "next/server";
@@ -42,19 +43,44 @@ To answer them, just reply to this email. Your reply goes straight to ${lead.nam
 
 ${leadDetailsBlock(lead)}
 
-About this email: IllinoisProbateDirectory.com is a free directory of Illinois probate attorneys. There is no charge for this inquiry. Andy Rouvalis, who runs the directory, is copied on this message. To change where inquiries are sent, or to stop receiving them, write to ${OWNER_EMAIL}.
+About this email: IllinoisProbateDirectory.com is a free directory of Illinois probate attorneys. There is no charge for this inquiry. Andy Rouvalis, who runs the directory, receives a copy of each inquiry. To change where inquiries are sent, or to stop receiving them, write to ${OWNER_EMAIL}.
 
 Sent ${ctTimestamp()}
       `.trim();
 
+      // The attorney's email never carries the PROPERTY LEAD flag.
       const result = await sendEmail({
         to: attorneyEmail,
-        cc: OWNER_EMAIL,
         replyTo: lead.email,
-        subject: withPropertyFlag(`New probate inquiry for ${attorneyName} from ${lead.name}`, property),
+        subject: `New probate inquiry for ${attorneyName} from ${lead.name}`,
         text,
       });
       if (!result.ok) return NextResponse.json({ error: result.error }, { status: 500 });
+
+      // Separate copy for the site owner. The attorney already has the lead, so a
+      // failure here is logged and the visitor still sees the true confirmation.
+      const copy = await sendEmail({
+        to: OWNER_EMAIL,
+        replyTo: lead.email,
+        subject: withPropertyFlag(`SENT TO ATTORNEY: ${attorneyName} (lead from ${lead.name})`, property),
+        text: `
+SENT TO ATTORNEY
+================
+This lead was emailed to ${attorneyName} at ${attorneyEmail}. This is your own copy; the attorney cannot see it.
+The visitor was told the message was emailed to the attorney, who will reply directly.
+
+Attorney:  ${attorneyName}
+Phone:     ${getAttorneyRecord(attorney.slug)?.phone_override || attorney.phone || "Not on file"}
+Listing:   ${pageUrl}
+
+Lead details:
+${leadDetailsBlock(lead)}
+
+--- What the attorney received ---
+${text}
+        `.trim(),
+      });
+      if (!copy.ok) console.error("Lead was sent to the attorney, but the owner copy failed:", attorney.slug, lead.email);
       return NextResponse.json({ ok: true, delivery: "attorney" });
     }
 

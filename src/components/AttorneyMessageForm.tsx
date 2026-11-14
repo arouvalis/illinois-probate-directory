@@ -87,7 +87,7 @@ export default function AttorneyMessageForm({ attorneyName, attorneySlug, hasEma
       </h2>
       <p className="text-xs text-gray-500 mb-4 leading-relaxed">
         {hasEmailOnFile
-          ? `Your message is emailed to ${attorneyName}. The person who runs this directory is copied.`
+          ? `Your message is emailed to ${attorneyName}. The person who runs this directory also receives a copy.`
           : `We don't have an email address for ${attorneyName} yet, so your message comes to us and we pass it to the firm within 1 business day.`}
       </p>
 

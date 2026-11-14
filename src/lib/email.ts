@@ -3,13 +3,11 @@ const FROM_EMAIL = "Illinois Probate Directory <noreply@illinoisprobatedirectory
 
 export async function sendEmail({
   to = OWNER_EMAIL,
-  cc,
   subject,
   text,
   replyTo,
 }: {
   to?: string;
-  cc?: string;
   subject: string;
   text: string;
   replyTo?: string;
@@ -24,7 +22,7 @@ export async function sendEmail({
       return { ok: false, error: "We couldn't send your message. Please try again or call instead." };
     }
     console.log(`=== EMAIL (no RESEND_API_KEY) ===`);
-    console.log(`To: ${to}${cc ? `\nCc: ${cc}` : ""}${replyTo ? `\nReply-To: ${replyTo}` : ""}`);
+    console.log(`To: ${to}${replyTo ? `\nReply-To: ${replyTo}` : ""}`);
     console.log(`Subject: ${subject}`);
     console.log(text);
     return { ok: true };
@@ -39,7 +37,6 @@ export async function sendEmail({
     body: JSON.stringify({
       from: FROM_EMAIL,
       to: [to],
-      ...(cc && cc.toLowerCase() !== to.toLowerCase() ? { cc: [cc] } : {}),
       ...(replyTo ? { reply_to: replyTo } : {}),
       subject,
       text,

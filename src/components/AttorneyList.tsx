@@ -32,7 +32,8 @@ interface Props {
 /**
  * A grid of attorney cards with a "Sort by" control. The default order is
  * alphabetical by name, which is neutral: nobody is placed first because of a
- * rating. Visitors can choose to sort by Google rating themselves.
+ * rating. Visitors can choose to sort by Google rating themselves. The one
+ * exception is a listing marked Featured, which is shown first with its badge.
  */
 export default function AttorneyList({
   attorneys,
@@ -40,7 +41,14 @@ export default function AttorneyList({
   gridClassName = "grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5",
 }: Props) {
   const [sort, setSort] = useState<SortKey>("name");
-  const sorted = useMemo(() => [...attorneys].sort(SORTS[sort].compare), [attorneys, sort]);
+  // A Featured listing (a referral partner, marked "Featured" on its card) stays first in every order.
+  const sorted = useMemo(
+    () =>
+      [...attorneys].sort(
+        (a, b) => Number(b.featured === true) - Number(a.featured === true) || SORTS[sort].compare(a, b)
+      ),
+    [attorneys, sort]
+  );
 
   return (
     <div>

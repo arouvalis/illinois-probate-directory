@@ -21,7 +21,7 @@ export default function HomepageSearch({ attorneys }: Props) {
           a.name?.toLowerCase().includes(q) ||
           a.city?.toLowerCase().includes(q)
       )
-      .sort((a, b) => (a.name ?? "").localeCompare(b.name ?? "", "en", { sensitivity: "base" }));
+      .sort((a, b) => Number(b.featured === true) - Number(a.featured === true) || (a.name ?? "").localeCompare(b.name ?? "", "en", { sensitivity: "base" }));
   }, [query, attorneys]);
 
   const hasQuery = query.trim().length > 0;
@@ -96,7 +96,7 @@ export default function HomepageSearch({ attorneys }: Props) {
             )}
             {filtered.length > 12 && (
               <p className="text-center text-sm text-gray-400 mt-6">
-                Showing the first 12 results in alphabetical order. Browse by county to see all.
+                Showing the first 12 results. Browse by county to see all.
               </p>
             )}
           </>

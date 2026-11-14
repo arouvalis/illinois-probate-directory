@@ -1218,28 +1218,6 @@
     "source_county": "Cook"
   },
   {
-    "slug": "probate-stoppers-morton-grove",
-    "name": "Probate Stoppers",
-    "phone": "+1 312-899-6111",
-    "website": "https://www.probatestoppers.com/",
-    "address": "6239 Park Ave, Morton Grove, IL 60053",
-    "street": "6239 Park Ave",
-    "city": "Morton Grove",
-    "state": "Illinois",
-    "postal_code": "60053",
-    "rating": 5.0,
-    "reviews": null,
-    "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=Gud_S-_e94hdN6rawPFuKw&cb_client=search.gws-prod.gps&w=800&h=500&yaw=169.41194&pitch=0&thumbfov=100",
-    "working_hours": "{\"Thursday\": [\"Open 24 hours\"]}",
-    "about": "{\"Accessibility\": {\"Wheelchair accessible entrance\": true, \"Wheelchair accessible parking lot\": true}}",
-    "probate_verified": "YES",
-    "confidence_score": 8.0,
-    "specializations_found": "probate, estate planning, trusts",
-    "free_consultation": "UNCLEAR",
-    "languages": null,
-    "source_county": "Cook"
-  },
-  {
     "slug": "ryan-law-group-ltd-chicago",
     "name": "Ryan Law Group, Ltd.",
     "phone": "+1 630-330-4017",

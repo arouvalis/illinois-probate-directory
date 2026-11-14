@@ -403,6 +403,11 @@ const nextConfig = {
         destination: "/",
         permanent: true,
       },
+      {
+        source: "/attorney/probate-stoppers-morton-grove",
+        destination: "/county/cook",
+        permanent: true,
+      },
     ];
   },
   images: {

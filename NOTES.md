@@ -262,11 +262,11 @@ Session date: Nov 14, 2026. IPD only. One pull request, not merged.
 ## What changed
 
 **Lead routing** (`src/app/api/*`, `src/lib/leads.ts`, `src/lib/email.ts`)
-- "Contact this attorney": if `data/attorney-records.json` has an email for the listing, the lead is emailed to the attorney with Andy copied and reply-to set to the visitor. If not, it goes to Andy with the subject `CALL THIS ATTORNEY: <name>, <phone>`.
+- "Contact this attorney": if `data/attorney-records.json` has an email for the listing, the lead is emailed to the attorney with reply-to set to the visitor, and Andy gets a separate copy (`SENT TO ATTORNEY: ...`). If not, it goes to Andy with the subject `CALL THIS ATTORNEY: <name>, <phone>`.
 - "Help me find an attorney" (homepage form) goes to Andy, subject `FIND ME AN ATTORNEY: ...`.
 - Checklist form emails the checklist text (`src/lib/checklist.ts`) to the visitor, then notifies Andy.
 - For-Families form goes to Andy and is always a property lead.
-- `PROPERTY LEAD:` is prefixed to the subject when the visitor answers "Yes" to the real-estate question, and on every For-Families lead. "Not Sure" is shown in the body but not flagged.
+- `PROPERTY LEAD:` is prefixed to the subject when the visitor answers "Yes" to the real-estate question, and on every For-Families lead. "Not Sure" is shown in the body but not flagged. The flag is only ever on emails to Andy; an attorney never sees it (they do see the visitor's Yes/No answer in the message body).
 - The confirmation a visitor sees is chosen from the server's answer, so it matches what happened.
 - On the live site a missing `RESEND_API_KEY` is now an error shown to the visitor. Before, the form said "sent" and only logged.
 - Added: hidden spam-trap field, server-side email check, length limits, 5-per-10-minutes limit per address (in memory, best effort).
@@ -278,9 +278,10 @@ Session date: Nov 14, 2026. IPD only. One pull request, not merged.
 **Attorney record**: `data/attorney-records.json`, keyed by listing slug: email, phone_override, referral_preference, last_verified, leads_sent, outcomes, notes. Server-side only. Empty apart from an example. `leads_sent` and `outcomes` are filled in by hand: there is no database yet.
 
 **Directory**
-- Default order is alphabetical by name on county pages, city pages and homepage search. A "Sort by" control offers City and Google rating. Nothing is pinned first, including the one listing marked Featured (badge kept).
-- Removed 32 listings (563 → 531), archived in `data/removed-attorneys.json` with a reason, each old URL redirected:
+- Default order is alphabetical by name on county pages, city pages and homepage search. A "Sort by" control offers City and Google rating. The one listing marked Featured (Illinois Estate Law, a referral partner, not paid) is pinned first with its badge in every order.
+- Removed 33 listings (563 → 530), archived in `data/removed-attorneys.json` with a reason, each old URL redirected:
   - 6 non-attorneys: Will County Courthouse, Lake County Bar Association, Lake County Illinois Clerk of the Circuit Court, Carl Guzzy Real Estate Transition and Estate Specialist, plus two the Phase 0 report missed: Cook County Probate Division and Will County Probation Department.
+  - Probate Stoppers (Morton Grove): search results could not confirm it is a law firm.
   - 26 with offices outside the six counties (all the "Other Illinois" listings).
 - All listing counts are calculated from the data: homepage, county cards, county page descriptions, city counts in county copy, `/llms.txt` (now generated).
 
@@ -300,10 +301,9 @@ The 9-to-12-month upper figure is the site's own estimate (it was already on the
 ## Open items for Andy
 
 1. **Attorney emails.** None on file, so today every attorney lead takes the CALL THIS ATTORNEY path. Add emails to `data/attorney-records.json` as you collect them.
-2. **Possible non-attorneys left in** (could not check their websites): The Probate Pro (Chicago), Probate Stoppers (Morton Grove), My Estate Matters (Niles), Earl Nelson Company Limited (Geneva).
-3. **Neighbouring-county firms removed** that may take cases in the six counties: Gateville Law Firm and Law Office of Richard C Claahsen (Yorkville), Kristine Larsen (Oswego), Krentz, Salfisberg & Swanson Haggard (Plano), Law Office of Evan King and Klein, Stoddard, Buck & Lewis (Sycamore), Krupp & Krupp (DeKalb), Law Office of Michael Olewinski (Morris). To restore one, name the county to list it under.
-4. **Featured listing** (Illinois Estate Law, Chicago) is no longer pinned first. If that is a paid or promised placement, say so.
+2. **Checked and kept as law firms** (from search results, Nov 14): The Probate Pro (Darren Findling Law Firm), My Estate Matters (attorney Cori Faye Brown), Earl Nelson Company Limited (attorney R. Gregory Earl).
+3. Neighbouring-county firms stay removed (Andy's decision).
+4. Lead tracking stays manual for now (Andy's decision).
 5. **Lead storage.** Leads still live only in email. Storing them (and counting leads sent per attorney automatically) needs a database or sheet, which is a choice of service for Andy.
 6. **Blog posts about removed firms** (`william-lee-attorney`, `estate-lawyer-nokomis-il`) are untouched, per the no-deletions-before-Phase-4 rule.
-7. **`PROPERTY LEAD` appears in the subject the attorney sees** when the lead is emailed to them, because one email goes to both. Easy to change to a separate copy for Andy.
 8. Homepage and For-Families confirmations promise a reply but no time limit. Only the attorney path promises "1 business day".

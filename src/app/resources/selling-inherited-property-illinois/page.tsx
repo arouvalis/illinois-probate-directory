@@ -27,7 +27,7 @@ const faqSchema = {
       "name": "How long does it take to sell a house in probate in Illinois?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Getting Letters of Office typically takes several weeks, and under independent administration the house can often be sold within a few months after that. The estate itself usually takes 9 to 14 months to close because the creditor claims period runs at least six months."
+        "text": "Getting Letters of Office typically takes several weeks, and under independent administration the house can often be sold within a few months after that. The estate itself usually takes 9 to 12 months to close because the creditor claims period runs at least six months."
       }
     },
     {
@@ -158,7 +158,7 @@ export default function SellingInheritedPropertyPage() {
           <section>
             <h2 className="text-2xl font-serif font-bold text-navy-800 mb-3">{"How Long Does It Take?"}</h2>
             <p>{"The sale itself can often happen within a few months of Letters being issued. Under independent administration, the executor doesn't have to wait for the estate to close before selling."}</p>
-            <p className="mt-3">{"The estate as a whole takes longer. After Letters are issued, notice to creditors is published, and the claims period runs at least six months from the first publication. The estate generally can't make final distributions until that period ends. For a straightforward estate with cooperative heirs, expect roughly 9 to 14 months from opening the estate to final distribution. Contested estates, title problems, or out-of-state heirs can stretch that to two years or more."}</p>
+            <p className="mt-3">{"The estate as a whole takes longer. After Letters are issued, notice to creditors is published, and the claims period runs at least six months from the first publication. The estate generally can't make final distributions until that period ends. For a straightforward estate with cooperative heirs, expect roughly 9 to 12 months from opening the estate to final distribution. Contested estates, title problems, or out-of-state heirs can stretch that to two years or more."}</p>
             <p className="mt-3">{"Ways to keep things moving:"}</p>
             <ul className="mt-3 space-y-2 list-disc list-outside ml-5">
               <li>{"Open the estate promptly rather than waiting months after the death"}</li>

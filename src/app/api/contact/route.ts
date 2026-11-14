@@ -1,44 +1,92 @@
+// "Contact this attorney" path.
+// - Attorney email on file  -> emailed to the attorney, site owner copied.
+// - No attorney email       -> emailed to the site owner, flagged CALL THIS ATTORNEY.
+// The response says which happened so the form can show an accurate confirmation.
 import { NextResponse } from "next/server";
-import { sendEmail, ctTimestamp } from "@/lib/email";
+import { sendEmail, ctTimestamp, OWNER_EMAIL } from "@/lib/email";
+import { getAttorneyBySlug } from "@/lib/attorneys";
+import { getAttorneyLeadEmail, getAttorneyRecord } from "@/lib/attorneyRecords";
+import { parseLead, isPropertyLead, withPropertyFlag, leadDetailsBlock, rateLimited, TOO_MANY } from "@/lib/leads";
+
+const SITE = "https://www.illinoisprobatedirectory.com";
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { name, email, phone, description, hasRealEstate, attorneyName, attorneySlug } = body;
+    const parsed = parseLead(body);
+    if (!parsed.ok) {
+      // Bots get a normal-looking answer and nothing is sent.
+      if (parsed.spam) return NextResponse.json({ ok: true, delivery: "owner" });
+      return NextResponse.json({ error: parsed.error }, { status: 400 });
+    }
+    if (rateLimited(req)) return NextResponse.json({ error: TOO_MANY }, { status: 429 });
 
-    if (!name || !email || !hasRealEstate) {
-      return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
+    // The attorney is looked up from our own data, never taken from the browser.
+    const attorney = getAttorneyBySlug(typeof body.attorneySlug === "string" ? body.attorneySlug : "");
+    if (!attorney) return NextResponse.json({ error: "We couldn't find that attorney listing." }, { status: 400 });
+
+    const { lead } = parsed;
+    const attorneyName = attorney.name ?? "Attorney";
+    const pageUrl = `${SITE}/attorney/${attorney.slug}`;
+    const property = isPropertyLead(lead);
+    const attorneyEmail = getAttorneyLeadEmail(attorney.slug);
+
+    if (attorneyEmail) {
+      const text = `
+${attorneyName},
+
+A visitor to IllinoisProbateDirectory.com sent you this message from your listing page:
+${pageUrl}
+
+To answer them, just reply to this email. Your reply goes straight to ${lead.name} (${lead.email}).
+
+${leadDetailsBlock(lead)}
+
+About this email: IllinoisProbateDirectory.com is a free directory of Illinois probate attorneys. There is no charge for this inquiry. Andy Rouvalis, who runs the directory, is copied on this message. To change where inquiries are sent, or to stop receiving them, write to ${OWNER_EMAIL}.
+
+Sent ${ctTimestamp()}
+      `.trim();
+
+      const result = await sendEmail({
+        to: attorneyEmail,
+        cc: OWNER_EMAIL,
+        replyTo: lead.email,
+        subject: withPropertyFlag(`New probate inquiry for ${attorneyName} from ${lead.name}`, property),
+        text,
+      });
+      if (!result.ok) return NextResponse.json({ error: result.error }, { status: 500 });
+      return NextResponse.json({ ok: true, delivery: "attorney" });
     }
 
-    const emailBody = `
-New Attorney Message — IllinoisProbateDirectory.com
-====================================================
+    const record = getAttorneyRecord(attorney.slug);
+    const phone = record?.phone_override || attorney.phone || "NO PHONE ON FILE";
+    const text = `
+CALL THIS ATTORNEY
+==================
+We have no email on file for this attorney, so this lead came only to you.
+The visitor was told: "We've received your request and will connect you with ${attorneyName} within 1 business day."
 
-Attorney:    ${attorneyName ?? "Unknown"}
-Page:        https://illinoisprobatedirectory.com/attorney/${attorneySlug ?? ""}
+Attorney:  ${attorneyName}
+Phone:     ${phone}
+Website:   ${attorney.website || "Not on file"}
+Listing:   ${pageUrl}
+${record?.referral_preference ? `Referral preference: ${record.referral_preference}\n` : ""}${record?.notes ? `Notes: ${record.notes}\n` : ""}
+Lead details:
+${leadDetailsBlock(lead)}
 
-Lead Details:
-  Name:              ${name}
-  Email:             ${email}
-  Phone:             ${phone || "Not provided"}
-  Message:           ${description || "Not provided"}
+Replying to this email writes to the visitor (${lead.email}).
 
-*** Real Estate in Estate: ${hasRealEstate} ***
-
-Sent at: ${ctTimestamp()}
+Sent ${ctTimestamp()}
     `.trim();
 
     const result = await sendEmail({
-      subject: `New Message Lead: ${name} → ${attorneyName ?? "Attorney"}`,
-      text: emailBody,
-      replyTo: email,
+      to: OWNER_EMAIL,
+      replyTo: lead.email,
+      subject: withPropertyFlag(`CALL THIS ATTORNEY: ${attorneyName}, ${phone} (lead from ${lead.name})`, property),
+      text,
     });
-
-    if (!result.ok) {
-      return NextResponse.json({ error: result.error }, { status: 500 });
-    }
-
-    return NextResponse.json({ ok: true });
+    if (!result.ok) return NextResponse.json({ error: result.error }, { status: 500 });
+    return NextResponse.json({ ok: true, delivery: "owner" });
   } catch (err) {
     console.error("Contact API error:", err);
     return NextResponse.json({ error: "Server error. Please try again." }, { status: 500 });

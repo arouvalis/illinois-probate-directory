@@ -3,23 +3,17 @@
 import { useState } from "react";
 
 import { trackEvent } from "@/lib/analytics";
+import { EMPTY_LEAD_DETAILS, type LeadDetails } from "@/lib/leadOptions";
+import LeadDetailFields, { Honeypot } from "./LeadDetailFields";
+
 interface Props {
-  attorneyName: string;
   attorneySlug: string;
 }
 
-interface FormData {
-  name: string;
-  email: string;
-  hasRealEstate: string;
-}
-
-export default function ChecklistForm({ attorneyName, attorneySlug }: Props) {
-  const [form, setForm] = useState<FormData>({
-    name: "",
-    email: "",
-    hasRealEstate: "",
-  });
+export default function ChecklistForm({ attorneySlug }: Props) {
+  const [form, setForm] = useState({ name: "", email: "" });
+  const [details, setDetails] = useState<LeadDetails>(EMPTY_LEAD_DETAILS);
+  const [trap, setTrap] = useState("");
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
@@ -36,12 +30,16 @@ export default function ChecklistForm({ attorneyName, attorneySlug }: Props) {
       const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, formType: "checklist", attorneyName, attorneySlug }),
+        body: JSON.stringify({ ...form, ...details, formType: "checklist", attorneySlug, company_website: trap }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Something went wrong.");
       setSubmitted(true);
-      trackEvent("generate_lead", { form_name: "checklist", has_real_estate: form.hasRealEstate || undefined });
+      trackEvent("generate_lead", {
+        form_name: "checklist",
+        lead_path: "checklist",
+        has_real_estate: details.hasRealEstate || undefined,
+      });
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Something went wrong.");
     } finally {
@@ -51,10 +49,11 @@ export default function ChecklistForm({ attorneyName, attorneySlug }: Props) {
 
   if (submitted) {
     return (
-      <div className="bg-blue-50 border border-blue-200 rounded-xl p-5 text-center">
-        <p className="font-semibold text-blue-800 text-sm mb-1">Checklist on its way!</p>
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-5 text-center" role="status">
+        <p className="font-semibold text-blue-800 text-sm mb-1">Checklist sent</p>
         <p className="text-blue-700 text-xs">
-          We&apos;ll email the Illinois Probate Checklist to {form.email} shortly.
+          We emailed the Illinois Probate Checklist to {form.email}. If you don&apos;t see it in a few
+          minutes, check your spam folder.
         </p>
       </div>
     );
@@ -69,18 +68,20 @@ export default function ChecklistForm({ attorneyName, attorneySlug }: Props) {
             Get Our Free Illinois Probate Checklist
           </h2>
           <p className="text-gray-500 text-xs mt-0.5">
-            A step-by-step guide to navigating probate in Illinois — sent to your inbox.
+            The steps of Illinois probate in one short list, emailed to you right away.
           </p>
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-3">
+      <form onSubmit={handleSubmit} className="space-y-3 relative">
+        <Honeypot value={trap} onChange={setTrap} />
         <div className="grid grid-cols-2 gap-3">
           <div>
-            <label className="block text-xs font-medium text-navy-800 mb-1">
+            <label htmlFor="cl-name" className="block text-xs font-medium text-navy-800 mb-1">
               Name <span className="text-red-500">*</span>
             </label>
             <input
+              id="cl-name"
               type="text"
               name="name"
               required
@@ -91,10 +92,11 @@ export default function ChecklistForm({ attorneyName, attorneySlug }: Props) {
             />
           </div>
           <div>
-            <label className="block text-xs font-medium text-navy-800 mb-1">
+            <label htmlFor="cl-email" className="block text-xs font-medium text-navy-800 mb-1">
               Email <span className="text-red-500">*</span>
             </label>
             <input
+              id="cl-email"
               type="email"
               name="email"
               required
@@ -106,30 +108,15 @@ export default function ChecklistForm({ attorneyName, attorneySlug }: Props) {
           </div>
         </div>
 
-        <div>
-          <p className="text-xs font-medium text-navy-800 mb-1.5">
-            Does the estate include real estate? <span className="text-red-500">*</span>
-          </p>
-          <div className="flex gap-4">
-            {["Yes", "No", "Not Sure"].map((opt) => (
-              <label key={opt} className="flex items-center gap-1.5 cursor-pointer text-xs text-gray-700">
-                <input
-                  type="radio"
-                  name="hasRealEstate"
-                  value={opt}
-                  required
-                  checked={form.hasRealEstate === opt}
-                  onChange={handleChange}
-                  className="text-navy-700 focus:ring-navy-500"
-                />
-                {opt}
-              </label>
-            ))}
-          </div>
-        </div>
+        <LeadDetailFields
+          idPrefix="cl"
+          compact
+          values={details}
+          onChange={(name, value) => setDetails((prev) => ({ ...prev, [name]: value }))}
+        />
 
         {error && (
-          <p className="text-red-600 text-xs bg-red-50 border border-red-200 rounded px-3 py-2">
+          <p className="text-red-600 text-xs bg-red-50 border border-red-200 rounded px-3 py-2" role="alert">
             {error}
           </p>
         )}
@@ -141,6 +128,9 @@ export default function ChecklistForm({ attorneyName, attorneySlug }: Props) {
         >
           {loading ? "Sending…" : "Send Me the Free Checklist"}
         </button>
+        <p className="text-[11px] text-gray-400 text-center leading-snug">
+          Your request also goes to the person who runs this directory.
+        </p>
       </form>
     </div>
   );

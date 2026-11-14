@@ -4,7 +4,7 @@ Losing a loved one is never easy, and dealing with the legal process of probate 
 
 ## How Long Does Probate Take in Illinois?
 
-In Illinois, probate typically takes anywhere from six months to two years to complete. The simplest cases involving small estates with clear wills and no disputes often wrap up within 6-9 months. However, more complex situations involving contested wills, significant assets, or family disagreements can extend the process to 18-24 months or even longer.
+In Illinois, a straightforward estate usually takes about 9 to 12 months to complete. It cannot finish much sooner, because creditors get at least six months from the first published notice to file claims. More complex situations involving contested wills, significant assets, or family disagreements can extend the process to 12 to 24 months or longer.
 
 This wide range exists because probate isn't a one-size-fits-all process. The timeline depends on several factors that are unique to each family's circumstances.
 

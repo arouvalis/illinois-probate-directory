@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAttorneysByCity } from "@/lib/attorneys";
-import AttorneyCard from "@/components/AttorneyCard";
+import AttorneyList from "@/components/AttorneyList";
 import { getCityGuideHtml } from "@/lib/cityGuide";
 import ForFamiliesBanner from "@/components/ForFamiliesBanner";
 
@@ -16,12 +16,6 @@ export default function AuroraProbatePage() {
   const attorneys = getAttorneysByCity("Aurora");
   const verified = attorneys.filter((a) => a.probate_verified === "YES");
   const freeConsult = attorneys.filter((a) => a.free_consultation === "YES");
-
-  const sorted = [...attorneys].sort((a, b) => {
-    const aScore = (a.featured ? 100 : 0) + (a.probate_verified === "YES" ? 10 : 0) + (a.rating ?? 0);
-    const bScore = (b.featured ? 100 : 0) + (b.probate_verified === "YES" ? 10 : 0) + (b.rating ?? 0);
-    return bScore - aScore;
-  });
 
   return (
     <>
@@ -63,14 +57,11 @@ export default function AuroraProbatePage() {
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="flex flex-col lg:flex-row gap-10">
           <div className="flex-1 min-w-0">
-            <h2 className="font-serif font-bold text-navy-800 text-xl mb-6">
-              {attorneys.length} Probate Attorneys in Aurora
-            </h2>
-            <div className="space-y-4">
-              {sorted.map((attorney) => (
-                <AttorneyCard key={attorney.slug} attorney={attorney} />
-              ))}
-            </div>
+            <AttorneyList
+              attorneys={attorneys}
+              heading={`${attorneys.length} Probate Attorney Listings in Aurora`}
+              gridClassName="space-y-4"
+            />
             {guideHtml && (
               <article
                 className="prose prose-lg max-w-none mt-12 pt-10 border-t border-gray-200 prose-headings:font-serif prose-headings:text-navy-800 prose-a:text-gold-600"

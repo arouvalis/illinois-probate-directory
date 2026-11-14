@@ -3,6 +3,8 @@
 import { useState } from "react";
 
 import { trackEvent } from "@/lib/analytics";
+import { EMPTY_LEAD_DETAILS, type LeadDetails } from "@/lib/leadOptions";
+import LeadDetailFields, { Honeypot } from "./LeadDetailFields";
 const COUNTIES = ["Cook", "Lake", "Will", "Kane", "McHenry", "DuPage", "Other"];
 
 interface FormData {
@@ -21,6 +23,8 @@ export default function ForFamiliesContactForm() {
     county: "",
     message: "",
   });
+  const [details, setDetails] = useState<LeadDetails>(EMPTY_LEAD_DETAILS);
+  const [trap, setTrap] = useState("");
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
@@ -48,12 +52,12 @@ export default function ForFamiliesContactForm() {
       const res = await fetch("/api/families-lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, ...details, company_website: trap }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Something went wrong.");
       setSubmitted(true);
-      trackEvent("generate_lead", { form_name: "for_families" });
+      trackEvent("generate_lead", { form_name: "for_families", lead_path: "property_help", has_real_estate: "Yes" });
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Something went wrong.");
     } finally {
@@ -73,7 +77,7 @@ export default function ForFamiliesContactForm() {
           We received your message!
         </h3>
         <p className="text-gray-500 text-sm leading-relaxed">
-          Thanks, {form.name}. Your inquiry has been personally received and we will be in touch shortly.
+          Thanks, {form.name}. Your message went to Andy Rouvalis, who reads every one himself and will reply to you at {form.email}.
         </p>
       </div>
     );
@@ -85,10 +89,11 @@ export default function ForFamiliesContactForm() {
         Get Help With the Property Side
       </h2>
       <p className="text-gray-400 text-sm text-center mb-5">
-        Personally reviewed. No automated responses.
+        Read by a person. Goes directly to Andy Rouvalis.
       </p>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4 relative">
+        <Honeypot value={trap} onChange={setTrap} />
         <div className="grid grid-cols-2 gap-3">
           <div>
             <label className="block text-sm font-medium text-navy-800 mb-1">
@@ -168,6 +173,13 @@ export default function ForFamiliesContactForm() {
           />
         </div>
 
+        <LeadDetailFields
+          idPrefix="ff"
+          showRealEstate={false}
+          values={details}
+          onChange={(name, value) => setDetails((prev) => ({ ...prev, [name]: value }))}
+        />
+
         {error && (
           <p className="text-red-600 text-sm bg-red-50 border border-red-200 rounded px-3 py-2">
             {error}
@@ -183,7 +195,7 @@ export default function ForFamiliesContactForm() {
         </button>
 
         <p className="text-xs text-gray-400 text-center">
-          No spam. Your info is never sold or shared.
+          No spam. Your details are never sold.
         </p>
       </form>
     </div>

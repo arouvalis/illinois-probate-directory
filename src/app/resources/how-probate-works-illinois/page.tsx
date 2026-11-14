@@ -10,7 +10,7 @@ const faqSchema = {
       "name": "When is probate required in Illinois?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Probate is required in Illinois when the deceased owned real estate in their name alone, when total individually owned assets exceed $100,000, when there are debts creditors need to resolve, or when there is a dispute among heirs."
+        "text": "Probate is required in Illinois when the deceased owned real estate in their name alone, when individually owned personal property is worth more than $150,000 ($100,000 for deaths before August 15, 2025), when there are debts creditors need to resolve, or when there is a dispute among heirs."
       }
     },
     {
@@ -18,7 +18,7 @@ const faqSchema = {
       "name": "How long does probate take in Illinois?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A straightforward Illinois probate case typically takes 6 to 12 months. Complex estates with disputed wills, real estate in multiple states, or contested debts can take 2 to 3 years or longer."
+        "text": "A straightforward Illinois estate usually takes about 9 to 12 months. The six-month creditor claims period (755 ILCS 5/18-3) sets the minimum. Contested or complex estates can take 12 to 24 months or longer."
       }
     },
     {
@@ -42,7 +42,7 @@ const faqSchema = {
       "name": "What is a Small Estate Affidavit in Illinois?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "If the total estate value excluding real estate and jointly held assets is $100,000 or less, Illinois allows heirs to collect assets using a Small Estate Affidavit without formal probate."
+        "text": "If the estate has no real estate and its personal property totals $150,000 or less (not counting motor vehicles registered with the Illinois Secretary of State), heirs can collect assets with a Small Estate Affidavit instead of formal probate. The $150,000 limit applies to deaths on or after August 15, 2025; for earlier deaths the limit is $100,000."
       }
     }
   ]
@@ -51,7 +51,7 @@ const faqSchema = {
 export const metadata: Metadata = {
   title: "How Probate Works in Illinois – Step-by-Step Guide",
   description:
-    "Illinois probate takes 6–12 months and costs 2–4% of the estate value. This guide covers filing requirements, timelines by county, small estate affidavits, and when an attorney is required.",
+    "Illinois probate usually takes 9–12 months and costs 2–4% of the estate value. This guide covers filing requirements, timelines by county, small estate affidavits, and when an attorney is required.",
   alternates: { canonical: "https://www.illinoisprobatedirectory.com/resources/how-probate-works-illinois" },
 };
 
@@ -106,7 +106,7 @@ export default function HowProbateWorksPage() {
             </p>
             <ul className="mt-3 space-y-2 list-disc list-outside ml-5">
               <li>The deceased owned real estate in their name alone (and it is not subject to a transfer-on-death instrument or held in a trust).</li>
-              <li>The total value of individually owned personal property exceeds $100,000.</li>
+              <li>The total value of individually owned personal property exceeds $150,000 ($100,000 for deaths before August 15, 2025).</li>
               <li>There are significant debts that need to be resolved through a formal court process.</li>
               <li>There is a dispute among heirs or beneficiaries that requires court involvement.</li>
             </ul>
@@ -183,11 +183,11 @@ export default function HowProbateWorksPage() {
               How Long Does Probate Take in Illinois?
             </h2>
             <p>
-              A straightforward Illinois probate case typically takes <strong>6 to 12 months</strong>.
+              A straightforward Illinois estate usually takes about <strong>9 to 12 months</strong>.
               The minimum timeline is driven by the six-month creditor claim period required by
               Illinois law (755 ILCS 5/18-3). Complex estates — those with disputed wills,
               real estate in multiple states, business interests, or contested debts — can take
-              2 to 3 years or longer.
+              12 to 24 months or longer.
             </p>
           </section>
 
@@ -210,10 +210,12 @@ export default function HowProbateWorksPage() {
               Small Estate Affidavit in Illinois
             </h2>
             <p>
-              If the total value of the estate (excluding real estate and jointly held
-              assets) is <strong>$100,000 or less</strong>, Illinois allows heirs to
-              collect assets using a Small Estate Affidavit (755 ILCS 5/25-1) — no
-              formal probate required. This is a signed, notarized document that can
+              If the estate has no real estate and its personal property totals{" "}
+              <strong>$150,000 or less</strong> (not counting motor vehicles registered with the
+              Illinois Secretary of State), Illinois allows heirs to collect assets using a
+              Small Estate Affidavit (755 ILCS 5/25-1) — no formal probate required. The $150,000
+              limit applies to deaths on or after August 15, 2025; for earlier deaths the limit
+              is $100,000. This is a signed, notarized document that can
               be presented to banks and other institutions.
             </p>
           </section>

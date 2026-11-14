@@ -18,7 +18,7 @@ Here is what the probate process typically looks like for a Palos Heights estate
 
 **Months 6-14:** Once the creditor period closes, the executor pays valid debts, prepares a final accounting, and petitions the court for distribution to heirs.
 
-The mandatory 6-month creditor period is the primary driver of the timeline. A straightforward Palos Heights estate typically takes 12 to 18 months from filing to closing.
+The mandatory 6-month creditor period is the primary driver of the timeline. A straightforward Palos Heights estate usually takes about 9 to 12 months from filing to closing.
 
 ## When Do You Need a Probate Attorney in Palos Heights?
 

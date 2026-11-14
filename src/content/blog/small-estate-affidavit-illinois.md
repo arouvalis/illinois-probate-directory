@@ -14,7 +14,7 @@ The beauty of the Small Estate Affidavit lies in its simplicity. Instead of mont
 
 Illinois has specific requirements that determine whether an estate qualifies for the Small Estate Affidavit process. Understanding these criteria upfront can save you time and help you choose the right path forward.
 
-**Asset Value Limits**: The total value of the deceased person's personal property (excluding real estate) cannot exceed $100,000. This includes bank accounts, vehicles, personal belongings, and other assets, but real estate is handled separately under different rules.
+**Asset Value Limits**: The total value of the deceased person's personal property (excluding real estate) cannot exceed $150,000 for deaths on or after August 15, 2025 ($100,000 for earlier deaths). This includes bank accounts, personal belongings, and other assets. Motor vehicles registered with the Illinois Secretary of State are not counted toward the limit, and the affidavit cannot be used to transfer real estate.
 
 **Timing Requirements**: You must wait at least 30 days after the person's death before filing the affidavit. This waiting period ensures that immediate debts and obligations can be identified and addressed.
 

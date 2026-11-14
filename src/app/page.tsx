@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { COUNTY_NAMES, COUNTY_SLUG_MAP, getAllAttorneys } from "@/lib/attorneys";
+import { COUNTY_NAMES, COUNTY_SLUG_MAP, getAllAttorneys, getDirectoryStats, getCountyCount } from "@/lib/attorneys";
 import CountySearchForm from "@/components/CountySearchForm";
 import ForFamiliesBanner from "@/components/ForFamiliesBanner";
 import HomepageLeadForm from "@/components/HomepageLeadForm";
@@ -11,16 +11,17 @@ export const metadata: Metadata = {
 };
 
 const COUNTY_DESCRIPTIONS: Record<string, string> = {
-  Cook: "240 attorneys · Chicago & suburbs",
-  Lake: "70 attorneys · Waukegan, Lake Forest, Libertyville",
-  McHenry: "70 attorneys · Crystal Lake, Woodstock, McHenry",
-  Kane: "65 attorneys · Aurora, Elgin, St. Charles",
-  Will: "59 attorneys · Joliet, Naperville, Plainfield",
-  DuPage: "55 attorneys · Wheaton, Naperville, Oak Brook",
+  Cook: "Chicago & suburbs",
+  Lake: "Waukegan, Lake Forest, Libertyville",
+  McHenry: "Crystal Lake, Woodstock, McHenry",
+  Kane: "Aurora, Elgin, St. Charles",
+  Will: "Joliet, Naperville, Plainfield",
+  DuPage: "Wheaton, Naperville, Oak Brook",
 };
 
 export default function HomePage() {
   const allAttorneys = getAllAttorneys();
+  const stats = getDirectoryStats();
 
   return (
     <>
@@ -37,11 +38,11 @@ export default function HomePage() {
                 Find a Probate Attorney<br />in Illinois
               </h1>
               <p className="text-lg text-gray-200 leading-relaxed mb-8">
-                Browse 592 verified probate attorneys across Chicagoland.
+                Browse {stats.total} probate attorney listings across Chicagoland.
                 Compare ratings, specializations, and connect directly — free.
               </p>
               <div className="space-y-2 text-sm text-gray-300">
-                <p>✓ 499 probate-verified listings</p>
+                <p>✓ {stats.verified} probate-verified listings</p>
                 <p>✓ Real Google ratings &amp; reviews</p>
                 <p>✓ 6 counties — Cook, Lake, Will, Kane, McHenry, DuPage</p>
               </div>
@@ -77,9 +78,9 @@ export default function HomePage() {
       <section className="bg-navy-700 text-white py-5">
         <div className="max-w-4xl mx-auto px-4 flex flex-wrap justify-center gap-8 text-center">
           {[
-            { value: "592", label: "Total Listings" },
-            { value: "499", label: "Probate Verified" },
-            { value: "91", label: "Free Consultations" },
+            { value: String(stats.total), label: "Total Listings" },
+            { value: String(stats.verified), label: "Probate Verified" },
+            { value: String(stats.freeConsult), label: "Free Consultations" },
             { value: "6", label: "Counties Covered" },
           ].map((stat) => (
             <div key={stat.label}>
@@ -159,7 +160,7 @@ export default function HomePage() {
                       {county} County
                     </h3>
                     <p className="text-gray-400 text-sm mt-1">
-                      {COUNTY_DESCRIPTIONS[county]}
+                      {getCountyCount(county)} attorney listings · {COUNTY_DESCRIPTIONS[county]}
                     </p>
                   </div>
                   <svg

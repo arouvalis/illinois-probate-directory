@@ -88,7 +88,7 @@ const counties = [
   {
     name: "Will County",
     courthouse: "Will County Courthouse",
-    address: "14 W. Jefferson St., Joliet, IL 60432",
+    address: "100 W. Jefferson St., Joliet, IL 60432",
     floor: "Circuit Clerk's Office",
     phone: "(815) 727-8592",
     hours: "Mon–Fri, 8:30 AM–4:30 PM",
@@ -99,9 +99,9 @@ const counties = [
   },
   {
     name: "Kane County",
-    courthouse: "Kane County Judicial Center",
-    address: "37W777 IL-38, St. Charles, IL 60175",
-    floor: "Circuit Clerk's Office",
+    courthouse: "Kane County Courthouse",
+    address: "100 S. 3rd St., Geneva, IL 60134",
+    floor: "Probate Administration, Room 112",
     phone: "(630) 232-3413",
     hours: "Mon–Fri, 8:30 AM–4:30 PM",
     filingFee: "$250–$350",

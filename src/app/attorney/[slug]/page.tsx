@@ -14,6 +14,7 @@ import {
 import AttorneyMessageForm from "@/components/AttorneyMessageForm";
 import ForFamiliesBanner from "@/components/ForFamiliesBanner";
 import ChecklistForm from "@/components/ChecklistForm";
+import { getAttorneyLeadEmail } from "@/lib/attorneyRecords";
 
 interface Props {
   params: { slug: string };
@@ -364,13 +365,11 @@ export default function AttorneyPage({ params }: Props) {
           <AttorneyMessageForm
             attorneyName={attorney.name ?? ""}
             attorneySlug={attorney.slug}
+            hasEmailOnFile={getAttorneyLeadEmail(attorney.slug) !== null}
           />
 
           {/* Checklist lead form */}
-          <ChecklistForm
-            attorneyName={attorney.name ?? ""}
-            attorneySlug={attorney.slug}
-          />
+          <ChecklistForm attorneySlug={attorney.slug} />
 
           {attorney.languages && (
             <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-5">

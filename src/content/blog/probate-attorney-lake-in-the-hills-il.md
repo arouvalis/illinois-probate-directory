@@ -10,7 +10,7 @@ Lake in the Hills is in McHenry County, which means probate cases are filed at t
 
 McHenry County has grown significantly over the past two decades, and with that growth comes a steady volume of probate cases each year. Most involve residential real estate — the primary asset for most families in the area — along with retirement accounts, vehicles, and personal property.
 
-One important note: not every estate requires full probate. Illinois offers a simplified small estate process for estates valued under $100,000 that don't include real property. If the estate is larger or includes a home, full probate is typically required.
+One important note: not every estate requires full probate. Illinois offers a simplified small estate process for estates with $150,000 or less in personal property (for deaths on or after August 15, 2025; $100,000 for earlier deaths) that don't include real property. If the estate is larger or includes a home, full probate is typically required.
 
 ## Do You Need a Probate Attorney in Lake in the Hills?
 
@@ -20,7 +20,7 @@ If the estate includes real property (a house, condo, or land) titled solely in 
 
 Even for estates without real property, a probate attorney protects the executor from personal liability. Executors have a legal duty to manage the estate properly — paying valid debts before distributing assets, notifying creditors within required timeframes, and filing accurate accountings with the court. Mistakes can expose the executor personally.
 
-Illinois also offers a **simplified small estate affidavit** process for estates under $100,000. An attorney can help you determine whether you qualify and handle the paperwork quickly.
+Illinois also offers a **simplified small estate affidavit** process for estates of $150,000 or less with no real estate. An attorney can help you determine whether you qualify and handle the paperwork quickly.
 
 ## What to Expect from the McHenry County Probate Process
 
@@ -32,7 +32,7 @@ For a straightforward, uncontested estate, here's a realistic timeline:
 
 **Months 6–12:** Once the creditor period closes, the executor pays valid claims, prepares a final accounting, and petitions the court for approval to distribute remaining assets to heirs.
 
-**Total timeline:** Most uncontested estates in McHenry County close within 9–14 months. Contested estates, title issues, or family disputes can push that significantly longer.
+**Total timeline:** Most uncontested estates in McHenry County close within about 9 to 12 months. Contested estates, title issues, or family disputes can push that significantly longer.
 
 ## Finding a Probate Attorney Serving Lake in the Hills
 

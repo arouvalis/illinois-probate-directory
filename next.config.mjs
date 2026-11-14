@@ -94,7 +94,7 @@ const nextConfig = {
       },
       {
         source: "/attorney/merle-c-bassett-wood-river",
-        destination: "/attorney/bassett-gabriel-law-office-p-c-wood-river",
+        destination: "/",
         permanent: true,
       },
       {
@@ -144,7 +144,7 @@ const nextConfig = {
       },
       {
         source: "/attorney/bernabei-balestri-fiocchi-spring-valley",
-        destination: "/attorney/bernabei-balestri-fiocchi-la-salle",
+        destination: "/",
         permanent: true,
       },
       {
@@ -240,6 +240,172 @@ const nextConfig = {
       {
         source: "/blog/mchenry-county-estate-planning-attorneys",
         destination: "/blog/mchenry-county-lawyers-probate-estate",
+        permanent: true,
+      },
+      // Phase 1 (Nov 2026): non-attorney listings and offices outside the six counties
+      {
+        source: "/attorney/cook-county-probate-division-chicago",
+        destination: "/resources/illinois-probate-courts-by-county",
+        permanent: true,
+      },
+      {
+        source: "/attorney/hewitt-wagner-attorneys-at-law-rochelle",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/attorney/lake-county-bar-association-waukegan",
+        destination: "/county/lake",
+        permanent: true,
+      },
+      {
+        source: "/attorney/lake-county-illinois-clerk-of-the-circuit-court-waukegan",
+        destination: "/resources/illinois-probate-courts-by-county",
+        permanent: true,
+      },
+      {
+        source: "/attorney/gateville-law-firm-yorkville",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/attorney/krentz-salfisberg-swanson-haggard-p-c-plano",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/attorney/kristine-larsen-attorney-at-law-oswego",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/attorney/sivia-law-edwardsville-edwardsville",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/attorney/the-justice-law-firm-p-c-ottawa",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/attorney/will-county-probation-department-joliet",
+        destination: "/county/will",
+        permanent: true,
+      },
+      {
+        source: "/attorney/ritchie-law-office-ltd-bloomington",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/attorney/law-office-of-michael-olewinski-morris",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/attorney/carl-guzzy-real-estate-transition-and-estate-specialist-orland-park",
+        destination: "/county/cook",
+        permanent: true,
+      },
+      {
+        source: "/attorney/estate-planning-center-salem",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/attorney/will-county-courthouse-joliet",
+        destination: "/resources/illinois-probate-courts-by-county",
+        permanent: true,
+      },
+      {
+        source: "/attorney/charles-n-erickson-law-office-bloomington",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/attorney/bassett-gabriel-law-office-p-c-wood-river",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/attorney/norsigian-law-pllc-o-fallon",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/attorney/law-office-of-william-lee-rock-falls",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/attorney/law-office-of-richard-c-claahsen-yorkville",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/attorney/bernabei-balestri-fiocchi-la-salle",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/attorney/beavers-graham-taylorville",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/attorney/ryan-j-anderson-law-office-henry",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/attorney/guilfoyle-stevenson-llp-mendota",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/attorney/bruckert-behme-long-p-c-new-baden",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/attorney/the-law-office-of-suzanne-wells-monticello",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/attorney/clinton-county-illinois-estate-planning-lawyer-carlyle",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/attorney/law-offices-of-glenn-west-nokomis",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/attorney/dodd-wambold-o-fallon",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/attorney/law-office-of-evan-king-p-c-sycamore",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/attorney/klein-stoddard-buck-lewis-llc-sycamore",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/attorney/krupp-krupp-dekalb",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/attorney/probate-stoppers-morton-grove",
+        destination: "/county/cook",
         permanent: true,
       },
     ];

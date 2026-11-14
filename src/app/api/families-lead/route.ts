@@ -1,41 +1,39 @@
+// The /for-families form: help with an estate property. Goes to the site owner
+// and is always a property lead.
 import { NextResponse } from "next/server";
-import { sendEmail, ctTimestamp } from "@/lib/email";
+import { sendEmail, ctTimestamp, OWNER_EMAIL } from "@/lib/email";
+import { parseLead, withPropertyFlag, leadDetailsBlock, countyLabel, rateLimited, TOO_MANY } from "@/lib/leads";
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { name, email, phone, county, message } = body;
-
-    if (!name || !email) {
-      return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
+    const parsed = parseLead(body);
+    if (!parsed.ok) {
+      if (parsed.spam) return NextResponse.json({ ok: true });
+      return NextResponse.json({ error: parsed.error }, { status: 400 });
     }
+    if (rateLimited(req)) return NextResponse.json({ error: TOO_MANY }, { status: 429 });
 
-    const subject = `New For-Families Lead: ${name}${county ? " — " + county + " County" : ""}`;
-    const emailBody = `
-New For-Families Lead — IllinoisProbateDirectory.com
-====================================================
-Source: For-Families Page
+    const lead = { ...parsed.lead, hasRealEstate: parsed.lead.hasRealEstate || "Yes (asked on the For-Families page)" };
+    const text = `
+PROPERTY HELP REQUEST (For-Families page)
+=========================================
+This visitor asked for help with an estate property. It came only to you.
 
-Lead Details:
-  Name:    ${name}
-  Email:   ${email}
-  Phone:   ${phone || "Not provided"}
-  County:  ${county || "Not provided"}
+${leadDetailsBlock(lead, { county: true })}
 
-Message:
-${message || "No message provided"}
+Replying to this email writes to the visitor (${lead.email}).
 
-*** source: for-families ***
-
-Sent at: ${ctTimestamp()}
+Sent ${ctTimestamp()}
     `.trim();
 
-    const result = await sendEmail({ subject, text: emailBody, replyTo: email });
-
-    if (!result.ok) {
-      return NextResponse.json({ error: result.error }, { status: 500 });
-    }
-
+    const result = await sendEmail({
+      to: OWNER_EMAIL,
+      replyTo: lead.email,
+      subject: withPropertyFlag(`For-Families request: ${lead.name}${lead.county ? `, ${countyLabel(lead.county)}` : ""}`, true),
+      text,
+    });
+    if (!result.ok) return NextResponse.json({ error: result.error }, { status: 500 });
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error("Families lead API error:", err);

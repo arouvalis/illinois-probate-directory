@@ -61,7 +61,7 @@ const counties = [
   {
     name: "DuPage County",
     simpleTimeline: "9–12 months",
-    complexTimeline: "12–18 months",
+    complexTimeline: "12–24+ months",
     smallEstate: "30–60 days",
     caseVolume: "High",
     notes: "Second most populous county. Generally efficient court scheduling. Mandatory e-filing through I2File or eFileIL. Inventory due within 60 days of appointment.",
@@ -70,7 +70,7 @@ const counties = [
   {
     name: "Lake County",
     simpleTimeline: "9–12 months",
-    complexTimeline: "12–18 months",
+    complexTimeline: "12–24+ months",
     smallEstate: "30–60 days",
     caseVolume: "Moderate-High",
     notes: "19th Judicial Circuit provides a Probate Court Handbook for executors. Court scheduling is generally faster than Cook County. Strong preference for independent administration.",
@@ -79,7 +79,7 @@ const counties = [
   {
     name: "Will County",
     simpleTimeline: "9–12 months",
-    complexTimeline: "12–24 months",
+    complexTimeline: "12–24+ months",
     smallEstate: "30–60 days",
     caseVolume: "Moderate-High",
     notes: "Fast-growing southwestern suburb. Caseload increasing annually. Early pilot county for mandatory e-filing. Inventory due within 60 days.",
@@ -88,16 +88,16 @@ const counties = [
   {
     name: "Kane County",
     simpleTimeline: "9–12 months",
-    complexTimeline: "12–18 months",
+    complexTimeline: "12–24+ months",
     smallEstate: "30–60 days",
     caseVolume: "Moderate",
-    notes: "16th Judicial Circuit. Generally efficient for straightforward estates. Court located in St. Charles. Lighter docket than Cook or DuPage typically means faster scheduling.",
+    notes: "16th Judicial Circuit. Generally efficient for straightforward estates. Probate is handled at the Kane County Courthouse in Geneva. Lighter docket than Cook or DuPage typically means faster scheduling.",
     link: "/county/kane",
   },
   {
     name: "McHenry County",
     simpleTimeline: "9–12 months",
-    complexTimeline: "12–18 months",
+    complexTimeline: "12–24+ months",
     smallEstate: "30–60 days",
     caseVolume: "Moderate",
     notes: "Probate hearings held at 9:30 AM in Courtroom 202, Woodstock courthouse. Lighter docket means faster court dates. Mandatory e-filing with original wills filed in person at Room 136.",

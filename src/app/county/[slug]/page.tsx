@@ -3,9 +3,10 @@ import type { Metadata } from "next";
 import {
   COUNTY_SLUGS,
   getAttorneysByCounty,
+  getAttorneysByCity,
   getAllAttorneys,
+  getCountyCount,
 } from "@/lib/attorneys";
-import AttorneyCard from "@/components/AttorneyCard";
 import AttorneySearch from "@/components/AttorneySearch";
 import Link from "next/link";
 import React from "react";
@@ -23,22 +24,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!county) return {};
   return {
     title: `Probate Attorneys in ${county} County, IL | Free Directory`,
-    description: county === 'Cook'
-      ? `Browse 240+ probate attorneys in Cook County, IL. Compare ratings, find free consultations, and connect with verified probate lawyers serving Chicago and suburbs.`
-      : county === 'Will'
-      ? `Browse 59 probate attorneys in Will County, IL. Find verified probate lawyers in Joliet, Naperville, and Plainfield. Compare ratings and free consultations.`
-      : county === 'Lake'
-      ? `Browse 70 probate attorneys in Lake County, IL. Find verified probate lawyers in Waukegan, Lake Forest, and Libertyville. Compare ratings and free consultations.`
-      : county === 'Kane'
-      ? `Browse 65 probate attorneys in Kane County, IL. Find verified probate lawyers in Aurora, Elgin, and St. Charles. Compare ratings and free consultations.`
-      : county === 'McHenry'
-      ? `Browse 70 probate attorneys in McHenry County, IL. Find verified probate lawyers in Crystal Lake, Woodstock, and McHenry. Compare ratings and free consultations.`
-      : county === 'DuPage'
-      ? `Browse 55 probate attorneys in DuPage County, IL. Find verified probate lawyers in Wheaton, Naperville, and Oak Brook. Compare ratings and free consultations.`
-      : `Find experienced probate attorneys in ${county} County, Illinois. Compare ratings, specializations, free consultations, and more.`,
+    description: `Browse ${getCountyCount(county)} probate attorney listings in ${county} County, IL. ${COUNTY_META_TAIL[county] ?? "Compare ratings, specializations, and free consultations."}`,
     alternates: { canonical: `https://www.illinoisprobatedirectory.com/county/${params.slug}` },
   };
 }
+
+const COUNTY_META_TAIL: Record<string, string> = {
+  Cook: "Compare ratings, find free consultations, and connect with probate lawyers serving Chicago and suburbs.",
+  Will: "Find probate lawyers in Joliet, Naperville, and Plainfield. Compare ratings and free consultations.",
+  Lake: "Find probate lawyers in Waukegan, Lake Forest, and Libertyville. Compare ratings and free consultations.",
+  Kane: "Find probate lawyers in Aurora, Elgin, and St. Charles. Compare ratings and free consultations.",
+  McHenry: "Find probate lawyers in Crystal Lake, Woodstock, and McHenry. Compare ratings and free consultations.",
+  DuPage: "Find probate lawyers in Wheaton, Naperville, and Oak Brook. Compare ratings and free consultations.",
+};
 
 const COUNTY_INTROS: Record<string, string> = {
   Cook: "Cook County is home to the largest probate court in Illinois, located in Chicago at the Daley Center. The court handles thousands of estate cases annually across Chicago and its suburbs.",
@@ -158,9 +156,9 @@ const COUNTY_CONTENT: Record<string, React.ReactNode> = {
       <h3>Frequently Asked Questions</h3>
       <h4>How long does probate take in Cook County?</h4>
       <p>
-        A straightforward Cook County probate case typically takes 12 to 18 months from filing
-        to closing. Complex estates with disputes, multiple properties, or creditor issues can
-        take longer. The mandatory 6-month creditor period is the primary driver of the timeline.
+        A straightforward Cook County probate case usually takes about 9 to 12 months from filing
+        to closing. Contested or complex estates can take 12 to 24 months
+        or longer. The mandatory 6-month creditor period is the primary driver of the timeline.
       </p>
       <h4>Do I need a probate attorney in Cook County?</h4>
       <p>
@@ -185,7 +183,7 @@ const COUNTY_CONTENT: Record<string, React.ReactNode> = {
       <p>After a loved one passes away in McHenry County, the executor files a petition at the Woodstock courthouse. The court appoints the executor, issues Letters of Office, and begins administration. Creditors have 6 months from publication of notice to file claims. Once that period closes, assets are distributed to heirs and the estate is closed.</p>
       <h3>McHenry County Communities We Serve</h3>
       <ul>
-        <li><strong><a href="/city/crystal-lake-probate-attorney">Crystal Lake</a></strong> — The largest city in McHenry County, with 30 probate attorneys serving the area.</li>
+        <li><strong><a href="/city/crystal-lake-probate-attorney">Crystal Lake</a></strong> — The largest city in McHenry County, with {getAttorneysByCity("Crystal Lake").length} probate attorney listings.</li>
         <li><strong>Woodstock</strong> — County seat and home to the McHenry County Courthouse where all probate cases are filed.</li>
         <li><strong>McHenry</strong> — Active Fox River community with strong probate attorney representation.</li>
         <li><strong>Algonquin, Huntley, Marengo</strong> — Additional McHenry County communities served by local probate attorneys.</li>
@@ -196,7 +194,7 @@ const COUNTY_CONTENT: Record<string, React.ReactNode> = {
       <h4>Where is the McHenry County Probate Court?</h4>
       <p>The McHenry County Courthouse is located at 2200 N Seminary Ave, Woodstock, IL 60098. All McHenry County probate filings are made here.</p>
       <h4>How long does probate take in McHenry County?</h4>
-      <p>A straightforward McHenry County estate typically takes 12 to 18 months. The mandatory 6-month creditor notice period is the primary driver of the timeline.</p>
+      <p>A straightforward McHenry County estate usually takes about 9 to 12 months. The mandatory 6-month creditor claims period sets the minimum, and contested or complex estates can take 12 to 24 months or longer.</p>
     </div>
   ),
   Kane: (
@@ -218,18 +216,18 @@ const COUNTY_CONTENT: Record<string, React.ReactNode> = {
       <h4>Where is the Kane County Probate Court?</h4>
       <p>The Kane County Courthouse is located at 100 S 3rd St, Geneva, IL 60134. All Kane County probate filings are made here.</p>
       <h4>How long does probate take in Kane County?</h4>
-      <p>A straightforward Kane County estate typically takes 12 to 18 months. The mandatory 6-month creditor notice period is the primary driver of the timeline.</p>
+      <p>A straightforward Kane County estate usually takes about 9 to 12 months. The mandatory 6-month creditor claims period sets the minimum, and contested or complex estates can take 12 to 24 months or longer.</p>
     </div>
   ),
   Will: (
     <div className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-navy-800 prose-a:text-navy-700">
       <h2>Probate in Will County, Illinois</h2>
-      <p>Will County probate cases are filed at the <strong>Will County Courthouse</strong>, located at 14 W Jefferson St, Joliet, IL 60432. The court serves Joliet, Naperville, Plainfield, Bolingbrook, Romeoville, and surrounding communities.</p>
+      <p>Will County probate cases are filed at the <strong>Will County Courthouse</strong>, located at 100 W Jefferson St, Joliet, IL 60432. The court serves Joliet, Naperville, Plainfield, Bolingbrook, Romeoville, and surrounding communities.</p>
       <h3>How Will County Probate Works</h3>
       <p>After a loved one passes away in Will County, the executor files a petition at the Joliet courthouse. The court appoints the executor, issues Letters of Office, and begins administration. Creditors have 6 months from publication of notice to file claims. Once that period closes, remaining assets are distributed to heirs and the estate is closed.</p>
       <h3>Will County Communities We Serve</h3>
       <ul>
-        <li><strong><a href="/city/joliet-probate-attorney">Joliet</a></strong> — The Will County seat and largest city, with 26 probate attorneys serving the area.</li>
+        <li><strong><a href="/city/joliet-probate-attorney">Joliet</a></strong> — The Will County seat and largest city, with {getAttorneysByCity("Joliet").length} probate attorney listings.</li>
         <li><strong>Naperville</strong> — One of Illinois most populous suburbs, spanning Will and DuPage counties.</li>
         <li><strong>Plainfield, Bolingbrook, Romeoville</strong> — Fast-growing Will County communities with active probate activity.</li>
         <li><strong>Mokena, New Lenox, Frankfort</strong> — Additional Will County communities served by local probate attorneys.</li>
@@ -238,9 +236,9 @@ const COUNTY_CONTENT: Record<string, React.ReactNode> = {
       <p>Many Will County probate estates include residential property in Joliet, Plainfield, or surrounding communities. If the estate includes a property that needs to be maintained, cleaned out, or sold during probate, we can help. <a href="/for-families">Get help with the property side</a></p>
       <h3>Frequently Asked Questions</h3>
       <h4>Where is the Will County Probate Court?</h4>
-      <p>The Will County Courthouse is located at 14 W Jefferson St, Joliet, IL 60432. All Will County probate filings are made here.</p>
+      <p>The Will County Courthouse is located at 100 W Jefferson St, Joliet, IL 60432. All Will County probate filings are made here.</p>
       <h4>How long does probate take in Will County?</h4>
-      <p>A straightforward Will County estate typically takes 12 to 18 months. The mandatory 6-month creditor notice period is the primary driver of the timeline.</p>
+      <p>A straightforward Will County estate usually takes about 9 to 12 months. The mandatory 6-month creditor claims period sets the minimum, and contested or complex estates can take 12 to 24 months or longer.</p>
     </div>
   ),
   Lake: (
@@ -262,7 +260,7 @@ const COUNTY_CONTENT: Record<string, React.ReactNode> = {
       <h4>Where is the Lake County Probate Court?</h4>
       <p>The Lake County Courthouse is located at 18 N County St, Waukegan, IL 60085. All Lake County probate filings are made here.</p>
       <h4>How long does probate take in Lake County?</h4>
-      <p>A straightforward Lake County estate typically takes 12 to 18 months. The mandatory 6-month creditor notice period is the primary driver of the timeline.</p>
+      <p>A straightforward Lake County estate usually takes about 9 to 12 months. The mandatory 6-month creditor claims period sets the minimum, and contested or complex estates can take 12 to 24 months or longer.</p>
     </div>
   ),
   DuPage: (
@@ -284,35 +282,35 @@ const COUNTY_CONTENT: Record<string, React.ReactNode> = {
       <h4>Where is the DuPage County Probate Court?</h4>
       <p>The DuPage County Courthouse is located at 505 N County Farm Rd, Wheaton, IL 60187. All DuPage County probate filings are made here.</p>
       <h4>How long does probate take in DuPage County?</h4>
-      <p>A straightforward DuPage County estate typically takes 12 to 18 months. The mandatory 6-month creditor notice period is the primary driver of the timeline.</p>
+      <p>A straightforward DuPage County estate usually takes about 9 to 12 months. The mandatory 6-month creditor claims period sets the minimum, and contested or complex estates can take 12 to 24 months or longer.</p>
     </div>
   ),
 };
 const COUNTY_FAQ: Record<string, { question: string; answer: string }[]> = {
   Cook: [
-    { question: "How long does probate take in Cook County?", answer: "A straightforward Cook County probate case typically takes 12 to 18 months from filing to closing. Complex estates with disputes, multiple properties, or creditor issues can take longer. The mandatory 6-month creditor period is the primary driver of the timeline." },
+    { question: "How long does probate take in Cook County?", answer: "A straightforward Cook County probate case usually takes about 9 to 12 months from filing to closing. Contested or complex estates can take 12 to 24 months or longer. The mandatory 6-month creditor period is the primary driver of the timeline." },
     { question: "Do I need a probate attorney in Cook County?", answer: "Illinois law does not require an attorney for probate, but Cook County's court procedures are complex enough that most executors benefit significantly from legal representation. Attorneys familiar with the Daley Center's Probate Division can prevent filing errors that cause costly delays." },
     { question: "Where is the Cook County Probate Court?", answer: "The Cook County Circuit Court Probate Division is located at the Richard J. Daley Center, 50 W Washington St, Chicago, IL 60602, on the 18th floor. Hours are Monday through Friday, 8:30 AM to 4:30 PM." },
   ],
   McHenry: [
     { question: "Where is the McHenry County Probate Court?", answer: "The McHenry County Courthouse is located at 2200 N Seminary Ave, Woodstock, IL 60098. All McHenry County probate filings are made here." },
-    { question: "How long does probate take in McHenry County?", answer: "A straightforward McHenry County estate typically takes 12 to 18 months. The mandatory 6-month creditor notice period is the primary driver of the timeline." },
+    { question: "How long does probate take in McHenry County?", answer: "A straightforward McHenry County estate usually takes about 9 to 12 months. The mandatory 6-month creditor claims period sets the minimum, and contested or complex estates can take 12 to 24 months or longer." },
   ],
   Kane: [
     { question: "Where is the Kane County Probate Court?", answer: "The Kane County Courthouse is located at 100 S 3rd St, Geneva, IL 60134. All Kane County probate filings are made here." },
-    { question: "How long does probate take in Kane County?", answer: "A straightforward Kane County estate typically takes 12 to 18 months. The mandatory 6-month creditor notice period is the primary driver of the timeline." },
+    { question: "How long does probate take in Kane County?", answer: "A straightforward Kane County estate usually takes about 9 to 12 months. The mandatory 6-month creditor claims period sets the minimum, and contested or complex estates can take 12 to 24 months or longer." },
   ],
   Will: [
-    { question: "Where is the Will County Probate Court?", answer: "The Will County Courthouse is located at 14 W Jefferson St, Joliet, IL 60432. All Will County probate filings are made here." },
-    { question: "How long does probate take in Will County?", answer: "A straightforward Will County estate typically takes 12 to 18 months. The mandatory 6-month creditor notice period is the primary driver of the timeline." },
+    { question: "Where is the Will County Probate Court?", answer: "The Will County Courthouse is located at 100 W Jefferson St, Joliet, IL 60432. All Will County probate filings are made here." },
+    { question: "How long does probate take in Will County?", answer: "A straightforward Will County estate usually takes about 9 to 12 months. The mandatory 6-month creditor claims period sets the minimum, and contested or complex estates can take 12 to 24 months or longer." },
   ],
   Lake: [
     { question: "Where is the Lake County Probate Court?", answer: "The Lake County Courthouse is located at 18 N County St, Waukegan, IL 60085. All Lake County probate filings are made here." },
-    { question: "How long does probate take in Lake County?", answer: "A straightforward Lake County estate typically takes 12 to 18 months. The mandatory 6-month creditor notice period is the primary driver of the timeline." },
+    { question: "How long does probate take in Lake County?", answer: "A straightforward Lake County estate usually takes about 9 to 12 months. The mandatory 6-month creditor claims period sets the minimum, and contested or complex estates can take 12 to 24 months or longer." },
   ],
   DuPage: [
     { question: "Where is the DuPage County Probate Court?", answer: "The DuPage County Courthouse is located at 505 N County Farm Rd, Wheaton, IL 60187. All DuPage County probate filings are made here." },
-    { question: "How long does probate take in DuPage County?", answer: "A straightforward DuPage County estate typically takes 12 to 18 months. The mandatory 6-month creditor notice period is the primary driver of the timeline." },
+    { question: "How long does probate take in DuPage County?", answer: "A straightforward DuPage County estate usually takes about 9 to 12 months. The mandatory 6-month creditor claims period sets the minimum, and contested or complex estates can take 12 to 24 months or longer." },
   ],
 };
 export default function CountyPage({ params }: Props) {
@@ -322,13 +320,6 @@ export default function CountyPage({ params }: Props) {
   const attorneys = getAttorneysByCounty(county);
   const verified = attorneys.filter((a) => a.probate_verified === "YES");
   const freeConsult = attorneys.filter((a) => a.free_consultation === "YES");
-
-  // Sort: verified + rated first
-  const sorted = [...attorneys].sort((a, b) => {
-    const aScore = (a.featured ? 100 : 0) + (a.probate_verified === "YES" ? 10 : 0) + (a.rating ?? 0);
-    const bScore = (b.featured ? 100 : 0) + (b.probate_verified === "YES" ? 10 : 0) + (b.rating ?? 0);
-    return bScore - aScore;
-  });
 
   const allCounties = Object.entries(COUNTY_SLUGS).filter(
     ([slug]) => slug !== params.slug
@@ -409,7 +400,7 @@ export default function CountyPage({ params }: Props) {
         <div className="flex flex-col lg:flex-row gap-10">
           {/* Main listing */}
           <div className="flex-1 min-w-0">
-            <AttorneySearch attorneys={sorted} totalCount={attorneys.length} />
+            <AttorneySearch attorneys={attorneys} totalCount={attorneys.length} />
           </div>
 
           {/* Sidebar */}

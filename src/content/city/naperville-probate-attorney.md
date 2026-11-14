@@ -28,7 +28,7 @@ Wheaton, IL 60187
 For the small portion of Naperville in Will County, cases go to:
 
 **Will County Courthouse**
-14 W. Jefferson Street
+100 W. Jefferson Street
 Joliet, IL 60432
 
 Before filing, confirm which county applies by checking the deceased's address against county boundary maps. Filing in the wrong county can cause delays and additional expenses. A local probate attorney familiar with both courthouses can help you confirm this quickly.
@@ -61,7 +61,7 @@ Understanding what to expect helps reduce stress and allows you to plan accordin
 
 ## How Long Does Probate Take in DuPage County?
 
-Most straightforward probate cases in DuPage County take between six months and one year. The creditor claim period runs at least six months from the first publication of the notice to creditors, which sets a minimum timeline.
+A straightforward DuPage County estate usually takes about 9 to 12 months. The creditor claim period runs at least six months from the first publication of the notice to creditors, which sets a minimum timeline.
 
 Factors that can extend the process include disputes among beneficiaries, complex assets like business interests, real estate that needs to be sold, tax issues or audits, and missing heirs who must be located.
 

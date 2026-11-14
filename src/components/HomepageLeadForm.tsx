@@ -3,6 +3,8 @@
 import { useState } from "react";
 
 import { trackEvent } from "@/lib/analytics";
+import { EMPTY_LEAD_DETAILS, type LeadDetails } from "@/lib/leadOptions";
+import LeadDetailFields, { Honeypot } from "./LeadDetailFields";
 const COUNTIES = ["Cook", "Lake", "Will", "Kane", "McHenry", "DuPage", "Other"];
 
 interface FormData {
@@ -10,7 +12,6 @@ interface FormData {
   email: string;
   phone: string;
   county: string;
-  hasRealEstate: string;
 }
 
 export default function HomepageLeadForm() {
@@ -19,8 +20,9 @@ export default function HomepageLeadForm() {
     email: "",
     phone: "",
     county: "",
-    hasRealEstate: "",
   });
+  const [details, setDetails] = useState<LeadDetails>(EMPTY_LEAD_DETAILS);
+  const [trap, setTrap] = useState("");
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
@@ -39,12 +41,12 @@ export default function HomepageLeadForm() {
       const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, formType: "homepage" }),
+        body: JSON.stringify({ ...form, ...details, formType: "homepage", company_website: trap }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Something went wrong.");
       setSubmitted(true);
-      trackEvent("generate_lead", { form_name: "homepage", has_real_estate: form.hasRealEstate || undefined });
+      trackEvent("generate_lead", { form_name: "homepage", lead_path: "find_attorney", has_real_estate: details.hasRealEstate || undefined });
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Something went wrong.");
     } finally {
@@ -64,8 +66,9 @@ export default function HomepageLeadForm() {
           We received your request!
         </h3>
         <p className="text-gray-500 text-sm leading-relaxed">
-          Thanks, {form.name}. We&apos;ll match you with qualified probate attorneys
-          in {form.county === "Other" ? "your area" : `${form.county} County`} shortly.
+          Thanks, {form.name}. Your request went to Andy Rouvalis, who runs this directory. He reads
+          every request himself and will email you at {form.email} with probate attorneys
+          in {form.county === "Other" ? "your area" : `${form.county} County`} to consider.
         </p>
       </div>
     );
@@ -77,10 +80,11 @@ export default function HomepageLeadForm() {
         Get Help Finding the Right Probate Attorney in Illinois
       </h2>
       <p className="text-gray-400 text-sm text-center mb-5">
-        Free. No obligation. Takes 30 seconds.
+        Free. No obligation. Tell us your county and we&apos;ll email you attorneys to consider.
       </p>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4 relative">
+        <Honeypot value={trap} onChange={setTrap} />
         <div className="grid grid-cols-2 gap-3">
           <div>
             <label className="block text-sm font-medium text-navy-800 mb-1">
@@ -146,27 +150,11 @@ export default function HomepageLeadForm() {
           </select>
         </div>
 
-        <div>
-          <p className="text-sm font-medium text-navy-800 mb-2">
-            Does the estate include real estate? <span className="text-red-500">*</span>
-          </p>
-          <div className="flex gap-5">
-            {["Yes", "No", "Not Sure"].map((opt) => (
-              <label key={opt} className="flex items-center gap-2 cursor-pointer text-sm text-gray-700">
-                <input
-                  type="radio"
-                  name="hasRealEstate"
-                  value={opt}
-                  required
-                  checked={form.hasRealEstate === opt}
-                  onChange={handleChange}
-                  className="text-navy-700 focus:ring-navy-500"
-                />
-                {opt}
-              </label>
-            ))}
-          </div>
-        </div>
+        <LeadDetailFields
+          idPrefix="hp"
+          values={details}
+          onChange={(name, value) => setDetails((prev) => ({ ...prev, [name]: value }))}
+        />
 
         {error && (
           <p className="text-red-600 text-sm bg-red-50 border border-red-200 rounded px-3 py-2">
@@ -179,11 +167,11 @@ export default function HomepageLeadForm() {
           disabled={loading}
           className="w-full bg-navy-700 text-white py-3 px-6 rounded-lg font-bold text-base hover:bg-navy-800 transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
         >
-          {loading ? "Submitting…" : "Get Free Attorney Matches →"}
+          {loading ? "Submitting…" : "Help Me Find an Attorney →"}
         </button>
 
         <p className="text-xs text-gray-400 text-center">
-          No spam. Your info is never sold or shared.
+          No spam. Your details are never sold. Your request goes to Andy Rouvalis, who runs this directory.
         </p>
       </form>
     </div>

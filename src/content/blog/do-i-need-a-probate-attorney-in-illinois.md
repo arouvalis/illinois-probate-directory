@@ -6,13 +6,13 @@ When you're dealing with the loss of a loved one, the last thing you want to wor
 
 Probate is the legal process of administering a deceased person's estate. In Illinois, this typically involves validating the will (if one exists), paying debts and taxes, and distributing remaining assets to beneficiaries. Not all estates require formal probate proceedings, which is why it's important to understand your situation first.
 
-Illinois offers several options depending on the size and complexity of the estate. For smaller estates valued under $100,000, you might qualify for a simplified small estate affidavit process that doesn't require court supervision. Larger or more complex estates usually need formal probate administration, which can be either supervised or independent, depending on what the will specifies or what the court determines is appropriate.
+Illinois offers several options depending on the size and complexity of the estate. For smaller estates with no real estate and $150,000 or less in personal property (for deaths on or after August 15, 2025; $100,000 for earlier deaths), you might qualify for a simplified small estate affidavit process that doesn't require court supervision. Larger or more complex estates usually need formal probate administration, which can be either supervised or independent, depending on what the will specifies or what the court determines is appropriate.
 
 The probate process can feel overwhelming when you're already grieving, especially if you've never dealt with legal proceedings before. Understanding your options is the first step in deciding whether you need professional legal guidance.
 
 ## When Do You Probably Not Need a Probate Attorney?
 
-You might be able to handle probate without an attorney if the estate is relatively simple and small. Illinois allows for a streamlined process called "small estate administration" when the total value of the estate is less than $100,000 and certain other conditions are met.
+You might be able to handle probate without an attorney if the estate is relatively simple and small. Illinois allows for a streamlined process called "small estate administration" when the total value of the estate is $150,000 or less (for deaths on or after August 15, 2025; $100,000 for earlier deaths), there is no real estate, and certain other conditions are met.
 
 If the deceased had a very simple estate with clear beneficiaries, minimal debts, and assets that transfer easily (like bank accounts with named beneficiaries or jointly-owned property), you might be able to navigate the process yourself. Additionally, if all family members and beneficiaries are in agreement and there are no disputes about the will or asset distribution, self-representation becomes more feasible.
 
@@ -20,7 +20,7 @@ Some people also choose to handle independent administration without an attorney
 
 ## When Should You Strongly Consider Hiring an Attorney?
 
-Several situations make hiring a probate attorney not just helpful, but almost essential. If the estate is valued over $100,000, involves business interests, real estate in multiple states, or complex investments, you'll likely benefit from professional legal guidance.
+Several situations make hiring a probate attorney not just helpful, but almost essential. If the estate is valued over $150,000, involves business interests, real estate in multiple states, or complex investments, you'll likely benefit from professional legal guidance.
 
 Family disputes are another major factor. If there's any disagreement among beneficiaries, questions about the validity of the will, or concerns about how the estate should be distributed, an attorney can help protect everyone's interests and navigate these sensitive situations professionally.
 

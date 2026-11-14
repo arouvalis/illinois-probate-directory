@@ -1,0 +1,12 @@
+{
+  "_readme": "INTERNAL attorney records, keyed by the listing slug (the last part of the profile URL). Never shown on the site. Add an entry only when you know something. Fields: email (where 'contact this attorney' leads are sent; you are copied), phone_override (a better number than the public listing, used in your CALL THIS ATTORNEY emails), referral_preference (free text, e.g. 'email', 'phone only', 'do not send'), last_verified (YYYY-MM-DD), leads_sent (number, update by hand for now), outcomes (free text), notes. Set referral_preference to 'do not send' to keep leads from going to the attorney's email even if one is on file.",
+  "_example-slug-do-not-use": {
+    "email": "name@examplefirm.com",
+    "phone_override": "",
+    "referral_preference": "email",
+    "last_verified": "2026-11-14",
+    "leads_sent": 0,
+    "outcomes": "",
+    "notes": ""
+  }
+}

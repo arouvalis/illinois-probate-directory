@@ -76,16 +76,17 @@ export function getCountyDisplayName(countySlug: string): string {
   return name ? `${name} County` : countySlug;
 }
 
-export function getFeaturedAttorneys(county: string, limit = 6): Attorney[] {
-  return attorneys
-    .filter(
-      (a) =>
-        a.source_county === county &&
-        a.probate_verified === "YES" &&
-        a.rating !== null
-    )
-    .sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0))
-    .slice(0, limit);
+/** Listing counts, always calculated from the data so the site never shows a stale number. */
+export function getDirectoryStats(list: Attorney[] = attorneys) {
+  return {
+    total: list.length,
+    verified: list.filter((a) => a.probate_verified === "YES").length,
+    freeConsult: list.filter((a) => a.free_consultation === "YES").length,
+  };
+}
+
+export function getCountyCount(county: string): number {
+  return getAttorneysByCounty(county).length;
 }
 
 export function parseSpecializations(raw: string | null): string[] {

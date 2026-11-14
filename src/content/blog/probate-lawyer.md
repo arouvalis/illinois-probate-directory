@@ -24,12 +24,12 @@ Think of a probate lawyer as your guide through unfamiliar territory. The Illino
 
 Not every estate requires full probate proceedings, and not every probate case requires an attorney. However, most people benefit from at least consulting with one.
 
-Illinois offers a simplified process called "small estate affidavit" for estates valued at $100,000 or less in personal property. If the deceased owned no real estate in their name alone and had limited assets, you might be able to settle everything without going to court.
+Illinois offers a simplified process called "small estate affidavit" for estates valued at $150,000 or less in personal property (for deaths on or after August 15, 2025; $100,000 for earlier deaths). If the deceased owned no real estate in their name alone and had limited assets, you might be able to settle everything without going to court.
 
 That said, you should strongly consider hiring a probate lawyer if:
 
 - The estate includes real estate
-- The total value exceeds $100,000
+- The personal property is worth more than $150,000
 - There's no will, or the will's validity might be questioned
 - Multiple beneficiaries disagree about distributions
 - The deceased had significant debts or creditors are making claims
@@ -60,7 +60,7 @@ Common disputes include challenges to the will's validity, accusations that the 
 
 ## Probate Timelines and What to Expect
 
-In Illinois, straightforward probate cases typically take six months to a year. More complicated estates — especially those involving real estate sales, business interests, or disputes — can take considerably longer.
+In Illinois, straightforward probate cases usually take about 9 to 12 months. More complicated estates — especially those involving real estate sales, business interests, or disputes — can take considerably longer.
 
 Your probate lawyer should give you a realistic timeline during your initial consultation. Be wary of anyone who promises everything will be resolved in a few weeks. Creditors alone have six months to file claims against the estate, so the process has built-in waiting periods regardless of how efficiently your attorney works.
 

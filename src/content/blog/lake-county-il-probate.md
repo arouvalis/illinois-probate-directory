@@ -9,10 +9,10 @@ Probate is the court-supervised process of settling a deceased person's estate. 
 In Illinois, probate is generally required when:
 
 - The deceased owned real estate titled solely in their name
-- The estate's total value exceeds $100,000
+- The estate's personal property is worth more than $150,000
 - Financial institutions require court authority before releasing funds
 
-Not every estate goes through full probate. Illinois offers a **small estate affidavit** for estates under $100,000 without real property, which allows heirs to collect assets without opening a court case. An attorney can quickly tell you whether your situation qualifies.
+Not every estate goes through full probate. Illinois offers a **small estate affidavit** for estates of $150,000 or less (for deaths on or after August 15, 2025; $100,000 for earlier deaths) without real property, which allows heirs to collect assets without opening a court case. An attorney can quickly tell you whether your situation qualifies.
 
 ## Where to File Probate in Lake County
 
@@ -34,11 +34,11 @@ Illinois offers different types of probate administration depending on the size 
 
 **Supervised Administration.** Here, the court oversees every major decision. This might be required when there are disputes among heirs, concerns about the executor's actions, or complex debts and claims against the estate.
 
-**Small Estate Affidavit.** If the estate is worth $100,000 or less and doesn't include real estate, you may be able to skip formal probate entirely and use a Small Estate Affidavit to collect assets directly from banks and other institutions.
+**Small Estate Affidavit.** If the estate is worth $150,000 or less and doesn't include real estate, you may be able to skip formal probate entirely and use a Small Estate Affidavit to collect assets directly from banks and other institutions.
 
 ## The Lake County Probate Timeline
 
-One of the most common questions families have is how long probate takes. In Lake County, a straightforward estate with independent administration typically takes six to nine months; more complex cases involving disputes, creditor claims, or real estate sales can take a year or longer.
+One of the most common questions families have is how long probate takes. In Lake County, a straightforward estate with independent administration usually takes about 9 to 12 months; more complex cases involving disputes, creditor claims, or real estate sales can take 12 to 24 months or longer.
 
 **Weeks 1-6:** File the petition to open probate at the Lake County courthouse. The court appoints an executor or administrator and issues Letters of Office.
 

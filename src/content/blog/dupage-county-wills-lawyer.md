@@ -18,7 +18,7 @@ DuPage County is one of the busier probate courts in Illinois, which reflects th
 
 The process follows Illinois probate law regardless of county, but local procedure and court familiarity matter. An attorney who regularly appears in DuPage County Probate Court knows the local filing requirements, the judges' preferences, and how to move cases forward efficiently.
 
-For a typical uncontested estate in DuPage County, the timeline runs roughly 9–14 months from opening to final distribution. The longest stretch is the mandatory 6-month creditor claim period, during which the estate can't be closed even if everything else is in order.
+For a typical uncontested estate in DuPage County, the timeline runs roughly 9 to 12 months from opening to final distribution. The longest stretch is the mandatory 6-month creditor claim period, during which the estate can't be closed even if everything else is in order.
 
 Estates with significant real estate, investment accounts, or business interests — common in DuPage County — often benefit from more experienced counsel who can handle the complexity.
 

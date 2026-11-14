@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import AttorneyCard from "./AttorneyCard";
+import AttorneyList from "./AttorneyList";
 import type { Attorney } from "@/lib/attorneys";
 
 interface Props {
@@ -66,18 +66,6 @@ export default function AttorneySearch({
         )}
       </div>
 
-      {/* Result header */}
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-xl font-serif font-bold text-navy-800">
-          {query
-            ? `${filtered.length} result${filtered.length !== 1 ? "s" : ""} for "${query}"`
-            : `${total} Attorneys Found`}
-        </h2>
-        {!query && (
-          <span className="text-sm text-gray-400">Sorted by verification &amp; rating</span>
-        )}
-      </div>
-
       {/* Results grid */}
       {filtered.length === 0 ? (
         <div className="py-12 text-center">
@@ -92,11 +80,14 @@ export default function AttorneySearch({
           </button>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
-          {filtered.map((attorney) => (
-            <AttorneyCard key={attorney.slug} attorney={attorney} />
-          ))}
-        </div>
+        <AttorneyList
+          attorneys={filtered}
+          heading={
+            query
+              ? `${filtered.length} result${filtered.length !== 1 ? "s" : ""} for "${query}"`
+              : `${total} Attorney Listings`
+          }
+        />
       )}
     </div>
   );

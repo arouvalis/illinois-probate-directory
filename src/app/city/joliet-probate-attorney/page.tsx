@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAttorneysByCity } from "@/lib/attorneys";
-import AttorneyCard from "@/components/AttorneyCard";
+import AttorneyList from "@/components/AttorneyList";
 import { getCityGuideHtml } from "@/lib/cityGuide";
 import ForFamiliesBanner from "@/components/ForFamiliesBanner";
 
@@ -16,12 +16,6 @@ export default function JolietProbatePage() {
   const attorneys = getAttorneysByCity("Joliet");
   const verified = attorneys.filter((a) => a.probate_verified === "YES");
   const freeConsult = attorneys.filter((a) => a.free_consultation === "YES");
-
-  const sorted = [...attorneys].sort((a, b) => {
-    const aScore = (a.featured ? 100 : 0) + (a.probate_verified === "YES" ? 10 : 0) + (a.rating ?? 0);
-    const bScore = (b.featured ? 100 : 0) + (b.probate_verified === "YES" ? 10 : 0) + (b.rating ?? 0);
-    return bScore - aScore;
-  });
 
   return (
     <>
@@ -66,14 +60,11 @@ export default function JolietProbatePage() {
 
           {/* Attorney listings */}
           <div className="flex-1 min-w-0">
-            <h2 className="font-serif font-bold text-navy-800 text-xl mb-6">
-              {attorneys.length} Probate Attorneys in Joliet
-            </h2>
-            <div className="space-y-4">
-              {sorted.map((attorney) => (
-                <AttorneyCard key={attorney.slug} attorney={attorney} />
-              ))}
-            </div>
+            <AttorneyList
+              attorneys={attorneys}
+              heading={`${attorneys.length} Probate Attorney Listings in Joliet`}
+              gridClassName="space-y-4"
+            />
             {guideHtml && (
               <article
                 className="prose prose-lg max-w-none mt-12 pt-10 border-t border-gray-200 prose-headings:font-serif prose-headings:text-navy-800 prose-a:text-gold-600"
@@ -91,7 +82,7 @@ export default function JolietProbatePage() {
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed mb-2">
                 Will County Courthouse<br />
-                14 W Jefferson St<br />
+                100 W Jefferson St<br />
                 Joliet, IL 60432
               </p>
               <p className="text-sm text-gray-500 leading-relaxed">

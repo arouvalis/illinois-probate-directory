@@ -34,7 +34,7 @@ Many families are relieved to learn that numerous assets can bypass the probate 
 
 Illinois law provides several important exceptions and special rules that can affect whether assets go through probate:
 
-**Small Estate Affidavit:** If the total probate estate is valued at $100,000 or less, Illinois allows for a simplified small estate affidavit process that can bypass formal probate proceedings. This threshold doesn't include non-probate assets like jointly owned property or assets with beneficiary designations.
+**Small Estate Affidavit:** If the total probate estate has no real estate and is valued at $150,000 or less (for deaths on or after August 15, 2025; $100,000 for earlier deaths), Illinois allows for a simplified small estate affidavit process that can bypass formal probate proceedings. This threshold doesn't include non-probate assets like jointly owned property or assets with beneficiary designations.
 
 **Homestead and Family Property:** Illinois provides special protections for surviving spouses and minor children, including homestead allowances and family awards that may affect how certain assets are distributed.
 

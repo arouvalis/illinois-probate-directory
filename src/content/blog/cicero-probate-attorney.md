@@ -42,7 +42,7 @@ Understanding the timeline helps set realistic expectations. Here's a general ov
 
 **Distributing assets (Month 6-12+).** Once debts are settled and the waiting period for creditors has passed, remaining assets go to the beneficiaries according to the will or Illinois inheritance law.
 
-A straightforward estate might wrap up in six to nine months. Complex cases can take two years or more. Cook County's volume means cases can move slower than smaller counties if filings aren't handled correctly.
+A straightforward estate usually takes about 9 to 12 months. Complex cases can take 12 to 24 months or longer. Cook County's volume means cases can move slower than smaller counties if filings aren't handled correctly.
 
 ## Selling a Family Home in Cicero Through Probate
 

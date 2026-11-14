@@ -77,7 +77,7 @@ export default function ForFamiliesContactForm() {
           We received your message!
         </h3>
         <p className="text-gray-500 text-sm leading-relaxed">
-          Thanks, {form.name}. Your message went to Andy Rouvalis, who reads every one himself and will reply to you at {form.email}.
+          Thanks, {form.name}. Your message went to Andy Rouvalis of Chicago Probate Specialist, a licensed Illinois real estate broker. He reads every one himself and will reply to you at {form.email}.
         </p>
       </div>
     );
@@ -86,10 +86,10 @@ export default function ForFamiliesContactForm() {
   return (
     <div className="bg-white rounded-xl p-6 max-w-lg mx-auto shadow-md">
       <h2 className="font-serif font-bold text-navy-900 text-xl mb-1 text-center">
-        Get Help With the Property Side
+        Ask About an Inherited Property
       </h2>
       <p className="text-gray-400 text-sm text-center mb-5">
-        Read by a person. Goes directly to Andy Rouvalis.
+        Requests go to Andy Rouvalis of Chicago Probate Specialist, a licensed Illinois real estate broker.
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-4 relative">

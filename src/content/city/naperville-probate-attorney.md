@@ -98,6 +98,4 @@ Handling probate while grieving is challenging, but you don't have to figure it 
 
 Start with the Naperville attorneys listed above. Many offer an initial consultation, so you can talk with a few before deciding.
 
-If the estate includes a house that needs to be sold, cleaned out, or maintained while probate is ongoing, we can help with that side. [Get help with the property side →](/for-families)
-
 *Browse more attorneys: [DuPage County Probate Attorneys](/county/dupage) · [Will County Probate Attorneys](/county/will) · [All Illinois Counties](/)*

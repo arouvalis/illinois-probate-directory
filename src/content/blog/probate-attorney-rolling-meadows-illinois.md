@@ -44,12 +44,6 @@ Common situations we see:
 
 If any of this applies to your situation, getting the right team around you early — both a probate attorney and a real estate professional with probate experience — makes the process significantly smoother.
 
-## Get Help With the Property Side
-
-If the Rolling Meadows estate includes real property, we can help. Many probate properties sit vacant for months while the estate settles. We work alongside your probate attorney to coordinate property maintenance, cleanout, valuation, and sale — no conflict, no confusion.
-
-[Get help with the property side →](/for-families)
-
 ## Find a Probate Attorney Serving Rolling Meadows
 
 Browse Cook County probate attorneys on Illinois Probate Directory — many serve the northwest suburbs including Rolling Meadows, Arlington Heights, Schaumburg, and surrounding communities.

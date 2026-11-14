@@ -32,6 +32,4 @@ Come prepared with relevant documents such as the will, death certificate, and i
 
 Trust your instincts during these meetings. Technical expertise is essential, but you also want an attorney you feel comfortable working with through what may be a lengthy process. The right attorney balances legal knowledge with compassion and clear communication.
 
-If the estate includes a house that needs to be sold, cleaned out, or maintained while probate is ongoing, we can help with that side. [Get help with the property side →](/for-families)
-
 *Browse more attorneys: [Kane County Probate Attorneys](/county/kane) · [All Illinois Counties](/)*

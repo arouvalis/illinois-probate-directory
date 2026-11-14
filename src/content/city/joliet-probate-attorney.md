@@ -93,6 +93,4 @@ The attorneys listed above serve Joliet and Will County families and know the lo
 
 Don't navigate this alone, and don't put it off because it's uncomfortable. The peace of mind of having a plan in place, or the right guidance during probate, is worth the effort either way.
 
-If the estate includes a house that needs to be sold, cleaned out, or maintained while probate is ongoing, we can help with that side. [Get help with the property side →](/for-families)
-
 *Browse more attorneys: [Will County Probate Attorneys](/county/will) · [All Illinois Counties](/)*

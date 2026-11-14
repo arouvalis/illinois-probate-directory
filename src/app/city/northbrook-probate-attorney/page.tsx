@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getAttorneysByCity } from "@/lib/attorneys";
 import AttorneyList from "@/components/AttorneyList";
-import ForFamiliesBanner from "@/components/ForFamiliesBanner";
+import EstateHouseBlock from "@/components/EstateHouseBlock";
 
 export const metadata: Metadata = {
   title: "Probate Attorneys in Northbrook, IL",
@@ -134,7 +134,9 @@ export default function NorthbrookProbatePage() {
         </div>
       </div>
 
-      <ForFamiliesBanner />
+      <div className="max-w-7xl mx-auto px-4 pb-12">
+        <EstateHouseBlock placement="city_northbrook" className="max-w-3xl" />
+      </div>
     </>
   );
 }

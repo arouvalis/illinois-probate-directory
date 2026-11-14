@@ -84,11 +84,9 @@ Before committing to any attorney, consider asking:
 
 The answers will help you gauge both their experience and whether their communication style works for you during what's already a difficult time.
 
-## Probate Real Estate Help for Cicero Families
+## Real Estate in Cicero Probate Estates
 
-If the estate includes a property — whether it needs to be sold, cleaned out, or maintained while probate is ongoing — we help Cicero families navigate the real estate side. Many probate properties sit vacant for months while the estate settles. We work directly alongside your attorney to coordinate property maintenance, cleanout, valuation, and sale.
-
-[Get help with the property side →](/for-families)
+If the estate includes a property, the executor is responsible for it until it is sold or transferred. Many probate properties sit vacant for months while the estate settles, so the house needs to stay insured, secured, and maintained in the meantime.
 
 ## Take the Next Step
 

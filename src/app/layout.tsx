@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 import PhoneClickTracker from "@/components/PhoneClickTracker";
+import HandoffClickTracker from "@/components/HandoffClickTracker";
 export const metadata: Metadata = {
   title: {
     template: "%s | Illinois Probate Directory",
@@ -56,6 +57,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <PhoneClickTracker />
+        <HandoffClickTracker />
       </body>
     </html>
   );

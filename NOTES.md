@@ -334,9 +334,9 @@ Session date: Nov 14, 2026. IPD only. One pull request, not merged. No form fiel
 
 ## Open items for Andy
 
-1. **GA4 setup (2 minutes, in GA4 Admin):** register `placement` as an event-scoped custom dimension, otherwise the event shows up but can't be broken down by page type. Optionally mark `cps_handoff_click` as a key event.
-2. **The amber prompt inside the attorney message form** ("We can help with that too →", shown only after a visitor answers Yes or Not sure to the real-estate question) was left alone under the no-form-changes rule. It is a second property mention on attorney pages for those visitors. Say if it should be reworded or removed.
-3. **"with HomeSmart Connect"** appears once on `/for-families`, taken from the brief, because Illinois broker advertising normally names the sponsoring brokerage. Confirm the exact brokerage name and whether your managing broker wants anything else shown (for example a license number).
-4. **Explainer facts worth an attorney's glance:** independent administration generally allows a sale without prior court approval, supervised administration requires it; vacancy clauses in homeowner's policies "often 30 or 60 days". Both are written as general statements with "ask the attorney / ask the insurer".
-5. **CPS side is still not measurable.** CPS has GA4 only on its ad funnels (Phase 0, finding 2), so arrivals from IPD will show as clicks in IPD's GA4 but not as sessions on CPS until CPS gets the tag. CPS → IPD tracked links are also still to do. Both need Lewis's OK.
+1. **GA4:** Andy is registering `placement` as an event-scoped custom dimension himself.
+2. **Attorney message form prompt:** per Andy, the amber prompt is now a plain grey link, "Estate includes a house? See what to expect →", to `/for-families`. It still appears only after a Yes or Not sure answer. Wording and style only; it fires `inherited_property_click` with `placement=attorney_form`.
+3. **HomeSmart Connect** confirmed correct by Andy.
+4. **Explainer facts** (court approval of a sale; vacancy clauses "often 30 or 60 days"): Andy is having an attorney review them.
+5. **CPS now has GA4 on every page** (Andy, CPS quick fixes), so arrivals from IPD are tracked there. Tracked CPS → IPD links were not checked from this repo.
 6. The footer still has no link to `/for-families`; not in scope here.

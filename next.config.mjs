@@ -214,7 +214,7 @@ const nextConfig = {
       },
       {
         source: "/blog/probate-attorney-cicero-illinois",
-        destination: "/blog/cicero-probate-attorney",
+        destination: "/city/cicero-probate-attorney",
         permanent: true,
       },
       {
@@ -224,12 +224,12 @@ const nextConfig = {
       },
       {
         source: "/blog/gilbert-wills-attorney",
-        destination: "/blog/gilberts-wills-attorney",
+        destination: "/county/kane",
         permanent: true,
       },
       {
         source: "/blog/gilbert-wills-litigation-attorney",
-        destination: "/blog/gilberts-wills-attorney",
+        destination: "/county/kane",
         permanent: true,
       },
       {
@@ -239,7 +239,7 @@ const nextConfig = {
       },
       {
         source: "/blog/mchenry-county-estate-planning-attorneys",
-        destination: "/blog/mchenry-county-lawyers-probate-estate",
+        destination: "/county/mchenry",
         permanent: true,
       },
       // Phase 1 (Nov 2026): non-attorney listings and offices outside the six counties
@@ -406,6 +406,122 @@ const nextConfig = {
       {
         source: "/attorney/probate-stoppers-morton-grove",
         destination: "/county/cook",
+        permanent: true,
+      },
+      // Phase 4b: blog posts replaced by city pages, county pages, the homepage or a profile.
+      {
+        source: "/blog/chicago-probate-lawyer",
+        destination: "/city/chicago-probate-attorney",
+        permanent: true,
+      },
+      {
+        source: "/blog/cicero-probate-attorney",
+        destination: "/city/cicero-probate-attorney",
+        permanent: true,
+      },
+      {
+        source: "/blog/probate-attorney-hinsdale",
+        destination: "/city/hinsdale-probate-attorney",
+        permanent: true,
+      },
+      {
+        source: "/blog/probate-attorney-schaumburg-illinois",
+        destination: "/city/schaumburg-probate-attorney",
+        permanent: true,
+      },
+      {
+        source: "/blog/probate-attorney-rolling-meadows-illinois",
+        destination: "/city/rolling-meadows-probate-attorney",
+        permanent: true,
+      },
+      {
+        source: "/blog/probate-attorney-burr-ridge-illinois",
+        destination: "/city/burr-ridge-probate-attorney",
+        permanent: true,
+      },
+      {
+        source: "/blog/probate-attorney-burr-ridge",
+        destination: "/city/burr-ridge-probate-attorney",
+        permanent: true,
+      },
+      {
+        source: "/blog/probate-attorney-waukegan-illinois",
+        destination: "/city/waukegan-probate-attorney",
+        permanent: true,
+      },
+      {
+        source: "/blog/probate-attorney-lake-in-the-hills-il",
+        destination: "/city/lake-in-the-hills-probate-attorney",
+        permanent: true,
+      },
+      {
+        source: "/blog/living-trust-attorney-lake-in-the-hills",
+        destination: "/city/lake-in-the-hills-probate-attorney",
+        permanent: true,
+      },
+      {
+        source: "/blog/probate-attorney-elgin-illinois",
+        destination: "/city/elgin-probate-attorney",
+        permanent: true,
+      },
+      {
+        source: "/blog/probate-attorney-palos-heights-illinois",
+        destination: "/city/palos-heights-probate-attorney",
+        permanent: true,
+      },
+      {
+        source: "/blog/estate-law-arlington-heights-il",
+        destination: "/county/cook",
+        permanent: true,
+      },
+      {
+        source: "/blog/gilberts-wills-attorney",
+        destination: "/county/kane",
+        permanent: true,
+      },
+      {
+        source: "/blog/dupage-county-wills-lawyer",
+        destination: "/county/dupage",
+        permanent: true,
+      },
+      {
+        source: "/blog/mchenry-county-lawyers-probate-estate",
+        destination: "/county/mchenry",
+        permanent: true,
+      },
+      {
+        source: "/blog/how-long-does-probate-take-in-illinois",
+        destination: "/resources/illinois-probate-timeline-by-county",
+        permanent: true,
+      },
+      {
+        source: "/blog/estate-lawyer-nokomis-il",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/blog/probate-lawyer",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/blog/list-of-probate-attorneys",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/blog/michael-naughton-attorney",
+        destination: "/attorney/michael-r-naughton-law-offices-manhattan",
+        permanent: true,
+      },
+      {
+        source: "/blog/meents-law-wilmington",
+        destination: "/attorney/meents-law-p-c-channahon",
+        permanent: true,
+      },
+      {
+        source: "/blog/william-lee-attorney",
+        destination: "/",
         permanent: true,
       },
     ];

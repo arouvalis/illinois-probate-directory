@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getAttorneysByCity } from "@/lib/attorneys";
 import AttorneyList from "@/components/AttorneyList";
+import { getCityGuideHtml } from "@/lib/cityGuide";
 import EstateHouseBlock from "@/components/EstateHouseBlock";
 
 export const metadata: Metadata = {
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default function ElginProbatePage() {
+  const guideHtml = getCityGuideHtml("elgin-probate-attorney");
   const attorneys = getAttorneysByCity("Elgin");
   const verified = attorneys.filter((a) => a.probate_verified === "YES");
   const freeConsult = attorneys.filter((a) => a.free_consultation === "YES");
@@ -61,6 +63,12 @@ export default function ElginProbatePage() {
               gridClassName="space-y-4"
               insert={<EstateHouseBlock placement="city_elgin" />}
             />
+            {guideHtml && (
+              <article
+                className="prose prose-lg max-w-none mt-12 pt-10 border-t border-gray-200 prose-headings:font-serif prose-headings:text-navy-800 prose-a:text-gold-600"
+                dangerouslySetInnerHTML={{ __html: guideHtml }}
+              />
+            )}
           </div>
 
           <aside className="lg:w-64 shrink-0 space-y-6">

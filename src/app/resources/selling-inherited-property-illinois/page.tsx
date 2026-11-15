@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import EstateHouseBlock from "@/components/EstateHouseBlock";
+import { cpsUrl } from "@/lib/cps";
+
+// This guide covers the statewide legal questions. Local selling content (a
+// town's transfer stamps, closing rules, the market) belongs to Chicago Probate
+// Specialist; this page links there instead of repeating it.
+const cpsLink = "text-navy-700 font-semibold underline hover:text-navy-900";
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -58,9 +64,9 @@ const faqSchema = {
 };
 
 export const metadata: Metadata = {
-  title: "Selling an Inherited House in Illinois: Complete Guide",
+  title: "Selling an Inherited House in Illinois: The Legal Steps",
   description:
-    "How to sell an inherited house in Illinois: when probate is required, executor authority, beneficiary approval, timelines, taxes, and what to do when heirs disagree.",
+    "Can the executor sell? Is probate needed first? What documents does the title company want? The Illinois rules for selling an inherited house, in order.",
   alternates: { canonical: "https://www.illinoisprobatedirectory.com/resources/selling-inherited-property-illinois" },
 };
 
@@ -82,16 +88,16 @@ export default function SellingInheritedPropertyPage() {
 
       <article className="prose prose-gray max-w-none">
         <h1 className="text-3xl sm:text-4xl font-serif font-bold text-navy-900 leading-tight mb-4">
-          Selling an Inherited House in Illinois: A Complete Guide for Heirs and Executors
+          Selling an Inherited House in Illinois: The Legal Steps
         </h1>
         <p className="text-gray-500 text-sm mb-8">
-          Who can sell, when probate is required, how long it takes, and what it means for taxes.{" "}
-          <span className="text-gray-400">Last updated: September 2026</span>
+          Who can sell, whether probate is needed first, what the title company will ask for, and what it means for taxes.{" "}
+          <span className="text-gray-400">Last updated: November 2026</span>
         </p>
 
         <div className="space-y-10 text-gray-700 leading-relaxed">
 
-          <p>{"Inheriting a house in Illinois usually means handling two things at once: the legal process of transferring or selling the property, and the physical property itself, with its bills, repairs, and a lifetime of belongings inside. This guide covers the legal side step by step, whether you're an executor selling on behalf of an estate or an heir trying to understand what happens next."}</p>
+          <p>{"Inheriting a house in Illinois usually means handling two things at once: the legal process of transferring or selling the property, and the physical property itself, with its bills, repairs, and a lifetime of belongings inside. This guide covers the legal side step by step, whether you're an executor selling on behalf of an estate or an heir trying to understand what happens next. The rules here are Illinois law and apply in every county. Costs and requirements that change from town to town are noted where they come up."}</p>
 
           <section>
             <h2 className="text-2xl font-serif font-bold text-navy-800 mb-3">{"The Short Answer"}</h2>
@@ -143,12 +149,7 @@ export default function SellingInheritedPropertyPage() {
             <h2 className="text-2xl font-serif font-bold text-navy-800 mb-3">{"Step 3: The Sale, Step by Step"}</h2>
             <p><strong>{"1. Secure and insure the property."}</strong>{" Change the locks, keep utilities on to prevent frozen pipes, and call the homeowner's insurance carrier right away. Many standard policies limit coverage once a home sits vacant, and vacant homes are exactly the ones that suffer water damage and break-ins."}</p>
             <p className="mt-3"><strong>{"2. Establish the value."}</strong>{" Get an appraisal of the property's value as of the date of death. It serves two purposes: it protects the executor against claims that the house was undersold, and it documents the heirs' stepped-up tax basis (covered below)."}</p>
-            <p className="mt-3"><strong>{"3. Choose how to sell."}</strong>{" Inherited homes usually sell one of three ways:"}</p>
-            <ul className="mt-3 space-y-2 list-disc list-outside ml-5">
-              <li><strong>{"Listing on the MLS"}</strong>{" typically brings the highest price, especially if the house is in reasonable condition and the estate can carry it for a few months."}</li>
-              <li><strong>{"An as-is sale to a cash buyer"}</strong>{" closes faster with no repairs, which is common when the house needs major work or the heirs live out of state."}</li>
-              <li><strong>{"Auction"}</strong>{" gives families who disagree on value a transparent, objective result."}</li>
-            </ul>
+            <p className="mt-3"><strong>{"3. Choose how to sell."}</strong>{" The usual choices are listing on the open market, an as-is sale, or an auction. Which one fits is a real-estate question more than a legal one. The legal point is the executor's duty to get a fair price for the estate and to be able to show how the price was reached."}</p>
             <p className="mt-3"><strong>{"4. List and disclose."}</strong>{" The executor signs the listing and contract in their representative capacity. Estates are generally exempt from Illinois' standard residential disclosure form, but an executor still can't hide known defects, so be honest about anything you know."}</p>
             <p className="mt-3"><strong>{"5. Accept an offer."}</strong>{" Under independent administration, the executor can accept and move forward. Under supervised administration, the accepted offer goes to the court for approval before closing."}</p>
             <p className="mt-3"><strong>{"6. Close."}</strong>{" The title company will require current Letters of Office, or the trust or TODI documents if the house passed outside probate. The mortgage, property taxes, and closing costs are paid at closing, and the net proceeds go into the estate account."}</p>
@@ -180,16 +181,18 @@ export default function SellingInheritedPropertyPage() {
           <section>
             <h2 className="text-2xl font-serif font-bold text-navy-800 mb-3">{"Taxes on an Inherited House in Illinois"}</h2>
             <p><strong>{"Illinois has no inheritance tax."}</strong>{" Heirs don't owe tax just for receiving property."}</p>
-            <p className="mt-3"><strong>{"Stepped-up basis."}</strong>{" When you inherit real estate, your tax basis is generally reset to the property's fair market value on the date of death, not what the original owner paid. If your parent bought a home in Oak Park in 1985 for $80,000 and it was worth $450,000 when they died, your basis is $450,000. Sell it for $450,000 and there's no capital gain on the decades of appreciation. You're taxed only on any gain above the date-of-death value."}</p>
+            <p className="mt-3"><strong>{"Stepped-up basis."}</strong>{" When you inherit real estate, your tax basis is generally reset to the property's fair market value on the date of death, not what the original owner paid. If your parent bought a home in 1985 for $80,000 and it was worth $450,000 when they died, your basis is $450,000. Sell it for $450,000 and there's no capital gain on the decades of appreciation. You're taxed only on any gain above the date-of-death value."}</p>
             <p className="mt-3"><strong>{"Estate tax."}</strong>{" Illinois taxes estates over $4 million, one of the lowest thresholds in the country, at rates up to 16%. The federal estate tax applies only to estates above $15 million in 2026. Any estate tax owed must be addressed before assets are distributed."}</p>
             <p className="mt-3"><strong>{"Transfer taxes."}</strong>{" Illinois charges a state transfer tax of $0.50 per $500 of the sale price, plus a county transfer tax of $0.25 per $500. Chicago and some suburbs add their own municipal transfer taxes. These are paid at closing."}</p>
+            <p className="mt-3">{"Municipal transfer taxes, transfer stamps and pre-closing requirements differ from town to town, so this guide does not list them. For Chicago, see "}<a href={cpsUrl("selling_guide_chicago", "/blog/sell-inherited-house-chicago")} target="_blank" rel="noopener" className={cpsLink}>{"selling an inherited house in Chicago"}</a>{" on Chicago Probate Specialist, a real estate brokerage service run by the publisher of this directory (not a law firm). For other towns, ask the title company or the village hall."}</p>
           </section>
 
           <section>
             <h2 className="text-2xl font-serif font-bold text-navy-800 mb-3">{"When Heirs Disagree"}</h2>
-            <p>{"Disagreements over an inherited house are common: one sibling wants to sell, another wants to keep it, a third lives in it. How they're resolved depends on how the house passed."}</p>
-            <p className="mt-3"><strong>{"If the house is in probate,"}</strong>{" the executor generally has authority to sell in the estate's best interest, and serious disputes go to the probate judge. If an heir living in the home won't leave, the executor may need a court order to get possession."}</p>
-            <p className="mt-3"><strong>{"If the heirs already co-own the house"}</strong>{" (for example, because it passed outside probate to several people), any co-owner can file a "}<strong>{"partition action"}</strong>{" asking an Illinois court to divide or force the sale of the property. Partition works, but it's slow and expensive. Mediation or an early conversation with a probate attorney usually resolves things faster and for less."}</p>
+            <p>{"How a disagreement is resolved depends on how the house passed."}</p>
+            <p className="mt-3"><strong>{"If the house is in probate,"}</strong>{" the executor generally has authority to sell in the estate's best interest, and serious disputes go to the probate judge."}</p>
+            <p className="mt-3"><strong>{"If the heirs already co-own the house,"}</strong>{" any co-owner can file a "}<strong>{"partition action"}</strong>{" asking an Illinois court to divide the property or order it sold, though mediation is usually faster and cheaper."}</p>
+            <p className="mt-3">{"For buyouts, who pays the bills in the meantime and what a partition case involves, see "}<a href={cpsUrl("selling_guide_heirs", "/blog/heirs-disagree-selling-inherited-property-illinois")} target="_blank" rel="noopener" className={cpsLink}>{"when heirs disagree about selling an inherited house"}</a>{" on Chicago Probate Specialist."}</p>
           </section>
 
           <section>

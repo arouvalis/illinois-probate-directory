@@ -94,6 +94,38 @@ export function parseSpecializations(raw: string | null): string[] {
   return raw.split(",").map((s) => s.trim()).filter(Boolean);
 }
 
+// ── Profile page title and description ─────────────────────────────
+// People who search an attorney's name want to confirm they found the right
+// office, so both lead with what the page holds. Each part is named only when
+// the listing has it; nothing calls a general-practice firm a probate attorney.
+function listsProbate(attorney: Attorney): boolean {
+  return attorney.probate_verified === "YES" || /probate/i.test(attorney.specializations_found ?? "");
+}
+
+export function attorneyMetaTitle(attorney: Attorney): string {
+  const parts = [
+    attorney.phone ? "Phone" : "Address",
+    attorney.reviews ? "Reviews" : attorney.rating ? "Rating" : null,
+    listsProbate(attorney) ? "Probate Practice" : attorney.specializations_found ? "Practice Areas" : "Contact",
+  ].filter(Boolean) as string[];
+  const where = attorney.city ? `, ${attorney.city}, IL` : "";
+  return `${attorney.name}${where}: ${parts.slice(0, -1).join(", ")} and ${parts[parts.length - 1]}`;
+}
+
+export function attorneyMetaDescription(attorney: Attorney): string {
+  const holds = [
+    attorney.address ? "address" : null,
+    attorney.phone ? "phone" : null,
+    attorney.working_hours ? "office hours" : null,
+    attorney.rating ? "Google rating" : null,
+    listsProbate(attorney) ? "probate practice areas" : attorney.specializations_found ? "practice areas" : null,
+  ].filter(Boolean) as string[];
+  const where = attorney.city ? ` in ${attorney.city}, Illinois` : " in Illinois";
+  const list = holds.length > 1 ? `${holds.slice(0, -1).join(", ")} and ${holds[holds.length - 1]}` : holds[0] ?? "listing details";
+  const free = attorney.free_consultation === "YES" ? " Free consultation offered." : "";
+  return `${attorney.name}${where}: ${list}.${free} Send a message from this page.`;
+}
+
 /**
  * Strip query strings (UTM params etc.) and fragments from a website URL.
  * Handles both standard query strings (?utm_source=...) and URL-encoded

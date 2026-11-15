@@ -28,7 +28,7 @@ const faqSchema = {
       "name": "What does probate cost in Illinois?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Illinois probate costs typically include court filing fees, publication fees for the required creditor notice, attorney fees (charged hourly, as a flat fee, or as a percentage of the estate), reasonable compensation for the executor, and appraisal fees. These costs are paid from the estate."
+        "text": "Illinois probate costs typically include court filing fees, publication fees for the required creditor notice, attorney fees, reasonable compensation for the executor, and appraisal fees. Attorney fees vary: some attorneys bill hourly, some charge a flat fee, and some charge a percentage of the estate. Ask for a written quote before you hire."
       }
     },
     {
@@ -36,7 +36,7 @@ const faqSchema = {
       "name": "Do I need an attorney for Illinois probate?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Illinois does not technically require an attorney for probate, but most executors hire one due to the legal filings, court appearances, creditor negotiations, and tax decisions involved."
+        "text": "Illinois law doesn't strictly require an attorney in every case, but courts generally expect executors to be represented, and nearly all estates hire one. Probate involves legal filings, court appearances, creditor negotiations and tax decisions that carry personal liability if mishandled."
       }
     },
     {
@@ -59,7 +59,7 @@ const faqs: Faq[] = faqSchema.mainEntity.map((q) => ({
 export const metadata: Metadata = {
   title: "How Probate Works in Illinois – Step-by-Step Guide",
   description:
-    "Illinois probate usually takes 9–12 months and costs 2–4% of the estate value. This guide covers filing requirements, timelines by county, small estate affidavits, and when an attorney is required.",
+    "Illinois probate usually takes 9–12 months. This guide covers the steps, what it costs, timelines by county, small estate affidavits, and when an attorney is required.",
   alternates: { canonical: "https://www.illinoisprobatedirectory.com/resources/how-probate-works-illinois" },
 };
 
@@ -216,7 +216,7 @@ export default function HowProbateWorksPage() {
             <ul className="mt-3 space-y-1.5 list-disc list-outside ml-5">
               <li><strong>Court filing fees:</strong> $200–$500 depending on estate size and county</li>
               <li><strong>Publication fees:</strong> $100–$300 for required creditor notices</li>
-              <li><strong>Attorney fees:</strong> Often 2–5% of the gross estate value, or charged as a flat or hourly fee</li>
+              <li><strong>Attorney fees:</strong> These vary. Some attorneys bill hourly, some charge a flat fee, and some charge a percentage of the estate. Ask for a written quote before you hire.</li>
               <li><strong>Executor fees:</strong> The executor is entitled to reasonable compensation from the estate</li>
               <li><strong>Appraisal fees:</strong> Often required for real estate, business interests, or unusual assets</li>
             </ul>
@@ -242,11 +242,11 @@ export default function HowProbateWorksPage() {
               Do I Need an Attorney for Illinois Probate?
             </h2>
             <p>
-              Illinois does not technically require an attorney for probate. However,
-              most executors hire one for good reason: probate involves legal filings,
-              court appearances, creditor negotiations, and tax decisions that carry
-              personal liability if mishandled. An experienced probate attorney can
-              help you avoid costly mistakes and move the process along efficiently.
+              Illinois law doesn&apos;t strictly require an attorney in every case, but courts generally expect executors to be represented, and nearly all estates hire one.
+              {" "}Probate involves legal filings, court appearances, creditor negotiations,
+              and tax decisions that carry personal liability if mishandled. An experienced
+              probate attorney can help you avoid costly mistakes and move the process along
+              efficiently.
             </p>
           </section>
 

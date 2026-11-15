@@ -219,7 +219,7 @@ export default function SellingInheritedPropertyPage() {
 
           <section>
             <h2 className="text-2xl font-serif font-bold text-navy-800 mb-3">{"Where a Probate Attorney Fits"}</h2>
-            <p>{"Illinois executors can technically handle probate without a lawyer, but when real estate is involved it rarely makes sense. A probate attorney can:"}</p>
+            <p>{"Illinois law doesn't strictly require an attorney in every case, but courts generally expect executors to be represented, and nearly all estates hire one. When real estate is involved, a probate attorney can:"}</p>
             <ul className="mt-3 space-y-2 list-disc list-outside ml-5">
               <li>{"Open the estate and obtain Letters of Office"}</li>
               <li>{"Advise whether independent administration is available"}</li>

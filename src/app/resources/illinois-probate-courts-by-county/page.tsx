@@ -315,8 +315,8 @@ export default function IllinoisProbateCourtsByCountyPage() {
               of notice.
             </li>
             <li>
-              Illinois courts generally require a licensed attorney to open a formal
-              probate estate. Self-represented parties may handle small estate affidavits.
+              Illinois law doesn&apos;t strictly require an attorney in every case, but courts generally expect executors to be represented, and nearly all estates hire one.
+              {" "}A small estate affidavit does not involve a court case.
             </li>
           </ul>
         </div>

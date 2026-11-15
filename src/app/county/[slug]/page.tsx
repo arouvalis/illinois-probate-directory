@@ -143,10 +143,9 @@ Until it is sold or transferred, the house is the executor&apos;s responsibility
       </p>
       <h4>Do I need a probate attorney in Cook County?</h4>
       <p>
-        Illinois law does not require an attorney for probate, but Cook County&apos;s court
-        procedures are complex enough that most executors benefit significantly from legal
-        representation. Attorneys familiar with the Daley Center&apos;s Probate Division can
-        prevent filing errors that cause costly delays.
+        Illinois law doesn&apos;t strictly require an attorney in every case, but courts generally expect executors to be represented, and nearly all estates hire one.
+        {" "}Attorneys familiar with the Daley Center&apos;s Probate Division can prevent
+        filing errors that cause costly delays.
       </p>
       <h4>Where is the Cook County Probate Court?</h4>
       <p>
@@ -273,7 +272,7 @@ Until it is sold or transferred, the house is the executor&apos;s responsibility
 const COUNTY_FAQ: Record<string, { question: string; answer: string }[]> = {
   Cook: [
     { question: "How long does probate take in Cook County?", answer: "A straightforward Cook County probate case usually takes about 9 to 12 months from filing to closing. Contested or complex estates can take 12 to 24 months or longer. The mandatory 6-month creditor period is the primary driver of the timeline." },
-    { question: "Do I need a probate attorney in Cook County?", answer: "Illinois law does not require an attorney for probate, but Cook County's court procedures are complex enough that most executors benefit significantly from legal representation. Attorneys familiar with the Daley Center's Probate Division can prevent filing errors that cause costly delays." },
+    { question: "Do I need a probate attorney in Cook County?", answer: "Illinois law doesn't strictly require an attorney in every case, but courts generally expect executors to be represented, and nearly all estates hire one. Attorneys familiar with the Daley Center's Probate Division can prevent filing errors that cause costly delays." },
     { question: "Where is the Cook County Probate Court?", answer: "The Cook County Circuit Court Probate Division is located at the Richard J. Daley Center, 50 W Washington St, Chicago, IL 60602, on the 18th floor. Hours are Monday through Friday, 8:30 AM to 4:30 PM." },
   ],
   McHenry: [

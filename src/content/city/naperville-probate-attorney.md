@@ -71,7 +71,7 @@ Probate expenses vary based on estate complexity. Typical costs include:
 
 - Court filing fees, which vary by county and estate value
 - Publication fees for creditor notice ($100–$300)
-- Attorney fees (often 2–4% of estate value for routine cases)
+- Attorney fees, which vary: hourly, flat-fee or a percentage of the estate. Ask for a written quote.
 - Representative compensation (reasonable fees based on time and effort)
 - Appraisal fees if needed
 - Accounting and tax preparation costs

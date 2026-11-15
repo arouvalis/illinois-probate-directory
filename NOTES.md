@@ -921,16 +921,20 @@ Session date: Nov 15, 2026. One pull request per repo, not merged. This section 
 ## Wording removed or softened because it was not confirmed
 
 - Timeline page FAQ: "one of the busiest probate courts in the United States" (Cook) removed. "Smaller counties like McHenry, Kane, and DuPage often move faster because of lighter dockets" replaced with a sentence saying the six-month period is the same everywhere and scheduling depends on each court's caseload.
-- How-probate-works FAQ: the cost answer no longer gives dollar ranges or a percentage. See item 1 below.
+- How-probate-works FAQ: the cost answer no longer gives dollar ranges or a percentage.
+
+## Decisions from Andy's review (same day), applied
+
+- **Attorney-fee percentages removed.** `/resources/how-probate-works-illinois` no longer gives a percentage in the text, the FAQ answer or the search description. It says fees vary (hourly, flat-fee or a percentage of the estate) and to ask for a written quote. The same was done where a percentage appeared elsewhere: the Naperville guide ("often 2–4%") and the cost article ("2-4% of the estate's value"). Wording is in `ATTORNEY_FEE_SENTENCE` in `src/lib/probateFacts.ts`.
+- **One answer to "is an attorney required?"** Every page that addresses it now uses: "Illinois law doesn't strictly require an attorney in every case, but courts generally expect executors to be represented, and nearly all estates hire one." Applied to the Cook County page (text and FAQ markup), how-probate-works (text and FAQ markup), the courts page, the selling guide and the Elgin guide. Saved as `ATTORNEY_SENTENCE` in `src/lib/probateFacts.ts`. The article "Do I Need a Probate Attorney in Illinois?" was not edited: it discusses when a family might manage alone and does not state a rule either way.
 
 ## Open items for Andy
 
-1. **Attorney-fee percentage disagrees with itself.** On `/resources/how-probate-works-illinois` the page text says "often 2–5%", the search description says "2–4%". Neither is sourced. I left both as they were and took the number out of the FAQ answer. Pick one, or drop the percentage.
-2. **"Do you need an attorney" is answered two ways.** The courts page says "Illinois courts generally require a licensed attorney to open a formal probate estate"; the county pages and how-probate-works say Illinois does not require one. Not changed. An attorney should settle the wording.
-3. **Existing figures now more visible.** The visible FAQ blocks repeat figures the pages already showed and that have no recorded source: per-county filing fees on the courts page, "30–60 days" for a small estate affidavit, and the Cook County court hours. Worth a check with the clerks.
-4. **Not done, still on the Phase 4b later list:** titles for the kept articles, plain-HTML links from the homepage to city and county pages, author and credentials on the selling guide.
-5. The Barrington page says "most Barrington probate cases are filed at the Daley Center". Unverified, unchanged.
-6. The courts page title is 101 characters with the site name. Not in this session's list.
+1. **Dollar figures for attorney fees remain** in the cost article (hourly $200–$500, flat fee $2,500–$6,000) and the Joliet guide ("a simple will might run $300–$1,000"). They are not percentages, so they were left. No source is recorded for them.
+2. **Existing figures now more visible.** The visible FAQ blocks repeat figures the pages already showed and that have no recorded source: per-county filing fees on the courts page, "30–60 days" for a small estate affidavit, and the Cook County court hours. Worth a check with the clerks.
+3. **Not done, still on the Phase 4b later list:** titles for the kept articles, plain-HTML links from the homepage to city and county pages, author and credentials on the selling guide.
+4. The Barrington page says "most Barrington probate cases are filed at the Daley Center". Unverified, unchanged.
+5. The courts page title is 101 characters with the site name. Not in this session's list.
 
 ## Checked in a production build
 

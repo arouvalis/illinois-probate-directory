@@ -810,3 +810,90 @@ After approval, this map is what Phase 5 feeds to the blog pipeline: a new post 
 - Municipal transfer tax lists (not opened; quoted in search results): https://www.illinoisrealtors.org/wp-content/uploads/2024/01/TransferTax_OneSheet_JAN2024.pdf · https://cmetro.ctic.com/CTRSCMetro/media/CT-RS-CMetro/Transfer-Tax-List-July-1,-2026.pdf
 
 These came from search results that quote the pages; the pages themselves could not be opened from this session. Court addresses and phone numbers are as already published on IPD.
+
+---
+
+# NOTES — Phase 4b (IPD content cleanup)
+
+Session date: Nov 15, 2026. IPD only. One pull request, not merged. No CPS changes, no form, lead-routing or email changes.
+
+## What changed
+
+- **`/blog` index** has its own title ("Illinois Probate Guides for Families and Executors"), description and canonical tag. It lists the five remaining articles and the four resource guides, each with a one-line summary. Summaries are in `src/app/blog/page.tsx`; an article without one is still listed under its own heading.
+- **Eight new city pages**, all built on one template (`src/components/CityPage.tsx`, settings in each `src/app/city/<town>-probate-attorney/page.tsx`, local guide in `src/content/city/<same name>.md`):
+
+  | Page | Listings in town | Nearby listings shown | Nearby towns |
+  | --- | --- | --- | --- |
+  | Chicago | 71 | — | — (has a search box) |
+  | Cicero | 1 | 13 | Berwyn, Oak Park, Forest Park, Riverside, North Riverside, Lyons, Brookfield |
+  | Hinsdale | 3 | 18 | Burr Ridge, Oak Brook, Oakbrook Terrace, Western Springs, La Grange, Willowbrook, Darien, Downers Grove |
+  | Schaumburg | 2 | 10 | Hoffman Estates, Rolling Meadows, Roselle, Palatine, Arlington Heights |
+  | Rolling Meadows | 2 | 9 | Schaumburg, Palatine, Arlington Heights, Hoffman Estates, Mt Prospect |
+  | Burr Ridge | 2 | 9 | Hinsdale, Willowbrook, Darien, Willow Springs, Western Springs |
+  | Waukegan | 3 | 14 | Gurnee, Lake Bluff, Grayslake |
+  | Lake in the Hills | 3 | 5 | Algonquin, Huntley, Cary (Crystal Lake is linked, not repeated) |
+
+  Nearby attorneys sit in a second list under a sentence saying those offices are not in the town and naming the towns they are in. Nearby towns are a hand-picked list (`nearbyTowns`), because the data has no coordinates. Counts are calculated from the data. Listings stay alphabetical; nothing is ranked.
+- **Elgin and Palos Heights** city pages now show a local guide that replaces their blog posts.
+- **The town posts were general essays with little local content.** The guides are short and new, and keep only the local points: which court, the county-line split (Hinsdale, Burr Ridge, Elgin, Schaumburg), the living-trust questions for Lake in the Hills. Every figure in them is one the site already states (court addresses, six-month claims period, 9 to 12 months, $150,000 small-estate limit, $4 million Illinois estate tax threshold).
+- **23 posts redirected** (permanent) and their files removed; the text is still in git history. Four older redirects that pointed at those posts now go straight to the final page, so there are no chains.
+
+  | Old post | Now goes to |
+  | --- | --- |
+  | `chicago-probate-lawyer` | `/city/chicago-probate-attorney` |
+  | `cicero-probate-attorney` | `/city/cicero-probate-attorney` |
+  | `probate-attorney-hinsdale` | `/city/hinsdale-probate-attorney` |
+  | `probate-attorney-schaumburg-illinois` | `/city/schaumburg-probate-attorney` |
+  | `probate-attorney-rolling-meadows-illinois` | `/city/rolling-meadows-probate-attorney` |
+  | `probate-attorney-burr-ridge-illinois`, `probate-attorney-burr-ridge` | `/city/burr-ridge-probate-attorney` |
+  | `probate-attorney-waukegan-illinois` | `/city/waukegan-probate-attorney` |
+  | `probate-attorney-lake-in-the-hills-il`, `living-trust-attorney-lake-in-the-hills` | `/city/lake-in-the-hills-probate-attorney` |
+  | `probate-attorney-elgin-illinois` | `/city/elgin-probate-attorney` |
+  | `probate-attorney-palos-heights-illinois` | `/city/palos-heights-probate-attorney` |
+  | `estate-law-arlington-heights-il` | `/county/cook` |
+  | `gilberts-wills-attorney` | `/county/kane` |
+  | `dupage-county-wills-lawyer` | `/county/dupage` |
+  | `mchenry-county-lawyers-probate-estate` | `/county/mchenry` |
+  | `how-long-does-probate-take-in-illinois` | `/resources/illinois-probate-timeline-by-county` |
+  | `estate-lawyer-nokomis-il`, `probate-lawyer`, `list-of-probate-attorneys`, `william-lee-attorney` | homepage |
+  | `meents-law-wilmington` | `/attorney/meents-law-p-c-channahon` |
+  | `michael-naughton-attorney` | `/attorney/michael-r-naughton-law-offices-manhattan` |
+
+  The three "merge" posts (DuPage, McHenry, how long probate takes) had nothing the owning page did not already say, so nothing was copied across.
+- **Naughton post.** The post names "Michael Naughton" and gives no town. Only one listing carries that first and last name, Michael R Naughton Law Offices in Manhattan, so the redirect goes there. The Crystal Lake firm (Cowlin, Naughton, Curran, Cuda & Hanzel) shares only the surname.
+- **Remaining articles (5):** do I need a probate attorney, cost of a probate attorney, small estate affidavit, what goes through probate, Lake County probate.
+- **Attorney profile title and description** (`attorneyMetaTitle`, `attorneyMetaDescription` in `src/lib/attorneys.ts`). Pattern: "{Name}, {City}, IL: Phone, Reviews and Probate Practice". Each word appears only if the listing has it: "Reviews" needs a review count ("Rating" if there is only a rating), "Probate Practice" needs probate in the listing's practice areas or a probate-verified mark; otherwise "Practice Areas" or "Contact". Applied to all 530 profiles, not just the zero-click ones.
+- **County pages:** new titles ("Cook County Probate Attorneys: 233 Listings by Town"; Lake carries ", IL") and descriptions from the Phase 4a table, with counts from the data. A "Browse by Town" box links every city page in the county. Links to redirected posts were replaced. `/county/lake` and the Lake County article link to each other.
+- **Selling guide:** retitled "Selling an Inherited House in Illinois: The Legal Steps", new description. It now says it covers Illinois law for every county. The how-to-sell options list was cut to one sentence about the executor's duty on price, the "When Heirs Disagree" section was shortened, and the Oak Park example lost its town. Two tracked links go to CPS: the Chicago guide (`utm_content=selling_guide_chicago`) and the heirs-disagree article (`selling_guide_heirs`).
+- `/llms.txt` lists the Chicago page and the new guide names. `data/content-dates.json` regenerated (566 URLs).
+
+## Checked in a production build
+
+- Build passes. All 104 redirects return a permanent redirect to a page that loads; none chain.
+- Each new page has one main heading, its own title, description and canonical tag, and the expected number of listing cards.
+- Sitemap holds 18 city pages, the blog index and 5 articles; no redirected address is in it.
+- Every internal link on the changed pages loads.
+- Cicero page and blog index viewed at desktop and phone width; no sideways scrolling.
+
+## Not verified from this session
+
+- **The two CPS addresses** linked from the selling guide (`/blog/sell-inherited-house-chicago`, `/blog/heirs-disagree-selling-inherited-property-illinois`). They come from the CPS Search Console page list; CPS could not be opened from here. If Phase 4 on CPS renames either, update the links.
+- **Rolling Meadows courthouse sentence.** The guide says the Cook County courthouse on Euclid Avenue serves the Third Municipal District and is not where probate estates are filed. Written from general knowledge, not from a source opened in this session. An attorney should confirm or the sentence should come out.
+- **County-line statements** (Schaumburg has a small part in DuPage; eastern Elgin is in Cook; eastern Hinsdale is in Cook). Same status.
+- Live Search Console effects. Nothing here has been deployed.
+
+## Left for later (in the Phase 4a report, not in this session's list)
+
+- Titles and descriptions for the kept articles and for the Joliet and Naperville city pages; the homepage title; the timeline page title.
+- Homepage links to city and county pages in plain HTML.
+- Author and credentials on the selling guide.
+- City pages for towns with no page yet (Downers Grove, Lake Forest, Palatine and others): Phase 5.
+- Feeding this map to the blog pipeline so it does not recreate the removed topics: Phase 5. Until then, do not run the pipeline scripts.
+- The 10 older city pages still use their own copies of the layout. They could move to the shared template.
+
+## Open items for Andy
+
+1. Confirm the Naughton redirect (Manhattan listing).
+2. Confirm the nearby-town lists above match how you would describe each area.
+3. The menu still says "Blog"; the page is now headed "Illinois Probate Guides". Rename the menu item?
+4. The brief says 592 listings; the data has 530 after the Phase 1 removals.

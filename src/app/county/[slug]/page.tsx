@@ -9,6 +9,9 @@ import {
 } from "@/lib/attorneys";
 import AttorneySearch from "@/components/AttorneySearch";
 import EstateHouseBlock from "@/components/EstateHouseBlock";
+import JsonLd from "@/components/JsonLd";
+import { COURTS } from "@/lib/cityPages";
+import { SITE, faqPageSchema, listingPageSchema } from "@/lib/schema";
 import Link from "next/link";
 import React from "react";
 
@@ -40,16 +43,6 @@ const COUNTY_META_TAIL: Record<string, string> = {
   Lake: "Waukegan, Libertyville, Lake Forest and nearby. Probate is filed at the Lake County Courthouse in Waukegan.",
   Kane: "Geneva, St. Charles, Elgin, Aurora and nearby. Probate is filed at the Kane County Courthouse in Geneva.",
 };
-
-const COUNTY_INTROS: Record<string, string> = {
-  Cook: "Cook County is home to the largest probate court in Illinois, located in Chicago at the Daley Center. The court handles thousands of estate cases annually across Chicago and its suburbs.",
-  Lake: "Lake County probate cases are handled at the Lake County Courthouse in Waukegan. Attorneys here serve communities from Waukegan and Gurnee to Highland Park and Lake Forest.",
-  Will: "Will County probate is administered from Joliet. Attorneys in this county serve Joliet, Naperville, Plainfield, Bolingbrook, and surrounding communities.",
-  Kane: "Kane County probate cases are heard in Geneva at the Kane County Courthouse. Local attorneys handle estates across Aurora, Elgin, St. Charles, Batavia, and surrounding areas.",
-  McHenry: "McHenry County probate court is located in Woodstock. Attorneys serve Crystal Lake, McHenry, Algonquin, Huntley, Marengo, and surrounding communities.",
-  DuPage: "DuPage County probate is handled at the DuPage County Courthouse in Wheaton. Attorneys cover Naperville, Oak Brook, Wheaton, Downers Grove, Lisle, and surrounding suburbs.",
-};
-
 
 // Town pages in each county, shown as "Browse by Town" in the sidebar.
 const city = (town: string) => ({
@@ -315,39 +308,29 @@ export default function CountyPage({ params }: Props) {
   const allCounties = Object.entries(COUNTY_SLUGS).filter(
     ([slug]) => slug !== params.slug
   );
-  const countySchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": (COUNTY_FAQ[county] || []).map((qa) => ({
-      "@type": "Question",
-      "name": qa.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": qa.answer,
-      },
-    })),
-  };
-
-  const collectionSchema = {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": `Probate Attorneys in ${county} County, Illinois`,
-    "url": `https://www.illinoisprobatedirectory.com/county/${params.slug}`,
-    "about": {
-      "@type": "AdministrativeArea",
-      "name": `${county} County, Illinois`,
+  const court = COURTS[county];
+  const pageUrl = `${SITE}/county/${params.slug}`;
+  const schema = [
+    listingPageSchema({
+      name: `Probate Attorneys in ${county} County, Illinois`,
+      url: pageUrl,
+      about: { "@type": "AdministrativeArea", name: `${county} County, Illinois` },
+      attorneys,
+      listName: `Probate attorney listings in ${county} County, Illinois`,
+    }),
+    faqPageSchema(COUNTY_FAQ[county] || []),
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+        { "@type": "ListItem", position: 2, name: `${county} County`, item: pageUrl },
+      ],
     },
-  };
+  ];
   return (
     <>
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(countySchema) }}
-    />
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
-    />
+      <JsonLd data={schema} />
       {/* Hero */}
       <section className="bg-gradient-to-r from-navy-800 to-navy-700 text-white py-12 px-4">
         <div className="max-w-5xl mx-auto">
@@ -359,8 +342,11 @@ export default function CountyPage({ params }: Props) {
           <h1 className="text-3xl sm:text-4xl font-serif font-bold mb-3">
             Probate Attorneys in {county} County, Illinois
           </h1>
+          {/* Direct answer: what the page holds and where the county's estates are filed */}
           <p className="text-gray-200 max-w-2xl leading-relaxed">
-            {COUNTY_INTROS[county]}
+            This page lists {attorneys.length} probate attorneys with offices in {county} County,
+            Illinois, with phone numbers and Google ratings. {county} County probate cases are
+            filed at the {court.building}, {court.street}, {court.cityLine}.
           </p>
           <div className="flex flex-wrap gap-6 mt-6 text-sm">
             <div>
@@ -376,16 +362,13 @@ export default function CountyPage({ params }: Props) {
               <span className="text-gray-300 ml-1.5">Free Consultations</span>
             </div>
           </div>
+          <p className="mt-5 text-sm">
+            <a href="#county-guide" className="text-blue-200 underline hover:text-white">
+              How probate works in {county} County, and common questions ↓
+            </a>
+          </p>
         </div>
       </section>
-
-      {COUNTY_CONTENT[county] && (
-        <section className="py-12 px-4 bg-gray-50 border-b border-gray-200">
-          <div className="max-w-5xl mx-auto">
-            {COUNTY_CONTENT[county]}
-          </div>
-        </section>
-      )}
 
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="flex flex-col lg:flex-row gap-10">
@@ -482,6 +465,15 @@ export default function CountyPage({ params }: Props) {
           </aside>
         </div>
       </div>
+
+      {/* County write-up: court, process and common questions. Kept below the listings. */}
+      {COUNTY_CONTENT[county] && (
+        <section id="county-guide" className="py-12 px-4 bg-gray-50 border-t border-gray-200">
+          <div className="max-w-5xl mx-auto">
+            {COUNTY_CONTENT[county]}
+          </div>
+        </section>
+      )}
     </>
   );
 }

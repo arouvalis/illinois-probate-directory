@@ -6,6 +6,8 @@ import Footer from "@/components/Footer";
 
 import PhoneClickTracker from "@/components/PhoneClickTracker";
 import HandoffClickTracker from "@/components/HandoffClickTracker";
+import { getDirectoryStats } from "@/lib/attorneys";
+import { ORG_ID, SITE } from "@/lib/schema";
 export const metadata: Metadata = {
   title: {
     template: "%s | Illinois Probate Directory",
@@ -18,16 +20,19 @@ export const metadata: Metadata = {
     google: "OdAS2upgHPS4qIzSHL45_8gVbwgmPT3StMm42ZYo044",
   },
 };
+const directoryStats = getDirectoryStats();
+// Site-wide Organization markup. Listing pages point to it by its @id.
 const orgSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": ORG_ID,
   "name": "Illinois Probate Directory",
-  "url": "https://www.illinoisprobatedirectory.com",
-  "description": "A directory of verified probate attorneys serving Cook, Lake, Will, Kane, McHenry, and DuPage counties, Illinois.",
-  "areaServed": {
-    "@type": "State",
-    "name": "Illinois",
-  },
+  "url": SITE,
+  "description": `A free directory of ${directoryStats.total} probate attorney listings in Cook, DuPage, Kane, Lake, McHenry and Will counties, Illinois, with guides to how Illinois probate works.`,
+  "areaServed": ["Cook", "DuPage", "Kane", "Lake", "McHenry", "Will"].map((county) => ({
+    "@type": "AdministrativeArea",
+    "name": `${county} County, Illinois`,
+  })),
 };
 export default function RootLayout({
   children,

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FaqSection from "@/components/FaqSection";
+import type { Faq } from "@/lib/schema";
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -26,7 +28,7 @@ const faqSchema = {
       "name": "What does probate cost in Illinois?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Illinois probate costs typically include court filing fees of $200–$500, publication fees of $100–$300, attorney fees of 2–4% of the gross estate value, executor fees, and appraisal fees."
+        "text": "Illinois probate costs typically include court filing fees, publication fees for the required creditor notice, attorney fees (charged hourly, as a flat fee, or as a percentage of the estate), reasonable compensation for the executor, and appraisal fees. These costs are paid from the estate."
       }
     },
     {
@@ -47,6 +49,12 @@ const faqSchema = {
     }
   ]
 };
+
+// The same questions are shown on the page (FaqSection) and in the FAQ markup.
+const faqs: Faq[] = faqSchema.mainEntity.map((q) => ({
+  question: q.name,
+  answer: q.acceptedAnswer.text,
+}));
 
 export const metadata: Metadata = {
   title: "How Probate Works in Illinois – Step-by-Step Guide",
@@ -76,7 +84,16 @@ export default function HowProbateWorksPage() {
         </h1>
         <p className="text-gray-500 text-sm mb-8">
           A complete step-by-step guide for families navigating estate administration.{" "}
-          <span className="text-gray-400">Last updated: June 2026</span>
+          <span className="text-gray-400">Last updated: November 2026</span>
+        </p>
+
+        {/* Direct answer */}
+        <p className="text-lg text-gray-800 leading-relaxed border-l-4 border-navy-700 pl-4 mb-10">
+          <strong>In short:</strong> probate in Illinois is the court process for settling a
+          deceased person&apos;s estate. The circuit court in the county where the person lived
+          appoints an executor or administrator, creditors get at least six months to file
+          claims, and what remains goes to the heirs. A straightforward estate usually takes
+          about 9 to 12 months.
         </p>
 
         <div className="space-y-10 text-gray-700 leading-relaxed">
@@ -232,6 +249,8 @@ export default function HowProbateWorksPage() {
               help you avoid costly mistakes and move the process along efficiently.
             </p>
           </section>
+
+          <FaqSection faqs={faqs} heading="Quick Answers" />
 
           <div className="bg-navy-50 border border-navy-200 rounded-xl p-6 mt-8">
             <h2 className="font-serif font-bold text-navy-800 text-xl mb-2">

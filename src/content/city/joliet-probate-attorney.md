@@ -48,7 +48,7 @@ Probate is the court-supervised process of validating a will, paying debts, and 
 
 ### Understanding Probate in Will County
 
-Joliet is the county seat of Will County, and the Will County Circuit Court handles all probate matters for Joliet residents and surrounding communities like Plainfield, Bolingbrook, Romeoville, and Lockport. The court is located at the Will County Courthouse, 14 West Jefferson Street in Joliet.
+Joliet is the county seat of Will County, and the Will County Circuit Court handles all probate matters for Joliet residents and surrounding communities like Plainfield, Bolingbrook, Romeoville, and Lockport. The court is located at the Will County Courthouse, 100 West Jefferson Street in Joliet.
 
 A straightforward Illinois estate usually takes about 9 to 12 months, and contested or complex estates can take 12 to 24 months or longer. Here's a simplified overview of the process:
 

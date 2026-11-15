@@ -3,11 +3,14 @@ import Link from "next/link";
 import { getAttorneysByCity } from "@/lib/attorneys";
 import AttorneyList from "@/components/AttorneyList";
 import { getCityGuideHtml } from "@/lib/cityGuide";
+import CityStructuredData from "@/components/CityStructuredData";
 import EstateHouseBlock from "@/components/EstateHouseBlock";
 
+const jolietCount = getAttorneysByCity("Joliet").length;
+
 export const metadata: Metadata = {
-  title: "Probate Attorneys in Joliet, IL",
-  description: "Find experienced probate attorneys in Joliet, Illinois. Joliet is the Will County seat — probate cases are filed at the Will County Courthouse. Browse verified local attorneys.",
+  title: `Joliet Probate Attorneys: ${jolietCount} Local Listings`,
+  description: `${jolietCount} probate attorney listings in Joliet, the Will County seat. Phone numbers, ratings, and how to file at the Will County Courthouse.`,
   alternates: { canonical: "https://www.illinoisprobatedirectory.com/city/joliet-probate-attorney" },
 };
 
@@ -19,6 +22,7 @@ export default function JolietProbatePage() {
 
   return (
     <>
+      <CityStructuredData city="Joliet" slug="joliet-probate-attorney" countySlug="will" attorneys={attorneys} />
       {/* Hero */}
       <section className="bg-gradient-to-r from-navy-800 to-navy-700 text-white py-12 px-4">
         <div className="max-w-5xl mx-auto">
@@ -33,6 +37,7 @@ export default function JolietProbatePage() {
             Probate Attorneys in Joliet, Illinois
           </h1>
           <p className="text-gray-200 max-w-2xl leading-relaxed">
+            This page lists {attorneys.length} probate attorneys with offices in Joliet, Illinois.{" "}
             Joliet is the county seat of Will County and home to the Will County Courthouse,
             where all Will County probate cases are filed. Attorneys here serve Joliet,
             Plainfield, Bolingbrook, Romeoville, and surrounding communities.

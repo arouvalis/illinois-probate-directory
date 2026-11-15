@@ -4,53 +4,10 @@ import { marked } from 'marked';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import EstateHouseBlock from '@/components/EstateHouseBlock';
+import JsonLd from '@/components/JsonLd';
+import { extractFaqs, faqPageSchema } from '@/lib/schema';
 
 const BLOG_DIR = path.join(process.cwd(), 'src/content/blog');
-
-function extractFAQs(markdown: string) {
-  const faqs: { question: string; answer: string }[] = [];
-  const lines = markdown.split('\n');
-
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i].trim();
-    const isHeading = line.startsWith('## ') || line.startsWith('### ');
-    if (!isHeading) continue;
-
-    const question = line.replace(/^#{2,3}\s+/, '').trim();
-    if (!question.endsWith('?')) continue;
-
-    // Find next non-empty paragraph
-    let answer = '';
-    for (let j = i + 1; j < lines.length; j++) {
-      const next = lines[j].trim();
-      if (next.length > 20 && !next.startsWith('#')) {
-        answer = next.replace(/\*\*/g, '').slice(0, 300);
-        break;
-      }
-    }
-
-    if (answer) faqs.push({ question, answer });
-    if (faqs.length >= 5) break;
-  }
-
-  return faqs;
-}
-
-function buildFAQSchema(faqs: { question: string; answer: string }[]) {
-  if (faqs.length === 0) return null;
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map(({ question, answer }) => ({
-      '@type': 'Question',
-      name: question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: answer,
-      },
-    })),
-  };
-}
 
 function getLastUpdated(filePath: string): string {
   const stat = fs.statSync(filePath);
@@ -89,18 +46,12 @@ export default async function BlogPost({ params }: { params: { slug: string } })
 
   const markdown = fs.readFileSync(filePath, 'utf8');
   const html = marked(markdown);
-  const faqs = extractFAQs(markdown);
-  const faqSchema = buildFAQSchema(faqs);
+  const faqs = extractFaqs(markdown);
   const lastUpdated = getLastUpdated(filePath);
 
   return (
     <>
-      {faqSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
-      )}
+      {faqs.length > 0 && <JsonLd data={faqPageSchema(faqs)} />}
     <div className="max-w-3xl mx-auto px-4 py-12">
       <p className="text-gray-400 text-sm mb-6">Last updated: {lastUpdated}</p>
       <article

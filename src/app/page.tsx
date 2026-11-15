@@ -4,8 +4,14 @@ import { COUNTY_NAMES, COUNTY_SLUG_MAP, getAllAttorneys, getDirectoryStats, getC
 import CountySearchForm from "@/components/CountySearchForm";
 import HomepageLeadForm from "@/components/HomepageLeadForm";
 import HomepageSearch from "@/components/HomepageSearch";
+import JsonLd from "@/components/JsonLd";
+import { ORG_ID, SITE } from "@/lib/schema";
+
+const listingTotal = getDirectoryStats().total;
 
 export const metadata: Metadata = {
+  title: `Find a Probate Attorney in Illinois: ${listingTotal} Local Listings`,
+  description: `Search ${listingTotal} probate attorney listings in Cook, DuPage, Kane, Lake, McHenry and Will counties by town or name. Free to use, with guides to how probate works.`,
   alternates: { canonical: "https://www.illinoisprobatedirectory.com/" },
 };
 
@@ -22,8 +28,30 @@ export default function HomePage() {
   const allAttorneys = getAllAttorneys();
   const stats = getDirectoryStats();
 
+  // The six county listing pages, as a list search engines and AI tools can read.
+  const homeSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Illinois Probate Directory",
+    url: `${SITE}/`,
+    publisher: { "@id": ORG_ID },
+    mainEntity: {
+      "@type": "ItemList",
+      name: "Probate attorney listings by county",
+      itemListOrder: "https://schema.org/ItemListUnordered",
+      numberOfItems: COUNTY_NAMES.length,
+      itemListElement: COUNTY_NAMES.map((county, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: `${county} County probate attorneys (${getCountyCount(county)} listings)`,
+        url: `${SITE}/county/${COUNTY_SLUG_MAP[county]}`,
+      })),
+    },
+  };
+
   return (
     <>
+      <JsonLd data={homeSchema} />
       {/* Hero */}
       <section className="bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700 text-white py-16 px-4">
         <div className="max-w-5xl mx-auto">
@@ -37,8 +65,10 @@ export default function HomePage() {
                 Find a Probate Attorney<br />in Illinois
               </h1>
               <p className="text-lg text-gray-200 leading-relaxed mb-8">
-                Browse {stats.total} probate attorney listings across Chicagoland.
-                Compare ratings, specializations, and connect directly — free.
+                Illinois Probate Directory lists {stats.total} probate attorneys with
+                offices in Cook, DuPage, Kane, Lake, McHenry and Will counties.
+                Search by town or name, compare ratings, and contact an attorney
+                directly. Free to use.
               </p>
               <div className="space-y-2 text-sm text-gray-300">
                 <p>✓ {stats.verified} probate-verified listings</p>

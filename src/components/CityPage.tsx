@@ -1,11 +1,10 @@
 import Link from "next/link";
 import AttorneyList from "@/components/AttorneyList";
 import AttorneySearch from "@/components/AttorneySearch";
+import CityStructuredData from "@/components/CityStructuredData";
 import EstateHouseBlock from "@/components/EstateHouseBlock";
 import { getCityGuideHtml } from "@/lib/cityGuide";
 import { COURTS, getCityListings, joinList, type CityPageConfig } from "@/lib/cityPages";
-
-const SITE = "https://www.illinoisprobatedirectory.com";
 
 const ALL_COUNTIES = ["Cook", "DuPage", "Kane", "Lake", "McHenry", "Will"];
 
@@ -24,28 +23,15 @@ export default function CityPage({ config }: { config: CityPageConfig }) {
   const freeConsult = local.filter((a) => a.free_consultation === "YES").length;
   const otherCounties = ALL_COUNTIES.filter((c) => !config.counties.includes(c));
 
-  const schema = [
-    {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      name: `Probate Attorneys in ${config.city}, Illinois`,
-      url: `${SITE}/city/${config.slug}`,
-      about: { "@type": "City", name: `${config.city}, Illinois` },
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: SITE },
-        { "@type": "ListItem", position: 2, name: `${main.county} County`, item: `${SITE}/county/${main.countySlug}` },
-        { "@type": "ListItem", position: 3, name: config.city, item: `${SITE}/city/${config.slug}` },
-      ],
-    },
-  ];
-
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <CityStructuredData
+        city={config.city}
+        slug={config.slug}
+        countySlug={main.countySlug}
+        attorneys={local}
+        nearby={nearby}
+      />
 
       <section className="bg-gradient-to-r from-navy-800 to-navy-700 text-white py-12 px-4">
         <div className="max-w-5xl mx-auto">
@@ -61,7 +47,12 @@ export default function CityPage({ config }: { config: CityPageConfig }) {
           <h1 className="text-3xl sm:text-4xl font-serif font-bold mb-3">
             Probate Attorneys in {config.city}, Illinois
           </h1>
-          <p className="text-gray-200 max-w-2xl leading-relaxed">{config.intro}</p>
+          {/* Direct answer: what the page holds, then which court handles the town */}
+          <p className="text-gray-200 max-w-2xl leading-relaxed">
+            This page lists {local.length} probate {local.length === 1 ? "attorney" : "attorneys"} with{" "}
+            {local.length === 1 ? "an office" : "offices"} in {config.city}, Illinois
+            {nearby.length > 0 ? `, and ${nearby.length} more in neighboring towns` : ""}. {config.intro}
+          </p>
           <div className="flex flex-wrap gap-6 mt-6 text-sm">
             <div>
               <span className="text-2xl font-bold">{local.length}</span>

@@ -340,3 +340,473 @@ Session date: Nov 14, 2026. IPD only. One pull request, not merged. No form fiel
 4. **Explainer facts** (court approval of a sale; vacancy clauses "often 30 or 60 days"): Andy is having an attorney review them.
 5. **CPS now has GA4 on every page** (Andy, CPS quick fixes), so arrivals from IPD are tracked there. Tracked CPS → IPD links were not checked from this repo.
 6. The footer still has no link to `/for-families`; not in scope here.
+
+---
+
+# NOTES — Phase 4a (query-to-page map)
+
+Session date: Nov 14, 2026. Both sites. **No code or content was changed.** This section is the only edit, and it is saved in both repos on branch `claude/jolly-allen-mkwgxz`. No pull request.
+
+## What this is based on, and its limits
+
+- The two Search Console exports in the repos (Aug 11 – Nov 10, 2026, web search): 1,000 IPD queries and 95 CPS queries, plus the page lists.
+- **The query lists cover only part of the traffic.** IPD's listed queries add up to 14,554 of 28,841 impressions and 24 of 174 clicks. CPS's add up to 1,691 of 2,667 impressions and 1 of 11 clicks. Google hides the rest. The map below is built on the visible half.
+- **The exports do not say which page showed for which query.** Where I name the page that currently ranks for a topic, that is inferred by comparing query totals with page totals. A query-and-page export would confirm it (see "Still needed").
+- Live sites and most official sources are blocked from this session. County facts in section 5 are marked **confirmed** (already on the sites and checked in Phase 1, or found in search results quoting an official page) or **to verify**.
+- Positions of 30 or worse are page three and beyond. A new title does not fix those; only a better or better-matched page does. I say which fixes are which.
+
+---
+
+## 1. Queries sorted by intent
+
+Rules used, so the sort can be repeated:
+
+- **Real-estate:** looking for a property professional or for probate properties (realtor, agent, specialist, expert, services, properties for sale, cash buyers).
+- **Probate + property:** selling or dealing with an inherited or probate house (the how and the where), including "do I need probate to sell" and "probate real estate attorney".
+- **Probate legal:** looking for an attorney by place or practice area, with no name.
+- **Attorney name:** a named person or firm, including searches by phone number or address.
+- **Informational:** how long, how much, court, clerk, case search, small estate, executor.
+
+| Site | Group | Queries | Impressions | Clicks | Avg. position |
+| --- | --- | --- | --- | --- | --- |
+| IPD | Attorney name | 377 | 3,496 | 23 | 12.5 |
+| IPD | Probate legal | 544 | 10,191 | 0 | 45.7 |
+| IPD | Probate + property | 49 | 635 | 0 | 29.7 |
+| IPD | Informational | 24 | 190 | 1 | 29.7 |
+| IPD | Real-estate | 6 | 42 | 0 | 51.2 |
+| CPS | Real-estate | 43 | 917 | 1 | 33.8 |
+| CPS | Probate + property | 50 | 754 | 0 | 38.1 |
+| CPS | Probate legal | 1 | 19 | 0 | 70.3 |
+| CPS | Other (the single word "yes") | 1 | 1 | 0 | 3.0 |
+
+What the sort shows:
+
+1. **IPD's clicks are attorney-name searches and nothing else.** 23 of the 24 visible clicks. 2,687 of the 3,496 name impressions sit on page one.
+2. **IPD's biggest group earns nothing.** "Probate attorney [place]" searches: 10,191 impressions, zero clicks, average position 46. This is where the content cleanup matters most.
+3. **The two sites overlap almost only in "probate + property".** 32 queries appear on both sites (523 impressions on IPD, 802 on CPS), and 27 of them are "sell inherited / probate house" searches.
+4. **CPS has no informational or legal footprint**, which is correct for its role.
+5. **Noise to ignore:** about 450 IPD impressions are for places outside the six counties (Nokomis, Peoria, Clinton, Belleville, Ottawa, and towns in Texas, Florida and Canada). About 430 are legal searches IPD does not serve (family law and divorce in Tinley Park, disability, wrongful death). On CPS, 27 impressions are out-of-state "sell probate home [Texas/Florida town]". One 587-impression IPD query is an automated name search (Phase 0).
+
+**Probate legal on IPD, by place** (the groups over 100 impressions):
+
+| Place | Queries | Impressions | Avg. position | IPD listings in that town | Page that exists today |
+| --- | --- | --- | --- | --- | --- |
+| Chicago | 34 | 1,247 | 72 | 71 | blog post `chicago-probate-lawyer`, `/county/cook` |
+| No place ("probate attorney", "probate lawyers") | 11 | 781 | 34 | — | homepage, plus 2 blog posts |
+| Joliet | 17 | 697 | 36 | 21 | city page |
+| Cicero | 3 | 564 | 39 | 1 | blog post |
+| Naperville | 14 | 536 | 34 | 10 | city page |
+| Hinsdale | 5 | 442 | 36 | 3 | blog post |
+| DuPage County | 54 | 428 | 44 | 51 | county page, 1 blog post |
+| "Near me" | 53 | 351 | 36 | — | homepage |
+| Arlington Heights | 9 | 347 | 71 | 1 | blog post |
+| Rolling Meadows | 4 | 323 | 35 | 2 | blog post |
+| Downers Grove | 5 | 301 | 63 | 2 | none |
+| South Barrington | 5 | 301 | 26 | 1 | `/city/barrington` nearby |
+| Will County | 24 | 227 | 35 | 52 | county page |
+| Cook County | 19 | 222 | 31 | 233 | county page |
+| Tinley Park (mostly family law) | 17 | 196 | 73 | 9 | none |
+| Lake County | 21 | 187 | 39 | 67 | county page, 1 blog post |
+| Lake in the Hills | 18 | 187 | 27 | 3 | 2 blog posts |
+| Hoffman Estates | 1 | 180 | 71 | 2 | none |
+| Darien | 4 | 167 | 59 | 3 | none |
+| Kane County | 15 | 163 | 24 | 65 | county page |
+| Clarendon Hills | 6 | 159 | 51 | 0 | none |
+| Schaumburg | 2 | 153 | 42 | 2 | blog post |
+| La Grange | 17 | 143 | 50 | 2 | none |
+| Lake Forest | 12 | 121 | 30 | 8 | none |
+| Aurora | 2 | 112 | 34 | 12 | city page |
+| Palatine | 7 | 112 | 28 | 3 | none |
+| Western Springs | 2 | 109 | 68 | 1 | none |
+
+**One finding from this table:** the town blog posts are not what Google shows. Hinsdale searches total 442 impressions, but the Hinsdale post has 1. Rolling Meadows searches total 323; the post has 4. The Schaumburg, Waukegan, Elgin and Arlington Heights posts do not appear in the page list at all. The `/blog` index page has 3,634 impressions at position 50. **Inferred:** the index page is collecting these searches in place of the posts, and several posts may not be indexed. The indexing report would settle it.
+
+---
+
+## 2. One owner per topic
+
+### The dividing rules
+
+1. **IPD owns "find an attorney" and "how probate works".** Every attorney-name, probate-legal and informational topic.
+2. **CPS owns "sell or deal with the house" for any named place** (Chicago, a county, a town) and every search for an agent, realtor or specialist.
+3. **IPD keeps exactly one property page with search ambitions:** the statewide legal-side guide, `/resources/selling-inherited-property-illinois`. It answers "can the executor sell, is probate needed, what documents" for Illinois as a whole and hands off to CPS. It is IPD's second-best page and already holds five merged posts, so moving it would throw that away.
+4. **On IPD, "probate attorney [town]" belongs to a page with listings** (a city page, or the county page for small towns), never to a blog post. A person searching that wants a list of attorneys, and the blog posts are general essays.
+
+### Topic map
+
+| Topic (example queries) | Intent | Owner | Site | Pages that compete today |
+| --- | --- | --- | --- | --- |
+| A named attorney or firm | Name | that attorney's profile page | IPD | 3 blog posts about named attorneys (see section 3) |
+| "probate attorney", "probate lawyers near me", "list of probate attorneys" | Legal | homepage | IPD | **`/blog` index (same title as the homepage)**, `blog/probate-lawyer`, `blog/list-of-probate-attorneys` |
+| "probate attorney chicago", "chicago probate lawyer" | Legal | new `/city/chicago-probate-attorney` (71 listings) | IPD | `blog/chicago-probate-lawyer`, `/county/cook`, the profile of a firm named "Chicago Estate Lawyers" (1,592 impr., position 68) |
+| "[county] probate attorney / estate planning attorney" ×6 | Legal | `/county/[county]` | IPD | `blog/dupage-county-wills-lawyer`, `blog/mchenry-county-lawyers-probate-estate` |
+| "probate attorney [town]" where a city page exists (Joliet, Naperville, Aurora, Elgin, Palos Heights, Orland Park, Crystal Lake, Northbrook, Barrington, Libertyville) | Legal | `/city/[town]-probate-attorney` | IPD | **`blog/probate-attorney-elgin-illinois`**, **`blog/probate-attorney-palos-heights-illinois`**, `/blog` index |
+| "probate attorney [town]" with a blog post only (Cicero, Hinsdale, Schaumburg, Rolling Meadows, Burr Ridge, Waukegan, Lake in the Hills) | Legal | a city page built from the post plus listings | IPD | **two Burr Ridge posts**, **two Lake in the Hills posts**, `/blog` index |
+| South Barrington, Barrington Hills | Legal | `/city/barrington-probate-attorney` | IPD | none |
+| Towns with no page (Downers Grove, Darien, Clarendon Hills, Western Springs, Westmont, Hoffman Estates, La Grange, Lake Forest, Palatine) | Legal | county page for now; candidates for city pages in Phase 5 | IPD | none |
+| "how long does probate take in illinois" | Info | `/resources/illinois-probate-timeline-by-county` | IPD | `blog/how-long-does-probate-take-in-illinois`, `/resources/how-probate-works-illinois`, **CPS copy of the timeline page** |
+| "how probate works", probate process | Info | `/resources/how-probate-works-illinois` | IPD | none |
+| Probate courts, clerk, case search, filing fees | Info | `/resources/illinois-probate-courts-by-county` | IPD | county pages (fine: they link to it) |
+| "lake county il probate" (the process in Lake County) | Info | `blog/lake-county-il-probate` (position 9.5) | IPD | `/county/lake` |
+| Small estate affidavit | Info | `blog/small-estate-affidavit-illinois` | IPD | a section of how-probate-works |
+| Cost of a probate attorney | Info | `blog/how-much-does-a-probate-attorney-cost-in-illinois` | IPD | none |
+| "do I need a probate attorney" | Info | `blog/do-i-need-a-probate-attorney-in-illinois` | IPD | none |
+| What assets go through probate | Info | `blog/what-assets-go-through-probate-in-illinois` | IPD | none |
+| "sell inherited house illinois", "sell house in probate illinois", "do you need probate to sell a house illinois", "documents required for selling inherited property", "can heir property be sold", "probate real estate attorney illinois" | Probate + property | `/resources/selling-inherited-property-illinois` | IPD | **CPS `how-to-sell-a-house-in-probate-in-illinois`** (cross-site), IPD `/for-families` |
+| What happens to the house before a sale (responsibility, vacancy, insurance) | Probate + property | `/for-families` (bridge page, not a search target) | IPD | the selling guide (low risk; keep the two distinct) |
+| "sell inherited house chicago", "selling an inherited house in chicago", "sell a probate home chicago" | Probate + property | `blog/sell-inherited-house-chicago` | CPS | **CPS `sell-inherited-property-chicago`**, **CPS homepage** (its main heading is "Selling an Inherited Property in Chicago?"), IPD selling guide (cross-site) |
+| "how to sell inherited house cook county", "sell inherited house [Cook suburb]" | Probate + property | new Cook County page | CPS | CPS Chicago posts, IPD selling guide (IPD shows at position 14–19 for these) |
+| "sell inherited house mchenry il / crystal lake", DuPage, Kane, Lake, Will equivalents | Probate + property | new county page for each | CPS | IPD selling guide (IPD shows at position 19–33 for McHenry) |
+| How long a probate house sale takes, step by step | Probate + property | `blog/illinois-probate-real-estate-timeline` | CPS | CPS `how-to-sell-a-house-in-probate-in-illinois`; IPD timeline page (different question, keep them distinct) |
+| Heirs disagree about selling | Probate + property | `blog/heirs-disagree-selling-inherited-property-illinois` | CPS | a section of the IPD selling guide |
+| Inherited house with a mortgage | Probate + property | `blog/inherited-property-with-mortgage-illinois` | CPS | none |
+| Inherited house with back taxes | Probate + property | `blog/inherited-home-back-taxes-chicago` | CPS | none |
+| Hoarder house | Probate + property | `blog/selling-hoarder-house-probate-chicago` | CPS | none |
+| Inherited rental property | Probate + property | `blog/selling-rental-property-probate-illinois` | CPS | none |
+| Inherited condo, 2027 Fannie Mae rule | Probate + property | `blog/fannie-mae-condo-reserve-rule-2027-chicago` | CPS | none |
+| Evanston, Oak Park | Probate + property | the two town posts | CPS | none on CPS; "probate lawyer oak park" shows on both sites and belongs to IPD |
+| "probate real estate agent", "probate realtor (near me)", "probate specialist", "chicago real estate probate expert" | Real-estate | homepage | CPS | **CPS `probate-real-estate-specialist-cook-county`**, About, Our Process, Services |
+| "probate real estate services (illinois)" | Real-estate | `/probate-services` | CPS | homepage |
+| "what does a probate real estate specialist do", "do I need one" | Real-estate | `blog/probate-real-estate-specialist-cook-county` (repositioned as the explainer) | CPS | homepage |
+| "probate property sale chicago", "probate properties (for sale)", "homes in probate" | Real-estate (buyer) | homepage; **no page should chase this** | CPS | none. Buyer intent, zero clicks at position 1.9 (Phase 0). |
+
+### Every competing case in one list
+
+**Across the two sites**
+
+1. **Selling an inherited house.** 27 shared queries. Largest: "sell inherited house chicago" (IPD 43 impr. at position 27, CPS 118 at 52), "how to sell inherited property cook county" (IPD 49 at 19, CPS 43 at 13), "sell house in probate illinois" (IPD 43 at 40, CPS 41 at 53), "sell inherited house illinois" (IPD 54 at 20, CPS 14 at 11). Fix: rule 2 and rule 3 above. The IPD guide stops naming Chicago and the counties as places it covers and links to the CPS local pages instead; CPS stops running a second statewide how-to.
+2. **CPS still carries a copy of IPD's timeline page** at `/resources/illinois-probate-timeline-by-county`, with six dead county links. It tells Google to prefer IPD's version, so it earns nothing.
+3. **The two timeline topics.** IPD answers "how long does probate take"; the CPS post answers "how long does selling the house take". The CPS title today reads as the first question.
+4. **"probate lawyer oak park"** shows on both (IPD position 65, CPS 70). It is an attorney search: IPD's.
+5. **"probate real estate services illinois"** shows on both (IPD position 62, CPS 7). CPS's.
+6. **Heirs disagreeing.** CPS has the full article (244 impressions); the IPD guide has a section. Keep the section short and link to the CPS article.
+
+**Inside IPD**
+
+7. `/blog` index against the homepage, the city pages and its own posts (3,634 impressions, 0 clicks; the homepage has 64).
+8. Two posts for Burr Ridge.
+9. A city page and a blog post each for Elgin and for Palos Heights.
+10. Two posts for Lake in the Hills (probate attorney, living trust attorney).
+11. `blog/probate-lawyer` and `blog/list-of-probate-attorneys` against the homepage.
+12. `blog/chicago-probate-lawyer` against `/county/cook`.
+13. `blog/dupage-county-wills-lawyer` and `blog/mchenry-county-lawyers-probate-estate` against their county pages.
+14. `blog/lake-county-il-probate` against `/county/lake` (solved by giving them different jobs, see below).
+15. `blog/how-long-does-probate-take-in-illinois` against the timeline page, which already has "How Long Does Probate Take?" in its title.
+16. Three posts about named attorneys against those attorneys' own profile pages.
+
+**Inside CPS**
+
+17. `sell-inherited-house-chicago` (253 impr., position 18.7) against `sell-inherited-property-chicago` (204 impr., position 32.9). Same steps, same audience.
+18. The homepage against both of those (its main heading targets the same phrase).
+19. `how-to-sell-a-house-in-probate-in-illinois` against `illinois-probate-real-estate-timeline`. Both are step-by-step sale walkthroughs.
+20. `probate-real-estate-specialist-cook-county` against the homepage for "probate real estate specialist / agent".
+21. About, Our Process and Services show identical numbers (27 impressions, position 10.59 each). **Inferred:** they appear together as sitelinks under the homepage for brand searches. Not a real conflict.
+
+---
+
+## 3. What to do with each article
+
+Meanings: **Keep** = leave as is apart from title and description. **Strengthen** = same page and address, better content. **Reposition** = same page, aimed at a different question. **Merge** = move the useful parts into the owner page and redirect the old address. **Redirect** = no useful content to move; just point the address at the owner.
+
+### IPD blog posts (28)
+
+| Post | Impr. / position | Decision | Reason |
+| --- | --- | --- | --- |
+| `chicago-probate-lawyer` | 2 / 9 | **Reposition** into `/city/chicago-probate-attorney`, redirect the post | Chicago is the largest place group (1,247 impr.) and has 71 listings but no city page. At position 72 this is a long game. |
+| `cicero-probate-attorney` | 84 / 23.7 | **Reposition** into a city page, redirect | 564 impressions of Cicero searches. Only 1 Cicero listing, so the city page should also show nearby attorneys (Berwyn, Oak Park, west-side Chicago), labelled as nearby. |
+| `probate-attorney-hinsdale` | 1 / 3 | **Reposition** into a city page, redirect | 442 impr. of Hinsdale searches; the post gets none of them. 3 listings plus nearby. |
+| `probate-attorney-schaumburg-illinois` | not shown | **Reposition** into a city page, redirect | 153 impr. of searches, post not showing at all. 2 listings plus nearby. |
+| `probate-attorney-rolling-meadows-illinois` | 4 / 10 | **Reposition** into a city page, redirect | 323 impr. of searches. 2 listings plus nearby. |
+| `probate-attorney-burr-ridge-illinois` | 20 / 8.2 | **Reposition** into one Burr Ridge city page, redirect | The better of the two (position 8). |
+| `probate-attorney-burr-ridge` | not shown | **Merge** into the Burr Ridge city page | Duplicate town. |
+| `probate-attorney-waukegan-illinois` | not shown | **Reposition** into a city page, redirect | Waukegan is the Lake County seat and court location; 3 listings. |
+| `probate-attorney-lake-in-the-hills-il` | 3 / 35 | **Reposition** into one Lake in the Hills city page, redirect | 187 impr. of searches at position 27, the best-placed town group without a city page. |
+| `living-trust-attorney-lake-in-the-hills` | 8 / 14 | **Merge** into the Lake in the Hills city page | Same town; trust searches are served by the same listings. |
+| `probate-attorney-elgin-illinois` | not shown | **Merge** into `/city/elgin-probate-attorney` | City page already exists (14 listings). |
+| `probate-attorney-palos-heights-illinois` | 11 / 9.4 | **Merge** into `/city/palos-heights-probate-attorney` | City page already exists (11 listings). The post ranks well, so move its local content across before redirecting. |
+| `estate-law-arlington-heights-il` | not shown | **Redirect** to `/county/cook` | Searches are for estate planning, at position 71, with 1 listing. Not worth a page now. |
+| `gilberts-wills-attorney` | 2 / 53 | **Redirect** to `/county/kane` | No listings in Gilberts. Already the target of two earlier redirects, so update those to point at the county page too. |
+| `estate-lawyer-nokomis-il` | not shown | **Redirect** to the homepage | Outside the six counties. Phase 1 removed the out-of-area listings the same way. |
+| `dupage-county-wills-lawyer` | 15 / 26.6 | **Merge** into `/county/dupage` | Competes with the county page. |
+| `mchenry-county-lawyers-probate-estate` | 11 / 28.3 | **Merge** into `/county/mchenry` | Competes with the county page. |
+| `lake-county-il-probate` | 55 / 9.5 | **Keep and strengthen** as the Lake County process guide | It ranks on page one. Give it a different job from the county page: how probate works in Lake County. It should link to `/county/lake` for attorneys, and the county page should link back. Do not redirect a page-one page into a page-three one. |
+| `probate-lawyer` | 1 / 3 | **Redirect** to the homepage | Generic; the homepage is the directory. |
+| `list-of-probate-attorneys` | 1 / 1 | **Redirect** to the homepage | Same. |
+| `how-long-does-probate-take-in-illinois` | not shown | **Merge** into the timeline page | The timeline page owns this question (225 impr.). |
+| `do-i-need-a-probate-attorney-in-illinois` | 4 / 25.8 | **Keep and strengthen** | Distinct question, natural lead-in to the directory. |
+| `how-much-does-a-probate-attorney-cost-in-illinois` | 13 / 12.2 | **Keep and strengthen** | Distinct question, already near page one. |
+| `small-estate-affidavit-illinois` | 10 / 38.3 | **Keep and strengthen** | Distinct, widely searched topic. Confirm the $150,000 figure reads cleanly throughout. |
+| `what-assets-go-through-probate-in-illinois` | 23 / 13.9 | **Keep** | Distinct; already earned a click. |
+| `michael-naughton-attorney` | 9 / 7.6 | **Redirect** to the attorney's profile | An AI-written essay about a named attorney is a risk with the people Andy plans to phone. Two listings carry the Naughton name (Manhattan and Crystal Lake); Andy to confirm which one the post means. |
+| `meents-law-wilmington` | not shown | **Redirect** to `/attorney/meents-law-p-c-channahon` | Same reason. The profile exists. |
+| `william-lee-attorney` | not shown | **Redirect** to the homepage | Same reason, and the firm's listing was removed in Phase 1 (outside the six counties). |
+
+Result: the 28 posts become 5 articles (four kept as they are, plus the Lake County guide) and up to 8 new city pages (Chicago, Cicero, Hinsdale, Schaumburg, Rolling Meadows, Burr Ridge, Waukegan, Lake in the Hills). The other 15 are merged or redirected.
+
+**A choice for Andy on the small towns.** City pages for towns with 1–3 listings only work if they also show nearby attorneys. If you would prefer not to build that, the alternative is to redirect Cicero, Hinsdale, Schaumburg and Rolling Meadows to their county pages. I recommend the city pages: these four towns account for 1,482 impressions and their searches sit at positions 35–42, closer to page one than most of IPD.
+
+### IPD other pages
+
+| Page | Impr. / clicks / position | Decision | Reason |
+| --- | --- | --- | --- |
+| `/blog` index | 3,634 / 0 / 50.4 | **Reposition** as a real guides hub | Give it its own title, description and canonical tag; list only the remaining articles with a one-line summary each. Today it carries the homepage's title and a list of keyword links. |
+| Homepage | 64 / 1 / 43.0 | **Strengthen** | Should own "probate attorney / lawyers / near me" (1,100+ impr.). Link it to city and county pages in plain HTML; today it links to no attorney or city page. |
+| `/resources/selling-inherited-property-illinois` | 1,209 / 5 / 27.5 | **Keep and strengthen**, narrow to statewide legal questions | Add author and credentials. Replace Chicago- and county-specific sections with links to the CPS local pages. |
+| `/resources/illinois-probate-timeline-by-county` | 225 / 2 / 26.3 | **Keep and strengthen** | Takes in the blog post above. |
+| `/resources/how-probate-works-illinois` | not shown | **Keep** | Owner of the process topic. Not showing in the export; check it is indexed. |
+| `/resources/illinois-probate-courts-by-county` | not shown | **Keep** | Same check. Its description says "Updated June 2026". |
+| `/for-families` | 17 / 0 / 28.4 | **Keep** as the bridge to CPS | Not a search target. |
+| Six county pages | 4,673 / 10 / 24–35 | **Strengthen** | See titles in section 4. Each takes in any county blog post. |
+| City pages for Elgin, Palos Heights | — | **Strengthen** | Each takes in a blog post. |
+
+### CPS blog posts (14) and pages
+
+| Page | Impr. / clicks / position | Decision | Reason |
+| --- | --- | --- | --- |
+| `sell-inherited-house-chicago` | 253 / 0 / 18.7 | **Keep and strengthen**; owner of the Chicago topic | The better-ranked of the two Chicago guides. |
+| `sell-inherited-property-chicago` | 204 / 0 / 32.9 | **Merge** into `sell-inherited-house-chicago` | Same topic. Move across the unique parts (how the property was held, disclosure requirements) and redirect. |
+| `how-to-sell-a-house-in-probate-in-illinois` | 167 / 1 / 34.6 | **Merge** into `illinois-probate-real-estate-timeline` | The statewide how-to belongs to the IPD guide. Its step-by-step content fits the CPS timeline post, which ranks better (16.5). |
+| `illinois-probate-real-estate-timeline` | 69 / 1 / 16.5 | **Reposition** as "how long a probate house sale takes" | Takes in the how-to. Retitle so it does not read as "how long does probate take" (IPD's). |
+| `heirs-disagree-selling-inherited-property-illinois` | 244 / 0 / 16.2 | **Keep and strengthen** | CPS's second-largest article and no competitor on either site. Needs a title and description that earn the click. |
+| `inherited-property-with-mortgage-illinois` | 135 / 2 / 7.4 | **Keep** | CPS's best performer. Title and description only. |
+| `inherited-home-back-taxes-chicago` | 77 / 0 / 10.0 | **Keep** | Revised recently with Chicago detail. Title and description only. |
+| `selling-hoarder-house-probate-chicago` | 39 / 0 / 47.7 | **Keep** | Distinct topic, recently revised. |
+| `selling-rental-property-probate-illinois` | not shown | **Keep** | Distinct topic. Check it is indexed. |
+| `fannie-mae-condo-reserve-rule-2027-chicago` | 24 / 0 / 6.4 | **Keep** | Timely and distinct; position 6. |
+| `sell-inherited-home-evanston` | 12 / 0 / 3.9 | **Keep and strengthen** | Position 3.9. Should become a child of the Cook County page. Thinnest of the town posts (799 words). |
+| `probate-real-estate-agent-oak-park` | 46 / 0 / 37.1 | **Keep** | Recently revised with village detail. Child of the Cook County page. |
+| `probate-real-estate-specialist-cook-county` | 53 / 0 / 44.9 | **Reposition** as the explainer "what a probate real estate specialist does, and when you need one" | Stops competing with the homepage for the hire-an-agent searches and with the new Cook County page for "cook county". |
+| `selling-probate-home-what-attorneys-want-clients-to-know` | 12 / 0 / 15.6 | **Keep** | Distinct, and useful when talking to attorneys. |
+| Homepage | 1,271 / 7 / 34.4 | **Strengthen**; owner of the agent, realtor and specialist searches | See title in section 4. The page title was deliberately left for Phase 4. |
+| `/probate-services` | 27 / 0 / 10.6 | **Keep**; owner of "probate real estate services" | Title currently says "in Chicago" only. |
+| `/blog` index | 276 / 0 / 52.7 | **Keep** | Fine after Phase 3 quick fixes. |
+| `/resources/illinois-probate-timeline-by-county` | not shown | **Redirect** to the IPD page | It is a copy with dead links. Phase 0 left this for the map to decide. |
+| `/homer-glen`, `/homer-glen-ad` | not shown | **Needs Andy** | Still open from Phase 0: is the listing active? If sold, remove both. |
+
+All CPS changes need Lewis's OK.
+
+---
+
+## 4. Pages with impressions and almost no clicks: proposed titles and descriptions
+
+Two groups. **Group A** pages already sit on or near page one (position 20 or better), so a better title and description can win clicks now. **Group B** pages sit at position 25 or worse; the new title helps Google match the page to the right search, but clicks will only follow when the position improves.
+
+Titles are 60 characters or fewer before the site name. On CPS the site name adds 28 more, so for articles either drop it or accept that Google trims it. Counts in braces are filled in from the data, as the sites already do. Nothing below claims a ranking, a "best", or a result.
+
+**Two site-wide causes sit behind most of the CPS rows:**
+
+- No CPS blog post has its own description. All 14 show the same site-wide sentence.
+- CPS post titles are the article heading plus the site name, about 100 characters, so Google cuts them off.
+
+**And one behind the IPD blog rows:** the description is the first 155 characters of the article, which is usually a sentence about grief, not about the answer.
+
+### Group A — can win clicks now
+
+| Page | Impr. / clicks / position | Proposed title | Proposed description |
+| --- | --- | --- | --- |
+| CPS `blog/heirs-disagree-selling-inherited-property-illinois` | 244 / 0 / 16.2 | When Heirs Disagree on Selling an Inherited Illinois House | One heir wants to sell, another wants to keep the house. Who decides in Illinois, how a buyout or partition works, and who pays the bills meanwhile. |
+| CPS `blog/sell-inherited-house-chicago` | 253 / 0 / 18.7 | Selling an Inherited House in Chicago: Steps and Costs | Who can sign, when probate is needed, Chicago transfer tax and water certification, and how to sell as-is or from out of state. From a local probate broker. |
+| CPS `blog/inherited-home-back-taxes-chicago` | 77 / 0 / 10.0 | Inherited a Chicago House With Back Taxes? What to Do | How to find what is owed in Cook County, what a tax sale means, the redemption deadline, and how back taxes are usually paid off at closing. |
+| CPS `blog/inherited-property-with-mortgage-illinois` | 135 / 2 / 7.4 | Inherited a House With a Mortgage in Illinois? Your Options | The mortgage does not disappear. Who makes payments during probate, when the lender can call the loan, reverse mortgages, and what happens at closing. |
+| CPS `blog/illinois-probate-real-estate-timeline` | 69 / 1 / 16.5 | How Long Does a Probate House Sale Take in Illinois? | From opening the estate to closing day: each stage of selling a house in probate, how long it usually takes, and what causes delays. |
+| CPS `blog/fannie-mae-condo-reserve-rule-2027-chicago` | 24 / 0 / 6.4 | Inherited a Chicago Condo? The 2027 Fannie Mae Reserve Rule | From January 4, 2027, lenders look harder at condo building reserves. What that means if you plan to sell an inherited condo, and what to request now. |
+| CPS `blog/sell-inherited-home-evanston` | 12 / 0 / 3.9 | Selling an Inherited Home in Evanston, IL | Evanston's transfer tax, probate through Cook County, tenants in inherited two-flats, and how to price an estate home on the North Shore. |
+| CPS `blog/selling-probate-home-what-attorneys-want-clients-to-know` | 12 / 0 / 15.6 | Selling a Probate Home: 7 Things Attorneys Want You to Know | When you can list, why price matters to an executor, title surprises, Cook County taxes, and how your agent and attorney should work together. |
+| CPS `/probate-services` | 27 / 0 / 10.6 | Probate Real Estate Services in Six Illinois Counties | Probate property sales, executor support and as-is estate sales in Cook, DuPage, Kane, Lake, McHenry and Will counties. We work alongside your attorney. |
+| CPS `/our-process` | 27 / 0 / 10.6 | How We Sell an Inherited Property, Step by Step | What happens after you call: a free consultation, a valuation, coordination with your attorney, as-is preparation, listing and closing. |
+| CPS `/about` | 27 / 0 / 10.6 | About Andy Rouvalis and Lewis Kaplan | Licensed Illinois real estate brokers with HomeSmart Connect who work only on probate and inherited property in six Chicago-area counties. |
+| IPD attorney profiles (template) — 19 profiles on page one with 0 clicks, 2,802 impr. in total | positions 5–12 | {Name}, {City}, IL: Phone, Reviews and Probate Practice | {Name} in {City}, Illinois: address, phone, office hours, Google rating and probate practice areas. {Free consultation offered.} Send a message from this page. |
+| IPD `blog/lake-county-il-probate` | 55 / 0 / 9.5 | Lake County, IL Probate: Court, Steps and Timeline | Where to file in Waukegan, what the 19th Judicial Circuit expects, how long Lake County probate takes, and when a small estate affidavit is enough. |
+| IPD Burr Ridge page (after the merge) | 20 / 0 / 8.2 | Probate Attorneys in Burr Ridge, IL | Burr Ridge straddles Cook and DuPage counties. See which court handles the estate and browse probate attorneys in and near Burr Ridge. |
+| IPD `blog/how-much-does-a-probate-attorney-cost-in-illinois` | 13 / 0 / 12.2 | What Does a Probate Attorney Cost in Illinois? | Hourly, flat-fee and percentage billing explained, what Illinois courts consider reasonable, typical filing costs, and questions to ask before you hire. |
+| IPD `blog/what-assets-go-through-probate-in-illinois` | 23 / 1 / 13.9 | What Goes Through Probate in Illinois, and What Doesn't | Houses, bank accounts, joint property, beneficiary accounts and trusts: which assets need probate in Illinois and which pass outside it. |
+
+Note on the attorney template: people searching a name want to confirm they have found the right office. Today every profile is titled "{Name} – Probate Attorney in {City}, Illinois" and described as "{Name} is a probate attorney in…", even where the listing is a general-practice firm. The proposed version leads with what the page actually holds. The top earning profiles (Laird, Jelinek, Clark Hagerty) already get 3–7% click rates, so test this on the zero-click profiles first.
+
+### Group B — fix the match now, clicks follow position
+
+| Page | Impr. / clicks / position | Proposed title | Proposed description |
+| --- | --- | --- | --- |
+| IPD `/blog` | 3,634 / 0 / 50.4 | Illinois Probate Guides for Families and Executors | Plain-language guides to Illinois probate: timelines, costs, small estates, what goes through probate, and when you need an attorney. |
+| IPD homepage | 64 / 1 / 43.0 | Find a Probate Attorney in Illinois: {N} Local Listings | Search {N} probate attorney listings in Cook, DuPage, Kane, Lake, McHenry and Will counties by town or name. Free to use, with guides to how probate works. |
+| IPD `/county/cook` | 1,236 / 4 / 31.9 | Cook County Probate Attorneys: {N} Listings by Town | {N} probate attorney listings in Chicago and the Cook County suburbs, with phone numbers and ratings. Probate is filed at the Daley Center. |
+| IPD `/county/dupage` | 914 / 1 / 34.9 | DuPage County Probate Attorneys: {N} Listings by Town | {N} probate attorney listings in Wheaton, Naperville, Oak Brook and nearby. Probate is filed at the DuPage County Courthouse in Wheaton. |
+| IPD `/county/will` | 799 / 0 / 34.4 | Will County Probate Attorneys: {N} Listings by Town | {N} probate attorney listings in Joliet, Plainfield, Bolingbrook and nearby. Probate is filed at the Will County Courthouse in Joliet. |
+| IPD `/county/mchenry` | 693 / 2 / 29.9 | McHenry County Probate Attorneys: {N} Listings by Town | {N} probate attorney listings in Crystal Lake, McHenry, Woodstock and nearby. Probate is filed at the courthouse in Woodstock. |
+| IPD `/county/lake` | 530 / 3 / 31.5 | Lake County, IL Probate Attorneys: {N} Listings by Town | {N} probate attorney listings in Waukegan, Libertyville, Lake Forest and nearby. Probate is filed at the Lake County Courthouse in Waukegan. |
+| IPD `/county/kane` | 501 / 0 / 23.7 | Kane County Probate Attorneys: {N} Listings by Town | {N} probate attorney listings in Geneva, St. Charles, Elgin, Aurora and nearby. Probate is filed at the Kane County Courthouse in Geneva. |
+| IPD `/resources/selling-inherited-property-illinois` | 1,209 / 5 / 27.5 | Selling an Inherited House in Illinois: The Legal Steps | Can the executor sell? Is probate needed first? What documents does the title company want? The Illinois rules for selling an inherited house, in order. |
+| IPD `/resources/illinois-probate-timeline-by-county` | 225 / 2 / 26.3 | How Long Does Probate Take in Illinois? Timeline by County | A straightforward Illinois estate takes about 9 to 12 months. See each stage, the six-month claims period, and notes for six Chicago-area counties. |
+| IPD `/city/joliet-probate-attorney` | 138 / 0 / 23.2 | Joliet Probate Attorneys: {N} Local Listings | {N} probate attorney listings in Joliet, the Will County seat. Phone numbers, ratings, and how to file at the Will County Courthouse. |
+| IPD `/city/naperville-probate-attorney` | 134 / 0 / 30.0 | Naperville Probate Attorneys: {N} Local Listings | {N} probate attorney listings in Naperville. The city spans DuPage and Will counties; see which courthouse handles the estate. |
+| IPD Cicero city page (after repositioning) | 84 / 0 / 23.7 | Probate Attorneys Serving Cicero, IL | Probate attorneys in and near Cicero, with phone numbers and ratings. Cicero estates are filed with the Cook County court at the Daley Center. |
+| CPS homepage | 1,271 / 7 / 34.4 | Probate Real Estate Agents in Chicago and Suburbs (full title, no site name added) | Probate real estate brokers for families and executors selling an inherited house in Cook, DuPage, Kane, Lake, McHenry or Will County. Free consultation. |
+| CPS `/blog` | 276 / 0 / 52.7 | Inherited Property Guides for Illinois Families | Guides to selling an inherited or probate house in the Chicago area: back taxes, mortgages, heirs who disagree, condos, timelines and costs. |
+| CPS `blog/probate-real-estate-specialist-cook-county` | 53 / 0 / 44.9 | What Does a Probate Real Estate Specialist Do? | What is different about a probate sale, what a specialist handles that a general agent may not, and the questions to ask before you hire one. |
+| CPS `blog/probate-real-estate-agent-oak-park` | 46 / 0 / 37.1 | Selling a Probate Home in Oak Park: Taxes, Rules, Costs | Oak Park's $8 per $1,000 transfer tax, village closing requirements, historic districts, and what executors should budget for before listing. |
+| CPS `blog/selling-hoarder-house-probate-chicago` | 39 / 0 / 47.7 | Selling a Hoarder House in Probate in Chicago | Secure it, assess before clearing, choose a cleanup plan, and price for the right buyers. Vacant-building rules and disclosures for executors. |
+
+Why the CPS homepage title changes: the agent searches are CPS's largest winnable group (about 400 impressions: "probate real estate agent" 196, "probate realtor" 57, "probate realtor near me" 43, "probate real estate services" 37 and others) and they sit at positions 38–85. The current title, "Chicago Probate Specialist – Inherited Property Experts", contains none of the words "real estate", "agent" or "realtor". Use "Realtor" only if both brokers are members and the brokerage's rules for the term are met; otherwise "agent" and "broker".
+
+**Left out on purpose:** `sell-inherited-property-chicago` and `how-to-sell-a-house-in-probate-in-illinois` (being merged), and IPD profiles whose impressions are noise (the firm named "Chicago Estate Lawyers" at position 68; one profile with 708 impressions from the automated name search).
+
+---
+
+## 5. Plan for the six CPS county pages
+
+### Shared decisions
+
+- **Address pattern:** `/inherited-property/cook-county`, `/inherited-property/dupage-county` and so on, with a short index at `/inherited-property`. Linked from the homepage "areas we serve" section and the footer.
+- **Search each page is built for:** "sell inherited house [county] county" first, "probate real estate agent [county] county" second.
+- **How they avoid being near-copies:** the statewide steps stay on one page each (the IPD legal guide and the CPS timeline post) and the county pages link to them. At least two-thirds of each county page is material that is true only of that county: court, towns, local taxes and stamps, housing stock, market figures.
+- **Each page links to** the matching IPD county page for families who still need an attorney (tracked, as Phase 3 set up), and to any CPS town article inside that county.
+- **Market figures** come from MRED or the Illinois REALTORS monthly county report at the time of writing, shown with the month and the source: median sale price, median days on market, months of supply. I have not put any numbers here because I could not open those sources and will not estimate them. No testimonials or case results unless they are real and documented.
+- **Legal wording** follows the Phase 3 pattern ("your attorney will…", "we work alongside…"). An attorney should read the court paragraphs before publishing.
+
+### Build order, from the evidence
+
+| Order | County | Why |
+| --- | --- | --- |
+| 1 | Cook | CPS already shows at position 6 and 13 for "how to sell inherited house / property cook county" (100 impr.) with no dedicated page. Largest IPD county page (1,236 impr.). |
+| 2 | McHenry | The only collar county with real search evidence: "sell inherited house mchenry il", "selling an inherited house in mchenry il", "sell inherited house crystal lake" (47 impr. on IPD at positions 19–33). |
+| 3 | DuPage | Some evidence ("probate sale inherited house dupage county timeline", "probate real estate attorney dupage county"). Second-largest IPD county page (914 impr.). |
+| 4 | Will | No sell-query evidence yet. IPD county page 799 impr. Andy has had a listing there (Homer Glen). |
+| 5 | Lake | No sell-query evidence yet. IPD county page 530 impr. |
+| 6 | Kane | No sell-query evidence yet. IPD county page 501 impr. |
+
+For Will, Lake and Kane the pages are being built on the model in the brief, not on demand seen in the data. That is fine, but expect them to start slowly.
+
+### Outline every page follows
+
+1. **Direct answer** in the first two sentences: who can sell an inherited house in this county and where the estate is handled.
+2. **The court** — name, address, room, how filing works, what the title company will ask for (Letters of Office).
+3. **How long a sale takes here** — link to the CPS timeline post; county note on scheduling.
+4. **Towns and which county handles them** — the split towns are a real source of confusion.
+5. **Local costs at closing** — state and county transfer tax, municipal transfer stamps and inspections for the main towns, property-tax timing.
+6. **What estate homes here are like** — housing stock and the issues that come with it.
+7. **The market right now** — dated figures with source.
+8. **How we help in this county** — as-is sales, out-of-state heirs, working with the attorney. Consultation and valuation forms.
+9. **Need an attorney first?** — link to the IPD county page ({N} listings).
+10. **Questions** — 4 or 5 county-specific questions with FAQ markup.
+
+True in every county (confirmed, state law and state tax): the state transfer tax is $0.50 per $500 of price and the county tax is $0.25 per $500, both customarily paid by the seller. Under independent administration the executor can usually sell without a court order (755 ILCS 5/28-8); supervised administration needs court approval. A straightforward estate takes about 9 to 12 months, but the house can often be sold well before the estate closes. State these once per page, briefly.
+
+### Cook County
+
+- **Target:** "how to sell inherited house cook county"; "sell inherited house [Cook suburb]"; "probate real estate agent cook county".
+- **Court (confirmed, on IPD):** Circuit Court of Cook County, Probate Division. Richard J. Daley Center, 50 W. Washington St., Chicago. Clerk's probate office in Room 1202; Probate Division on the 18th floor. Clerk (312) 603-6441. E-filing required; the original will is filed in person. All Cook County estates file downtown, including the suburbs.
+- **Timeline note (on IPD, reasonable):** the largest probate docket in Illinois; court dates take longer to get than in the collar counties.
+- **Local costs:**
+  - Chicago transfer tax: $5.25 per $500 in total, of which the buyer pays $3.75 and the seller $1.50 (**confirmed**, City of Chicago).
+  - Chicago Full Payment Certificate for water and sewer before closing (**confirmed**, already in two CPS articles).
+  - Suburban transfer stamps: Oak Park $8 per $1,000, seller; Evanston $5 per $1,000, seller (both already on CPS, revised by Andy). Others **to verify** from the title company list: Cicero, Berwyn, Oak Lawn, Calumet City, Skokie, Park Ridge, Des Plaines, Schaumburg, Hoffman Estates, Rolling Meadows.
+  - Point-of-sale inspections in some south and west suburbs, for example Calumet City (**to verify**, town by town).
+  - Property taxes: paid a year behind; first instalment is 55% of the prior year's bill, normally due about March 1; the second has been late two years running, with the 2025 bill due October 1, 2026 (**confirmed**, already on CPS; re-check each year).
+  - Annual tax sale and redemption rules: link to the back-taxes article.
+- **Housing stock (Andy to confirm from experience):** Chicago bungalows, two- to four-flats with tenants, condos (link to the Fannie Mae article), vacant-building registration in the city (link to the hoarder article).
+- **Sub-areas worth a short section each:** Chicago; north suburbs; northwest suburbs (the export shows "probate real estate agent arlington heights / mount prospect / palatine"); south and southwest suburbs ("sell inherited house calumet city", "sell inherited property chicago south side").
+- **Child pages:** Chicago guide, Evanston, Oak Park.
+- **Attorney link:** IPD `/county/cook` (233 listings).
+
+### McHenry County
+
+- **Target:** "sell inherited house mchenry il"; "sell inherited house crystal lake"; "probate real estate agent mchenry county".
+- **Court (on IPD; room details to verify with the clerk):** 22nd Judicial Circuit. McHenry County Courthouse, 2200 N. Seminary Ave., Woodstock. Clerk in Room 136, (815) 334-4190. IPD says probate hearings are at 9:30 AM in Courtroom 202. E-filing required; original will filed in person.
+- **Timeline note:** lighter docket than Cook, so court dates come sooner (on IPD).
+- **Towns:** Crystal Lake, McHenry, Woodstock, Algonquin, Lake in the Hills, Huntley, Cary, Harvard, Marengo. Split towns to explain: Algonquin and Huntley reach into Kane County; Barrington Hills and Fox River Grove touch Lake and Cook.
+- **Local costs:** municipal transfer stamps **to verify** (Woodstock and Harvard are the ones to check). Collar-county property taxes come in two instalments, typically early June and early September (**to verify** for 2027 with the McHenry County Treasurer).
+- **Housing stock (Andy to confirm):** many homes outside town limits are on private well and septic, which buyers' lenders often want tested; lake and river cottages around the Chain O'Lakes and Fox River, some in flood zones; acreage and farm parcels in the west of the county; large age-restricted communities in Huntley, where estate sales are common.
+- **Attorney link:** IPD `/county/mchenry` (62 listings).
+
+### DuPage County
+
+- **Target:** "sell inherited house dupage county"; "probate sale inherited house dupage county timeline"; "probate real estate agent naperville / wheaton".
+- **Court (on IPD; phone and floor to verify):** 18th Judicial Circuit. DuPage County Courthouse, 505 N. County Farm Rd., Wheaton. Circuit Clerk (630) 407-8700. E-filing required.
+- **Timeline note:** generally efficient scheduling (on IPD). The county question in the export is specifically about timeline, so answer it near the top.
+- **Towns:** Wheaton, Naperville, Downers Grove, Elmhurst, Lombard, Glen Ellyn, Hinsdale, Oak Brook, Addison, Carol Stream, Woodridge. Split towns: Naperville (DuPage and Will), Aurora (mostly Kane), Burr Ridge and Hinsdale (DuPage and Cook), Bolingbrook and Woodridge (DuPage and Will). The estate is handled in the county where the person lived, wherever the house is.
+- **Local costs (from search results quoting Illinois REALTORS and village pages; to verify against the July 2026 title list):** Naperville $3 per $1,000, buyer; Glen Ellyn $3 per $1,000, seller; Carol Stream $3 per $1,000, seller; Woodridge $2.50 per $1,000, seller; Addison $2.50 per $1,000, buyer (least certain). Property taxes: two instalments, June 1 and September 1 in 2026 (**confirmed** from search results quoting the county).
+- **Housing stock (Andy to confirm):** post-war ranches and split-levels that are often original inside; teardown demand in Hinsdale, Clarendon Hills, Elmhurst and parts of Downers Grove, which changes how an as-is estate home is priced and marketed.
+- **Attorney link:** IPD `/county/dupage` (51 listings).
+
+### Will County
+
+- **Target:** "sell inherited house will county il"; "sell inherited house joliet"; "probate real estate agent joliet / plainfield".
+- **Court (confirmed in Phase 1):** 12th Judicial Circuit. Will County Courthouse, 100 W. Jefferson St., Joliet. Circuit Clerk (815) 727-8592. E-filing required. The courthouse is the newer building; older pages around the web still give 14 W. Jefferson.
+- **Towns:** Joliet, Plainfield, Bolingbrook, Romeoville, Lockport, New Lenox, Mokena, Frankfort, Homer Glen, Channahon. Split towns: Naperville and Bolingbrook (with DuPage), Aurora (a small part), Tinley Park and Orland Park (mostly Cook), Plainfield (a part in Kendall County, which CPS does not cover).
+- **Local costs:** Bolingbrook $7.50 per $1,000, split equally between buyer and seller (from a title company list in search results; **to verify**). Joliet requires a city transfer stamp, rate **to verify** on the city's page; exempt transfers still need a stamp. Romeoville, Channahon and Peotone **to verify**. Two tax instalments, typically June and September (**to verify**).
+- **Housing stock (Andy to confirm):** older homes on Joliet's east and west sides; 1990s–2000s subdivisions with homeowner associations in Plainfield, Bolingbrook and Romeoville, where an association payoff letter is needed at closing; acreage and horse properties in Homer Glen and the south of the county.
+- **Attorney link:** IPD `/county/will` (52 listings).
+
+### Lake County
+
+- **Target:** "sell inherited house lake county il"; "sell inherited house waukegan / libertyville"; "probate real estate agent lake county il".
+- **Court (on IPD; phone and floor to verify):** 19th Judicial Circuit. Lake County Courthouse, 18 N. County St., Waukegan. Circuit Clerk (847) 377-3380. The circuit publishes a probate handbook for executors (on IPD; link to it once verified). E-filing required.
+- **Towns:** Waukegan, Gurnee, Libertyville, Mundelein, Vernon Hills, Lake Forest, Highland Park, Deerfield, Lake Zurich, Antioch, Zion. Split towns: Barrington, Buffalo Grove and Deerfield (with Cook).
+- **Local costs:** Highland Park $5 per $1,000, seller (from a 2018 list; **to verify**). Lake Forest, Buffalo Grove, North Chicago, Mundelein and Lincolnshire **to verify**. Search results suggest Waukegan has no city transfer tax (**to verify**). Two tax instalments, typically early June and early September (**to verify**).
+- **Housing stock (Andy to confirm):** a very wide price range in one county, from North Shore estates in Lake Forest and Highland Park to modest older homes in Waukegan, North Chicago and Zion; lake cottages and well-and-septic homes in the northwest (Antioch, Fox Lake, the Chain O'Lakes). One page has to speak to both ends.
+- **Attorney link:** IPD `/county/lake` (67 listings).
+
+### Kane County
+
+- **Target:** "sell inherited house kane county il"; "sell inherited house aurora / elgin"; "probate real estate agent st charles / geneva".
+- **Court (confirmed in Phase 1):** 16th Judicial Circuit. Kane County Courthouse, 100 S. 3rd St., Geneva; Probate Administration, Room 112; (630) 232-3413. The Kane County Judicial Center on Route 38 in St. Charles is a different building and does not handle probate. Say so plainly; the two were mixed up on IPD itself.
+- **Towns:** Aurora, Elgin, St. Charles, Geneva, Batavia, Carpentersville, South Elgin, Elburn. Split towns: Aurora (Kane, DuPage, Will and Kendall), Elgin (Kane and Cook), Algonquin and Huntley (with McHenry).
+- **Local costs:** Aurora charges a city transfer tax on the full sale price (**confirmed** that the tax exists; rate **to verify** on the city's page). Elgin and Carpentersville requirements **to verify**. Two tax instalments, June 1 and September 1 in 2026 (**confirmed** from the Kane County Treasurer's release).
+- **Housing stock (Andy to confirm):** older housing in central Aurora and Elgin, including two-flats; historic districts in Elgin, St. Charles and Geneva; newer subdivisions west of Randall Road; farm parcels in the west of the county.
+- **Attorney link:** IPD `/county/kane` (65 listings).
+
+### One source to settle the local taxes
+
+Chicago Title publishes a transfer tax list for the Chicago area, most recently dated July 1, 2026. It gives the rate, who pays, and where to get the stamp for every municipality. It could not be opened from this session. Andy's title contact can send it; every "to verify" tax above can be checked against it in a few minutes.
+
+---
+
+## Top 10 actions, ranked by impact
+
+Impact means qualified inherited-property opportunities, not traffic.
+
+1. **Build the CPS Cook County page and settle the Chicago pages.** Merge `sell-inherited-property-chicago` into `sell-inherited-house-chicago`. CPS is already at positions 6–19 for these searches with no page aimed at them. *(Lewis)*
+2. **Give every CPS article its own title and description.** None has a description today, and titles run to about 100 characters. Pages at position 20 or better drew 3 clicks from about 900 impressions. *(Lewis)*
+3. **Retitle the CPS homepage for the agent searches** ("probate real estate agent", "probate realtor"), about 400 impressions with no page aimed at them. *(Lewis)*
+4. **Fix the IPD `/blog` index.** Own title, description and canonical tag. It holds 3,634 impressions under the homepage's title while the homepage holds 64.
+5. **Turn IPD's town blog posts into city pages with listings**, and clear the duplicate pairs (Burr Ridge, Elgin, Palos Heights, Lake in the Hills). This is the 10,191-impression, zero-click group.
+6. **Change the IPD attorney-profile title and description template.** Profiles are the only pages that earn clicks; 19 sit on page one with none.
+7. **Draw the line on "selling an inherited house".** The IPD guide keeps the statewide legal questions and links out; CPS keeps every local page. Merge the CPS statewide how-to into the CPS timeline post and retitle it.
+8. **Build the McHenry and DuPage county pages next**, then Will, Lake and Kane.
+9. **Redirect the IPD posts that carry risk or no value:** three about named attorneys, one outside the six counties, two generic ("probate lawyer", "list of probate attorneys"), and the county and timeline duplicates.
+10. **Remove CPS's copy of the IPD timeline page** (redirect to IPD) and retitle the six IPD county pages and the selling guide.
+
+After approval, this map is what Phase 5 feeds to the blog pipeline: a new post is allowed only if its topic has no owner in section 2.
+
+## Decisions needed from Andy
+
+1. Small towns on IPD: city pages that include nearby attorneys (recommended), or redirect those posts to the county page?
+2. A Chicago city page on IPD: build it, or let `/county/cook` own Chicago?
+3. Which Naughton listing the `michael-naughton-attorney` post should redirect to.
+4. Whether the CPS homepage title may say "Realtor", or should say "agent" and "broker".
+5. The address pattern for the county pages (`/inherited-property/cook-county`).
+6. Whether the Homer Glen listing pages can go.
+
+## Still needed
+
+- **Search Console, query and page together**, for both sites. At minimum the queries for IPD `/blog`, the six county pages and the selling guide, and for the CPS homepage. This confirms which page shows for which search before anything is redirected.
+- **The Pages (indexing) report** for both sites. I suspect several IPD town posts and two IPD resource pages are not indexed.
+- **The Chicago Title transfer tax list** (July 1, 2026).
+- **Current county market figures** from MRED or Illinois REALTORS when each county page is written.
+- **An attorney's read** of the court paragraphs for the six county pages.
+- **Lewis's OK** for every CPS item.
+
+## Sources for the new facts in this section
+
+- Chicago transfer tax: https://chicago.gov/city/en/depts/fin/supp_info/revenue/tax_list/real_property_transfertax.html
+- State and county transfer tax: https://tax.illinois.gov/research/taxinformation/property/realestate.html
+- Independent administration and sale of real estate, 755 ILCS 5/28-8: https://ilga.gov/legislation/ilcs/documents/075500050K28-8.htm
+- Kane County 2026 tax dates: https://www.kanecountyil.gov/Documents/Press%20Releases/Kane%20County%20Property%20Tax%20Bills%20for%202026%20-%20Key%20Dates%20and%20Details.pdf
+- Cook County second instalment delay: https://news.wttw.com/2026/06/09/second-installment-2025-cook-county-property-tax-bills-will-be-2-months-late-officials
+- Carol Stream transfer tax: https://carolstream.org/departments/finance/local-taxes/real-estate-transfer-tax
+- Aurora transfer tax: https://www.aurora.il.us/Government-and-Engagement/Finance/Revenue-Collection/Real-Estate-Transfer-Tax
+- Joliet transfer stamp: https://joliet.gov/government/departments/customer-service/real-estate-transfer
+- Highland Park transfer tax: https://cityhpil.com/government/city_departments/finance/real_estate_transfer_tax.php
+- Municipal transfer tax lists (not opened; quoted in search results): https://www.illinoisrealtors.org/wp-content/uploads/2024/01/TransferTax_OneSheet_JAN2024.pdf · https://cmetro.ctic.com/CTRSCMetro/media/CT-RS-CMetro/Transfer-Tax-List-July-1,-2026.pdf
+
+These came from search results that quote the pages; the pages themselves could not be opened from this session. Court addresses and phone numbers are as already published on IPD.

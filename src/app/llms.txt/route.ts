@@ -22,8 +22,9 @@ export function GET() {
 - [How Probate Works in Illinois](${SITE}/resources/how-probate-works-illinois)
 - [Illinois Probate Courts by County](${SITE}/resources/illinois-probate-courts-by-county)
 - [Illinois Probate Timeline by County](${SITE}/resources/illinois-probate-timeline-by-county)
-- [Selling Inherited Property in Illinois](${SITE}/resources/selling-inherited-property-illinois)
-- [Blog](${SITE}/blog)
+- [Selling an Inherited House in Illinois: The Legal Steps](${SITE}/resources/selling-inherited-property-illinois)
+- [Probate Attorneys in Chicago](${SITE}/city/chicago-probate-attorney)
+- [Illinois Probate Guides](${SITE}/blog)
 `;
   return new Response(body, { headers: { "Content-Type": "text/plain; charset=utf-8" } });
 }

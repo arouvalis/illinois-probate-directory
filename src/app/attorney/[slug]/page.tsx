@@ -10,6 +10,8 @@ import {
   COUNTY_SLUG_MAP,
   generateAttorneyDescription,
   getOtherOffices,
+  attorneyMetaTitle,
+  attorneyMetaDescription,
 } from "@/lib/attorneys";
 import AttorneyMessageForm from "@/components/AttorneyMessageForm";
 import { EstateHouseLine } from "@/components/EstateHouseBlock";
@@ -28,12 +30,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const attorney = getAttorneyBySlug(params.slug);
   if (!attorney) return {};
   return {
-    title: `${attorney.name} – Probate Attorney in ${attorney.city}, Illinois`,
-    description: `${attorney.name} is a probate attorney in ${attorney.city}, ${attorney.state}. ${
-      attorney.specializations_found
-        ? `Specializes in: ${attorney.specializations_found}.`
-        : ""
-    } ${attorney.free_consultation === "YES" ? "Free consultation available." : ""}`,
+    title: attorneyMetaTitle(attorney),
+    description: attorneyMetaDescription(attorney),
     alternates: { canonical: `https://www.illinoisprobatedirectory.com/attorney/${params.slug}` },
   };
 }

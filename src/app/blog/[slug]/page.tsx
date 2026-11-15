@@ -3,15 +3,7 @@ import path from 'path';
 import { marked } from 'marked';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import EstateHouseBlock, { EstateHouseLine } from '@/components/EstateHouseBlock';
-
-// Articles about one named attorney or firm are treated like attorney pages:
-// one low-key line instead of the block.
-const NAMED_ATTORNEY_POSTS = new Set([
-  'michael-naughton-attorney',
-  'william-lee-attorney',
-  'meents-law-wilmington',
-]);
+import EstateHouseBlock from '@/components/EstateHouseBlock';
 
 const BLOG_DIR = path.join(process.cwd(), 'src/content/blog');
 
@@ -115,11 +107,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
         className="prose prose-lg prose-headings:font-serif prose-headings:text-navy-800 prose-a:text-gold-600"
         dangerouslySetInnerHTML={{ __html: html }}
       />
-      {NAMED_ATTORNEY_POSTS.has(params.slug) ? (
-        <EstateHouseLine placement={`blog_${params.slug}`} className="mt-10" />
-      ) : (
-        <EstateHouseBlock placement={`blog_${params.slug}`} className="mt-10" />
-      )}
+      <EstateHouseBlock placement={`blog_${params.slug}`} className="mt-10" />
     </div>
     </>
   );

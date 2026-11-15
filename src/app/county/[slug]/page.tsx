@@ -24,19 +24,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const county = COUNTY_SLUGS[params.slug];
   if (!county) return {};
   return {
-    title: `Probate Attorneys in ${county} County, IL | Free Directory`,
-    description: `Browse ${getCountyCount(county)} probate attorney listings in ${county} County, IL. ${COUNTY_META_TAIL[county] ?? "Compare ratings, specializations, and free consultations."}`,
+    // Lake needs ", IL": other states have a Lake County too.
+    title: `${county} County${county === "Lake" ? ", IL" : ""} Probate Attorneys: ${getCountyCount(county)} Listings by Town`,
+    description: `${getCountyCount(county)} probate attorney listings in ${COUNTY_META_TAIL[county]}`,
     alternates: { canonical: `https://www.illinoisprobatedirectory.com/county/${params.slug}` },
   };
 }
 
+// Second half of the meta description: main towns, then where probate is filed.
 const COUNTY_META_TAIL: Record<string, string> = {
-  Cook: "Compare ratings, find free consultations, and connect with probate lawyers serving Chicago and suburbs.",
-  Will: "Find probate lawyers in Joliet, Naperville, and Plainfield. Compare ratings and free consultations.",
-  Lake: "Find probate lawyers in Waukegan, Lake Forest, and Libertyville. Compare ratings and free consultations.",
-  Kane: "Find probate lawyers in Aurora, Elgin, and St. Charles. Compare ratings and free consultations.",
-  McHenry: "Find probate lawyers in Crystal Lake, Woodstock, and McHenry. Compare ratings and free consultations.",
-  DuPage: "Find probate lawyers in Wheaton, Naperville, and Oak Brook. Compare ratings and free consultations.",
+  Cook: "Chicago and the Cook County suburbs, with phone numbers and ratings. Probate is filed at the Daley Center.",
+  DuPage: "Wheaton, Naperville, Oak Brook and nearby. Probate is filed at the DuPage County Courthouse in Wheaton.",
+  Will: "Joliet, Plainfield, Bolingbrook and nearby. Probate is filed at the Will County Courthouse in Joliet.",
+  McHenry: "Crystal Lake, McHenry, Woodstock and nearby. Probate is filed at the courthouse in Woodstock.",
+  Lake: "Waukegan, Libertyville, Lake Forest and nearby. Probate is filed at the Lake County Courthouse in Waukegan.",
+  Kane: "Geneva, St. Charles, Elgin, Aurora and nearby. Probate is filed at the Kane County Courthouse in Geneva.",
 };
 
 const COUNTY_INTROS: Record<string, string> = {
@@ -49,43 +51,30 @@ const COUNTY_INTROS: Record<string, string> = {
 };
 
 
+// Town pages in each county, shown as "Browse by Town" in the sidebar.
+const city = (town: string) => ({
+  title: town,
+  href: `/city/${town.toLowerCase().replace(/ /g, "-")}-probate-attorney`,
+});
+const COUNTY_TOWN_PAGES: Record<string, { title: string; href: string }[]> = {
+  Cook: ["Chicago", "Barrington", "Burr Ridge", "Cicero", "Hinsdale", "Northbrook", "Orland Park", "Palos Heights", "Rolling Meadows", "Schaumburg"].map(city),
+  DuPage: ["Naperville", "Hinsdale", "Burr Ridge", "Aurora"].map(city),
+  Will: ["Joliet", "Naperville"].map(city),
+  Kane: ["Aurora", "Elgin"].map(city),
+  McHenry: ["Crystal Lake", "Lake in the Hills"].map(city),
+  Lake: ["Waukegan", "Libertyville", "Barrington"].map(city),
+};
+
+const SELLING_GUIDE = { title: "Selling an Inherited House in Illinois", href: "/resources/selling-inherited-property-illinois" };
 const COUNTY_BLOG_LINKS: Record<string, { title: string; href: string }[]> = {
-  Cook: [
-    { title: "Probate Attorneys in Northbrook, IL", href: "/city/northbrook-probate-attorney" },
-    { title: "Probate Attorneys in Orland Park, IL", href: "/city/orland-park-probate-attorney" },
-    { title: "Selling an Inherited House in Illinois", href: "/resources/selling-inherited-property-illinois" },
-    { title: "Probate Attorneys in Joliet", href: "/city/joliet-probate-attorney" },
-  ],
-  DuPage: [
-    { title: "Probate Attorneys in Naperville, IL", href: "/city/naperville-probate-attorney" },
-    { title: "Probate Attorneys in Naperville", href: "/city/naperville-probate-attorney" },
-    { title: "Finding a Probate Attorney in Hinsdale", href: "/blog/probate-attorney-hinsdale" },
-    { title: "Finding a Probate Attorney in Burr Ridge", href: "/blog/probate-attorney-burr-ridge" },
-    { title: "Estate Law in Arlington Heights", href: "/blog/estate-law-arlington-heights-il" },
-    { title: "Selling an Inherited House in Illinois", href: "/resources/selling-inherited-property-illinois" },
-  ],
-  Will: [
-    { title: "Probate Attorneys in Joliet, IL", href: "/city/joliet-probate-attorney" },
-    { title: "Probate Attorneys in Joliet", href: "/city/joliet-probate-attorney" },
-    { title: "Selling an Inherited House in Illinois", href: "/resources/selling-inherited-property-illinois" },
-  ],
-  Kane: [
-    { title: "Probate Attorneys in Elgin, IL", href: "/city/elgin-probate-attorney" },
-    { title: "Probate Attorneys in Aurora, IL", href: "/city/aurora-probate-attorney" },
-    { title: "Probate Attorneys in Aurora", href: "/city/aurora-probate-attorney" },
-    { title: "Wills & Probate Attorney in Gilberts, IL", href: "/blog/gilberts-wills-attorney" },
-    { title: "Estate Law in Arlington Heights", href: "/blog/estate-law-arlington-heights-il" },
-    { title: "Selling an Inherited House in Illinois", href: "/resources/selling-inherited-property-illinois" },
-  ],
-  McHenry: [
-    { title: "Probate Attorneys in Crystal Lake, IL", href: "/city/crystal-lake-probate-attorney" },
-    { title: "McHenry County Probate & Estate Lawyers", href: "/blog/mchenry-county-lawyers-probate-estate" },
-    { title: "Selling an Inherited House in Illinois", href: "/resources/selling-inherited-property-illinois" },
-  ],
+  Cook: [SELLING_GUIDE],
+  DuPage: [SELLING_GUIDE],
+  Will: [SELLING_GUIDE],
+  Kane: [SELLING_GUIDE],
+  McHenry: [SELLING_GUIDE],
   Lake: [
-    { title: "Probate Attorneys in Libertyville, IL", href: "/city/libertyville-probate-attorney" },
-    { title: "Lake County IL Probate: A Complete Guide", href: "/blog/lake-county-il-probate" },
-    { title: "Selling an Inherited House in Illinois", href: "/resources/selling-inherited-property-illinois" },
+    { title: "Lake County Probate: Court, Steps and Timeline", href: "/blog/lake-county-il-probate" },
+    SELLING_GUIDE,
   ],
 };
 
@@ -117,7 +106,8 @@ const COUNTY_CONTENT: Record<string, React.ReactNode> = {
 
       <h3>Chicago Probate Attorneys</h3>
       <p>
-        Chicago is home to the largest concentration of probate attorneys in Illinois. Whether
+        Chicago is home to the largest concentration of probate attorneys in Illinois, and{" "}
+        <a href="/city/chicago-probate-attorney">{getAttorneysByCity("Chicago").length} of the listings on this page have a Chicago address</a>. Whether
         you need help with a straightforward estate or a complex situation involving disputed
         assets, trust litigation, or multiple properties, Chicago probate lawyers handle the
         full range of estate matters. Many offer free initial consultations and serve clients
@@ -129,13 +119,13 @@ const COUNTY_CONTENT: Record<string, React.ReactNode> = {
         Our directory includes probate attorneys serving every Cook County community, including:
       </p>
       <ul>
-        <li><strong><a href="/blog/cicero-probate-attorney">Cicero</a></strong> — One of the most densely populated Cook County suburbs, with many estates centered on family homes passed through generations.</li>
-        <li><strong><a href="/blog/probate-attorney-rolling-meadows-illinois">Rolling Meadows</a></strong> — Northwest suburban community with active probate activity through the Cook County Probate Division.</li>
+        <li><strong><a href="/city/cicero-probate-attorney">Cicero</a></strong> — One of the most densely populated Cook County suburbs, with many estates centered on family homes passed through generations.</li>
+        <li><strong><a href="/city/rolling-meadows-probate-attorney">Rolling Meadows</a></strong> — Northwest suburban community with active probate activity through the Cook County Probate Division.</li>
         <li><strong><a href="/city/northbrook-probate-attorney">Northbrook</a></strong> — North Shore suburb with attorneys serving Glenview, Deerfield, and surrounding communities.</li>
         <li><strong><a href="/city/orland-park-probate-attorney">Orland Park</a></strong> — Southwest suburban hub serving Tinley Park, Mokena, and surrounding communities.</li>
         <li><strong><a href="/city/barrington-probate-attorney">Barrington</a></strong> — Northwest community at the intersection of Cook, Lake, McHenry, and Kane counties.</li>
         <li><strong><a href="/city/palos-heights-probate-attorney">Palos Heights</a></strong> — Southwest Cook County community serving Palos Hills and surrounding suburbs.</li>
-        <li><strong>Schaumburg, Arlington Heights, Evanston</strong> — Additional high-activity Cook County communities with strong probate attorney representation.</li>
+        <li><strong><a href="/city/schaumburg-probate-attorney">Schaumburg</a>, Arlington Heights, Evanston</strong> — Additional high-activity Cook County communities with strong probate attorney representation.</li>
       </ul>
 
       <h3>Real Estate in Cook County Probate</h3>
@@ -184,6 +174,7 @@ Until it is sold or transferred, the house is the executor&apos;s responsibility
         <li><strong><a href="/city/crystal-lake-probate-attorney">Crystal Lake</a></strong> — The largest city in McHenry County, with {getAttorneysByCity("Crystal Lake").length} probate attorney listings.</li>
         <li><strong>Woodstock</strong> — County seat and home to the McHenry County Courthouse where all probate cases are filed.</li>
         <li><strong>McHenry</strong> — Active Fox River community with strong probate attorney representation.</li>
+        <li><strong><a href="/city/lake-in-the-hills-probate-attorney">Lake in the Hills</a></strong> — Next to Crystal Lake, with offices in Algonquin, Huntley and Cary nearby.</li>
         <li><strong>Algonquin, Huntley, Marengo</strong> — Additional McHenry County communities served by local probate attorneys.</li>
       </ul>
       <h3>Real Estate in McHenry County Probate</h3>
@@ -247,11 +238,12 @@ Until it is sold or transferred, the house is the executor&apos;s responsibility
       <p>After a loved one passes away in Lake County, the executor files a petition at the Waukegan courthouse. The court appoints the executor, issues Letters of Office, and begins administration. Creditors have 6 months from publication of notice to file claims. Once that period closes, remaining assets are distributed to heirs and the estate is closed.</p>
       <h3>Lake County Communities We Serve</h3>
       <ul>
-        <li><strong>Waukegan</strong> — Lake County seat and home to the courthouse where all probate cases are filed.</li>
+        <li><strong><a href="/city/waukegan-probate-attorney">Waukegan</a></strong> — Lake County seat and home to the courthouse where all probate cases are filed.</li>
         <li><strong><a href="/city/libertyville-probate-attorney">Libertyville</a></strong> — Prominent Lake County community with 11 probate attorneys serving the area.</li>
         <li><strong>Lake Forest, Highland Park</strong> — North Shore communities with active estate activity and strong attorney representation.</li>
         <li><strong>Gurnee, Mundelein, Vernon Hills</strong> — Additional Lake County communities served by local probate attorneys.</li>
       </ul>
+      <p>For the local process step by step, see the <a href="/blog/lake-county-il-probate">Lake County probate guide</a>.</p>
       <h3>Real Estate in Lake County Probate</h3>
       <p>Many Lake County probate estates include residential property — often homes in Waukegan, Libertyville, or the North Shore communities. Until the house is sold or transferred, the executor is responsible for keeping it insured, secured and maintained.</p>
       <h3>Frequently Asked Questions</h3>
@@ -272,7 +264,8 @@ Until it is sold or transferred, the house is the executor&apos;s responsibility
         <li><strong><a href="/city/naperville-probate-attorney">Naperville</a></strong> — One of Illinois most populous suburbs, spanning DuPage and Will counties with 11 probate attorneys.</li>
         <li><strong>Wheaton</strong> — DuPage County seat and home to the courthouse where all probate cases are filed.</li>
         <li><strong>Oak Brook, Downers Grove, Lisle</strong> — Prominent DuPage communities with strong probate attorney representation.</li>
-        <li><strong>Hinsdale, Burr Ridge, Elmhurst</strong> — Additional high-activity DuPage County communities.</li>
+        <li><strong><a href="/city/hinsdale-probate-attorney">Hinsdale</a>, <a href="/city/burr-ridge-probate-attorney">Burr Ridge</a></strong> — Villages on the county line: estates from the eastern edge are filed in Cook County instead.</li>
+        <li><strong>Elmhurst</strong> — An additional high-activity DuPage County community.</li>
       </ul>
       <h3>Real Estate in DuPage County Probate</h3>
       <p>Many DuPage County probate estates include residential property in Naperville, Wheaton, or surrounding communities. Until the house is sold or transferred, the executor is responsible for keeping it insured, secured and maintained.</p>
@@ -446,7 +439,27 @@ export default function CountyPage({ params }: Props) {
                 How Probate Works in Illinois →
               </Link>
             </div>
-          
+
+            {COUNTY_TOWN_PAGES[county] && (
+              <div className="bg-gray-50 rounded-lg p-5 border border-gray-200">
+                <h3 className="font-serif font-bold text-navy-800 mb-4">
+                  Browse by Town
+                </h3>
+                <ul className="space-y-2">
+                  {COUNTY_TOWN_PAGES[county].map((town) => (
+                    <li key={town.href}>
+                      <Link
+                        href={town.href}
+                        className="text-sm text-navy-700 hover:text-navy-900 hover:underline"
+                      >
+                        Probate attorneys in {town.title} →
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
             {COUNTY_BLOG_LINKS[county] && (
               <div className="bg-gray-50 rounded-lg p-5 border border-gray-200">
                 <h3 className="font-serif font-bold text-navy-800 mb-4">

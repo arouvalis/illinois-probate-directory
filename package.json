@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test:pipeline": "node --test scripts/test-pipeline.js",
+    "pipeline:dry-run": "node scripts/run-pipeline.js --dry-run"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
@@ -17,6 +19,7 @@
     "resend": "^3.5.0"
   },
   "devDependencies": {
+    "@anthropic-ai/sdk": "^1.8.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

@@ -1,0 +1,255 @@
+{
+  "version": 1,
+  "updated": "2026-11-16",
+  "about": "Machine-readable copy of the Phase 4 query-to-page map (NOTES.md, Phase 4a section 2 and Phase 4b). The blog pipeline reads this file and will not propose or write a topic that an existing page owns, on either site, or that was removed in Phase 4b. When a page is added, moved or removed, update this file in the same pull request.",
+  "howMatchingWorks": "A search query is lower-cased and stripped of punctuation. Each topic has one or more 'match' alternatives. An alternative is a list of groups; every group must be present in the query. A group is one or more words or phrases separated by |, any one of which counts. Topics are checked top to bottom and the first match wins, then the broader intentRules.",
+  "sites": {
+    "IPD": "https://www.illinoisprobatedirectory.com",
+    "CPS": "https://www.chicagoprobatespecialist.com"
+  },
+  "topics": [
+    {
+      "id": "cps-heirs-disagree",
+      "topic": "Heirs disagree about selling",
+      "intent": "probate + property",
+      "owner": { "site": "CPS", "url": "/blog/heirs-disagree-selling-inherited-property-illinois" },
+      "match": [
+        ["heir|heirs|sibling|siblings|brother|sister|family|co owner|co owners|beneficiaries", "disagree|disagrees|disagreement|dispute|disputes|fight|fighting|refuse|refuses|won t sell|force|forced|partition|buy out|buyout"]
+      ]
+    },
+    {
+      "id": "cps-mortgage",
+      "topic": "Inherited house with a mortgage",
+      "intent": "probate + property",
+      "owner": { "site": "CPS", "url": "/blog/inherited-property-with-mortgage-illinois" },
+      "match": [["mortgage|mortgages|reverse mortgage|foreclosure|underwater|loan"]]
+    },
+    {
+      "id": "cps-back-taxes",
+      "topic": "Inherited house with back taxes",
+      "intent": "probate + property",
+      "owner": { "site": "CPS", "url": "/blog/inherited-home-back-taxes-chicago" },
+      "match": [["back taxes|delinquent taxes|unpaid property taxes|tax sale|tax lien|property tax|property taxes"]]
+    },
+    {
+      "id": "cps-hoarder",
+      "topic": "Hoarder house",
+      "intent": "probate + property",
+      "owner": { "site": "CPS", "url": "/blog/selling-hoarder-house-probate-chicago" },
+      "match": [["hoarder|hoarding|cleanout|clean out|estate sale|estate sales"]]
+    },
+    {
+      "id": "cps-rental",
+      "topic": "Inherited rental property",
+      "intent": "probate + property",
+      "owner": { "site": "CPS", "url": "/blog/selling-rental-property-probate-illinois" },
+      "match": [["rental|rentals|tenant|tenants|landlord|two flat|multi unit|investment property"]]
+    },
+    {
+      "id": "cps-condo",
+      "topic": "Inherited condo, 2027 Fannie Mae rule",
+      "intent": "probate + property",
+      "owner": { "site": "CPS", "url": "/blog/fannie-mae-condo-reserve-rule-2027-chicago" },
+      "match": [["condo|condos|condominium|fannie mae|hoa"]]
+    },
+    {
+      "id": "cps-specialist-explainer",
+      "topic": "What a probate real estate specialist does, and when you need one",
+      "intent": "real-estate",
+      "owner": { "site": "CPS", "url": "/blog/probate-real-estate-specialist-cook-county" },
+      "match": [["what does|do i need|what is", "specialist|realtor|agent|broker"]]
+    },
+    {
+      "id": "cps-services",
+      "topic": "Probate real estate services",
+      "intent": "real-estate",
+      "owner": { "site": "CPS", "url": "/probate-services" },
+      "match": [["real estate services|property services|probate services"]]
+    },
+    {
+      "id": "cps-sale-timeline",
+      "topic": "How long a probate house sale takes, step by step",
+      "intent": "probate + property",
+      "owner": { "site": "CPS", "url": "/blog/illinois-probate-real-estate-timeline" },
+      "match": [
+        ["how long|timeline|time frame|take|takes", "sell|selling|sale|closing", "house|home|property|real estate"]
+      ]
+    },
+    {
+      "id": "cps-chicago-sell",
+      "topic": "Selling an inherited or probate house in Chicago",
+      "intent": "probate + property",
+      "owner": { "site": "CPS", "url": "/blog/sell-inherited-house-chicago" },
+      "match": [["sell|selling|sale|sold", "chicago"]]
+    },
+    {
+      "id": "cps-evanston",
+      "topic": "Selling an inherited home in Evanston",
+      "intent": "probate + property",
+      "owner": { "site": "CPS", "url": "/blog/sell-inherited-home-evanston" },
+      "match": [["evanston", "sell|selling|sale|house|home|property|real estate|realtor|agent"]]
+    },
+    {
+      "id": "cps-oak-park",
+      "topic": "Probate real estate in Oak Park",
+      "intent": "probate + property",
+      "owner": { "site": "CPS", "url": "/blog/probate-real-estate-agent-oak-park" },
+      "match": [["oak park", "sell|selling|sale|house|home|property|real estate|realtor|agent"]]
+    },
+    {
+      "id": "ipd-timeline",
+      "topic": "How long probate takes in Illinois",
+      "intent": "informational",
+      "owner": { "site": "IPD", "url": "/resources/illinois-probate-timeline-by-county" },
+      "match": [
+        ["how long|timeline|timelines|time frame|timeframe|length|duration|how many months|how much time", "probate|estate|executor"],
+        ["probate", "take|takes|taking|last|lasts"]
+      ]
+    },
+    {
+      "id": "ipd-lake-county-probate",
+      "topic": "How probate works in Lake County",
+      "intent": "informational",
+      "owner": { "site": "IPD", "url": "/blog/lake-county-il-probate" },
+      "match": [["lake county", "probate"]]
+    },
+    {
+      "id": "ipd-courts",
+      "topic": "Probate courts, clerk, case search, filing fees",
+      "intent": "informational",
+      "owner": { "site": "IPD", "url": "/resources/illinois-probate-courts-by-county" },
+      "match": [
+        ["court|courts|courthouse|courtroom|clerk|clerks|judge|judges|docket|case search|case lookup|case number|records|filing fee|filing fees|daley center|where to file|where do i file|e filing|efiling"]
+      ]
+    },
+    {
+      "id": "ipd-small-estate",
+      "topic": "Small estate affidavit",
+      "intent": "informational",
+      "owner": { "site": "IPD", "url": "/blog/small-estate-affidavit-illinois" },
+      "match": [["small estate|small estates"], ["affidavit|affidavits"]]
+    },
+    {
+      "id": "ipd-attorney-cost",
+      "topic": "Cost of a probate attorney",
+      "intent": "informational",
+      "owner": { "site": "IPD", "url": "/blog/how-much-does-a-probate-attorney-cost-in-illinois" },
+      "match": [
+        ["cost|costs|fee|fees|how much|price|prices|pricing|charge|charges|expensive|afford|cheap|affordable|hourly|flat fee|retainer", "probate|attorney|attorneys|lawyer|lawyers"]
+      ]
+    },
+    {
+      "id": "ipd-need-attorney",
+      "topic": "Do I need a probate attorney",
+      "intent": "informational",
+      "owner": { "site": "IPD", "url": "/blog/do-i-need-a-probate-attorney-in-illinois" },
+      "match": [
+        ["need|needed|necessary|required|require|without|should i|have to|myself|on my own|diy", "attorney|attorneys|lawyer|lawyers"],
+        ["probate", "without a lawyer|without an attorney|myself|on my own|diy|pro se"]
+      ]
+    },
+    {
+      "id": "ipd-assets",
+      "topic": "What assets go through probate",
+      "intent": "informational",
+      "owner": { "site": "IPD", "url": "/blog/what-assets-go-through-probate-in-illinois" },
+      "match": [
+        ["asset|assets|what goes|go through|goes through|subject to|non probate|nonprobate|included in", "probate"]
+      ]
+    },
+    {
+      "id": "ipd-how-probate-works",
+      "topic": "How probate works, the probate process",
+      "intent": "informational",
+      "owner": { "site": "IPD", "url": "/resources/how-probate-works-illinois" },
+      "match": [
+        ["probate", "process|steps|step by step|procedure|procedures|stages"],
+        ["what is probate|how does probate work|how probate works|probate explained|probate guide|probate basics|probate overview|how to file probate|how to file for probate|how to start probate|how to open probate|file for probate|filing for probate|filing probate|open probate|opening probate|start probate|starting probate|go through probate|going through probate"]
+      ]
+    },
+    {
+      "id": "ipd-selling-guide",
+      "topic": "Selling an inherited house in Illinois: the legal steps (statewide)",
+      "intent": "probate + property",
+      "owner": { "site": "IPD", "url": "/resources/selling-inherited-property-illinois" },
+      "match": [
+        ["sell|selling|sale|sold", "inherited|inherit|inheritance|probate|estate|executor|heir|heirs|deceased|parent|parents"],
+        ["heir property|heirs property"]
+      ]
+    }
+  ],
+  "intentRules": [
+    {
+      "id": "real-estate-professional",
+      "rule": "Dividing rule 2: every search for an agent, realtor or specialist belongs to CPS.",
+      "intent": "real-estate",
+      "owner": { "site": "CPS", "url": "/" },
+      "match": [
+        ["realtor|realtors|real estate agent|real estate agents|real estate broker|real estate specialist|real estate expert|probate specialist|probate agent|probate properties|properties for sale|homes in probate|houses in probate|probate homes|probate houses|probate property sale|cash buyer|cash buyers|we buy houses|investor|investors"]
+      ]
+    },
+    {
+      "id": "property",
+      "rule": "Dividing rules 2 and 3: selling or dealing with the house belongs to CPS for any named place, and to the IPD statewide selling guide otherwise. The blog writes neither.",
+      "intent": "probate + property",
+      "owner": { "site": "CPS or IPD", "url": "CPS local pages for a named place; IPD /resources/selling-inherited-property-illinois statewide; IPD /for-families for the house before a sale" },
+      "match": [
+        ["house|houses|home|homes|real estate|property|properties|vacant|sell|selling|sale|buyer|buyers"]
+      ]
+    },
+    {
+      "id": "find-an-attorney",
+      "rule": "Dividing rules 1 and 4: 'probate attorney [place]' belongs to a page with listings (city page, county page or the homepage), never to a blog post.",
+      "intent": "probate legal",
+      "owner": { "site": "IPD", "url": "resolved by the script: /city/<town>-probate-attorney where one exists, else the /county/<county> page, else the homepage" },
+      "match": [
+        ["attorney|attorneys|lawyer|lawyers|law firm|law firms|law office|law offices|law group|legal help|legal services|legal aid|counsel|esq|near me|directory|list of|estate planning|financial planning|retirement planning|elder law"]
+      ]
+    }
+  ],
+  "localRule": "Any query that names a town or county in the directory is a local search. Local searches belong to the page with listings for that place (city page where one exists, else the county page), never to a blog post. The one local article that stays is /blog/lake-county-il-probate (topic ipd-lake-county-probate above). The script applies this rule from the town and county names in data/attorneys.json.",
+  "neverWrite": [
+    {
+      "id": "named-attorney-or-firm",
+      "rule": "Never generate a post about a named attorney or law firm. A named attorney's own profile page owns that search (topic map, row 1), and Phase 4a decided an AI-written essay about a named attorney is a risk. The script checks every query against the names in data/attorneys.json and data/removed-attorneys.json, and rejects any query with a word it does not recognise, because it may be a name."
+    },
+    {
+      "id": "rankings",
+      "rule": "The brief says do not rank attorneys or build 'best of' lists.",
+      "match": [["best|top|top rated|highest rated|rated|ranking|rankings|ranked|reviews|review|recommended"]]
+    },
+    {
+      "id": "outside-scope",
+      "rule": "Legal searches IPD does not serve, and places outside the six counties (Phase 4a, 'Noise to ignore').",
+      "match": [
+        ["divorce|family law|custody|child support|disability|wrongful death|personal injury|injury|accident|criminal|dui|bankruptcy|immigration|workers comp|social security|malpractice|eviction|traffic"],
+        ["texas|florida|california|indiana|wisconsin|iowa|missouri|michigan|ohio|new york|canada|ontario|arizona|georgia|nokomis|peoria|clinton|belleville|ottawa|springfield|rockford|champaign"]
+      ]
+    }
+  ],
+  "removedPosts": [
+    { "slug": "chicago-probate-lawyer", "redirectTo": "/city/chicago-probate-attorney" },
+    { "slug": "cicero-probate-attorney", "redirectTo": "/city/cicero-probate-attorney" },
+    { "slug": "probate-attorney-hinsdale", "redirectTo": "/city/hinsdale-probate-attorney" },
+    { "slug": "probate-attorney-schaumburg-illinois", "redirectTo": "/city/schaumburg-probate-attorney" },
+    { "slug": "probate-attorney-rolling-meadows-illinois", "redirectTo": "/city/rolling-meadows-probate-attorney" },
+    { "slug": "probate-attorney-burr-ridge-illinois", "redirectTo": "/city/burr-ridge-probate-attorney" },
+    { "slug": "probate-attorney-burr-ridge", "redirectTo": "/city/burr-ridge-probate-attorney" },
+    { "slug": "probate-attorney-waukegan-illinois", "redirectTo": "/city/waukegan-probate-attorney" },
+    { "slug": "probate-attorney-lake-in-the-hills-il", "redirectTo": "/city/lake-in-the-hills-probate-attorney" },
+    { "slug": "living-trust-attorney-lake-in-the-hills", "redirectTo": "/city/lake-in-the-hills-probate-attorney" },
+    { "slug": "probate-attorney-elgin-illinois", "redirectTo": "/city/elgin-probate-attorney" },
+    { "slug": "probate-attorney-palos-heights-illinois", "redirectTo": "/city/palos-heights-probate-attorney" },
+    { "slug": "estate-law-arlington-heights-il", "redirectTo": "/county/cook" },
+    { "slug": "gilberts-wills-attorney", "redirectTo": "/county/kane" },
+    { "slug": "dupage-county-wills-lawyer", "redirectTo": "/county/dupage" },
+    { "slug": "mchenry-county-lawyers-probate-estate", "redirectTo": "/county/mchenry" },
+    { "slug": "how-long-does-probate-take-in-illinois", "redirectTo": "/resources/illinois-probate-timeline-by-county" },
+    { "slug": "estate-lawyer-nokomis-il", "redirectTo": "/" },
+    { "slug": "probate-lawyer", "redirectTo": "/" },
+    { "slug": "list-of-probate-attorneys", "redirectTo": "/" },
+    { "slug": "william-lee-attorney", "redirectTo": "/" },
+    { "slug": "meents-law-wilmington", "redirectTo": "/attorney/meents-law-p-c-channahon" },
+    { "slug": "michael-naughton-attorney", "redirectTo": "/attorney/michael-r-naughton-law-offices-manhattan" }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "updated": "2026-11-16",
+  "about": "The only legal statements the blog pipeline may publish. The review step (scripts/review-drafts.js) checks every legal statement in a draft against this list and flags anything that is not here. To allow a new statement, add a fact with its source after an attorney or an official source has confirmed it. Sources are recorded in NOTES.md (Phase 1 fact sources, Phase 4a section 5).",
+  "facts": [
+    {
+      "id": "small-estate-limit",
+      "statement": "A Small Estate Affidavit can be used in Illinois when the estate's personal property totals $150,000 or less, for deaths on or after August 15, 2025. For deaths before August 15, 2025 the limit is $100,000.",
+      "status": "confirmed",
+      "source": "Public Act 104-0346; 755 ILCS 5/25-1",
+      "allowed": {
+        "amounts": ["$150,000", "$100,000"],
+        "citations": ["755 ILCS 5/25-1", "Public Act 104-0346"]
+      }
+    },
+    {
+      "id": "small-estate-no-real-estate",
+      "statement": "A Small Estate Affidavit cannot be used when the estate includes real estate, and it cannot transfer real estate.",
+      "status": "confirmed",
+      "source": "755 ILCS 5/25-1",
+      "allowed": { "citations": ["755 ILCS 5/25-1"] }
+    },
+    {
+      "id": "small-estate-vehicles",
+      "statement": "Motor vehicles registered with the Illinois Secretary of State are not counted toward the Small Estate Affidavit limit.",
+      "status": "confirmed",
+      "source": "Public Act 104-0346; 755 ILCS 5/25-1",
+      "allowed": { "citations": ["755 ILCS 5/25-1", "Public Act 104-0346"] }
+    },
+    {
+      "id": "creditor-claims-period",
+      "statement": "In an Illinois probate estate, creditors get at least six months from the first published notice to file claims. An estate cannot close before that period ends.",
+      "status": "confirmed",
+      "source": "755 ILCS 5/18-3",
+      "allowed": {
+        "durations": ["6 months"],
+        "citations": ["755 ILCS 5/18-3"]
+      }
+    },
+    {
+      "id": "typical-timeline",
+      "statement": "A straightforward Illinois probate estate usually takes about 9 to 12 months from opening to closing.",
+      "status": "confirmed",
+      "note": "The 12-month upper figure is the site's own estimate (NOTES.md, Phase 1). No official source gives a typical upper bound; an attorney should confirm it.",
+      "source": "755 ILCS 5/18-3 (six-month minimum); ISBA guide (at least nine months); site estimate",
+      "allowed": { "durations": ["9-12 months", "9 months", "12 months"] }
+    },
+    {
+      "id": "complex-timeline",
+      "statement": "Contested or complex Illinois probate estates can take 12 to 24 months or longer.",
+      "status": "confirmed",
+      "note": "Site estimate, same standing as typical-timeline.",
+      "source": "Site estimate (NOTES.md, Phase 1 fact sources)",
+      "allowed": { "durations": ["12-24 months", "12 months", "24 months"] }
+    },
+    {
+      "id": "court-cook",
+      "statement": "Cook County probate estates are filed with the Circuit Court of Cook County, Probate Division, at the Richard J. Daley Center, 50 W. Washington St., Chicago. The Clerk's probate office is in Room 1202 and the Probate Division is on the 18th floor. Clerk's phone: (312) 603-6441. All Cook County estates, including suburban ones, are filed downtown.",
+      "status": "confirmed",
+      "source": "NOTES.md Phase 4a, Cook County (confirmed, on IPD)",
+      "allowed": {
+        "addresses": ["50 W. Washington St."],
+        "phones": ["(312) 603-6441"]
+      }
+    },
+    {
+      "id": "court-will",
+      "statement": "Will County probate estates are filed with the 12th Judicial Circuit at the Will County Courthouse, 100 W. Jefferson St., Joliet, IL 60432. Circuit Clerk's phone: (815) 727-8592.",
+      "status": "confirmed",
+      "note": "Older pages around the web give 14 W. Jefferson St.; that address is out of date.",
+      "source": "Will County Circuit Clerk, Court Locations (NOTES.md Phase 1)",
+      "allowed": {
+        "addresses": ["100 W. Jefferson St."],
+        "phones": ["(815) 727-8592"]
+      }
+    },
+    {
+      "id": "court-kane",
+      "statement": "Kane County probate estates are filed with the 16th Judicial Circuit at the Kane County Courthouse, 100 S. 3rd St., Geneva. Probate Administration is in Room 112. Phone: (630) 232-3413. The Kane County Judicial Center on Route 38 in St. Charles is a different building and does not handle probate.",
+      "status": "confirmed",
+      "source": "16th Judicial Circuit contacts and court addresses (NOTES.md Phase 1)",
+      "allowed": {
+        "addresses": ["100 S. 3rd St."],
+        "phones": ["(630) 232-3413"]
+      }
+    },
+    {
+      "id": "court-dupage",
+      "statement": "DuPage County probate estates are filed with the 18th Judicial Circuit at the DuPage County Courthouse, 505 N. County Farm Rd., Wheaton.",
+      "status": "confirmed",
+      "note": "Address only. The clerk's phone number and floor are still to verify (NOTES.md Phase 4a), so they are not allowed in drafts.",
+      "source": "NOTES.md Phase 4a, DuPage County (on IPD)",
+      "allowed": { "addresses": ["505 N. County Farm Rd."] }
+    },
+    {
+      "id": "court-lake",
+      "statement": "Lake County probate estates are filed with the 19th Judicial Circuit at the Lake County Courthouse, 18 N. County St., Waukegan.",
+      "status": "confirmed",
+      "note": "Address only. The clerk's phone number and floor are still to verify (NOTES.md Phase 4a), so they are not allowed in drafts.",
+      "source": "NOTES.md Phase 4a, Lake County (on IPD)",
+      "allowed": { "addresses": ["18 N. County St."] }
+    },
+    {
+      "id": "court-mchenry",
+      "statement": "McHenry County probate estates are filed with the 22nd Judicial Circuit at the McHenry County Courthouse, 2200 N. Seminary Ave., Woodstock.",
+      "status": "confirmed",
+      "note": "Address only. Room numbers, the clerk's phone number and hearing times are still to verify (NOTES.md Phase 4a), so they are not allowed in drafts.",
+      "source": "NOTES.md Phase 4a, McHenry County (on IPD)",
+      "allowed": { "addresses": ["2200 N. Seminary Ave."] }
+    }
+  ]
+}

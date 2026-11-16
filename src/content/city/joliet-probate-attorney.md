@@ -83,7 +83,7 @@ Whether you're planning ahead or handling an estate after a loss, look for the s
 
 **Clear communication.** Legal documents are complex, but explanations shouldn't be. The best attorneys explain things in plain language and return calls promptly, especially during an already stressful time.
 
-**Transparent fees.** Ask upfront whether the attorney charges hourly, flat fees, or a percentage of the estate. A simple will might run $300–$1,000; more complex plans or contested probate cases cost more. Understanding costs ahead of time avoids surprises.
+**Transparent fees.** Ask upfront whether the attorney charges hourly, flat fees, or a percentage of the estate. Ask for a written quote before you hire. Understanding costs ahead of time avoids surprises.
 
 **Relevant specialization.** An attorney who mostly handles personal injury cases isn't necessarily the right fit for a complex estate or a contested will. Look for someone who concentrates specifically in probate and estate law.
 

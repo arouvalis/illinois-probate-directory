@@ -930,7 +930,7 @@ Session date: Nov 15, 2026. One pull request per repo, not merged. This section 
 
 ## Open items for Andy
 
-1. **Dollar figures for attorney fees remain** in the cost article (hourly $200–$500, flat fee $2,500–$6,000) and the Joliet guide ("a simple will might run $300–$1,000"). They are not percentages, so they were left. No source is recorded for them.
+1. **Hourly and flat-fee ranges stay in the cost article for now** (hourly $200–$500, flat fee $2,500–$6,000). Andy's decision: an attorney will review them. The "$300–$1,000 simple will" line was removed from the Joliet guide; it now says to ask for a written quote.
 2. **Existing figures now more visible.** The visible FAQ blocks repeat figures the pages already showed and that have no recorded source: per-county filing fees on the courts page, "30–60 days" for a small estate affidavit, and the Cook County court hours. Worth a check with the clerks.
 3. **Not done, still on the Phase 4b later list:** titles for the kept articles, plain-HTML links from the homepage to city and county pages, author and credentials on the selling guide.
 4. The Barrington page says "most Barrington probate cases are filed at the Daley Center". Unverified, unchanged.

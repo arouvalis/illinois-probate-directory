@@ -1016,3 +1016,73 @@ What to look for in the answers, beyond a citation:
 - Kane County probate is in **Geneva** (not St. Charles); the Will County courthouse is at **100 W. Jefferson St.**; the small-estate limit is **$150,000** for deaths on or after August 15, 2025; a straightforward estate takes **about 9 to 12 months**. An AI answer that cites us with an older figure means an old page or copy is still being read.
 - For question 9, whether Andy Rouvalis, Lewis Kaplan and HomeSmart Connect are named correctly.
 - The first check is the baseline. Nothing here has been deployed yet, so expect few or no citations in month one.
+
+---
+
+# NOTES — Verify your listing (IPD)
+
+Session date: Nov 16, 2026. IPD only. One pull request, not merged.
+
+## What it does
+
+1. **Page** `/verify-listing/<listing slug>` shows what the listing says now (name, address, phone, website, county, practice areas) and a short form: contact name, email (required), phone, website, counties served (the six), the required "I'd like to receive client inquiries" box, and a corrections box. Kept out of search results (noindex) and out of the sitemap.
+2. **Link on every profile:** one small grey line under the disclaimer, "Is this your firm? Verify your listing" (`?src=profile`, nofollow).
+3. **Email confirmation.** Submitting saves a request and emails a link to the address entered. The link opens a page with a Confirm button. Nothing changes until the button is pressed. Unconfirmed requests delete themselves after 7 days.
+4. **Andy's approval.** After the attorney confirms, Andy gets `APPROVE LISTING CHANGE: <firm>` with the listing-now and submitted details side by side, a line saying whether the email's domain matches the firm's website, and three signed links: approve, reject, and (for later) stop sending leads to this address. Each opens a page with one button. Approving saves the email and emails the attorney that it is live. Rejecting changes nothing and tells nobody.
+5. **Lead routing.** `resolveAttorneyLeadEmail` in `src/lib/attorneyRecords.ts` decides where a "Contact this attorney" lead goes: testing override, then `do not send` in `data/attorney-records.json` (always wins), then the approved email from the database, then an email typed into the JSON file. Andy is copied as in Phase 1.
+6. **The email is never published.** It lives only in the database and in emails to Andy. The site can only ask "is there an email for this listing, yes or no" so the message form's wording is true.
+7. **Removal requests** (a fold-out under the form) email Andy only: `LISTING REMOVAL REQUEST: <firm>`. Nothing is removed; the requester's email is not checked, so call the firm first.
+
+## Why links open a page with a button
+
+Mail security scanners (Outlook, corporate filters) open every link in an email. If a link alone confirmed or approved, a scanner could do it. So opening a link changes nothing; pressing the button does.
+
+## Where the email is stored, and why
+
+**Upstash Redis, added from the Vercel dashboard (Storage).** On Vercel the site's files are read-only, so `data/attorney-records.json` can only change with a new commit and a redeploy. The database changes instantly, costs nothing at this size (free tier), needs no new code library (the site calls it over HTTPS), and Vercel fills in the two settings itself. `data/attorney-records.json` still works for emails and notes Andy types by hand, and its `do not send` still overrides everything.
+
+Preview deployments and the live site keep separate data inside the same database, so approving a test on a preview never changes live lead routing.
+
+What is saved per approved listing: email, contact name, phone, website, counties, when they consented, when approved. Phone, website, county and corrections are **not** applied to the public listing; Andy edits `data/attorneys.json` by hand if he agrees.
+
+## Settings needed in Vercel (Production and Preview) before this works
+
+- Storage → Create → Upstash for Redis → connect to the IPD project (adds `KV_REST_API_URL` and `KV_REST_API_TOKEN`).
+- `VERIFY_LISTING_SECRET`: any long random phrase (16+ characters). Signs every link. Changing it later breaks links in emails already sent.
+- Then redeploy once. Without these, the form says "Listing verification isn't available right now" and nothing else on the site is affected.
+
+## Signed links
+
+Each link carries a request id and a signature (HMAC-SHA256 with `VERIFY_LISTING_SECRET`) over the action plus the id. A confirm signature cannot be used to approve, and one request's links do not work for another.
+
+## Limits against misuse
+
+Hidden spam-trap field; 5 submissions per 10 minutes per visitor (as on the other forms); at most 5 requests per listing and 3 per email address per day.
+
+## GA4
+
+- `verify_listing_start`: the verify page was opened. Parameters `src`, `listing`.
+- `verify_listing_submit`: the form was sent (extra, not asked for).
+- `verify_listing_confirmed`: the attorney pressed Confirm. Carries the `src` from the original link even if they confirm on another device.
+- `listing_removal_request`.
+- `src` comes from the link: `?src=email` for a campaign, `profile` from the profile link, `direct` if missing. To see it in reports, register `src` (and `listing` if wanted) as event-scoped custom dimensions, as with `placement`.
+
+## Campaign links
+
+`data/verify-listing-links.csv` has one link per listing (530), ending `?src=email`, with name, city, county, phone and website for a mail merge. Regenerate, or use another label: `node scripts/verify-listing-links.js postcard`.
+
+## Tested
+
+In a production build on this machine, in a real browser, with a stand-in for the database and emails written to a log instead of sent: 40 checks passed. They cover every step above, forged and reused signatures, opening links without pressing the button, the email not appearing on any page, the daily limits, and a 390 px phone layout.
+
+## Not tested
+
+- **The Vercel preview.** It needs the database and the secret, which only Andy can add. The pull request has the checklist.
+- **Real email delivery** through Resend, and the real Upstash service (written to its documented REST interface).
+
+## Open items for Andy
+
+1. The attorney-profile template changed (one line), so the next run of `scripts/update-content-dates.js` will mark all 530 profiles as modified. It was not run in this session.
+2. A rejected attorney is not told. Reply to the approval email if you want to explain.
+3. The verified phone and counties are stored but nothing uses them yet.
+4. To see every verified email in one place, open the database in the Upstash console (keys starting `ipd:production:attorney:`). There is no admin page.

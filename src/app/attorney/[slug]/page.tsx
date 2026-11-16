@@ -412,6 +412,17 @@ export default function AttorneyPage({ params }: Props) {
               own due diligence before hiring an attorney.
             </p>
           </div>
+
+          <p className="text-xs text-gray-400 px-1">
+            Is this your firm?{" "}
+            <a
+              href={`/verify-listing/${attorney.slug}?src=profile`}
+              rel="nofollow"
+              className="underline hover:text-navy-700"
+            >
+              Verify your listing
+            </a>
+          </p>
         </div>
       </div>
     </div>

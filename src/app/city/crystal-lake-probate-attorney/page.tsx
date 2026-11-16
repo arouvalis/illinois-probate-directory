@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getAttorneysByCity } from "@/lib/attorneys";
 import AttorneyList from "@/components/AttorneyList";
+import CityStructuredData from "@/components/CityStructuredData";
 import EstateHouseBlock from "@/components/EstateHouseBlock";
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function CrystalLakeProbatePage() {
 
   return (
     <>
+      <CityStructuredData city="Crystal Lake" slug="crystal-lake-probate-attorney" countySlug="mchenry" attorneys={attorneys} />
       {/* Hero */}
       <section className="bg-gradient-to-r from-navy-800 to-navy-700 text-white py-12 px-4">
         <div className="max-w-5xl mx-auto">
@@ -31,6 +33,7 @@ export default function CrystalLakeProbatePage() {
             Probate Attorneys in Crystal Lake, Illinois
           </h1>
           <p className="text-gray-200 max-w-2xl leading-relaxed">
+            This page lists {attorneys.length} probate attorneys with offices in Crystal Lake, Illinois.{" "}
             Crystal Lake is one of the largest cities in McHenry County. Probate cases
             for Crystal Lake residents are filed at the McHenry County Courthouse in
             Woodstock. Attorneys here serve Crystal Lake, Algonquin, Huntley, and

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FaqSection from "@/components/FaqSection";
+import type { Faq } from "@/lib/schema";
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -47,6 +49,12 @@ const faqSchema = {
     },
   ],
 };
+
+// The same questions are shown on the page (FaqSection) and in the FAQ markup.
+const faqs: Faq[] = faqSchema.mainEntity.map((q) => ({
+  question: q.name,
+  answer: q.acceptedAnswer.text,
+}));
 
 const counties = [
   {
@@ -126,7 +134,7 @@ const counties = [
 export const metadata: Metadata = {
   title: "Illinois Probate Courts by County – Locations, Fees & Filing Info (2026)",
   description:
-    "Illinois probate court addresses, phone numbers, filing fees, and e-filing requirements for Cook, DuPage, Lake, Will, Kane, and McHenry counties. Updated June 2026.",
+    "Illinois probate court addresses, phone numbers, filing fees, and e-filing requirements for Cook, DuPage, Lake, Will, Kane, and McHenry counties. Updated November 2026.",
   alternates: {
     canonical:
       "https://www.illinoisprobatedirectory.com/resources/illinois-probate-courts-by-county",
@@ -157,8 +165,16 @@ export default function IllinoisProbateCourtsByCountyPage() {
           Courthouse locations, filing fees, phone numbers, and e-filing requirements
           for Illinois's most active probate counties.
         </p>
-        <p className="text-gray-400 text-xs mb-8">
-          Last updated: June 2026 — Verify current fees with the Circuit Clerk before filing.
+        <p className="text-gray-400 text-xs mb-6">
+          Last updated: November 2026 — Verify current fees with the Circuit Clerk before filing.
+        </p>
+
+        {/* Direct answer */}
+        <p className="text-lg text-gray-800 leading-relaxed border-l-4 border-navy-700 pl-4 mb-8">
+          <strong>In short:</strong> an Illinois probate case is filed with the circuit court of
+          the county where the person lived. In the six Chicago-area counties that means the
+          Daley Center in Chicago (Cook), Wheaton (DuPage), Geneva (Kane), Waukegan (Lake),
+          Woodstock (McHenry) and Joliet (Will).
         </p>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10 not-prose">
@@ -299,11 +315,13 @@ export default function IllinoisProbateCourtsByCountyPage() {
               of notice.
             </li>
             <li>
-              Illinois courts generally require a licensed attorney to open a formal
-              probate estate. Self-represented parties may handle small estate affidavits.
+              Illinois law doesn&apos;t strictly require an attorney in every case, but courts generally expect executors to be represented, and nearly all estates hire one.
+              {" "}A small estate affidavit does not involve a court case.
             </li>
           </ul>
         </div>
+
+        <FaqSection faqs={faqs} className="mb-10" />
 
         <div className="bg-navy-50 border border-navy-200 rounded-xl p-6 not-prose">
           <h2 className="font-serif font-bold text-navy-800 text-xl mb-2">

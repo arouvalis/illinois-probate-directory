@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getAttorneysByCity } from "@/lib/attorneys";
 import AttorneyList from "@/components/AttorneyList";
 import { getCityGuideHtml } from "@/lib/cityGuide";
+import CityStructuredData from "@/components/CityStructuredData";
 import EstateHouseBlock from "@/components/EstateHouseBlock";
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export default function PalosHeightsProbatePage() {
 
   return (
     <>
+      <CityStructuredData city="Palos Heights" slug="palos-heights-probate-attorney" countySlug="cook" attorneys={attorneys} />
       <section className="bg-gradient-to-r from-navy-800 to-navy-700 text-white py-12 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center gap-2 text-sm text-blue-300 mb-3">
@@ -32,6 +34,7 @@ export default function PalosHeightsProbatePage() {
             Probate Attorneys in Palos Heights, Illinois
           </h1>
           <p className="text-gray-200 max-w-2xl leading-relaxed">
+            This page lists {attorneys.length} probate attorneys with offices in Palos Heights, Illinois.{" "}
             Palos Heights is a southwest suburban Cook County community. Probate
             cases for Palos Heights residents are filed at the Richard J. Daley
             Center in Chicago. Attorneys here serve Palos Heights, Palos Hills,

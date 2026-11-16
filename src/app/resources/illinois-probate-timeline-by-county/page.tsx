@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FaqSection from "@/components/FaqSection";
+import type { Faq } from "@/lib/schema";
+import { TIMELINE_SENTENCE } from "@/lib/probateFacts";
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -18,7 +21,7 @@ const faqSchema = {
       name: "How long does probate take in Cook County Illinois?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Cook County probate typically takes 9 to 12 months for a simple estate under independent administration. Complex estates with disputes, real estate in multiple states, or tax issues can take 12 to 24 months or longer. Cook County processes thousands of estates annually and is one of the busiest probate courts in the United States.",
+        text: "Cook County probate typically takes 9 to 12 months for a simple estate under independent administration. Complex estates with disputes, real estate in multiple states, or tax issues can take 12 to 24 months or longer.",
       },
     },
     {
@@ -34,7 +37,7 @@ const faqSchema = {
       name: "Does probate take longer in some Illinois counties than others?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Cook County probate can take longer due to higher case volume and court scheduling delays. Smaller counties like McHenry, Kane, and DuPage often move faster because of lighter dockets. However, all Illinois counties are bound by the same 6-month creditor claims period.",
+        text: "The legal minimum is the same everywhere: every Illinois county is bound by the same 6-month creditor claims period. What differs from county to county is court scheduling, which depends on each court's caseload.",
       },
     },
     {
@@ -47,6 +50,12 @@ const faqSchema = {
     },
   ],
 };
+
+// The same questions are shown on the page (FaqSection) and in the FAQ markup.
+const faqs: Faq[] = faqSchema.mainEntity.map((q) => ({
+  question: q.name,
+  answer: q.acceptedAnswer.text,
+}));
 
 const counties = [
   {
@@ -145,9 +154,9 @@ const phases = [
 ];
 
 export const metadata: Metadata = {
-  title: "Illinois Probate Timeline by County – How Long Does Probate Take? (2026)",
+  title: "How Long Does Probate Take in Illinois? Timeline by County",
   description:
-    "Illinois probate takes 9–12 months in most counties. See county-by-county timelines for Cook, DuPage, Lake, Will, Kane, and McHenry, plus a phase-by-phase breakdown of the process.",
+    "A straightforward Illinois estate takes about 9 to 12 months. See each stage, the six-month claims period, and notes for six Chicago-area counties.",
   alternates: {
     canonical:
       "https://www.illinoisprobatedirectory.com/resources/illinois-probate-timeline-by-county",
@@ -167,19 +176,24 @@ export default function IllinoisProbateTimelineByCountyPage() {
           Home
         </Link>
         <span>/</span>
-        <span className="text-gray-600">Illinois Probate Timeline by County</span>
+        <span className="text-gray-600">How Long Probate Takes in Illinois</span>
       </nav>
 
       <article className="prose prose-gray max-w-none">
         <h1 className="text-3xl sm:text-4xl font-serif font-bold text-navy-900 leading-tight mb-4">
-          Illinois Probate Timeline by County
+          How Long Does Probate Take in Illinois? Timeline by County
         </h1>
         <p className="text-gray-500 text-sm mb-2">
           How long probate takes in Cook, DuPage, Lake, Will, Kane, and McHenry counties —
           plus a phase-by-phase breakdown of the Illinois probate process.
         </p>
-        <p className="text-gray-400 text-xs mb-8">
-          Last updated: June 2026 — Timelines are estimates. Actual duration depends on estate complexity and court scheduling.
+        <p className="text-gray-400 text-xs mb-6">
+          Last updated: November 2026 — Timelines are estimates. Actual duration depends on estate complexity and court scheduling.
+        </p>
+
+        {/* Direct answer: the site's single timeline statement */}
+        <p className="text-lg text-gray-800 leading-relaxed border-l-4 border-navy-700 pl-4 mb-8">
+          <strong>In short:</strong> {TIMELINE_SENTENCE}
         </p>
 
         {/* Key Stats */}
@@ -286,6 +300,8 @@ export default function IllinoisProbateTimelineByCountyPage() {
             <li><strong>Cook County court volume</strong> — high caseload can delay hearing dates by weeks</li>
           </ul>
         </div>
+
+        <FaqSection faqs={faqs} className="mb-10" />
 
         {/* CTA */}
         <div className="bg-navy-50 border border-navy-200 rounded-xl p-6 not-prose">

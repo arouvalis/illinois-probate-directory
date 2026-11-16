@@ -3,11 +3,14 @@ import Link from "next/link";
 import { getAttorneysByCity } from "@/lib/attorneys";
 import AttorneyList from "@/components/AttorneyList";
 import { getCityGuideHtml } from "@/lib/cityGuide";
+import CityStructuredData from "@/components/CityStructuredData";
 import EstateHouseBlock from "@/components/EstateHouseBlock";
 
+const napervilleCount = getAttorneysByCity("Naperville").length;
+
 export const metadata: Metadata = {
-  title: "Probate Attorneys in Naperville, IL",
-  description: "Find experienced probate attorneys in Naperville, Illinois. Naperville spans DuPage and Will counties — most probate cases are filed at the DuPage County Courthouse in Wheaton. Browse verified local attorneys.",
+  title: `Naperville Probate Attorneys: ${napervilleCount} Local Listings`,
+  description: `${napervilleCount} probate attorney listings in Naperville. The city spans DuPage and Will counties; see which courthouse handles the estate.`,
   alternates: { canonical: "https://www.illinoisprobatedirectory.com/city/naperville-probate-attorney" },
 };
 
@@ -19,6 +22,7 @@ export default function NapervilleProbatePage() {
 
   return (
     <>
+      <CityStructuredData city="Naperville" slug="naperville-probate-attorney" countySlug="dupage" attorneys={attorneys} />
       <section className="bg-gradient-to-r from-navy-800 to-navy-700 text-white py-12 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center gap-2 text-sm text-blue-300 mb-3">
@@ -32,6 +36,7 @@ export default function NapervilleProbatePage() {
             Probate Attorneys in Naperville, Illinois
           </h1>
           <p className="text-gray-200 max-w-2xl leading-relaxed">
+            This page lists {attorneys.length} probate attorneys with offices in Naperville, Illinois.{" "}
             Naperville spans both DuPage and Will counties and is one of the most
             populous suburbs in Illinois. Most Naperville probate cases are filed
             at the DuPage County Courthouse in Wheaton. Attorneys here serve

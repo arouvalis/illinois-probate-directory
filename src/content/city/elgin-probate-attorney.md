@@ -6,7 +6,7 @@ The eastern part of Elgin is in Cook County. If the person lived on that side, t
 
 ## Choosing an Elgin probate attorney
 
-Illinois does not require an attorney for every estate, but most executors use one when there is a house, a dispute or a creditor problem. When you call, ask whether the attorney files regularly in the county that will handle the estate, how the fee is charged (hourly or flat), and who in the office will answer your questions.
+Illinois law doesn't strictly require an attorney in every case, but courts generally expect executors to be represented, and nearly all estates hire one. When you call, ask whether the attorney files regularly in the county that will handle the estate, how the fee is charged (hourly or flat), and who in the office will answer your questions.
 
 ## How long it takes
 

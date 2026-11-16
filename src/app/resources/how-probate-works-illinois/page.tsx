@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FaqSection from "@/components/FaqSection";
+import type { Faq } from "@/lib/schema";
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -26,7 +28,7 @@ const faqSchema = {
       "name": "What does probate cost in Illinois?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Illinois probate costs typically include court filing fees of $200–$500, publication fees of $100–$300, attorney fees of 2–4% of the gross estate value, executor fees, and appraisal fees."
+        "text": "Illinois probate costs typically include court filing fees, publication fees for the required creditor notice, attorney fees, reasonable compensation for the executor, and appraisal fees. Attorney fees vary: some attorneys bill hourly, some charge a flat fee, and some charge a percentage of the estate. Ask for a written quote before you hire."
       }
     },
     {
@@ -34,7 +36,7 @@ const faqSchema = {
       "name": "Do I need an attorney for Illinois probate?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Illinois does not technically require an attorney for probate, but most executors hire one due to the legal filings, court appearances, creditor negotiations, and tax decisions involved."
+        "text": "Illinois law doesn't strictly require an attorney in every case, but courts generally expect executors to be represented, and nearly all estates hire one. Probate involves legal filings, court appearances, creditor negotiations and tax decisions that carry personal liability if mishandled."
       }
     },
     {
@@ -48,10 +50,16 @@ const faqSchema = {
   ]
 };
 
+// The same questions are shown on the page (FaqSection) and in the FAQ markup.
+const faqs: Faq[] = faqSchema.mainEntity.map((q) => ({
+  question: q.name,
+  answer: q.acceptedAnswer.text,
+}));
+
 export const metadata: Metadata = {
   title: "How Probate Works in Illinois – Step-by-Step Guide",
   description:
-    "Illinois probate usually takes 9–12 months and costs 2–4% of the estate value. This guide covers filing requirements, timelines by county, small estate affidavits, and when an attorney is required.",
+    "Illinois probate usually takes 9–12 months. This guide covers the steps, what it costs, timelines by county, small estate affidavits, and when an attorney is required.",
   alternates: { canonical: "https://www.illinoisprobatedirectory.com/resources/how-probate-works-illinois" },
 };
 
@@ -76,7 +84,16 @@ export default function HowProbateWorksPage() {
         </h1>
         <p className="text-gray-500 text-sm mb-8">
           A complete step-by-step guide for families navigating estate administration.{" "}
-          <span className="text-gray-400">Last updated: June 2026</span>
+          <span className="text-gray-400">Last updated: November 2026</span>
+        </p>
+
+        {/* Direct answer */}
+        <p className="text-lg text-gray-800 leading-relaxed border-l-4 border-navy-700 pl-4 mb-10">
+          <strong>In short:</strong> probate in Illinois is the court process for settling a
+          deceased person&apos;s estate. The circuit court in the county where the person lived
+          appoints an executor or administrator, creditors get at least six months to file
+          claims, and what remains goes to the heirs. A straightforward estate usually takes
+          about 9 to 12 months.
         </p>
 
         <div className="space-y-10 text-gray-700 leading-relaxed">
@@ -199,7 +216,7 @@ export default function HowProbateWorksPage() {
             <ul className="mt-3 space-y-1.5 list-disc list-outside ml-5">
               <li><strong>Court filing fees:</strong> $200–$500 depending on estate size and county</li>
               <li><strong>Publication fees:</strong> $100–$300 for required creditor notices</li>
-              <li><strong>Attorney fees:</strong> Often 2–5% of the gross estate value, or charged as a flat or hourly fee</li>
+              <li><strong>Attorney fees:</strong> These vary. Some attorneys bill hourly, some charge a flat fee, and some charge a percentage of the estate. Ask for a written quote before you hire.</li>
               <li><strong>Executor fees:</strong> The executor is entitled to reasonable compensation from the estate</li>
               <li><strong>Appraisal fees:</strong> Often required for real estate, business interests, or unusual assets</li>
             </ul>
@@ -225,13 +242,15 @@ export default function HowProbateWorksPage() {
               Do I Need an Attorney for Illinois Probate?
             </h2>
             <p>
-              Illinois does not technically require an attorney for probate. However,
-              most executors hire one for good reason: probate involves legal filings,
-              court appearances, creditor negotiations, and tax decisions that carry
-              personal liability if mishandled. An experienced probate attorney can
-              help you avoid costly mistakes and move the process along efficiently.
+              Illinois law doesn&apos;t strictly require an attorney in every case, but courts generally expect executors to be represented, and nearly all estates hire one.
+              {" "}Probate involves legal filings, court appearances, creditor negotiations,
+              and tax decisions that carry personal liability if mishandled. An experienced
+              probate attorney can help you avoid costly mistakes and move the process along
+              efficiently.
             </p>
           </section>
+
+          <FaqSection faqs={faqs} heading="Quick Answers" />
 
           <div className="bg-navy-50 border border-navy-200 rounded-xl p-6 mt-8">
             <h2 className="font-serif font-bold text-navy-800 text-xl mb-2">

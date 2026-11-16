@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FaqSection from "@/components/FaqSection";
+import type { Faq } from "@/lib/schema";
 import EstateHouseBlock from "@/components/EstateHouseBlock";
 import { cpsUrl } from "@/lib/cps";
 
@@ -63,6 +65,12 @@ const faqSchema = {
   ]
 };
 
+// The same questions are shown on the page (FaqSection) and in the FAQ markup.
+const faqs: Faq[] = faqSchema.mainEntity.map((q) => ({
+  question: q.name,
+  answer: q.acceptedAnswer.text,
+}));
+
 export const metadata: Metadata = {
   title: "Selling an Inherited House in Illinois: The Legal Steps",
   description:
@@ -97,8 +105,6 @@ export default function SellingInheritedPropertyPage() {
 
         <div className="space-y-10 text-gray-700 leading-relaxed">
 
-          <p>{"Inheriting a house in Illinois usually means handling two things at once: the legal process of transferring or selling the property, and the physical property itself, with its bills, repairs, and a lifetime of belongings inside. This guide covers the legal side step by step, whether you're an executor selling on behalf of an estate or an heir trying to understand what happens next. The rules here are Illinois law and apply in every county. Costs and requirements that change from town to town are noted where they come up."}</p>
-
           <section>
             <h2 className="text-2xl font-serif font-bold text-navy-800 mb-3">{"The Short Answer"}</h2>
             <p>{"Yes, an inherited house in Illinois can be sold, but only by the person with legal authority to sign. Who that is depends on how the property was titled when the owner died:"}</p>
@@ -110,6 +116,8 @@ export default function SellingInheritedPropertyPage() {
             </ul>
             <p className="mt-3">{"When the house is sold through probate, the sale proceeds belong to the estate, not to any individual heir, until debts and expenses are paid and the estate distributes what's left."}</p>
           </section>
+
+          <p>{"Inheriting a house in Illinois usually means handling two things at once: the legal process of transferring or selling the property, and the physical property itself, with its bills, repairs, and a lifetime of belongings inside. This guide covers the legal side step by step, whether you're an executor selling on behalf of an estate or an heir trying to understand what happens next. The rules here are Illinois law and apply in every county. Costs and requirements that change from town to town are noted where they come up."}</p>
 
           <section>
             <h2 className="text-2xl font-serif font-bold text-navy-800 mb-3">{"Step 1: Find Out Whether the House Needs Probate"}</h2>
@@ -211,7 +219,7 @@ export default function SellingInheritedPropertyPage() {
 
           <section>
             <h2 className="text-2xl font-serif font-bold text-navy-800 mb-3">{"Where a Probate Attorney Fits"}</h2>
-            <p>{"Illinois executors can technically handle probate without a lawyer, but when real estate is involved it rarely makes sense. A probate attorney can:"}</p>
+            <p>{"Illinois law doesn't strictly require an attorney in every case, but courts generally expect executors to be represented, and nearly all estates hire one. When real estate is involved, a probate attorney can:"}</p>
             <ul className="mt-3 space-y-2 list-disc list-outside ml-5">
               <li>{"Open the estate and obtain Letters of Office"}</li>
               <li>{"Advise whether independent administration is available"}</li>
@@ -222,6 +230,8 @@ export default function SellingInheritedPropertyPage() {
             </ul>
             <p className="mt-3">{"Attorney fees in Illinois probate are typically paid from the estate, not out of the executor's pocket."}</p>
           </section>
+
+          <FaqSection faqs={faqs} heading="Common Questions About Selling an Inherited House in Illinois" />
 
           <EstateHouseBlock placement="selling_guide" />
 

@@ -12,7 +12,7 @@ Illinois probate attorneys typically use one of three fee structures, and unders
 
 **Flat Fee Arrangements** are increasingly popular for straightforward probate cases. Many attorneys offer flat fees ranging from $2,500 to $6,000 for uncontested probate proceedings. This approach provides cost certainty and can be more economical for typical cases involving standard asset distribution and minimal complications.
 
-**Percentage-Based Fees** are less common in Illinois but may be used for complex estates. Some attorneys charge 2-4% of the estate's value, though this arrangement requires careful consideration since it can become expensive for larger estates.
+**Percentage-Based Fees** are less common in Illinois but may be used for complex estates. The fee is set as a share of the estate's value, so this arrangement requires careful consideration: it can become expensive for larger estates. Whichever structure an attorney uses, ask for a written quote before you hire.
 
 ## Factors That Influence Probate Attorney Costs
 

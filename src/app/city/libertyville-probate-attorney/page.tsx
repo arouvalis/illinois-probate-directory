@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getAttorneysByCity } from "@/lib/attorneys";
 import AttorneyList from "@/components/AttorneyList";
+import CityStructuredData from "@/components/CityStructuredData";
 import EstateHouseBlock from "@/components/EstateHouseBlock";
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function LibertyvilleProbatePage() {
 
   return (
     <>
+      <CityStructuredData city="Libertyville" slug="libertyville-probate-attorney" countySlug="lake" attorneys={attorneys} />
       <section className="bg-gradient-to-r from-navy-800 to-navy-700 text-white py-12 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center gap-2 text-sm text-blue-300 mb-3">
@@ -30,6 +32,7 @@ export default function LibertyvilleProbatePage() {
             Probate Attorneys in Libertyville, Illinois
           </h1>
           <p className="text-gray-200 max-w-2xl leading-relaxed">
+            This page lists {attorneys.length} probate attorneys with offices in Libertyville, Illinois.{" "}
             Libertyville is a prominent Lake County community in the northern
             Chicago suburbs. Probate cases for Libertyville residents are filed
             at the Lake County Courthouse in Waukegan. Attorneys here serve

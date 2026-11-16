@@ -942,3 +942,77 @@ Session date: Nov 16, 2026. IPD only. One pull request, not merged. **Nothing wa
 2. The 9-to-12-month figure is in the facts file as confirmed, as instructed. Phase 1 notes it is the site's own estimate and an attorney should confirm the upper end.
 3. City pages for towns with no page (Downers Grove, Lake Forest, Palatine and others) were listed under Phase 5 in the Phase 4b notes. They are not in this pull request.
 4. `--publish` commits and pushes on whatever branch is checked out, as the old script did. On `main` that goes straight to the live site.
+
+---
+
+# NOTES — Phase 6 (AI search visibility, IPD)
+
+Session date: Nov 15, 2026. One pull request per repo, not merged. This section covers IPD; the CPS repo's NOTES.md has its own Phase 6 section. The test questions below are saved in both. Phase 5 has not been run.
+
+## What changed
+
+- **County pages:** the attorney listings now come straight after the page heading. The county write-up (court, process, towns, questions) is unchanged and sits below the listings; a link under the heading jumps to it. The paragraph under the heading is now a direct answer: how many listings the page holds and where the county's probate cases are filed (address from `COURTS` in `src/lib/cityPages.ts`). The old intro sentences were removed.
+- **City pages (all 18):** the paragraph under the heading opens with "This page lists N probate attorneys with offices in [town]", then the existing sentence about which court handles the town.
+- **Resource pages:** each of the four opens with a one- or two-sentence answer marked "In short". On the selling guide, the existing "The Short Answer" section moved above the introduction.
+- **Homepage:** the sentence under the heading now says what the site is, how many listings, and which six counties.
+- **FAQ markup now matches what is on the page.** The four resource pages carried FAQ markup whose questions were not shown as questions anywhere on the page. Each now shows the same questions and answers in a visible block (`src/components/FaqSection.tsx`). Checked in the build: every marked-up question on the site appears in the page text.
+- **FAQ content that had no markup:** question headings in the city guides ("Which court handles a Burr Ridge estate?", "Is probate needed at all?" and others) now get FAQ markup, on 12 of the 18 city pages. Articles already had it; their answers are no longer cut off mid-sentence at 300 characters.
+- **Schema:** county and city pages carry an ItemList of their attorney listings (marked as unordered, because the directory does not rank), plus breadcrumbs. Small-town pages have a second list for the nearby offices. The homepage lists the six county pages. The site-wide Organization markup has an id the listing pages point to, lists the six counties, and no longer says "verified probate attorneys" (not every listing is verified). Shared code: `src/lib/schema.ts`, `src/components/CityStructuredData.tsx`.
+- **Titles and descriptions** (Phase 4a wording, counts from the data): homepage "Find a Probate Attorney in Illinois: 530 Local Listings"; timeline page "How Long Does Probate Take in Illinois? Timeline by County" (page heading changed to match); "Joliet Probate Attorneys: 21 Local Listings"; "Naperville Probate Attorneys: 10 Local Listings".
+- **`/llms.txt`** rewritten: what the site offers, the six county pages with their courts, all 18 town pages with counts, the guides, the two standard facts (timeline, small estate limit), and the link to CPS. Still generated from the data.
+- **One stale fact fixed:** the Joliet guide still gave the courthouse as 14 West Jefferson Street. Now 100 West Jefferson Street (Phase 1 source).
+- "Last updated" on three resource pages changed from June 2026 to November 2026.
+
+## Wording removed or softened because it was not confirmed
+
+- Timeline page FAQ: "one of the busiest probate courts in the United States" (Cook) removed. "Smaller counties like McHenry, Kane, and DuPage often move faster because of lighter dockets" replaced with a sentence saying the six-month period is the same everywhere and scheduling depends on each court's caseload.
+- How-probate-works FAQ: the cost answer no longer gives dollar ranges or a percentage.
+
+## Decisions from Andy's review (same day), applied
+
+- **Attorney-fee percentages removed.** `/resources/how-probate-works-illinois` no longer gives a percentage in the text, the FAQ answer or the search description. It says fees vary (hourly, flat-fee or a percentage of the estate) and to ask for a written quote. The same was done where a percentage appeared elsewhere: the Naperville guide ("often 2–4%") and the cost article ("2-4% of the estate's value"). Wording is in `ATTORNEY_FEE_SENTENCE` in `src/lib/probateFacts.ts`.
+- **One answer to "is an attorney required?"** Every page that addresses it now uses: "Illinois law doesn't strictly require an attorney in every case, but courts generally expect executors to be represented, and nearly all estates hire one." Applied to the Cook County page (text and FAQ markup), how-probate-works (text and FAQ markup), the courts page, the selling guide and the Elgin guide. Saved as `ATTORNEY_SENTENCE` in `src/lib/probateFacts.ts`. The article "Do I Need a Probate Attorney in Illinois?" was not edited: it discusses when a family might manage alone and does not state a rule either way.
+
+## Open items for Andy
+
+1. **Hourly and flat-fee ranges stay in the cost article for now** (hourly $200–$500, flat fee $2,500–$6,000). Andy's decision: an attorney will review them. The "$300–$1,000 simple will" line was removed from the Joliet guide; it now says to ask for a written quote.
+2. **Existing figures now more visible.** The visible FAQ blocks repeat figures the pages already showed and that have no recorded source: per-county filing fees on the courts page, "30–60 days" for a small estate affidavit, and the Cook County court hours. Worth a check with the clerks.
+3. **Not done, still on the Phase 4b later list:** titles for the kept articles, plain-HTML links from the homepage to city and county pages, author and credentials on the selling guide.
+4. The Barrington page says "most Barrington probate cases are filed at the Daley Center". Unverified, unchanged.
+5. The courts page title is 101 characters with the site name. Not in this session's list.
+
+## Checked in a production build
+
+- Build passes. Titles, descriptions and schema read from the built pages for the homepage, two county pages, four city pages, four resource pages and an article.
+- County page order confirmed in the built HTML (listings before write-up) and by eye at desktop width. No sideways scrolling at 390 px on the county and Joliet pages.
+- Not checked: the live site, and Google's Rich Results Test (blocked from this session). Both are on the PR checklist.
+
+## Monthly AI-search test questions (15)
+
+Ask each question, word for word, in ChatGPT (with search on), Perplexity and Google (note whether an AI Overview appears). Do it in a private window, signed out where possible, once a month on about the same day. For each one record: was either site cited or linked (yes/no), which page, and whether the answer got our facts right. A plain sheet with one row per question and one column per month is enough.
+
+"Page that should be cited" is the page built to answer that question. It is a target, not a prediction.
+
+| # | Question | Site | Page that should be cited |
+| --- | --- | --- | --- |
+| 1 | How do I sell an inherited house in Cook County? | CPS | `/inherited-property/cook-county` |
+| 2 | Who can sell a house in probate in Illinois? | IPD | `/resources/selling-inherited-property-illinois` |
+| 3 | Do I need probate to sell my parent's house in Illinois? | IPD | `/resources/selling-inherited-property-illinois` |
+| 4 | How long does probate take in Illinois? | IPD | `/resources/illinois-probate-timeline-by-county` |
+| 5 | How long does it take to sell a house in probate in Illinois? | CPS | `/blog/illinois-probate-real-estate-timeline` |
+| 6 | What happens if heirs disagree about selling an inherited house in Illinois? | CPS | `/blog/heirs-disagree-selling-inherited-property-illinois` |
+| 7 | I inherited a house in Chicago with back taxes. What should I do? | CPS | `/blog/inherited-home-back-taxes-chicago` |
+| 8 | What happens to the mortgage when you inherit a house in Illinois? | CPS | `/blog/inherited-property-with-mortgage-illinois` |
+| 9 | Who is a probate real estate agent in the Chicago suburbs? | CPS | homepage |
+| 10 | What does a probate real estate specialist do, and do I need one? | CPS | `/blog/probate-real-estate-specialist-cook-county` |
+| 11 | How do I sell an inherited house in McHenry County, Illinois? | CPS | `/inherited-property/mchenry-county` |
+| 12 | Where do I file probate in Kane County, Illinois? | IPD | `/county/kane` or `/resources/illinois-probate-courts-by-county` |
+| 13 | How do I find a probate attorney in DuPage County, Illinois? | IPD | `/county/dupage` |
+| 14 | Who are the probate attorneys in Joliet, Illinois? | IPD | `/city/joliet-probate-attorney` |
+| 15 | What is the small estate affidavit limit in Illinois? | IPD | `/blog/small-estate-affidavit-illinois` or `/resources/how-probate-works-illinois` |
+
+What to look for in the answers, beyond a citation:
+
+- Kane County probate is in **Geneva** (not St. Charles); the Will County courthouse is at **100 W. Jefferson St.**; the small-estate limit is **$150,000** for deaths on or after August 15, 2025; a straightforward estate takes **about 9 to 12 months**. An AI answer that cites us with an older figure means an old page or copy is still being read.
+- For question 9, whether Andy Rouvalis, Lewis Kaplan and HomeSmart Connect are named correctly.
+- The first check is the baseline. Nothing here has been deployed yet, so expect few or no citations in month one.

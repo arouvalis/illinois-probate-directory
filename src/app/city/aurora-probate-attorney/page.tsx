@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getAttorneysByCity } from "@/lib/attorneys";
 import AttorneyList from "@/components/AttorneyList";
 import { getCityGuideHtml } from "@/lib/cityGuide";
+import CityStructuredData from "@/components/CityStructuredData";
 import EstateHouseBlock from "@/components/EstateHouseBlock";
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export default function AuroraProbatePage() {
 
   return (
     <>
+      <CityStructuredData city="Aurora" slug="aurora-probate-attorney" countySlug="kane" attorneys={attorneys} />
       <section className="bg-gradient-to-r from-navy-800 to-navy-700 text-white py-12 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center gap-2 text-sm text-blue-300 mb-3">
@@ -32,6 +34,7 @@ export default function AuroraProbatePage() {
             Probate Attorneys in Aurora, Illinois
           </h1>
           <p className="text-gray-200 max-w-2xl leading-relaxed">
+            This page lists {attorneys.length} probate attorneys with offices in Aurora, Illinois.{" "}
             Aurora is the second largest city in Illinois and spans both Kane and
             DuPage counties. Most Aurora probate cases are filed at the Kane County
             Courthouse in Geneva. Attorneys here serve Aurora, Naperville, Montgomery,

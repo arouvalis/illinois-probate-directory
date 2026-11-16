@@ -900,6 +900,51 @@ Session date: Nov 15, 2026. IPD only. One pull request, not merged. No CPS chang
 
 ---
 
+# NOTES — Phase 5 (blog pipeline guardrails)
+
+Session date: Nov 16, 2026. IPD only. One pull request, not merged. **Nothing was published and no article was added or changed.** How to run the pipeline is in `scripts/README.md`.
+
+## What changed
+
+- **The Phase 4 map is now a file the scripts read:** `data/query-page-map.json`. It holds the topic map from Phase 4a section 2 (which page on IPD or CPS owns each topic), the dividing rules, and the 23 posts removed in Phase 4b. The script also reads every `/blog/...` redirect in `next.config.mjs`, the city pages that exist, and the articles in `src/content/blog`, so those stay current without editing the map.
+- **One topic guard, used by every step** (`scripts/lib/topic-guard.js`). The keyword-gap script, the draft writer and the publish step each ask it before acting. It refuses a topic that names an attorney or firm, is owned by a page on either site, was removed or redirects, already has an article, names a town or county (local searches belong to the listing pages), asks for a ranking, or is outside the six counties or the probate field.
+- **Named attorneys and firms.** A query is refused if it contains any distinctive word from a listing name (530 current and 61 removed listings give 831 such words), a whole listing name, a quoted phrase, or a firm marker (LLC, "Law Office of"). Any word the script does not recognise also stops the topic, because an unknown word in these searches is usually a name. The writer is told never to name anyone, and the review flags any draft that does.
+- **Review step** (`scripts/review-drafts.js`, new). Two checks, and a draft must pass both:
+  1. The script checks every dollar amount, percentage, time period, statute citation, street address and phone number against `data/legal-facts.json`, and looks for attorney, firm and judge names.
+  2. Claude Sonnet (`claude-sonnet-5-5`) lists every legal statement and names the fact that supports it. "Not in the file" or "contradicts the file" flags the draft. So does an error, an answer in the wrong shape, or a fact id that does not exist.
+- **`data/legal-facts.json`** (new): 12 facts, all from these notes. Small estate limit ($150,000 on or after Aug 15, 2025; $100,000 before; no real estate; state-registered vehicles not counted), the six-month creditor claims period, about 9 to 12 months typical, 12 to 24 months or longer when contested, and the six probate court locations. For DuPage, Lake and McHenry only the address is allowed, because Phase 4a marks their phone and room details "to verify".
+- **Drafts no longer land on the site.** They are written to `pipeline-output/drafts/` (not committed, not read by the site). Only the publish step copies a draft into `src/content/blog`, and only when the review says approved, the review was done by Sonnet, the draft and the facts file are unchanged since the review, and the topic still passes the guard.
+- **Dry run is the default.** `run-pipeline.js` publishes only with `--publish`. A dry run does every step in `pipeline-output/dry-run/` and writes a report. `--mock` swaps the two models for canned answers so the plumbing can be tested with no API calls; it only works with `--dry-run`, and the publish step refuses a review that came from canned answers.
+- **Models.** Haiku still writes drafts, now `claude-haiku-5-5` (was `claude-haiku-4-5-20251001`). Calls go through the official SDK (`@anthropic-ai/sdk`, added as a dev dependency).
+- **Removed:** `scripts/generate-posts.js`, a second generator that used Claude Opus and wrote straight into the live blog folder, bypassing every check; and `scripts/keyword-gaps-output.json`, a stale saved result full of removed topics and attorney-name searches.
+- The old publish step ran `git add .`, which committed whatever was in the folder. It now adds only the published posts and `data/content-dates.json`.
+
+## Tested
+
+- `npm run test:pipeline`: 15 tests pass. No API calls.
+- All 23 removed posts, the older blog redirects, 13 IPD-owned and 6 CPS-owned sample searches are refused, each with the right owner named.
+- Every one of the 591 listing names, alone and with "probate" added, is refused.
+- The Nov 13 Search Console export (1,003 queries): **no query passes as a new topic.** Of the 524 worth a look, 323 belong to an existing page, 121 name an attorney or firm, 33 are phone numbers or web addresses, 17 are out of area, 14 are removed topics, 6 ask for rankings, 6 have an unknown word.
+- Full dry run with canned answers and nine hand-given topics: the five banned ones were refused; four new ones were drafted; the three with problems (statements not in the facts file, figures not in the file, a named firm) were flagged; the clean one was approved but still not publishable because its review was canned. The blog folder, the git status and the last commit were identical before and after.
+
+## Not tested
+
+- **A dry run with the real models.** This session has no Anthropic API key and could not be given one. The calls to Haiku and Sonnet are written from the current API documentation but have not been run. Andy should do one real dry run before the first `--publish` (first command in `scripts/README.md`).
+
+## What to expect
+
+- **Most real drafts will be flagged at first.** The facts file has 12 facts, so a draft on almost any new topic will make statements that are not in it. That is the rule working. Each flag report lists the exact statements; the ones worth keeping get confirmed and added to the facts file.
+- **The current export produces no new topics**, because every search in it belongs to an existing page or names an attorney. New articles will come from topics given by hand (`--topic=`) until Search Console shows new informational searches.
+
+## Open items for Andy
+
+1. Two live articles contain figures that are not in the facts file: the cost article (fee ranges from $200 to $10,000 and "4%") and the small estate article ("30 days" waiting period). They were not written by this pipeline and were not changed. Confirm and add them to the facts file, or soften them.
+2. The 9-to-12-month figure is in the facts file as confirmed, as instructed. Phase 1 notes it is the site's own estimate and an attorney should confirm the upper end.
+3. City pages for towns with no page (Downers Grove, Lake Forest, Palatine and others) were listed under Phase 5 in the Phase 4b notes. They are not in this pull request.
+4. `--publish` commits and pushes on whatever branch is checked out, as the old script did. On `main` that goes straight to the live site.
+
+---
+
 # NOTES — Phase 6 (AI search visibility, IPD)
 
 Session date: Nov 15, 2026. One pull request per repo, not merged. This section covers IPD; the CPS repo's NOTES.md has its own Phase 6 section. The test questions below are saved in both. Phase 5 has not been run.

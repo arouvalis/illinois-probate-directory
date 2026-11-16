@@ -1,0 +1,8 @@
+{
+  "claims": [
+    { "quote": "Illinois law entitles an executor to reasonable compensation for their services.", "status": "not_in_facts", "fact_ids": [], "note": "No fact covers executor compensation." },
+    { "quote": "The court must approve the fee before it is paid, and beneficiaries can object to it.", "status": "not_in_facts", "fact_ids": [], "note": "No fact covers fee approval." },
+    { "quote": "Creditors get at least six months from the first published notice to file claims.", "status": "supported", "fact_ids": ["creditor-claims-period"], "note": "Matches the claims period fact." }
+  ],
+  "named_parties": []
+}

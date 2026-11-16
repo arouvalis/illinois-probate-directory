@@ -1,0 +1,8 @@
+{
+  "claims": [
+    { "quote": "creditors get at least six months from the first published notice to file claims, and the estate cannot close before that period ends", "status": "supported", "fact_ids": ["creditor-claims-period"], "note": "Matches the claims period fact." },
+    { "quote": "A straightforward estate usually takes about 9 to 12 months from opening to closing.", "status": "supported", "fact_ids": ["typical-timeline"], "note": "Matches the timeline fact." },
+    { "quote": "If the estate has no real estate and its personal property totals $150,000 or less, for a death on or after August 15, 2025, a Small Estate Affidavit may be an option.", "status": "supported", "fact_ids": ["small-estate-limit", "small-estate-no-real-estate"], "note": "Matches the small estate facts." }
+  ],
+  "named_parties": []
+}

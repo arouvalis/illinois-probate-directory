@@ -1,117 +1,101 @@
+#!/usr/bin/env node
+'use strict';
+// Step 2 of the blog pipeline: Claude Haiku writes a DRAFT for each new topic.
+//
+// Drafts go to pipeline-output/drafts/, which the website does not read.
+// Nothing here publishes. Each topic is checked against the topic guard again
+// before any writing, so a topic file edited by hand cannot get round the map.
+//
+// Usage: node scripts/generate-blog-posts.js [--max=3] [--dry-run] [--mock]
+
 const fs = require('fs');
 const path = require('path');
-const https = require('https');
+const { PATHS, WRITER_MODEL, dirs, parseArgs, ensureDir, readJson, writeJson } = require('./lib/config');
+const { loadGuard } = require('./lib/topic-guard');
+const { getClient, writeDraft } = require('./lib/anthropic');
 
-// ── CONFIG ────────────────────────────────────────────────────────────────────
-const GAPS_FILE = path.join(__dirname, 'keyword-gaps-output.json');
-const OUTPUT_DIR = path.join(__dirname, '../src/content/blog');
-const API_KEY = process.env.ANTHROPIC_API_KEY;
+function writerSystem(facts, map) {
+  const factList = facts.facts.map((f) => `- ${f.statement}`).join('\n');
+  const owned = map.topics
+    .filter((t) => t.owner.site === 'IPD')
+    .map((t) => `- ${t.topic}: ${t.owner.url}`)
+    .join('\n');
+  return `You write articles for IllinoisProbateDirectory.com, a directory of probate attorneys in six Illinois counties (Cook, DuPage, Kane, Lake, McHenry, Will). Readers are families dealing with a death: stressed, short of time and new to the legal process. Write in plain English and explain any legal term the first time you use it.
 
-if (!API_KEY) {
-  console.error('Error: ANTHROPIC_API_KEY not set');
-  process.exit(1);
+Every draft is checked before publication, and a draft that breaks any of these rules is thrown away:
+
+1. Legal statements. The only statements of Illinois law, deadlines, dollar limits, typical timelines, court procedure or court locations you may make are the confirmed facts below, in your own words but without changing their meaning or adding to them. For everything else, describe the question in general terms and tell the reader it depends on the estate and is a question for an Illinois probate attorney. Do not state any other number, deadline, fee, percentage, form name, statute or rule, even one you are sure of.
+
+<confirmed_facts>
+${factList}
+</confirmed_facts>
+
+2. No names. Never name an attorney, a law firm, a judge or any other private person or business. Do not recommend, rank or compare attorneys.
+
+3. Nothing invented. No statistics, testimonials, case studies, client stories or example families.
+
+4. Stay on the topic you are given. These topics already have their own pages; do not re-explain them. Where one is relevant, give it one sentence and a markdown link to its page:
+${owned}
+- Finding an attorney: the directory homepage, /
+- What to do with an inherited house: /for-families
+
+Format: markdown. Begin with a single "# " heading that contains the topic naturally; nothing before it, no front matter. Use "## " subheadings. 700 to 1,000 words. End with a short paragraph inviting the reader to use the directory to find a local probate attorney. Return only the article.`;
 }
 
-if (!fs.existsSync(OUTPUT_DIR)) {
-  fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+function writerPrompt(candidate) {
+  const related = candidate.related && candidate.related.length ? `\nRelated searches to cover if they fit naturally: ${candidate.related.map((r) => `"${r}"`).join(', ')}` : '';
+  return `TOPIC: "${candidate.query}"${related}\n\nWrite the article.`;
 }
 
-// ── HELPERS ───────────────────────────────────────────────────────────────────
-function slugify(str) {
-  return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-}
-
-function callClaude(prompt) {
-  return new Promise((resolve, reject) => {
-    const body = JSON.stringify({
-      model: 'claude-haiku-4-5-20251001',
-      max_tokens: 2000,
-      messages: [{ role: 'user', content: prompt }]
-    });
-
-    const req = https.request({
-      hostname: 'api.anthropic.com',
-      path: '/v1/messages',
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': API_KEY,
-        'anthropic-version': '2023-06-01',
-        'Content-Length': Buffer.byteLength(body)
-      }
-    }, (res) => {
-      let data = '';
-      res.on('data', chunk => data += chunk);
-      res.on('end', () => {
-        try {
-          const parsed = JSON.parse(data);
-          resolve(parsed.content[0].text);
-        } catch (e) {
-          reject(e);
-        }
-      });
-    });
-
-    req.on('error', reject);
-    req.write(body);
-    req.end();
-  });
-}
-
-// ── PROMPT ────────────────────────────────────────────────────────────────────
-function buildPrompt(keyword) {
-  return `You are an SEO content writer for IllinoisProbateDirectory.com, a directory of Illinois probate attorneys.
-
-Write a helpful, informative blog post targeting the keyword: "${keyword}"
-
-The post should:
-- Be written for families dealing with probate in Illinois
-- Be empathetic and clear — avoid legal jargon
-- Include the keyword naturally in the title, first paragraph, and 2-3 times throughout
-- Be approximately 600-800 words
-- Include these sections: intro, what to look for in a probate attorney, how our directory helps, closing CTA
-- End with a call to action to search IllinoisProbateDirectory.com
-- Be formatted in markdown
-
-Return only the markdown content, no preamble.`;
-}
-
-// ── MAIN ──────────────────────────────────────────────────────────────────────
 async function main() {
-  const gaps = JSON.parse(fs.readFileSync(GAPS_FILE, 'utf8'));
+  const args = parseArgs(process.argv.slice(2));
+  const out = dirs(args.dryRun);
+  if (!fs.existsSync(out.gaps)) {
+    console.error(`No topic list at ${out.gaps}. Run find-keyword-gaps.js first.`);
+    process.exit(1);
+  }
+  const gaps = readJson(out.gaps);
+  const facts = readJson(PATHS.facts);
+  const guard = loadGuard();
+  const client = getClient({ mock: args.mock });
+  const system = writerSystem(facts, guard.map);
+  ensureDir(out.drafts);
 
-  // Pick top geographic opportunities only
-  const targets = gaps.geo
-    .filter(r => r.query.match(/probate|estate law|estate lawyer|estate attorney/i))
-    .filter(r => !r.query.match(/^(gilbert|michael|meents|bear law|brian|clark)/i))
-    .slice(0, 5);
-
-  console.log(`\n🚀 Generating ${targets.length} blog posts...\n`);
-
-  for (const target of targets) {
-    const keyword = target.query;
-    const slug = slugify(keyword);
-    const outFile = path.join(OUTPUT_DIR, `${slug}.md`);
-
-    if (fs.existsSync(outFile)) {
-      console.log(`⏭️  Skipping "${keyword}" — already exists`);
+  console.log(`\nWriting drafts${args.dryRun ? ' (dry run)' : ''}${args.mock ? ' with canned answers, no API calls' : ` with ${WRITER_MODEL}`}`);
+  let written = 0;
+  for (const candidate of gaps.candidates) {
+    if (written >= args.max) break;
+    const verdict = guard.check(candidate.query);
+    if (!verdict.allowed) {
+      console.log(`  Skipped "${candidate.query}": ${verdict.reason}`);
       continue;
     }
-
-    console.log(`✍️  Writing post for: "${keyword}"`);
+    const draftFile = path.join(out.drafts, `${verdict.slug}.md`);
+    if (fs.existsSync(draftFile)) {
+      console.log(`  Skipped "${candidate.query}": a draft is already waiting for review.`);
+      continue;
+    }
     try {
-      const content = await callClaude(buildPrompt(keyword));
-      fs.writeFileSync(outFile, content);
-      console.log(`✅ Saved: ${outFile}\n`);
-      // Small delay to avoid rate limits
-      await new Promise(r => setTimeout(r, 1000));
+      const draft = await writeDraft(client, { system, prompt: writerPrompt(candidate) });
+      if (!draft.startsWith('# ')) throw new Error('The draft does not begin with a "# " heading.');
+      fs.writeFileSync(draftFile, draft + '\n');
+      writeJson(path.join(out.drafts, `${verdict.slug}.meta.json`), {
+        slug: verdict.slug,
+        query: candidate.query,
+        related: candidate.related || [],
+        writerModel: args.mock ? 'mock' : WRITER_MODEL,
+        writtenAt: new Date().toISOString(),
+      });
+      written++;
+      console.log(`  Draft written: ${path.relative(PATHS.root, draftFile)}`);
     } catch (err) {
-      console.error(`❌ Failed for "${keyword}":`, err.message);
+      console.error(`  Failed "${candidate.query}": ${err.message}`);
     }
   }
-
-  console.log('\n🎉 Done! Blog posts saved to:', OUTPUT_DIR);
+  console.log(`  ${written} draft(s) written. Drafts are not on the site; the review step is next.\n`);
 }
 
-main();
-
+main().catch((err) => {
+  console.error('Fatal:', err.message);
+  process.exit(1);
+});

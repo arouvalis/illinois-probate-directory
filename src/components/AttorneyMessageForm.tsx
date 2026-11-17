@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { trackEvent } from "@/lib/analytics";
 import { EMPTY_LEAD_DETAILS, type LeadDetails } from "@/lib/leadOptions";
@@ -13,7 +13,16 @@ interface Props {
   hasEmailOnFile: boolean;
 }
 
-export default function AttorneyMessageForm({ attorneyName, attorneySlug, hasEmailOnFile }: Props) {
+export default function AttorneyMessageForm({ attorneyName, attorneySlug, hasEmailOnFile: emailOnFileAtBuild }: Props) {
+  // An attorney can verify an email after the page was built, so ask the server.
+  const [hasEmailOnFile, setHasEmailOnFile] = useState(emailOnFileAtBuild);
+  useEffect(() => {
+    fetch(`/api/contact?slug=${encodeURIComponent(attorneySlug)}`)
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => data && setHasEmailOnFile(data.emailOnFile === true))
+      .catch(() => {});
+  }, [attorneySlug]);
+
   const [form, setForm] = useState({ name: "", email: "", phone: "", description: "" });
   const [details, setDetails] = useState<LeadDetails>(EMPTY_LEAD_DETAILS);
   const [trap, setTrap] = useState("");

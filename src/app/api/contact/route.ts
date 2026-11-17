@@ -6,10 +6,20 @@
 import { NextResponse } from "next/server";
 import { sendEmail, ctTimestamp, OWNER_EMAIL } from "@/lib/email";
 import { getAttorneyBySlug } from "@/lib/attorneys";
-import { getAttorneyLeadEmail, getAttorneyRecord } from "@/lib/attorneyRecords";
+import { resolveAttorneyLeadEmail, getAttorneyRecord } from "@/lib/attorneyRecords";
 import { parseLead, isPropertyLead, withPropertyFlag, leadDetailsBlock, rateLimited, TOO_MANY } from "@/lib/leads";
 
 const SITE = "https://www.illinoisprobatedirectory.com";
+
+export const dynamic = "force-dynamic";
+
+// Lets the message form say truthfully where a message will go. Answers only
+// yes or no; the address itself never leaves the server.
+export async function GET(req: Request) {
+  const slug = new URL(req.url).searchParams.get("slug") ?? "";
+  if (!getAttorneyBySlug(slug)) return NextResponse.json({ emailOnFile: false });
+  return NextResponse.json({ emailOnFile: (await resolveAttorneyLeadEmail(slug)) !== null });
+}
 
 export async function POST(req: Request) {
   try {
@@ -30,7 +40,7 @@ export async function POST(req: Request) {
     const attorneyName = attorney.name ?? "Attorney";
     const pageUrl = `${SITE}/attorney/${attorney.slug}`;
     const property = isPropertyLead(lead);
-    const attorneyEmail = getAttorneyLeadEmail(attorney.slug);
+    const attorneyEmail = await resolveAttorneyLeadEmail(attorney.slug);
 
     if (attorneyEmail) {
       const text = `

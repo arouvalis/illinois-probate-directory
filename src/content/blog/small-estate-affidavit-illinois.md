@@ -44,6 +44,6 @@ Additionally, if you're unsure about any part of the process or feel overwhelmed
 
 ---
 
-Navigating estate matters doesn't have to be overwhelming. While the Small Estate Affidavit offers a valuable option for many Illinois families, having the right guidance makes all the difference. IllinoisProbateDirectory.com connects you with qualified probate attorneys throughout Illinois who understand the nuances of estate law and can help determine the best path forward for your specific situation. **[Visit our directory today](https://illinoisprobatedirectory.com)** to find experienced legal counsel in your area.
+Navigating estate matters doesn't have to be overwhelming. While the Small Estate Affidavit offers a valuable option for many Illinois families, having the right guidance makes all the difference. IllinoisProbateDirectory.com connects you with qualified probate attorneys throughout Illinois who understand the nuances of estate law and can help determine the best path forward for your specific situation. **[Visit our directory today](/)** to find experienced legal counsel in your area.
 
 *Browse attorneys: [Cook County Probate Attorneys](/county/cook) · [All Illinois Counties](/)*

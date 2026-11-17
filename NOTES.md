@@ -1130,6 +1130,7 @@ Nothing is broken for a visitor: no dead link, no failed redirect, no missing pa
 - "Matt S.", "Michael R." and "Sarah J." are on the CPS homepage with no source. This has been open since Phase 0, and the brief rules out testimonials that are not documented.
 - The Michael R. quote also says "They handled all the probate paperwork", which describes legal work.
 - Confirm them with documentation, or take them down.
+- **Resolved Nov 17, 2026:** Andy confirmed all three are real clients. They stay as they are and are no longer flagged.
 
 ---
 
@@ -1259,3 +1260,73 @@ Ranked by effect on leads and measurement first, then search, then housekeeping.
 ## One setting changed in Claude Code (not on either site)
 
 To reach the live sites, this session created a cloud environment named "IPD + CPS live QA" that allows only the four site hostnames. It affects Claude Code sessions for these two repos and nothing on the sites. It can be deleted or kept for the monthly checks.
+
+---
+
+# NOTES — QA fixes (IPD + CPS)
+
+Session date: Nov 17, 2026. One pull request per repo, not merged. This section is saved in both repos. It covers items 1 to 9 of Andy's list from the final QA review above.
+
+## CPS changes
+
+1. **Licence wording.** "licensed Illinois probate real estate specialist" is now "licensed Illinois real estate broker" in the box at the end of every article and in the blog index description. The nine article sign-offs that said "agent" now say "broker". No article says "agent" in a licence statement any more.
+2. **Testimonials.** Andy confirmed on Nov 17, 2026 that the three homepage testimonials (Matt S., Michael R., Sarah J.) are real clients. They are unchanged, word for word, and are **no longer an open item**. This closes Phase 0 finding 5, the Phase 3 and Phase 6 notes on them, and must-fix 3 in the QA review. The comment above them in `src/app/page.tsx` says so.
+3. **Links to IPD are tracked.**
+   - Every link to the directory is built by `ipdUrl()` in `src/lib/ipd.ts`: `utm_source=chicagoprobatespecialist`, `utm_medium=referral`, `utm_campaign=cps_handoff`, `utm_content=<placement>`.
+   - Placements: `footer`, `homepage_attorney_section`, `consultation_form`, `county_cook` … `county_kane`, `blog_<article>`.
+   - GA4 event `ipd_handoff_click` fires on any click on a link to the directory (`src/components/IpdClickTracker.tsx`, site-wide). Parameters: `placement`, `link_url`, `page_path`.
+   - The links no longer hide the referrer (`noreferrer` removed; `noopener` kept).
+   - Safety net, as on IPD: a link added later without tags gets them at click time with `utm_content=untagged_link`.
+6. **`/blog/how-to-sell-a-house-in-probate-in-illinois`: rewritten, not redirected.** In the Search Console export (Aug 11 – Nov 10) it has 167 impressions and 1 of CPS's 11 clicks, more impressions than any other CPS article still live except the heirs article. That is too much to throw away. It is now "Selling a House in Probate in Illinois: A Practical Guide": securing and insuring the house, finding the paperwork, valuation, contents, as-is preparation, pricing and listing, offers and closing, selling from out of state. The legal steps are one short section that links to the IPD selling guide. Same address, new title, description and short answer in `src/content/blog/meta.ts`. It contains no new figures.
+7. **Phase 4a titles and descriptions applied:** Services ("Probate Real Estate Services in Six Illinois Counties"), Our Process ("How We Sell an Inherited Property, Step by Step"), About ("About Andy Rouvalis and Lewis Kaplan"), blog index ("Inherited Property Guides for Illinois Families"). The site name is left off all but About so none is cut short.
+8. **Unconfirmed timings removed.**
+   - Timeline article: every week and month range is gone ("4–9 months", "4–8 weeks", "30–60 days", "4–12 weeks", "3–6 weeks", "3–4 weeks", and the "4–7 months" and "6–10 months" totals). The table now says what each phase depends on. The wording used is "often a few months; your attorney can tell you what to expect".
+   - Our Process: the timing answer is reworded the same way, so all five questions are now in the FAQ markup. The step labels "Day 1", "Days 2–5", "Days 5–14", "Week 2–3", "Weeks 3–8" became "First step", "After we talk", "Before listing", "Once you can sell", "Through closing".
+   - Also removed: "6–18 months" for a partition case (heirs article), "60–120 days" for a short sale and "12–18 months" for foreclosure (mortgage article), "2–4 months" for an eviction (rental article), and "close in as little as two weeks" on the `/probate-seller` ad page.
+   - Kept: "about 9 to 12 months" for a straightforward estate (the confirmed site-wide figure), the timeline choices in the forms, and "recent 3–6 months" of comparable sales on Our Process (a description of method, not a promise).
+
+## IPD changes
+
+4. **Selling guide:** the "selling an inherited house in Chicago" link now goes straight to CPS `/inherited-property/cook-county` (same tracking placement, `selling_guide_chicago`). **Small-estate article:** the "Visit our directory today" link now points to the homepage directly instead of the address without "www".
+5. **Star-rating markup removed from every profile.** No `AggregateRating` or `Review` markup remains on any of the 530 profiles (327 had it). The rating and review count are still shown on the page.
+7. **Article search titles**, all under 60 characters with no site name added (`src/content/blog-meta.ts`). The headings on the pages are unchanged.
+
+   | Article | New search title |
+   | --- | --- |
+   | Do I need a probate attorney | Do I Need a Probate Attorney in Illinois? |
+   | Small estate affidavit | Small Estate Affidavit in Illinois: Limit and How It Works |
+   | What goes through probate | What Goes Through Probate in Illinois, and What Doesn't |
+   | Lake County probate | Lake County, IL Probate: Court, Steps and Timeline |
+   | Cost of a probate attorney (was 79 characters) | What Does a Probate Attorney Cost in Illinois? |
+
+   The Lake County, cost and what-goes-through-probate articles also got the Phase 4a descriptions.
+- **Also changed, to keep things consistent:**
+  - The blog pipeline's topic map (`data/query-page-map.json`) and its test now name `/inherited-property/cook-county` as the CPS owner of the Chicago topic, since the old Chicago guide redirects there.
+  - `data/content-dates.json` was regenerated. It had not been run since the Verify your listing change, so all 530 profiles, the six county pages, the small-estate article and the selling guide now carry Nov 17 in the sitemap.
+  - `scripts/update-content-dates.js` now skips the verify-listing pages. Without that, regenerating would have put two noindex pages into the sitemap.
+
+## Checked
+
+- Both sites build. IPD pipeline tests: 15 pass.
+- In a browser on local production builds:
+  - CPS: every link to the directory on 14 pages carries the tags and no `noreferrer`; `ipd_handoff_click` fires from the homepage section, the footer, a county page, an article link and an untagged test link; the link in the consultation form is tagged; no page shows the old licence wording or a week, month or day range; one title per page; testimonials present.
+  - IPD: no rating markup on a profile and none anywhere in the built profile pages; visible rating still shown; selling guide and small-estate links as described; five article titles between 41 and 58 characters.
+- Not checked: the live sites (nothing is deployed until the pull requests are merged), and arrival of the new event in GA4.
+
+## Open items for Andy
+
+1. **Register `placement` on the CPS GA4 property** (`G-2M5SGHGTLN`) as an event-scoped custom dimension, as on IPD, to see where `ipd_handoff_click` came from.
+2. **Read the rewritten how-to article before merging.** It is new text. It makes no legal claims beyond the confirmed ones (Letters of Office, independent and supervised administration, about 9 to 12 months for the estate), but it is yours to approve.
+3. **Still on the page, not on this list:** "Heirs typically have 6 months" for a reverse mortgage (mortgage article); the service-area wording in five article sign-offs ("across Chicago and the suburbs", "across Cook County"); the legal-sounding labels on About and Services.
+4. Must-fix 1 from the QA review (one real test through every live form) is still to do.
+
+---
+
+# NOTES — Phase 7 (measurement and reporting)
+
+Recorded Nov 17, 2026 from Andy. No code in either repo.
+
+- **Lead tracker: built.** It is a Claude sheet for now. An automated Google Sheet is planned.
+- **Search Console log: every two weeks**, for both sites.
+- **Attorney verify-listing campaign: planned.** It uses the links in `data/verify-listing-links.csv` (IPD repo). Run must-fix 1 from the QA review first, so the verify form is known to work on the live site.
+- Not recorded here: the tracker's columns, where the Search Console log is kept, and the campaign date. Add them when they are settled.

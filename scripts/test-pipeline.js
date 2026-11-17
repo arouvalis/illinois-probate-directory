@@ -58,7 +58,7 @@ test('topics owned by an IPD page are refused, with the owner named', () => {
 
 test('topics owned by a CPS page are refused', () => {
   const cases = {
-    'sell inherited house chicago': '/blog/sell-inherited-house-chicago',
+    'sell inherited house chicago': '/inherited-property/cook-county',
     'heirs disagree about selling inherited house': '/blog/heirs-disagree-selling-inherited-property-illinois',
     'inherited house with a mortgage illinois': '/blog/inherited-property-with-mortgage-illinois',
     'probate realtor near me': '/',

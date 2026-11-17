@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "test:pipeline": "node --test scripts/test-pipeline.js",
-    "pipeline:dry-run": "node scripts/run-pipeline.js --dry-run"
+    "pipeline:dry-run": "node scripts/run-pipeline.js --dry-run",
+    "campaign": "node scripts/send-campaign.js",
+    "test:campaign": "node --test scripts/test-campaign.js"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",

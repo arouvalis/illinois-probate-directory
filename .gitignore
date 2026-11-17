@@ -21,3 +21,9 @@ yarn-error.log*
 
 # blog pipeline working files (drafts, reviews, dry-run reports)
 pipeline-output/
+
+# campaign list, reports and send log hold attorney email addresses (this
+# repository is public). Only the email text and the instructions are kept.
+data/campaign/*
+!data/campaign/verify-email.md
+!data/campaign/README.md

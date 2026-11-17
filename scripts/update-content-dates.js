@@ -79,11 +79,12 @@ for (const f of fs.readdirSync(BLOG).filter((f) => f.endsWith(".md"))) {
   record(`/blog/${f.replace(/\.md$/, "")}`, hash(fs.readFileSync(path.join(ROOT, rel), "utf8")), fileDate(rel));
 }
 
-// Static routes: every src/app/**/page.tsx without a [dynamic] segment
+// Static routes: every src/app/**/page.tsx without a [dynamic] segment.
+// verify-listing is left out: those pages are noindex and must stay out of the sitemap.
 (function walk(dir) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, e.name);
-    if (e.isDirectory()) { if (!e.name.startsWith("[") && e.name !== "api" && !e.name.startsWith("_")) walk(full); continue; }
+    if (e.isDirectory()) { if (!e.name.startsWith("[") && e.name !== "api" && e.name !== "verify-listing" && !e.name.startsWith("_")) walk(full); continue; }
     if (e.name !== "page.tsx") continue;
     const rel = path.relative(ROOT, full);
     const route = "/" + path.relative(APP, dir).split(path.sep).filter(Boolean).join("/");

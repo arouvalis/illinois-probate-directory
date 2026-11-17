@@ -1330,3 +1330,57 @@ Recorded Nov 17, 2026 from Andy. No code in either repo.
 - **Search Console log: every two weeks**, for both sites.
 - **Attorney verify-listing campaign: planned.** It uses the links in `data/verify-listing-links.csv` (IPD repo). Run must-fix 1 from the QA review first, so the verify form is known to work on the live site.
 - Not recorded here: the tracker's columns, where the Search Console log is kept, and the campaign date. Add them when they are settled.
+
+---
+
+# NOTES — Verify your listing: campaign sender (IPD)
+
+Session date: Nov 17, 2026. IPD only. One pull request, not merged. **Nothing was sent.**
+
+## What was added
+
+1. **`scripts/send-campaign.js`** (`npm run campaign`). Reads `data/campaign/attorneys.csv` (firm_name, email, optional slug), ties each row to its listing in `data/verify-listing-links.csv`, and emails each firm its own verify link through Resend, from andy@illinoisprobatedirectory.com with replies going to arouvalis@gmail.com. 50 per run unless `--limit` says otherwise. **A run sends nothing unless `--send` is added.** Day-to-day instructions are in `data/campaign/README.md`.
+2. **`data/campaign/verify-email.md`**: the email text, a placeholder for Andy to fill in. The script refuses to send while the `[[PLACEHOLDER]]` marker is still in it, or if `{{verify_link}}` is missing.
+3. **`/unsubscribe` page** on the site, with one button. Pressing it saves the address in the same Upstash database as the verified emails (keys starting `ipd:production:unsub:`). Kept out of search results and the sitemap.
+4. **Footer on every email**, added by the script so it cannot be left out: `HomeSmart Connect, 1367 W Chicago Ave, Chicago, IL 60642` and the unsubscribe link.
+
+## Matching rows to listings
+
+By slug when the row has one (a pasted profile or verify link also works). Otherwise by firm name, ignoring capitals, punctuation, "&" versus "and", and endings such as LLC or P.C., and **only when exactly one listing has that name**. Six firm names appear on more than one listing (for example Kelleher + Holland, LLC has three), so those rows need a slug. Everything not matched goes to `data/campaign/unmatched.csv` with the reason and the likely listings. A wrong match would send one firm another firm's link, so the script does not guess.
+
+## Who is skipped
+
+Listings with an approved verified email; anyone unsubscribed; anyone already sent this campaign; listings marked `do not send` in `data/attorney-records.json` (not asked for, added because that mark means the firm does not want to hear from the directory). Skipped rows and reasons go to `data/campaign/skipped.csv`.
+
+## How "already sent" is remembered
+
+In the database (`ipd:production:campaign:verify-listing:sent:…`) and in `data/campaign/send-log.csv`. The database is the one that counts, so the memory survives a lost laptop or a deleted log. Each address is reserved in the database before its email is sent, so two runs at once cannot both send to it. A send Resend refuses is logged as failed and tried again next run. Three failures in a row stop the run.
+
+## Decisions made without asking
+
+- **The unsubscribe link holds a random code, not the email address.** An address in a link ends up in Google Analytics and browser history. The script saves code → address in the database just before each send.
+- **Opening the unsubscribe link changes nothing; the button does**, for the same reason as the confirm links (mail scanners open every link). The emails also carry the header that makes Gmail and Outlook show their own Unsubscribe button, which works without the page.
+- **Before the first email of a real run, the script asks the live site whether that email's unsubscribe link works**, and stops if not. This catches the page not being deployed yet, or the script pointing at a different database from the site.
+- **Emails go out as plain text plus a simple HTML version** (so "Verify your listing" is a clickable link). No images, no tracking pixels, no click tracking added by the script.
+- **Sender name** is "Andy Rouvalis" unless the `From-Name:` line in the email text says otherwise.
+- **Private files stay out of GitHub.** This repository is public, so `.gitignore` now excludes everything in `data/campaign/` except the email text and the README. The attorney list, the reports and the send log exist only on Andy's computer.
+- Extras not asked for: `--test-to` (one sample to yourself), `--unsubscribe` (add someone by hand when they reply "remove me"), `--forget` (clear a stuck "sent" mark).
+
+## Tested
+
+- `npm run test:campaign`: 14 automated checks, all passing, using a stand-in for the database and for Resend. They cover matching, the footer, dry run sending and recording nothing, refusing to send with the placeholder text or missing settings, batching, each skip reason, no double sends, the send log, a refused send, and stopping when the unsubscribe link is not recognised.
+- Dry run with a fake nine-row list (`scripts/test-fixtures/campaign/attorneys.csv`, example.com addresses): 4 matched, 5 reported as unmatched with correct reasons.
+- A production build of the site on this machine, in a real browser at phone width, with the stand-in database: the script's link check against the real page, the page and its button, "already unsubscribed", made-up links refused, the mail-program one-click route, and the next run skipping the unsubscribed addresses.
+
+## Not tested
+
+- **Real email through Resend.** No key in this session, and nothing was to be sent. Whether andy@illinoisprobatedirectory.com is accepted as a sender depends on the domain being verified in the Resend account the key belongs to.
+- **The real Upstash database** and the Vercel preview.
+
+## Open items for Andy
+
+1. Write the email in `data/campaign/verify-email.md`.
+2. Merge and deploy before the first real send: the unsubscribe page has to be live.
+3. Check the Resend plan's daily limit. The free plan has allowed 100 emails a day, which is two batches of 50; that figure is from memory, not checked in this session.
+4. Bounces and spam complaints show only in the Resend dashboard. The script does not read them. Add hard bounces to the unsubscribe list by hand if a second campaign is ever sent.
+5. Replies come to arouvalis@gmail.com. There is still no inbox at andy@illinoisprobatedirectory.com, so mail sent to that address directly (not as a reply) goes nowhere.

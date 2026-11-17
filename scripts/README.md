@@ -62,3 +62,8 @@ ANTHROPIC_API_KEY=your-key node scripts/run-pipeline.js export.zip --publish
 ## When a draft is flagged
 
 Open `pipeline-output/reviews/<name>.json`. `reasons` lists each statement that could not be verified. Either edit the draft to remove the statement and run `node scripts/review-drafts.js` again, or confirm the statement, add it to `data/legal-facts.json`, and review again. A draft edited after its review must be reviewed again before it can be published.
+
+# Other scripts
+
+- `send-campaign.js`: sends the attorney "Verify your listing" email in batches. Dry run unless `--send`. Instructions: `data/campaign/README.md`. Tests: `npm run test:campaign`.
+- `verify-listing-links.js`: rebuilds `data/verify-listing-links.csv`, the per-listing links the campaign uses.

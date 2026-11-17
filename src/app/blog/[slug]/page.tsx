@@ -1,3 +1,4 @@
+import { BLOG_META } from '@/content/blog-meta';
 import fs from 'fs';
 import path from 'path';
 import { marked } from 'marked';
@@ -30,9 +31,11 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const firstPara = lines.find(line => line.trim().length > 80 && !line.startsWith('#') && !line.startsWith('!'));
   const description = firstPara ? firstPara.replace(/\*\*/g, '').slice(0, 155).trim() + '...' : `${title} — Illinois Probate Directory`;
 
+  const meta = BLOG_META[params.slug];
   return {
-    title,
-    description,
+    // "absolute" keeps the site name off, so the title is not cut short.
+    title: meta ? { absolute: meta.title } : title,
+    description: meta?.description ?? description,
     alternates: {
       canonical: `https://www.illinoisprobatedirectory.com/blog/${params.slug}`,
     },

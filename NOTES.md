@@ -1086,3 +1086,247 @@ In a production build on this machine, in a real browser, with a stand-in for th
 2. A rejected attorney is not told. Reply to the approval email if you want to explain.
 3. The verified phone and counties are stored but nothing uses them yet.
 4. To see every verified email in one place, open the database in the Upstash console (keys starting `ipd:production:attorney:`). There is no admin page.
+
+---
+
+# NOTES — Final QA review (IPD + CPS, live sites)
+
+Session date: Nov 17, 2026. Read-only. No code, content or settings on either site were changed. This section is the only edit, saved in both repos on branch `claude/tender-cori-j2ros7`. No pull request.
+
+## What was checked, and how
+
+- **The live sites**, `www.illinoisprobatedirectory.com` and `www.chicagoprobatespecialist.com`. Both match `main` in the repos (the latest merged work, including Verify your listing, is deployed).
+- **Every page was fetched:** IPD 566 indexable pages plus 530 verify-listing pages; CPS 25 pages plus the three ad-funnel pages. Every link between pages on either site was followed (1,130 distinct targets from IPD, 32 from CPS), and every redirect rule was requested (104 on IPD, 7 on CPS).
+- **GA4 events and forms** were run in a real browser on the live pages. Form submissions were intercepted inside the browser, so **no test lead, email or database entry reached either site**, and requests to Google Analytics were blocked so no test hits were recorded. "Fires" below means the page sends the event to the GA4 tag with the right name and details.
+- **Lead routing** was also run end to end on a local copy of IPD (emails written to a log instead of sent), including the whole verify-listing flow.
+- **Mobile:** homepage, one county page and one attorney page on IPD; homepage and one county page on CPS, at iPhone 13 size.
+
+**Not checked, because it cannot be done from outside:**
+
+- Whether emails actually arrive (Resend) on either live site.
+- Whether the verify-listing database and secret are set in Vercel. The live form only reveals this when a real request is sent.
+- Whether events arrive in GA4 and whether the custom dimensions are registered.
+- Google's Rich Results Test and Search Console. Schema was checked by reading it from every page instead.
+- The 448 attorney websites that IPD profiles link out to.
+- The `http://` to `https://` redirect (this session can only make secure requests).
+
+---
+
+## Must fix
+
+Nothing is broken for a visitor: no dead link, no failed redirect, no missing page. These three are the items that should not wait.
+
+### 1. Send one real test through every live form (a check, not a code change)
+- CPS has never received a lead from its own form, its emails are sent from an IPD address (`noreply@illinoisprobatedirectory.com`), and no session has ever been able to test real delivery on either site.
+- Send one test each: CPS consultation (including the optional steps), CPS valuation, the CPS ad-funnel form, IPD attorney message, IPD homepage "find me an attorney", IPD checklist, IPD For-Families. Confirm each arrives with the subject line listed under "Fine" below, and that the checklist reaches the visitor's address.
+- Then submit **Verify your listing** once on a real profile with your own email. If it says "Listing verification isn't available right now", the Upstash database or `VERIFY_LISTING_SECRET` is missing in Vercel. The 530 campaign links should not be mailed until this passes.
+
+### 2. CPS describes Andy with a licence that does not exist
+- The call-to-action box at the end of **all 12 CPS articles** says "Andy Rouvalis is a licensed Illinois **probate real estate specialist**". The blog index description says "Written by a licensed Illinois probate real estate specialist."
+- The sign-off in **9 of the 12 articles** says "licensed Illinois real estate **agent**"; the other 3 say "broker".
+- Phase 6 settled the wording as "licensed Illinois real estate broker". The homepage, footer, schema, About, Services and county pages use it. The articles and the box were missed.
+
+### 3. The three CPS testimonials are still unverified and still live
+- "Matt S.", "Michael R." and "Sarah J." are on the CPS homepage with no source. This has been open since Phase 0, and the brief rules out testimonials that are not documented.
+- The Michael R. quote also says "They handled all the probate paperwork", which describes legal work.
+- Confirm them with documentation, or take them down.
+- **Resolved Nov 17, 2026:** Andy confirmed all three are real clients. They stay as they are and are no longer flagged.
+
+---
+
+## Should fix
+
+Ranked by effect on leads and measurement first, then search, then housekeeping.
+
+### Tracking and links
+
+1. **Visits from CPS to IPD cannot be seen.** CPS links to IPD from every page (29 pages link to the IPD homepage; each of the six county pages links to its matching IPD county page). None carries tracking tags, CPS fires no event when one is clicked, and the links are marked so the browser hides where the visitor came from. In IPD's GA4 these visits will look like direct traffic. The brief asks for tracked links in both directions; only IPD to CPS is done.
+2. **One IPD link to CPS goes through a redirect.** On `/resources/selling-inherited-property-illinois`, the "Chicago guide" link points to CPS `/blog/sell-inherited-house-chicago`, which now redirects to `/inherited-property/cook-county`. It works and keeps its tracking tags, but it should point straight at the county page. (Phase 4b flagged this as possible.)
+3. **One IPD link uses the address without "www".** In `/blog/small-estate-affidavit-illinois`, a link goes to `https://illinoisprobatedirectory.com/`, which redirects to the www address.
+4. **The no-www addresses redirect with a temporary code (307) on both sites.** Search engines treat a temporary redirect as "keep the old address". Set it to permanent in Vercel's domain settings.
+5. **CPS phone and email clicks are not tracked.** IPD tracks phone clicks; CPS does not, and the brief lists "call/text" as a main CPS conversion.
+6. **GA4 custom dimensions.** To see the details in reports, these need registering as event-scoped dimensions: `placement`, `src`, `listing` (already in the notes), and also `form_name`, `lead_path`, `delivery`, `has_real_estate` (IPD) and `form_source` (CPS).
+7. **Phase 7 has no notes.** There is no record of the tracking sheet or the weekly Search Console report having been built.
+
+### Search
+
+8. **327 IPD attorney profiles carry star-rating markup copied from Google Maps.** Google does not show stars for ratings taken from another site, and it is a policy risk. Open since Phase 0. The visible rating can stay; the markup should go.
+9. **CPS `/blog/how-to-sell-a-house-in-probate-in-illinois` is still live.** The Phase 4a map gives that topic to the IPD selling guide and says to merge this article into the CPS timeline article. Until then the two sites still compete.
+10. **Titles and descriptions the Phase 4a table covered but nobody applied:**
+    - CPS `/probate-services` title still says "in Chicago" (68 characters); its description is 194 characters and gets cut off.
+    - CPS `/about` ("Chicago's probate real estate specialists licensed under HomeSmart Connect") and `/our-process` (75 characters).
+    - CPS `/blog` description is 183 characters.
+    - Four kept IPD articles have titles of 93 to 101 characters ("…A Guide for Grieving Families | Illinois Probate Directory"); the courts page is 101.
+    - The 10 older IPD city pages have descriptions of 178 to 201 characters.
+11. **IPD attorney profile titles are 91 to 130 characters** once " | Illinois Probate Directory" is added. The firm name comes first, so the important part survives, but dropping the site name from this template would stop Google cutting them.
+12. **No social-share (Open Graph) tags on any page of either site**, and **IPD has no favicon** (the browser tab and Google's result show a blank icon).
+13. **CPS sitemap stamps every page with the time of the last deployment.** IPD's sitemap uses real change dates. Harmless, but Google learns to ignore the dates.
+
+### Facts and wording
+
+14. **Unconfirmed timings still live on CPS** (flagged in Phases 3 and 6, awaiting an attorney): "4–9 months from the date of death to closing" in two articles; "4–7 months" and "6–10 months" totals in the timeline article; "30–60 days" and "add 4–8 weeks" on Our Process. They do not contradict the "about 9 to 12 months" figure directly (that is the whole estate, these are the sale), but a reader will see both.
+15. **Service area in four article sign-offs:** "across Chicago and the suburbs" (three articles), "Cook County's Probate Real Estate Experts" (one heading), "across Cook County" (Evanston, Oak Park). The rest name the six counties.
+16. **Legal-sounding labels left for Andy and Lewis in Phase 3 are unchanged:** "Court Confirmation Sales" (Services), "Court-Supervised Sales", "Title Issue Resolution" and "the specific documentation requirements of Illinois probate law" (About).
+17. **IPD small wording:** "Browse verified probate attorneys" on two resource pages (441 of 530 are verified), and "Covers All Chicagoland Counties" on the homepage.
+
+### Technical
+
+18. **CPS lead emails are still sent from the IPD domain.** Open since Phase 0. Tied to must-fix 1: if that test fails, this is the first place to look.
+19. **IPD `/api/og-image` still fetches any web address passed to it**, with no restriction. A security and cost exposure, open since Phase 0.
+20. **IPD is still on Next.js 14.2.5** (CPS is on 14.2.35), so it is behind on security patches.
+21. **CPS forms have no limit on repeat submissions.** IPD's forms do.
+22. **Page weight.** The IPD homepage is 661 KB of HTML and the Cook County page 584 KB. On a phone the Cook page is about 62,700 pixels tall (233 listings, no paging).
+
+### Mobile
+
+23. **IPD homepage:** the first screen is the heading, the paragraph and three check-marks. The county search starts just below it. Not broken; a search box or button on the first screen would help.
+24. **CPS county pages:** the first screen is the breadcrumb, heading and opening paragraph. The "Free Consultation" button begins right at the bottom edge.
+25. **CPS menu has no link to the county pages.** They are reachable from the homepage and the footer only.
+26. **IPD menu still says "Blog"**; the page is headed "Illinois Probate Guides" (open from Phase 4b).
+27. Three IPD profiles have an empty phone number in their markup (Gary N Foley PC, Magnolia Law LLC, Wendy Calvert Law Offices). Cosmetic.
+
+---
+
+## Fine
+
+### Links and redirects
+- **No broken links.** All 1,162 distinct link targets on the two sites load. Apart from the two in "Should fix" (items 2 and 3), none passes through a redirect.
+- **All 111 redirect rules** (104 IPD, 7 CPS) answer with a single permanent redirect to a page that loads. No chains. This includes the 23 retired IPD posts, the 33 removed listings, both merged CPS Chicago guides, the Homer Glen pages and CPS's old copy of the timeline page (which lands on the IPD page).
+- **IPD to CPS:** 33 links, all built with the tracking tags and a placement (`county_*`, `city_*`, `blog_*`, `selling_guide`, `selling_guide_chicago`, `selling_guide_heirs`, `for_families`). Attorney profiles have no CPS link, as intended.
+- **CPS to IPD:** all seven distinct targets load (homepage and the six county pages).
+- Unknown addresses return a proper "not found" on both sites.
+
+### Titles, descriptions, canonicals
+- Every indexable page on both sites has exactly one title, one description, one main heading and a canonical tag pointing at itself.
+- **No duplicate titles or descriptions** on either site.
+- All 12 CPS articles and all 7 CPS inherited-property pages have their own title (60 characters or fewer) and description. The doubled site name is gone.
+- The 530 verify-listing pages, the confirm and review pages and the three CPS ad-funnel pages are marked noindex and are not in a sitemap.
+
+### Schema (read from every live page; all of it parses)
+- **IPD:** Organization site-wide; Attorney on all 530 profiles (name, address, phone, area served); CollectionPage with an unordered ItemList on the homepage, 6 county and 18 city pages, and the item counts match the listings shown; breadcrumbs on county and city pages; FAQ markup on 6 county, 12 city, 4 resource pages and 5 articles.
+- **CPS:** RealEstateAgent on every page with both brokers, licence numbers 475165248 (Andy) and 475156218 (Lewis), HomeSmart Connect, 1367 W Chicago Ave, the phone and email from the footer, and the six counties. No ratings or reviews in it. FAQ markup and breadcrumbs on the six county pages; FAQ markup on Our Process.
+- **Every question and answer in FAQ markup on both sites appears in the visible text of its page.**
+- Both broker photos named in the CPS schema load.
+
+### GA4 and events
+- The GA4 tag is on every page: `G-NKWRWZQDP9` on all 1,096 IPD pages, `G-2M5SGHGTLN` on all 28 CPS pages including the ad funnel.
+
+| Event | Where it was triggered | Result |
+| --- | --- | --- |
+| `cps_handoff_click` | IPD county, city, article, selling guide, For-Families | Fires with `placement`, `link_url`, `page_path`. Link opens CPS in a new tab with tags intact. |
+| `inherited_property_click` | IPD county block; also present on homepage (`homepage_hero`), profiles (`attorney_page`), the message-form prompt (`attorney_form`) | Fires with `placement`. |
+| `generate_lead` (IPD) | attorney message, homepage, checklist, For-Families | Fires once each, only after the server answers. `form_name` = `attorney_message`, `homepage`, `checklist`, `for_families`; the attorney form also sends `delivery` (`owner_call` or `attorney_email`). |
+| `generate_lead` (CPS) | consultation, valuation, ad-funnel form | Fires once each with `form_name` and `form_source`. The optional follow-up questions do not fire a second event. |
+| `phone_click` (IPD) | attorney profile | Fires with the number. |
+| `form_start` (IPD) | For-Families | Fires. |
+| `verify_listing_start` | verify page opened from a profile, from a `?src=email` link, and with no label | Fires once per visit with `src` = `profile`, `email`, `direct`. |
+| `verify_listing_submit` | verify form | Fires with `src` and `listing`. |
+| `verify_listing_confirmed` | Confirm button (local copy) | Fires once, carrying the original `src`. Opening the link without pressing the button fires nothing, and reloading afterwards does not fire it again. |
+
+### Forms and lead routing (matches the notes)
+- **IPD, run locally end to end:**
+  - Attorney with no email on file: to Andy, `CALL THIS ATTORNEY: <name>, <phone> (lead from …)`. Visitor sees "We've received your request and will connect you with <firm> within 1 business day."
+  - Attorney with an approved email: to the attorney with reply-to set to the visitor and **no** property flag; separate copy to Andy, `SENT TO ATTORNEY: …`, with `PROPERTY LEAD:` in front when the answer was Yes.
+  - Homepage: `FIND ME AN ATTORNEY: <name>, <county>`. Checklist: the checklist goes to the visitor, then `Checklist request: <name>` to Andy. For-Families: always `PROPERTY LEAD: For-Families request: …`.
+  - "Not Sure" is not flagged. The hidden spam field, a bad email address and an unknown listing are all refused without sending anything.
+  - Verify your listing: nothing changes on opening a link; the approve email is sent only after Confirm is pressed; lead routing switches to the attorney's address only after Approve is pressed.
+- **IPD live:** the message form has name and email required and everything else optional, with the four extra fields behind "Add details (optional)". No listing has an email on file yet, so every attorney lead currently takes the call-this-attorney path.
+- **CPS live:** consultation step 1 (name, email, optional phone) sends at once, `New Lead: <form name>`; steps 2 and 3 send one follow-up, `DETAILS: <name>`; valuation sends `VALUATION REQUEST: <address>`. All go to `andy@chicagoprobatespecialist.com` only. Answering "No" to the attorney question shows the link to IPD. The ad-funnel form goes to its thank-you page.
+- **CPS buttons:** "Free Consultation" and "What's the Property Worth?" open the right tab of the form from the homepage, from county pages and from articles. The call-to-action box at the end of articles is visible (white on navy, gold button); the Phase 0 invisible-button problem is fixed.
+
+### Facts
+- **Small estate limit:** $150,000 for deaths on or after August 15, 2025 on every page that mentions it (19 on IPD). Every remaining "$100,000" is the "for earlier deaths" clause. (The one $100,000 on CPS is a condo-reserve example, unrelated.)
+- **Timeline:** "about 9 to 12 months" for a straightforward estate and "12 to 24 months or longer" for contested ones, on every IPD page and all six CPS county pages. No "12 to 18", "6 to 12" or "6–9 months" claims remain. (The "3 to 12 months" on IPD forms and "3 to 6 / 6 to 12 months" on CPS forms are timeline choices in a dropdown.)
+- **Court addresses are the same on both sites:** Daley Center, 50 W. Washington St., Chicago; 505 N. County Farm Rd., Wheaton; 100 S. 3rd St., Geneva; 18 N. County St., Waukegan; 2200 N. Seminary Ave., Woodstock; 100 W. Jefferson St., Joliet.
+- **Kane County:** Geneva everywhere. St. Charles appears only as a town name and in the sentence saying the Judicial Center there does not handle probate.
+- **Will County:** 100 W. Jefferson everywhere. "14 W. Jefferson" appears only on the CPS Will County page, as the former courthouse.
+- **Licence numbers:** 475165248 for Andy and 475156218 for Lewis wherever they appear (schema, footer, About, Services, county pages, articles, `llms.txt`).
+- **Listing counts:** 530 everywhere on IPD, with county counts that add up (233, 67, 65, 62, 52, 51). No "592", "563" or "590+" remains. CPS says "500+".
+- **Service area:** the six counties on the CPS homepage, schema, footer, county pages and `llms.txt` (exceptions in "Should fix" 15).
+
+### Sitemaps and robots.txt
+- **IPD:** robots.txt allows everything, names the AI crawlers and points to the sitemap. The sitemap has 566 addresses: homepage, 530 profiles, 18 city pages (including the 8 new ones), 6 county pages, 4 resources, the guides index, 5 articles and For-Families. Every one loads, is indexable and matches its canonical tag. No redirected or noindex address is in it, and no indexable page is missing from it.
+- **CPS:** robots.txt now exists and points to the sitemap. The sitemap has 25 addresses, including `/inherited-property`, the six county pages and `/blog`. Same checks pass.
+- `/llms.txt` loads on both sites with the right counts, courts, licences and county pages.
+
+### Mobile (390 px wide)
+- No sideways scrolling on any page tested. No text under 12 px apart from one label on the profile page.
+- Menus open and every item works on both sites.
+- **CPS homepage:** heading, both brokers, the six counties, both buttons and the phone number are all on the first screen.
+- **IPD Cook County page:** heading, the listing count, the court address and the jump link are on the first screen; listings start straight after.
+
+---
+
+## One setting changed in Claude Code (not on either site)
+
+To reach the live sites, this session created a cloud environment named "IPD + CPS live QA" that allows only the four site hostnames. It affects Claude Code sessions for these two repos and nothing on the sites. It can be deleted or kept for the monthly checks.
+
+---
+
+# NOTES — QA fixes (IPD + CPS)
+
+Session date: Nov 17, 2026. One pull request per repo, not merged. This section is saved in both repos. It covers items 1 to 9 of Andy's list from the final QA review above.
+
+## CPS changes
+
+1. **Licence wording.** "licensed Illinois probate real estate specialist" is now "licensed Illinois real estate broker" in the box at the end of every article and in the blog index description. The nine article sign-offs that said "agent" now say "broker". No article says "agent" in a licence statement any more.
+2. **Testimonials.** Andy confirmed on Nov 17, 2026 that the three homepage testimonials (Matt S., Michael R., Sarah J.) are real clients. They are unchanged, word for word, and are **no longer an open item**. This closes Phase 0 finding 5, the Phase 3 and Phase 6 notes on them, and must-fix 3 in the QA review. The comment above them in `src/app/page.tsx` says so.
+3. **Links to IPD are tracked.**
+   - Every link to the directory is built by `ipdUrl()` in `src/lib/ipd.ts`: `utm_source=chicagoprobatespecialist`, `utm_medium=referral`, `utm_campaign=cps_handoff`, `utm_content=<placement>`.
+   - Placements: `footer`, `homepage_attorney_section`, `consultation_form`, `county_cook` … `county_kane`, `blog_<article>`.
+   - GA4 event `ipd_handoff_click` fires on any click on a link to the directory (`src/components/IpdClickTracker.tsx`, site-wide). Parameters: `placement`, `link_url`, `page_path`.
+   - The links no longer hide the referrer (`noreferrer` removed; `noopener` kept).
+   - Safety net, as on IPD: a link added later without tags gets them at click time with `utm_content=untagged_link`.
+6. **`/blog/how-to-sell-a-house-in-probate-in-illinois`: rewritten, not redirected.** In the Search Console export (Aug 11 – Nov 10) it has 167 impressions and 1 of CPS's 11 clicks, more impressions than any other CPS article still live except the heirs article. That is too much to throw away. It is now "Selling a House in Probate in Illinois: A Practical Guide": securing and insuring the house, finding the paperwork, valuation, contents, as-is preparation, pricing and listing, offers and closing, selling from out of state. The legal steps are one short section that links to the IPD selling guide. Same address, new title, description and short answer in `src/content/blog/meta.ts`. It contains no new figures.
+7. **Phase 4a titles and descriptions applied:** Services ("Probate Real Estate Services in Six Illinois Counties"), Our Process ("How We Sell an Inherited Property, Step by Step"), About ("About Andy Rouvalis and Lewis Kaplan"), blog index ("Inherited Property Guides for Illinois Families"). The site name is left off all but About so none is cut short.
+8. **Unconfirmed timings removed.**
+   - Timeline article: every week and month range is gone ("4–9 months", "4–8 weeks", "30–60 days", "4–12 weeks", "3–6 weeks", "3–4 weeks", and the "4–7 months" and "6–10 months" totals). The table now says what each phase depends on. The wording used is "often a few months; your attorney can tell you what to expect".
+   - Our Process: the timing answer is reworded the same way, so all five questions are now in the FAQ markup. The step labels "Day 1", "Days 2–5", "Days 5–14", "Week 2–3", "Weeks 3–8" became "First step", "After we talk", "Before listing", "Once you can sell", "Through closing".
+   - Also removed: "6–18 months" for a partition case (heirs article), "60–120 days" for a short sale and "12–18 months" for foreclosure (mortgage article), "2–4 months" for an eviction (rental article), and "close in as little as two weeks" on the `/probate-seller` ad page.
+   - Kept: "about 9 to 12 months" for a straightforward estate (the confirmed site-wide figure), the timeline choices in the forms, and "recent 3–6 months" of comparable sales on Our Process (a description of method, not a promise).
+
+## IPD changes
+
+4. **Selling guide:** the "selling an inherited house in Chicago" link now goes straight to CPS `/inherited-property/cook-county` (same tracking placement, `selling_guide_chicago`). **Small-estate article:** the "Visit our directory today" link now points to the homepage directly instead of the address without "www".
+5. **Star-rating markup removed from every profile.** No `AggregateRating` or `Review` markup remains on any of the 530 profiles (327 had it). The rating and review count are still shown on the page.
+7. **Article search titles**, all under 60 characters with no site name added (`src/content/blog-meta.ts`). The headings on the pages are unchanged.
+
+   | Article | New search title |
+   | --- | --- |
+   | Do I need a probate attorney | Do I Need a Probate Attorney in Illinois? |
+   | Small estate affidavit | Small Estate Affidavit in Illinois: Limit and How It Works |
+   | What goes through probate | What Goes Through Probate in Illinois, and What Doesn't |
+   | Lake County probate | Lake County, IL Probate: Court, Steps and Timeline |
+   | Cost of a probate attorney (was 79 characters) | What Does a Probate Attorney Cost in Illinois? |
+
+   The Lake County, cost and what-goes-through-probate articles also got the Phase 4a descriptions.
+- **Also changed, to keep things consistent:**
+  - The blog pipeline's topic map (`data/query-page-map.json`) and its test now name `/inherited-property/cook-county` as the CPS owner of the Chicago topic, since the old Chicago guide redirects there.
+  - `data/content-dates.json` was regenerated. It had not been run since the Verify your listing change, so all 530 profiles, the six county pages, the small-estate article and the selling guide now carry Nov 17 in the sitemap.
+  - `scripts/update-content-dates.js` now skips the verify-listing pages. Without that, regenerating would have put two noindex pages into the sitemap.
+
+## Checked
+
+- Both sites build. IPD pipeline tests: 15 pass.
+- In a browser on local production builds:
+  - CPS: every link to the directory on 14 pages carries the tags and no `noreferrer`; `ipd_handoff_click` fires from the homepage section, the footer, a county page, an article link and an untagged test link; the link in the consultation form is tagged; no page shows the old licence wording or a week, month or day range; one title per page; testimonials present.
+  - IPD: no rating markup on a profile and none anywhere in the built profile pages; visible rating still shown; selling guide and small-estate links as described; five article titles between 41 and 58 characters.
+- Not checked: the live sites (nothing is deployed until the pull requests are merged), and arrival of the new event in GA4.
+
+## Open items for Andy
+
+1. **Register `placement` on the CPS GA4 property** (`G-2M5SGHGTLN`) as an event-scoped custom dimension, as on IPD, to see where `ipd_handoff_click` came from.
+2. **Read the rewritten how-to article before merging.** It is new text. It makes no legal claims beyond the confirmed ones (Letters of Office, independent and supervised administration, about 9 to 12 months for the estate), but it is yours to approve.
+3. **Still on the page, not on this list:** "Heirs typically have 6 months" for a reverse mortgage (mortgage article); the service-area wording in five article sign-offs ("across Chicago and the suburbs", "across Cook County"); the legal-sounding labels on About and Services.
+4. Must-fix 1 from the QA review (one real test through every live form) is still to do.
+
+---
+
+# NOTES — Phase 7 (measurement and reporting)
+
+Recorded Nov 17, 2026 from Andy. No code in either repo.
+
+- **Lead tracker: built.** It is a Claude sheet for now. An automated Google Sheet is planned.
+- **Search Console log: every two weeks**, for both sites.
+- **Attorney verify-listing campaign: planned.** It uses the links in `data/verify-listing-links.csv` (IPD repo). Run must-fix 1 from the QA review first, so the verify form is known to work on the live site.
+- Not recorded here: the tracker's columns, where the Search Console log is kept, and the campaign date. Add them when they are settled.

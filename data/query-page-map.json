@@ -79,7 +79,7 @@
       "id": "cps-chicago-sell",
       "topic": "Selling an inherited or probate house in Chicago",
       "intent": "probate + property",
-      "owner": { "site": "CPS", "url": "/blog/sell-inherited-house-chicago" },
+      "owner": { "site": "CPS", "url": "/inherited-property/cook-county" },
       "match": [["sell|selling|sale|sold", "chicago"]]
     },
     {

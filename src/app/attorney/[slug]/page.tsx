@@ -102,13 +102,9 @@ export default function AttorneyPage({ params }: Props) {
     },
     "knowsAbout": "Probate Law",
     ...(website && { "sameAs": website }),
-    ...(rating && attorney.reviews && {
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": rating,
-        "reviewCount": attorney.reviews,
-      },
-    }),
+    // No AggregateRating or Review markup: the ratings shown on the page come
+    // from Google Maps, and Google does not allow review markup for ratings
+    // collected on another site. The visible rating is unaffected.
   };
   const accessibilityFeatures = about?.Accessibility
       ? Object.entries(about.Accessibility)
